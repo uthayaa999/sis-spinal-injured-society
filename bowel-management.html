@@ -1,0 +1,1507 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bowel Management | SIS</title>
+<link rel="stylesheet" href="sis-styles.css">
+<style>
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+ margin:0;
+ font-family:Arial,"Noto Sans Tamil",sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.85;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{width:140px;height:auto;max-width:100%}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav,.tools{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ align-items:center;
+ gap:12px;
+ padding:14px;
+}
+nav{background:#052b4d}
+nav a{
+ color:white;
+ font-weight:bold;
+ text-decoration:none;
+ padding:10px;
+}
+.tools{background:white}
+button,.btn{
+ display:inline-block;
+ background:#073763;
+ color:white;
+ padding:12px 18px;
+ min-height:44px;
+ font:inherit;
+ border:0;
+ border-radius:8px;
+ text-decoration:none;
+ cursor:pointer;
+}
+button[aria-pressed="true"]{
+ background:#007d80;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ text-align:center;
+ padding:40px 20px;
+}
+.hero h2{font-size:2em;margin:0 0 12px}
+.article-container{
+ max-width:960px;
+ margin:auto;
+ padding:24px 16px;
+}
+.article-section{
+ background:white;
+ padding:28px;
+ margin:24px 0;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376312;
+ overflow-wrap:anywhere;
+ scroll-margin-top:20px;
+}
+.article-section h2{
+ margin-top:0;
+ padding-bottom:12px;
+ border-bottom:2px solid #e2f3f2;
+}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:18px;
+ border-radius:8px;
+ margin:20px 0;
+}
+.warning{
+ background:#fff4e5;
+ color:#663800;
+ border-left:4px solid #b66a00;
+ padding:20px;
+ border-radius:10px;
+ margin:20px 0;
+}
+.emergency{
+ background:#fff0f0;
+ color:#8b1616;
+ border-left:4px solid #b42318;
+ padding:20px;
+ border-radius:10px;
+}
+.review-status{
+ display:inline-block;
+ background:#fff0cf;
+ color:#704600;
+ border-radius:8px;
+ padding:8px 14px;
+ font-weight:bold;
+}
+.toc a{
+ display:block;
+ padding:10px 0;
+ color:#073763;
+ border-bottom:1px solid #dce7ef;
+ text-decoration:none;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+ gap:16px;
+}
+.info-card{
+ background:#f8fbff;
+ border:1px solid #dce7ef;
+ border-radius:12px;
+ padding:20px;
+}
+.info-card h3{margin-top:0}
+.diagram{
+ background:#f4f9ff;
+ border:1px solid #dce7ef;
+ border-radius:14px;
+ text-align:center;
+ padding:20px;
+}
+.diagram svg{
+ width:100%;
+ max-width:440px;
+ height:auto;
+}
+.flow-step{
+ background:#e2f3f2;
+ border-radius:10px;
+ padding:14px;
+ font-weight:bold;
+}
+.flow-arrow{
+ text-align:center;
+ font-size:1.5em;
+}
+.check-item{
+ display:flex;
+ align-items:flex-start;
+ gap:12px;
+ padding:14px 8px;
+ border-bottom:1px solid #dce7ef;
+ cursor:pointer;
+}
+.check-item input{
+ flex-shrink:0;
+ width:22px;
+ height:22px;
+ accent-color:#007d80;
+ margin-top:5px;
+}
+progress{
+ width:100%;
+ height:18px;
+ accent-color:#007d80;
+}
+details{
+ border:1px solid #cbd9e5;
+ border-radius:10px;
+ padding:16px;
+ margin:12px 0;
+}
+summary{
+ font-weight:bold;
+ cursor:pointer;
+ min-height:44px;
+}
+li{margin-bottom:10px}
+a{overflow-wrap:anywhere}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:28px 16px;
+}
+[hidden]{display:none!important}
+@media(max-width:600px){
+ .article-section{padding:18px}
+ .grid{grid-template-columns:1fr}
+ .hero h2{font-size:1.65em}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html" data-key="home"></a>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<a href="understanding-sci.html" data-key="sci"></a>
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+
+<strong data-key="language"></strong>
+
+<button id="taButton" onclick="setLanguage('ta')"
+aria-pressed="true">தமிழ்</button>
+
+<button id="enButton" onclick="setLanguage('en')"
+aria-pressed="false">English</button>
+
+<strong data-key="textSize"></strong>
+
+<button onclick="resizeText(-2)"
+aria-label="Decrease text size">A−</button>
+
+<button onclick="resetText()"
+aria-label="Reset text size">A</button>
+
+<button onclick="resizeText(2)"
+aria-label="Increase text size">A+</button>
+
+<button id="readButton" onclick="readArticle()"
+data-key="read"></button>
+
+<button id="stopButton" onclick="stopReading()"
+data-key="stop"></button>
+
+</section>
+
+<p id="speechStatus" role="status"
+aria-live="polite"
+style="text-align:center;padding:0 16px"></p>
+
+<section class="hero">
+<h2 data-key="title"></h2>
+<p data-key="subtitle"></p>
+<p data-key="audience"></p>
+</section>
+
+<main class="article-container">
+
+<p>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<span aria-hidden="true"> / </span>
+<span data-key="shortTitle"></span>
+</p>
+
+<div class="notice">
+<span class="review-status" data-key="review"></span>
+<p data-key="reviewNote"></p>
+<p data-key="updated"></p>
+</div>
+
+<section class="article-section toc">
+<h2 data-key="contents"></h2>
+<div id="contentsList"></div>
+<a href="#checklist" data-key="checklistTitle"></a>
+<a href="#faq" data-key="faqTitle"></a>
+<a href="#sources" data-key="sourcesTitle"></a>
+</section>
+
+<div id="articleContent"></div>
+
+<section id="checklist" class="article-section">
+
+<h2 data-key="checklistTitle"></h2>
+<p data-key="checklistNote"></p>
+
+<div id="checklistItems"></div>
+
+<p id="checklistStatus" role="status"
+aria-live="polite"></p>
+
+<progress id="checklistProgress"
+value="0" max="7"
+aria-label="Education checklist progress">
+</progress>
+
+<p>
+<button onclick="resetChecklist()"
+data-key="resetChecklist"></button>
+</p>
+
+<p><small data-key="privacy"></small></p>
+
+</section>
+
+<section id="faq" class="article-section">
+<h2 data-key="faqTitle"></h2>
+<div id="faqList"></div>
+</section>
+
+<section id="sources" class="article-section">
+
+<h2 data-key="sourcesTitle"></h2>
+
+<p data-key="sourcesNote"></p>
+
+<p><strong>[1] MSKTC – 2025</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/bowel-function-after-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">
+Bowel Function After Spinal Cord Injury
+</a>
+
+<p><strong>[2] Clinical Practice Guideline – 2021</strong></p>
+
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8115581/"
+target="_blank" rel="noopener noreferrer">
+Management of Neurogenic Bowel Dysfunction in Adults after Spinal Cord Injury
+</a>
+
+<p><strong>[3] NSW Agency for Clinical Innovation</strong></p>
+
+<a href="https://aci.health.nsw.gov.au/networks/spinal-cord-injury/resources/bowel-and-bladder-management"
+target="_blank" rel="noopener noreferrer">
+Bowel and Bladder Management for People with SCI
+</a>
+
+<p><strong>[4] Clinical Guideline – 2022</strong></p>
+
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8948006/"
+target="_blank" rel="noopener noreferrer">
+Guideline for the Management of Neurogenic Bowel Dysfunction in SCI
+</a>
+
+</section>
+
+<div class="warning">
+<h3 data-key="disclaimerTitle"></h3>
+<p data-key="disclaimer"></p>
+<p><strong>Emergency:</strong>
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a></p>
+</div>
+
+<a class="btn" href="knowledge-hub.html"
+data-key="back"></a>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Understand • Support • Empower</p>
+<p>© 2026 SIS | Knowledge Hub</p>
+<p>Educational Draft V0.1</p>
+</footer>
+
+<script>
+
+let language="ta";
+let textSize=16;
+let checked=Array(7).fill(false);
+let speechToken=0;
+
+const ui={
+
+home:["Home","முகப்பு"],
+
+hub:["Knowledge Hub","அறிவு மையம்"],
+
+sci:["Understanding SCI","முதுகுத்தண்டுவடப் பாதிப்பு"],
+
+language:["Language","மொழி"],
+
+textSize:["Text Size","எழுத்து அளவு"],
+
+read:["Read Aloud","குரலில் வாசிக்க"],
+
+stop:["Stop Reading","வாசிப்பை நிறுத்து"],
+
+title:[
+"Bowel Management After Spinal Cord Injury",
+"முதுகுத்தண்டுவடப் பாதிப்புக்குப் பிறகு குடல் பராமரிப்பு"
+],
+
+shortTitle:[
+"Bowel Management",
+"குடல் பராமரிப்பு"
+],
+
+subtitle:[
+"Understanding bowel health with dignity, comfort and confidence.",
+"கண்ணியம், உடல் நலம் மற்றும் தன்னம்பிக்கையுடன் குடல் பராமரிப்பைப் புரிந்துகொள்வோம்."
+],
+
+audience:[
+"Educational guide for people with SCI, families and caregivers.",
+"முதுகுத்தண்டுவடப் பாதிப்பு உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான கல்வி வழிகாட்டி."
+],
+
+review:[
+"Medical Review Pending",
+"மருத்துவ நிபுணரின் மதிப்பாய்வு நிலுவையில் உள்ளது"
+],
+
+reviewNote:[
+"This educational draft is informed by published clinical resources. The SIS article is awaiting independent clinical review.",
+"வெளியிடப்பட்ட மருத்துவ ஆதாரங்களின் அடிப்படையில் இந்த கல்வி வரைவு தயாரிக்கப்பட்டுள்ளது. SIS கட்டுரைக்கான மருத்துவ நிபுணரின் மதிப்பாய்வு இன்னும் பெறப்படவில்லை."
+],
+
+updated:[
+"Draft prepared: 24 November 2026",
+"வரைவு தயாரிக்கப்பட்ட நாள்: 24 நவம்பர் 2026"
+],
+
+contents:[
+"In This Guide",
+"இந்த வழிகாட்டியில்"
+],
+
+checklistTitle:[
+"10. Bowel Care Education Checklist",
+"10. குடல் பராமரிப்பு விழிப்புணர்வுப் பட்டியல்"
+],
+
+checklistNote:[
+"Use this checklist to identify topics to discuss with your healthcare team. It is not a prescribed daily procedure or a medical assessment.",
+"மருத்துவக் குழுவுடன் ஆலோசிக்க வேண்டிய தலைப்புகளைக் கண்டறிய இந்தப் பட்டியலைப் பயன்படுத்துங்கள். இது தினசரி சிகிச்சை முறையோ மருத்துவப் பரிசோதனையோ அல்ல."
+],
+
+resetChecklist:[
+"Reset Checklist",
+"பட்டியலை மீட்டமை"
+],
+
+privacy:[
+"Selections stay in this page only. They are not saved or submitted to SIS.",
+"உங்கள் தேர்வுகள் இந்தப் பக்கத்தில் மட்டுமே இருக்கும். அவை சேமிக்கப்படவோ SIS அமைப்புக்கு அனுப்பப்படவோ மாட்டாது."
+],
+
+faqTitle:[
+"11. Frequently Asked Questions",
+"11. அடிக்கடி கேட்கப்படும் கேள்விகள்"
+],
+
+sourcesTitle:[
+"12. Medical References",
+"12. மருத்துவ ஆதாரங்கள்"
+],
+
+sourcesNote:[
+"Published educational and clinical resources for further reading.",
+"கூடுதல் தகவல்களுக்கான கல்வி மற்றும் மருத்துவ வழிகாட்டுதல் ஆதாரங்கள்."
+],
+
+disclaimerTitle:[
+"Important Medical Disclaimer",
+"முக்கிய மருத்துவ அறிவிப்பு"
+],
+
+disclaimer:[
+"Do not start, stop or modify medicines, rectal procedures, enemas or irrigation based only on this guide. Consult your SCI rehabilitation team for an individual bowel care plan.",
+"இந்த வழிகாட்டியை மட்டும் பயன்படுத்தி மருந்துகள், மலக்குடல் பராமரிப்பு முறைகள், எனிமா அல்லது குடல் கழுவுதல் முறைகளைத் தொடங்கவோ நிறுத்தவோ மாற்றவோ வேண்டாம். தனிப்பட்ட குடல் பராமரிப்புத் திட்டத்திற்கு மறுவாழ்வு மருத்துவக் குழுவை அணுகுங்கள்."
+],
+
+back:[
+"Back to Knowledge Hub",
+"அறிவு மையத்திற்குத் திரும்பவும்"
+]
+
+};
+
+function tr(en,ta){
+ return language==="ta"?ta:en;
+}
+
+function escapeText(value){
+ const div=document.createElement("div");
+ div.textContent=value;
+ return div.innerHTML;
+}
+
+function digestiveDiagram(){
+
+return `
+<div class="diagram">
+
+<h3>${tr(
+"Digestive System – Simplified Illustration",
+"செரிமான மண்டலம் – எளிய விளக்கப்படம்"
+)}</h3>
+
+<svg viewBox="0 0 340 400"
+role="img"
+aria-labelledby="diagramTitle diagramDesc">
+
+<title id="diagramTitle">${tr(
+"Digestive system schematic",
+"செரிமான மண்டல வரைபடம்"
+)}</title>
+
+<desc id="diagramDesc">${tr(
+"Diagram showing the oesophagus, stomach, small intestine, large intestine and rectum.",
+"உணவுக்குழாய், இரைப்பை, சிறுகுடல், பெருங்குடல் மற்றும் மலக்குடலைக் காட்டும் வரைபடம்."
+)}</desc>
+
+<rect x="1" y="1" width="338" height="398"
+rx="18" fill="#ffffff"/>
+
+<path d="M145 25 L145 80"
+stroke="#d98f72" stroke-width="15"
+stroke-linecap="round" fill="none"/>
+
+<path d="M145 75
+C205 65 211 132 170 145
+C130 160 111 130 125 105
+L145 75Z"
+fill="#edb29d" stroke="#b76550"
+stroke-width="2"/>
+
+<path d="M87 278
+L87 170
+Q87 145 112 150
+L218 150
+Q242 150 242 175
+L242 275
+Q242 300 218 300
+L194 300 Q170 300 170 324"
+fill="none"
+stroke="#b97a53"
+stroke-width="24"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+
+<path d="M165 155
+Q125 169 135 190
+Q205 173 209 204
+Q128 226 122 247
+Q209 222 207 251
+Q140 272 145 289"
+fill="none"
+stroke="#e8aa83" stroke-width="15"
+stroke-linecap="round"/>
+
+<path d="M170 325 L170 365"
+stroke="#b97a53" stroke-width="20"
+stroke-linecap="round"/>
+
+<g fill="#073763"
+font-family="Arial"
+font-size="13"
+font-weight="bold">
+
+<text x="170" y="42">1</text>
+<text x="220" y="105">2</text>
+<text x="160" y="218">3</text>
+<text x="52" y="207">4</text>
+<text x="195" y="348">5</text>
+
+</g>
+
+</svg>
+
+<div style="text-align:left">
+
+<p>1. ${tr("Oesophagus","உணவுக்குழாய்")}</p>
+<p>2. ${tr("Stomach","இரைப்பை")}</p>
+<p>3. ${tr("Small intestine","சிறுகுடல்")}</p>
+<p>4. ${tr("Large intestine","பெருங்குடல்")}</p>
+<p>5. ${tr("Rectum and outlet","மலக்குடல் மற்றும் மலவாய்")}</p>
+
+</div>
+
+<p><small>${tr(
+"Original SIS schematic for education. Simplified and not anatomically to scale.",
+"கல்விக்காக SIS உருவாக்கிய எளிய வரைபடம். உடற்கூறு அளவுகளுக்கு ஏற்ப வரையப்படவில்லை."
+)}</small></p>
+
+</div>`;
+}
+
+function bowelFlow(){
+
+return `
+<div class="diagram">
+
+<div class="flow-step">
+${tr("Food and digestion","உணவு மற்றும் செரிமானம்")}
+</div>
+
+<div class="flow-arrow" aria-hidden="true">↓</div>
+
+<div class="flow-step">
+${tr("Nutrient absorption","ஊட்டச்சத்து உறிஞ்சுதல்")}
+</div>
+
+<div class="flow-arrow" aria-hidden="true">↓</div>
+
+<div class="flow-step">
+${tr("Stool formation in the colon","பெருங்குடலில் மலம் உருவாதல்")}
+</div>
+
+<div class="flow-arrow" aria-hidden="true">↓</div>
+
+<div class="flow-step">
+${tr("Rectal storage and emptying","மலக்குடலில் சேமித்தல் மற்றும் வெளியேற்றுதல்")}
+</div>
+
+</div>`;
+}
+
+const sections=[
+
+{
+id:"digestive-system",
+
+title:[
+"01. Understanding the Digestive System",
+"01. செரிமான மண்டலத்தைப் புரிந்துகொள்வோம்"
+],
+
+content:()=>`
+
+<p>${tr(
+"Digestion breaks food into nutrients that support the body's functions. Unused material continues through the intestines before leaving the body.",
+"செரிமானம் உணவை உடலுக்குத் தேவையான ஊட்டச்சத்துகளாக மாற்றுகிறது. பயன்படுத்தப்படாத உணவுக் கழிவுகள் குடல் வழியாகச் சென்று உடலிலிருந்து வெளியேறுகின்றன."
+)}</p>
+
+${digestiveDiagram()}
+
+<p>${tr(
+"The large intestine absorbs water and helps form stool. The rectum holds stool before a bowel movement.",
+"பெருங்குடல் நீரை உறிஞ்சி மலம் உருவாக உதவுகிறது. மலம் வெளியேறுவதற்கு முன்பு மலக்குடலில் சேமிக்கப்படுகிறது."
+)}</p>
+
+${bowelFlow()}
+
+<p><small>[1]</small></p>`
+
+},
+
+{
+id:"neurogenic-bowel",
+
+title:[
+"02. What is Neurogenic Bowel?",
+"02. Neurogenic Bowel என்றால் என்ன?"
+],
+
+content:()=>`
+
+<p>${tr(
+"After SCI, disrupted nerve communication can interfere with bowel sensation, movement and control. This is called neurogenic bowel dysfunction.",
+"முதுகுத்தண்டுவடப் பாதிப்புக்குப் பிறகு நரம்புகளின் தகவல் பரிமாற்றம் பாதிக்கப்படுவதால் குடல் இயக்கம், உணர்வு மற்றும் மலத்தைக் கட்டுப்படுத்தும் திறனில் சிக்கல்கள் ஏற்படலாம். இதனை Neurogenic Bowel Dysfunction என அழைக்கின்றனர்."
+)}</p>
+
+<div class="grid">
+
+<div class="info-card">
+<h3>${tr("Reduced sensation","உணர்வு குறைதல்")}</h3>
+<p>${tr(
+"A person may not recognize the usual urge to pass stool.",
+"மலம் கழிக்க வேண்டிய இயல்பான உணர்வு தெரியாமல் போகலாம்."
+)}</p>
+</div>
+
+<div class="info-card">
+<h3>${tr("Altered movement","குடல் இயக்க மாற்றம்")}</h3>
+<p>${tr(
+"Stool may move slowly or be difficult to empty.",
+"மலம் மெதுவாக நகரலாம் அல்லது வெளியேற்றுவதில் சிரமம் ஏற்படலாம்."
+)}</p>
+</div>
+
+<div class="info-card">
+<h3>${tr("Reduced control","கட்டுப்பாடு குறைதல்")}</h3>
+<p>${tr(
+"Unexpected bowel movements can occur.",
+"எதிர்பாராத நேரத்தில் மலம் வெளியேறலாம்."
+)}</p>
+</div>
+
+</div>
+
+<div class="notice">${tr(
+"Bowel difficulties are medical consequences of SCI. They are not a personal failure.",
+"குடல் பராமரிப்புச் சிக்கல்கள் முதுகுத்தண்டுவடப் பாதிப்பினால் ஏற்படும் உடல்நல மாற்றங்கள். அவை தனிநபரின் தவறு அல்ல."
+)}</div>
+
+<p><small>[1], [2]</small></p>`
+
+},
+
+{
+id:"bowel-types",
+
+title:[
+"03. Reflexic and Areflexic Bowel",
+"03. Reflexic மற்றும் Areflexic குடல் வகைகள்"
+],
+
+content:()=>`
+
+<div class="grid">
+
+<div class="info-card">
+
+<h3>Reflexic Bowel</h3>
+
+<p><strong>${tr(
+"Reflex bowel / Upper motor neuron pattern",
+"Reflex Bowel / மேல் இயக்க நரம்பியல் வகை"
+)}</strong></p>
+
+<p>${tr(
+"Reflex activity may remain present while voluntary control is affected. Increased muscle tone can make emptying difficult.",
+"தன்னிச்சையாகக் கட்டுப்படுத்தும் திறன் பாதிக்கப்பட்டாலும் நரம்புகளின் பிரதிபலிப்பு செயல்பாடு இருக்கலாம். அதிகரித்த தசை இறுக்கம் மலம் வெளியேறுவதைச் சிரமமாக்கலாம்."
+)}</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>Areflexic Bowel</h3>
+
+<p><strong>${tr(
+"Flaccid bowel / Lower motor neuron pattern",
+"Flaccid Bowel / கீழ் இயக்க நரம்பியல் வகை"
+)}</strong></p>
+
+<p>${tr(
+"Reflex activity and muscle tone may be reduced. Retained stool and accidental leakage can both occur.",
+"நரம்புப் பிரதிபலிப்பு செயல்பாடும் தசை இறுக்கமும் குறையலாம். மலம் தேங்குதல் மற்றும் கட்டுப்பாடின்றி வெளியேறுதல் ஆகிய இரண்டும் ஏற்படலாம்."
+)}</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+${tr(
+"Injury level alone cannot reliably determine your bowel pattern. A clinical assessment is required.",
+"பாதிப்பு ஏற்பட்ட நிலையை மட்டும் வைத்து குடல் வகையை உறுதியாகக் கண்டறிய முடியாது. மருத்துவப் பரிசோதனை தேவை."
+)}
+</div>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+id:"bowel-program",
+
+title:[
+"04. Individual Bowel Care Plan",
+"04. தனிப்பட்ட குடல் பராமரிப்புத் திட்டம்"
+],
+
+content:()=>`
+
+<p>${tr(
+"A bowel plan organizes care around the person's health, preferences and daily life.",
+"தனிநபரின் உடல்நிலை, விருப்பங்கள் மற்றும் அன்றாட வாழ்க்கைக்கு ஏற்ப குடல் பராமரிப்புத் திட்டம் அமைக்கப்படுகிறது."
+)}</p>
+
+<ul>
+
+<li>${tr(
+"Discuss a suitable routine and timing with your clinical team.",
+"பொருத்தமான பராமரிப்பு முறையையும் நேரத்தையும் மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."
+)}</li>
+
+<li>${tr(
+"Identify assistance and accessibility needs.",
+"தேவையான உதவி மற்றும் அணுகல் வசதிகளைக் கண்டறியவும்."
+)}</li>
+
+<li>${tr(
+"Review stool consistency, bowel symptoms and comfort.",
+"மலத்தின் தன்மை, குடல் தொடர்பான அறிகுறிகள் மற்றும் உடல் சௌகரியத்தைக் கருத்தில் கொள்ளவும்."
+)}</li>
+
+<li>${tr(
+"Review how the plan affects work, education, travel and privacy.",
+"வேலை, கல்வி, பயணம் மற்றும் தனியுரிமையைப் பராமரிப்புத் திட்டம் எவ்வாறு பாதிக்கிறது என்பதை மதிப்பிடவும்."
+)}</li>
+
+</ul>
+
+<div class="notice">${tr(
+"The goal is safe and predictable bowel care that supports the individual's quality of life.",
+"பாதுகாப்பான, திட்டமிட்ட குடல் பராமரிப்பு மூலம் தனிநபரின் வாழ்க்கைத் தரத்தை மேம்படுத்துவதே நோக்கம்."
+)}</div>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+id:"nutrition",
+
+title:[
+"05. Food, Fibre and Hydration",
+"05. உணவு, நார்ச்சத்து மற்றும் நீர்ச்சத்து"
+],
+
+content:()=>`
+
+<div class="grid">
+
+<div class="info-card">
+
+<h3>${tr("Fibre","நார்ச்சத்து")}</h3>
+
+<p>${tr(
+"Vegetables, fruits, whole grains and pulses provide dietary fibre. Fibre needs vary, and excessive or rapid increases may worsen symptoms.",
+"காய்கறிகள், பழங்கள், முழுத் தானியங்கள் மற்றும் பருப்பு வகைகளில் நார்ச்சத்து உள்ளது. தேவையான அளவு ஒவ்வொருவருக்கும் மாறுபடும். திடீரென அதிகரிப்பதால் சிலருக்குக் குடல் சிக்கல்கள் அதிகரிக்கலாம்."
+)}</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>${tr("Hydration","நீர்ச்சத்து")}</h3>
+
+<p>${tr(
+"Discuss suitable fluid intake with your clinician, especially if you have bladder, heart or kidney conditions.",
+"சிறுநீர்ப்பை, இதயம் அல்லது சிறுநீரகப் பிரச்சினைகள் இருந்தால் குறிப்பாக, உங்களுக்குப் பொருத்தமான நீர் உட்கொள்ளும் அளவை மருத்துவருடன் ஆலோசிக்கவும்."
+)}</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>${tr("Balanced nutrition","சமச்சீர் ஊட்டச்சத்து")}</h3>
+
+<p>${tr(
+"Choose meals that meet your nutritional needs and personal tolerance. A dietitian can help with individual planning.",
+"உடலின் ஊட்டச்சத்துத் தேவைகளுக்கும் உடல் ஏற்றுக்கொள்ளும் தன்மைக்கும் பொருத்தமான உணவுகளைத் தேர்வு செய்யுங்கள். உணவியல் நிபுணர் தனிப்பட்ட திட்டத்திற்கு உதவலாம்."
+)}</p>
+
+</div>
+
+</div>
+
+<p>${tr(
+"Affordable local foods such as greens, seasonal fruit, vegetables and legumes can be discussed with your dietitian.",
+"கீரைகள், பருவகாலப் பழங்கள், காய்கறிகள் மற்றும் பருப்பு வகைகள் போன்ற உள்ளூரில் கிடைக்கும் உணவுகளை உணவியல் நிபுணருடன் ஆலோசித்து தேர்ந்தெடுக்கலாம்."
+)}</p>
+
+<p><small>[2], [3]</small></p>`
+
+},
+
+{
+id:"care-methods",
+
+title:[
+"06. Bowel Management Options",
+"06. குடல் பராமரிப்பு முறைகள்"
+],
+
+content:()=>`
+
+<p>${tr(
+"The following are medical care options that your SCI team may consider. They are not instructions for performing procedures.",
+"கீழே உள்ளவை SCI மருத்துவக் குழு பரிசீலிக்கக்கூடிய மருத்துவப் பராமரிப்பு முறைகள். இவை செயல்முறைகளைத் தனியாகச் செய்வதற்கான வழிமுறைகள் அல்ல."
+)}</p>
+
+<div class="grid">
+
+${[
+[
+"Oral bowel medicines",
+"வாய்வழி குடல் மருந்துகள்",
+"May help regulate stool consistency or intestinal movement.",
+"மலத்தின் தன்மை அல்லது குடல் இயக்கத்தை ஒழுங்குபடுத்த உதவலாம்."
+],
+[
+"Rectal medicines",
+"மலக்குடல் வழி மருந்துகள்",
+"May support bowel emptying when clinically prescribed.",
+"மருத்துவ ஆலோசனையின்படி மலம் வெளியேற்ற உதவலாம்."
+],
+[
+"Digital rectal stimulation",
+"விரல் மூலம் மலக்குடல் பிரதிபலிப்பைத் தூண்டுதல்",
+"A trained care technique sometimes considered for reflexic bowel.",
+"Reflexic Bowel வகையில் சிலருக்குப் பரிந்துரைக்கப்படும் பயிற்சி தேவைப்படும் பராமரிப்பு முறை."
+],
+[
+"Manual evacuation",
+"கையால் மலம் அகற்றுதல்",
+"A clinical care technique that may be appropriate for areflexic bowel.",
+"Areflexic Bowel வகையில் சிலருக்குப் பொருத்தமான மருத்துவப் பராமரிப்பு முறை."
+],
+[
+"Transanal irrigation",
+"மலவாய் வழி குடல் கழுவுதல்",
+"A specialist-supported option for selected individuals.",
+"தேர்ந்தெடுக்கப்பட்ட தனிநபர்களுக்கு நிபுணரின் வழிகாட்டுதலுடன் பயன்படுத்தப்படும் முறை."
+],
+[
+"Surgical options",
+"அறுவை சிகிச்சை முறைகள்",
+"Specialist assessment may identify options such as a colostomy.",
+"சிறப்பு மருத்துவ மதிப்பீட்டின் அடிப்படையில் Colostomy போன்ற முறைகள் பரிசீலிக்கப்படலாம்."
+]
+].map(item=>`
+
+<div class="info-card">
+<h3>${tr(item[0],item[1])}</h3>
+<p>${tr(item[2],item[3])}</p>
+</div>
+
+`).join("")}
+
+</div>
+
+<div class="warning">
+
+<strong>${tr(
+"Professional training is essential.",
+"தொழில்முறை மருத்துவப் பயிற்சி அவசியம்."
+)}</strong>
+
+<p>${tr(
+"Incorrect bowel procedures can cause injury, bleeding or autonomic dysreflexia. Do not attempt new invasive techniques without clinical assessment and training.",
+"தவறான குடல் பராமரிப்பு முறைகளால் காயம், இரத்தப்போக்கு அல்லது Autonomic Dysreflexia ஏற்படலாம். மருத்துவ மதிப்பீடும் பயிற்சியும் இல்லாமல் புதிய உட்செலுத்தும் முறைகளை முயற்சிக்க வேண்டாம்."
+)}</p>
+
+</div>
+
+<p><small>[2], [3], [4]</small></p>`
+
+},
+
+{
+id:"common-problems",
+
+title:[
+"07. Common Bowel Problems",
+"07. பொதுவான குடல் பிரச்சினைகள்"
+],
+
+content:()=>`
+
+<div class="grid">
+
+${[
+[
+"Constipation",
+"மலச்சிக்கல்",
+"Difficulty passing stool or a change from the person's normal routine.",
+"மலம் வெளியேற்றுவதில் சிரமம் அல்லது வழக்கமான குடல் இயக்கத்தில் மாற்றம்."
+],
+[
+"Faecal incontinence",
+"மலக் கட்டுப்பாட்டின்மை",
+"Unplanned loss of stool.",
+"கட்டுப்பாடின்றி மலம் வெளியேறுதல்."
+],
+[
+"Bloating",
+"வயிறு உப்புசம்",
+"A feeling of abdominal fullness or swelling.",
+"வயிறு நிறைந்தது அல்லது வீங்கியது போன்ற உணர்வு."
+],
+[
+"Faecal impaction",
+"கடினமான மலம் தேங்குதல்",
+"Retained stool that may require medical assessment.",
+"தேங்கிய கடினமான மலத்திற்கு மருத்துவப் பரிசோதனை தேவைப்படலாம்."
+],
+[
+"Haemorrhoids",
+"மூலநோய்",
+"Swollen blood vessels around the anus or rectum.",
+"மலவாய் அல்லது மலக்குடலைச் சுற்றிய இரத்த நாளங்களில் ஏற்படும் வீக்கம்."
+],
+[
+"Skin irritation",
+"தோல் எரிச்சல்",
+"Skin damage associated with moisture or stool exposure.",
+"ஈரப்பதம் அல்லது மலம் தோலில் படுவதால் ஏற்படும் பாதிப்பு."
+]
+].map(item=>`
+
+<div class="info-card">
+<h3>${tr(item[0],item[1])}</h3>
+<p>${tr(item[2],item[3])}</p>
+</div>
+
+`).join("")}
+
+</div>
+
+<p>${tr(
+"Report persistent changes, repeated accidents or worsening symptoms to your healthcare team. Watery leakage can sometimes occur around retained stool; do not assume it is simple diarrhoea.",
+"தொடர்ச்சியான மாற்றங்கள், அடிக்கடி மலக் கட்டுப்பாட்டின்மை அல்லது அதிகரிக்கும் அறிகுறிகளை மருத்துவக் குழுவிடம் தெரிவிக்கவும். தேங்கிய மலத்தைச் சுற்றியும் நீர்ம மலம் வெளியேறலாம்; அதைச் சாதாரண வயிற்றுப்போக்கு என்று கருத வேண்டாம்."
+)}</p>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+id:"equipment",
+
+title:[
+"08. Assistive Products and Privacy",
+"08. உதவி உபகரணங்கள் மற்றும் தனியுரிமை"
+],
+
+content:()=>`
+
+<ul>
+
+<li>${tr(
+"An appropriately assessed commode or shower chair.",
+"மருத்துவ மதிப்பீட்டின் அடிப்படையில் பொருத்தமான கழிப்பறை அல்லது குளியல் நாற்காலி."
+)}</li>
+
+<li>${tr(
+"Personal protective supplies recommended by the care team.",
+"பராமரிப்புக் குழு பரிந்துரைக்கும் தனிநபர் பாதுகாப்புப் பொருட்கள்."
+)}</li>
+
+<li>${tr(
+"Adaptive equipment for limited hand function or reach.",
+"கைகளின் செயல்திறன் அல்லது எட்டும் திறன் குறைந்தவர்களுக்கான உதவி உபகரணங்கள்."
+)}</li>
+
+<li>${tr(
+"Safe transfer support and accessible bathroom arrangements.",
+"பாதுகாப்பான இடமாற்ற உதவி மற்றும் அணுகக்கூடிய கழிப்பறை வசதிகள்."
+)}</li>
+
+<li>${tr(
+"Clinically prescribed bowel care products.",
+"மருத்துவ நிபுணரால் பரிந்துரைக்கப்படும் குடல் பராமரிப்புப் பொருட்கள்."
+)}</li>
+
+</ul>
+
+<div class="notice">
+${tr(
+"Respect individual consent, privacy and personal preferences throughout bowel care. Equipment should be selected with attention to safety and skin protection.",
+"குடல் பராமரிப்பின்போது தனிநபரின் சம்மதம், தனியுரிமை மற்றும் விருப்பங்களை மதிக்க வேண்டும். பாதுகாப்பு மற்றும் தோல் பாதுகாப்பைக் கருத்தில் கொண்டு உபகரணங்களைத் தேர்வு செய்ய வேண்டும்."
+)}
+</div>
+
+<p><small>[2], [3]</small></p>`
+
+},
+
+{
+id:"warning-signs",
+
+title:[
+"09. Warning Signs and Emergencies",
+"09. ஆபத்தான அறிகுறிகள் மற்றும் அவசரநிலைகள்"
+],
+
+content:()=>`
+
+<div class="emergency">
+
+<h3>${tr(
+"Seek urgent medical help",
+"உடனடி மருத்துவ உதவியை நாடுங்கள்"
+)}</h3>
+
+<ul>
+
+<li>${tr(
+"Severe or increasing abdominal pain or swelling.",
+"கடுமையான அல்லது அதிகரிக்கும் வயிற்றுவலி அல்லது வீக்கம்."
+)}</li>
+
+<li>${tr(
+"Repeated vomiting, especially with abdominal swelling or inability to pass stool or gas.",
+"தொடர்ச்சியான வாந்தியுடன் வயிறு வீங்குதல் அல்லது மலம், வாயு வெளியேறாமல் இருத்தல்."
+)}</li>
+
+<li>${tr(
+"Heavy rectal bleeding, black tar-like stool, fainting or marked weakness.",
+"அதிக மலவாய் இரத்தப்போக்கு, கருப்புத் தார் போன்ற மலம், மயக்கம் அல்லது கடுமையான பலவீனம்."
+)}</li>
+
+<li>${tr(
+"Sudden severe headache, sweating, flushing or a marked rise in blood pressure.",
+"திடீர் கடுமையான தலைவலி, வியர்வை, முகம் சிவத்தல் அல்லது இரத்த அழுத்தம் குறிப்பிடத்தக்க அளவில் அதிகரித்தல்."
+)}</li>
+
+</ul>
+
+</div>
+
+<div class="warning">
+
+<h3>Autonomic Dysreflexia (AD)</h3>
+
+<p>${tr(
+"AD is a potentially life-threatening rise in blood pressure, particularly associated with SCI at T6 or above. Bowel problems and procedures may trigger it.",
+"Autonomic Dysreflexia என்பது உயிருக்கு ஆபத்தை ஏற்படுத்தக்கூடிய திடீர் இரத்த அழுத்த உயர்வு. இது குறிப்பாக T6 அல்லது அதற்கு மேல் SCI உள்ளவர்களுக்கு ஏற்படலாம். குடல் சிக்கல்கள் மற்றும் பராமரிப்பு முறைகளால் இது தூண்டப்படலாம்."
+)}</p>
+
+<p>${tr(
+"If AD is suspected, stop the bowel procedure, sit upright if safely possible, loosen restrictive clothing and seek emergency medical help. Follow your established emergency care plan.",
+"AD சந்தேகம் இருந்தால் குடல் பராமரிப்பு செயல்முறையை நிறுத்துங்கள். பாதுகாப்பாக முடிந்தால் நிமிர்ந்து அமருங்கள். இறுக்கமான ஆடைகளைத் தளர்த்தி உடனடி மருத்துவ உதவியை நாடுங்கள். ஏற்கெனவே மருத்துவர் வழங்கிய அவசரநிலைத் திட்டத்தைப் பின்பற்றுங்கள்."
+)}</p>
+
+</div>
+
+<p><strong>${tr("Emergency assistance","அவசர மருத்துவ உதவி")}:</strong>
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a></p>
+
+<p>${tr(
+"Reduced sensation after SCI can make serious abdominal problems harder to recognize.",
+"SCI காரணமாக உணர்வு குறைந்திருந்தால் தீவிரமான வயிற்றுப் பிரச்சினைகளை அடையாளம் காண்பது சிரமமாக இருக்கலாம்."
+)}</p>
+
+<p><small>[2], [3], [4]</small></p>`
+
+}
+
+];
+
+const checklist=[
+
+[
+"I know who to contact for bowel-related concerns.",
+"குடல் தொடர்பான சிக்கல்களுக்கு யாரை அணுக வேண்டும் என்பது எனக்குத் தெரியும்."
+],
+
+[
+"I have discussed my individual bowel care plan with a clinician.",
+"எனது தனிப்பட்ட குடல் பராமரிப்புத் திட்டத்தை மருத்துவருடன் ஆலோசித்துள்ளேன்."
+],
+
+[
+"I understand my prescribed medicines and care instructions.",
+"எனக்குப் பரிந்துரைக்கப்பட்ட மருந்துகள் மற்றும் பராமரிப்பு அறிவுறுத்தல்களைப் புரிந்துகொண்டுள்ளேன்."
+],
+
+[
+"I have discussed suitable food and fluid intake.",
+"பொருத்தமான உணவு மற்றும் நீர் உட்கொள்ளும் அளவை ஆலோசித்துள்ளேன்."
+],
+
+[
+"My equipment and bathroom safety needs have been considered.",
+"எனக்குத் தேவையான உபகரணங்கள் மற்றும் கழிப்பறைப் பாதுகாப்பு வசதிகள் குறித்து ஆலோசிக்கப்பட்டுள்ளது."
+],
+
+[
+"I know the warning signs that require emergency medical help.",
+"அவசர மருத்துவ உதவி தேவைப்படும் அறிகுறிகள் எனக்குத் தெரியும்."
+],
+
+[
+"I understand the importance of consent, privacy and caregiver training.",
+"சம்மதம், தனியுரிமை மற்றும் பராமரிப்பாளர் பயிற்சியின் முக்கியத்துவத்தைப் புரிந்துகொண்டுள்ளேன்."
+]
+
+];
+
+const faqs=[
+
+[
+"Does every person with SCI have the same bowel problem?",
+"SCI உள்ள அனைவருக்கும் ஒரே மாதிரியான குடல் பிரச்சினை ஏற்படுமா?",
+"No. Bowel changes and care needs vary between individuals.",
+"இல்லை. குடல் செயல்பாட்டு மாற்றங்களும் பராமரிப்புத் தேவைகளும் ஒவ்வொருவருக்கும் மாறுபடும்."
+],
+
+[
+"Can I follow another person's bowel routine?",
+"மற்றொருவரின் குடல் பராமரிப்பு முறையைப் பின்பற்றலாமா?",
+"Not without clinical advice. Your care plan should be individualized.",
+"மருத்துவ ஆலோசனையின்றிப் பின்பற்ற வேண்டாம். உங்களுக்கான பராமரிப்புத் திட்டம் தனிப்பட்டதாக இருக்க வேண்டும்."
+],
+
+[
+"Does more fibre always improve constipation?",
+"அதிக நார்ச்சத்து எப்போதும் மலச்சிக்கலைக் குறைக்குமா?",
+"No. Fibre intake should be adjusted to symptoms, fluid intake and professional advice.",
+"இல்லை. அறிகுறிகள், நீர் உட்கொள்ளும் அளவு மற்றும் மருத்துவ ஆலோசனைக்கு ஏற்ப நார்ச்சத்தைத் தீர்மானிக்க வேண்டும்."
+],
+
+[
+"Can medicines affect bowel function?",
+"மருந்துகள் குடல் செயல்பாட்டைப் பாதிக்குமா?",
+"Yes. Ask your prescriber to review your medicines if bowel symptoms change. Do not discontinue medicines independently.",
+"ஆம். குடல் அறிகுறிகள் மாறினால் மருந்துகளை மறுபரிசீலனை செய்ய மருத்துவரிடம் கேளுங்கள். தன்னிச்சையாக மருந்துகளை நிறுத்த வேண்டாம்."
+],
+
+[
+"Can bowel care be managed while travelling?",
+"பயணத்தின்போது குடல் பராமரிப்பை நிர்வகிக்க முடியுமா?",
+"Advance planning for accessible toilets, supplies and assistance can help. Discuss adjustments with your care team.",
+"அணுகக்கூடிய கழிப்பறைகள், தேவையான பொருட்கள் மற்றும் உதவிகளை முன்கூட்டியே திட்டமிடுவது உதவும். பராமரிப்பு மாற்றங்களை மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."
+],
+
+[
+"Can bowel problems trigger autonomic dysreflexia?",
+"குடல் பிரச்சினைகளால் Autonomic Dysreflexia ஏற்படுமா?",
+"Yes. People at risk should have an emergency plan agreed with their healthcare team.",
+"ஆம். இந்த ஆபத்து உள்ளவர்கள் மருத்துவக் குழுவுடன் இணைந்து அவசரநிலைத் திட்டத்தை வைத்திருக்க வேண்டும்."
+],
+
+[
+"Should I feel embarrassed discussing bowel care?",
+"குடல் பராமரிப்பு குறித்து மருத்துவரிடம் பேசத் தயங்க வேண்டுமா?",
+"Bowel care is an important healthcare topic. You deserve respectful, confidential support.",
+"குடல் பராமரிப்பு உடல்நலத்தின் முக்கியமான பகுதி. உங்களுக்கு மரியாதையான, தனியுரிமையுடன் கூடிய மருத்துவ ஆதரவைப் பெற உரிமை உள்ளது."
+]
+
+];
+
+function renderChecklist(){
+
+const index=language==="ta"?1:0;
+
+document.getElementById("checklistItems").innerHTML=
+
+checklist.map((item,i)=>`
+
+<label class="check-item">
+
+<input type="checkbox"
+${checked[i]?"checked":""}
+onchange="updateChecklist(${i},this.checked)">
+
+<span>${escapeText(item[index])}</span>
+
+</label>
+
+`).join("");
+
+updateProgress();
+
+}
+
+function updateChecklist(index,value){
+ checked[index]=value;
+ updateProgress();
+}
+
+function updateProgress(){
+
+ const count=checked.filter(Boolean).length;
+
+ document.getElementById("checklistProgress").value=count;
+
+ document.getElementById("checklistStatus").textContent=
+
+ tr(
+ count+" of 7 education topics checked",
+ "7 தலைப்புகளில் "+count+" தலைப்புகள் குறிக்கப்பட்டுள்ளன"
+ );
+
+}
+
+function resetChecklist(){
+ checked=Array(7).fill(false);
+ renderChecklist();
+}
+
+function renderPage(){
+
+const index=language==="ta"?1:0;
+
+document.documentElement.lang=language;
+
+document.title=ui.title[index]+" | SIS";
+
+document.querySelectorAll("[data-key]")
+.forEach(element=>{
+ const key=element.dataset.key;
+ if(ui[key])element.textContent=ui[key][index];
+});
+
+document.getElementById("taButton")
+.setAttribute("aria-pressed",String(language==="ta"));
+
+document.getElementById("enButton")
+.setAttribute("aria-pressed",String(language==="en"));
+
+document.getElementById("contentsList").innerHTML=
+
+sections.map(section=>`
+
+<a href="#${section.id}">
+${escapeText(section.title[index])}
+</a>
+
+`).join("");
+
+document.getElementById("articleContent").innerHTML=
+
+sections.map(section=>`
+
+<section class="article-section" id="${section.id}">
+<h2>${escapeText(section.title[index])}</h2>
+${section.content()}
+</section>
+
+`).join("");
+
+document.getElementById("faqList").innerHTML=
+
+faqs.map(faq=>`
+
+<details>
+
+<summary>${escapeText(faq[index])}</summary>
+
+<p>${escapeText(faq[index+2])}</p>
+
+</details>
+
+`).join("");
+
+renderChecklist();
+
+if(!("speechSynthesis" in window) ||
+!("SpeechSynthesisUtterance" in window)){
+
+ document.getElementById("readButton").disabled=true;
+ document.getElementById("stopButton").disabled=true;
+
+ document.getElementById("speechStatus").textContent=
+ tr(
+ "Read Aloud is not supported by this browser.",
+ "இந்த உலாவியில் குரல் வாசிப்பு வசதி இல்லை."
+ );
+
+}
+
+}
+
+function setLanguage(value){
+
+ stopReading();
+
+ language=value==="en"?"en":"ta";
+
+ document.getElementById("speechStatus").textContent="";
+
+ renderPage();
+
+}
+
+function resizeText(change){
+
+ textSize=Math.max(16,Math.min(24,textSize+change));
+
+ document.documentElement.style.fontSize=textSize+"px";
+
+}
+
+function resetText(){
+
+ textSize=16;
+
+ document.documentElement.style.fontSize="16px";
+
+}
+
+function stopReading(){
+
+ speechToken++;
+
+ if("speechSynthesis" in window){
+ window.speechSynthesis.cancel();
+ }
+
+ document.getElementById("speechStatus").textContent="";
+
+}
+
+function readArticle(){
+
+ if(!("speechSynthesis" in window) ||
+ !("SpeechSynthesisUtterance" in window))return;
+
+ stopReading();
+
+ const token=speechToken;
+ const synth=window.speechSynthesis;
+ const lang=language==="ta"?"ta-IN":"en-IN";
+
+ const voices=synth.getVoices();
+
+ const voice=voices.find(v=>
+ v.lang.toLowerCase().startsWith(language)
+ );
+
+ const status=document.getElementById("speechStatus");
+
+ if(!voice){
+
+ status.textContent=tr(
+ "A matching voice is not available. Enable a supported speech voice in your device settings.",
+ "தமிழ் குரல் வசதி கிடைக்கவில்லை. உங்கள் சாதனத்தின் குரல் அமைப்புகளைச் சரிபார்க்கவும்."
+ );
+
+ return;
+
+ }
+
+ const text=document.getElementById("articleContent")
+ .innerText;
+
+ const sentences=text.split(/(?<=[.!?।])\s+|\n+/)
+ .map(x=>x.trim())
+ .filter(Boolean);
+
+ let position=0;
+
+ status.textContent=tr(
+ "Reading article...",
+ "கட்டுரை வாசிக்கப்படுகிறது..."
+ );
+
+ function speakNext(){
+
+ if(token!==speechToken)return;
+
+ if(position>=sentences.length){
+
+ status.textContent=tr(
+ "Reading completed.",
+ "வாசிப்பு முடிந்தது."
+ );
+
+ return;
+
+ }
+
+ const utterance=new SpeechSynthesisUtterance(
+ sentences[position]
+ );
+
+ utterance.lang=lang;
+ utterance.voice=voice;
+ utterance.rate=0.9;
+
+ utterance.onend=function(){
+
+ position++;
+
+ speakNext();
+
+ };
+
+ utterance.onerror=function(){
+
+ if(token!==speechToken)return;
+
+ status.textContent=tr(
+ "Speech playback could not continue.",
+ "குரல் வாசிப்பைத் தொடர முடியவில்லை."
+ );
+
+ };
+
+ synth.speak(utterance);
+
+ }
+
+ speakNext();
+
+}
+
+window.addEventListener("pagehide",stopReading);
+
+renderPage();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Knowledge & Support Hub | SIS</title>
+
+<link rel="stylesheet" href="sis-styles.css">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.75;
+}
+
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+
+header img{
+ width:140px;
+ max-width:100%;
+ height:auto;
+}
+
+header h1{margin:8px 0}
+header p{margin:4px 0}
+
+nav{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:16px;
+ background:#052b4d;
+ padding:12px;
+}
+
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+ padding:10px;
+}
+
+.tools{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ justify-content:center;
+ gap:10px;
+ padding:14px;
+ background:white;
+}
+
+button,.btn{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:12px 18px;
+ min-height:44px;
+ font:inherit;
+ cursor:pointer;
+ text-decoration:none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+
+button[aria-pressed="true"]{
+ background:#007d80;
+}
+
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ text-align:center;
+ padding:42px 20px;
+}
+
+.hero h2{
+ font-size:2em;
+ margin:0 0 12px;
+}
+
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:24px 16px;
+}
+
+.panel{
+ background:white;
+ border-radius:16px;
+ padding:24px;
+ margin-bottom:24px;
+ box-shadow:0 4px 14px #07376316;
+}
+
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ border-radius:8px;
+ padding:18px;
+ margin:24px 0;
+}
+
+.search-label{
+ display:block;
+ font-weight:bold;
+ margin-bottom:8px;
+}
+
+#searchInput{
+ width:100%;
+ min-height:48px;
+ padding:14px;
+ border:1px solid #a8bacb;
+ border-radius:10px;
+ font:inherit;
+ color:#073763;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
+ gap:20px;
+}
+
+.card{
+ background:white;
+ padding:24px;
+ border:1px solid #dce7ef;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376312;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+}
+
+.card h3{margin:12px 0}
+.card p{color:#465b70}
+
+.card ul{
+ padding-left:22px;
+ flex:1;
+}
+
+.card li{
+ margin-bottom:6px;
+}
+
+.symbol{
+ font-size:36px;
+}
+
+.category-number{
+ color:#007d80;
+ font-weight:bold;
+ font-size:.85em;
+}
+
+.status{
+ display:inline-block;
+ background:#fff0cf;
+ color:#704600;
+ padding:6px 12px;
+ border-radius:8px;
+ font-size:.85em;
+ font-weight:bold;
+ margin-bottom:12px;
+}
+
+.card button{
+ width:100%;
+ margin-top:auto;
+}
+
+dialog{
+ width:92%;
+ max-width:580px;
+ max-height:85vh;
+ overflow:auto;
+ border:0;
+ border-radius:16px;
+ padding:24px;
+ color:#073763;
+}
+
+dialog::backdrop{
+ background:#0009;
+}
+
+[hidden]{
+ display:none!important;
+}
+
+footer{
+ background:#073763;
+ color:white;
+ padding:28px 16px;
+ text-align:center;
+}
+
+@media(max-width:600px){
+ .grid{grid-template-columns:1fr}
+ .card,.panel{padding:18px}
+ .hero h2{font-size:1.65em}
+ nav{gap:6px}
+}
+
+@media(prefers-reduced-motion:reduce){
+ *{scroll-behavior:auto!important}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+
+<a href="index.html"
+ data-en="Home"
+ data-ta="முகப்பு">முகப்பு</a>
+
+<a href="medical-rehabilitation.html"
+ data-en="Medical Services"
+ data-ta="மருத்துவ சேவைகள்">மருத்துவ சேவைகள்</a>
+
+<a href="learning-resources.html"
+ data-en="Learning"
+ data-ta="கல்வி">கல்வி</a>
+
+<a href="community-support.html"
+ data-en="Community"
+ data-ta="சமூகம்">சமூகம்</a>
+
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+
+<strong data-en="Language"
+ data-ta="மொழி">மொழி</strong>
+
+<button id="taButton"
+ aria-pressed="true"
+ onclick="setLanguage('ta')">தமிழ்</button>
+
+<button id="enButton"
+ aria-pressed="false"
+ onclick="setLanguage('en')">English</button>
+
+<strong data-en="Text Size"
+ data-ta="எழுத்து அளவு">எழுத்து அளவு</strong>
+
+<button onclick="resizeText(-2)"
+ aria-label="Decrease text size">A−</button>
+
+<button onclick="resetText()"
+ aria-label="Reset text size">A</button>
+
+<button onclick="resizeText(2)"
+ aria-label="Increase text size">A+</button>
+
+</section>
+
+<section class="hero">
+
+<h2 data-en="SCI Knowledge & Support Hub"
+ data-ta="முதுகுத்தண்டுவட அறிவு மற்றும் ஆதரவு மையம்">
+முதுகுத்தண்டுவட அறிவு மற்றும் ஆதரவு மையம்
+</h2>
+
+<p data-en="Understand • Recover • Adapt • Empower"
+ data-ta="புரிந்துகொள்வோம் • மீள்வோம் • முன்னேறுவோம்">
+புரிந்துகொள்வோம் • மீள்வோம் • முன்னேறுவோம்
+</p>
+
+<p data-en="Accessible education for individuals with spinal cord injuries, families and caregivers."
+ data-ta="முதுகுத்தண்டுவடப் பாதிப்பு உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான எளிய அறிவுத் தளம்.">
+முதுகுத்தண்டுவடப் பாதிப்பு உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான எளிய அறிவுத் தளம்.
+</p>
+
+</section>
+
+<main class="container">
+
+<section class="notice">
+
+<strong data-en="Knowledge Hub – Development Preview V0.1"
+ data-ta="அறிவு மையம் – உருவாக்க முன்னோட்டம் V0.1">
+அறிவு மையம் – உருவாக்க முன்னோட்டம் V0.1
+</strong>
+
+<p data-en="Detailed educational guides are being developed. Medical content will require qualified professional review before being presented as medically reviewed information."
+ data-ta="விரிவான கல்வி வழிகாட்டுதல்கள் உருவாக்கப்பட்டு வருகின்றன. மருத்துவத் தகவல்கள் தகுதியான மருத்துவ நிபுணர்களின் சரிபார்ப்புக்குப் பிறகே மருத்துவ ரீதியாக மதிப்பாய்வு செய்யப்பட்ட தகவல்களாக வெளியிடப்படும்.">
+விரிவான கல்வி வழிகாட்டுதல்கள் உருவாக்கப்பட்டு வருகின்றன. மருத்துவத் தகவல்கள் தகுதியான மருத்துவ நிபுணர்களின் சரிபார்ப்புக்குப் பிறகே மருத்துவ ரீதியாக மதிப்பாய்வு செய்யப்பட்ட தகவல்களாக வெளியிடப்படும்.
+</p>
+
+</section>
+
+<section class="panel">
+
+<label for="searchInput"
+ class="search-label"
+ data-en="Search Knowledge Topics"
+ data-ta="தேவையான தலைப்புகளைத் தேடுங்கள்">
+தேவையான தலைப்புகளைத் தேடுங்கள்
+</label>
+
+<input id="searchInput"
+ type="search"
+ placeholder="குடல், சிறுநீர்ப்பை, கல்வி..."
+ autocomplete="off">
+
+<p id="searchCount" role="status" aria-live="polite"></p>
+
+</section>
+
+<h2 data-en="Explore Knowledge Categories"
+ data-ta="அறிவுத் தலைப்புகளை ஆராயுங்கள்">
+அறிவுத் தலைப்புகளை ஆராயுங்கள்
+</h2>
+
+<div class="grid" id="categoryGrid"></div>
+
+<section id="emptyState" class="panel" hidden>
+
+<h3 data-en="No matching topics"
+ data-ta="பொருத்தமான தலைப்புகள் இல்லை">
+பொருத்தமான தலைப்புகள் இல்லை
+</h3>
+
+<button onclick="clearSearch()"
+ data-en="Clear Search"
+ data-ta="தேடலை அழிக்கவும்">
+தேடலை அழிக்கவும்
+</button>
+
+</section>
+
+<section class="notice">
+
+<h3 data-en="Medical Safety & Responsibility"
+ data-ta="மருத்துவப் பாதுகாப்பு">
+மருத்துவப் பாதுகாப்பு
+</h3>
+
+<p data-en="This knowledge hub is intended for general education. It is not a substitute for individual medical advice, diagnosis or treatment."
+ data-ta="இந்த அறிவுத் தளம் பொதுவான விழிப்புணர்வுக்கானது. தனிப்பட்ட மருத்துவ ஆலோசனை, நோயறிதல் அல்லது சிகிச்சைக்கு மாற்றாக இதைப் பயன்படுத்த வேண்டாம்.">
+இந்த அறிவுத் தளம் பொதுவான விழிப்புணர்வுக்கானது. தனிப்பட்ட மருத்துவ ஆலோசனை, நோயறிதல் அல்லது சிகிச்சைக்கு மாற்றாக இதைப் பயன்படுத்த வேண்டாம்.
+</p>
+
+<p data-en="For a medical emergency, seek immediate medical assistance."
+ data-ta="மருத்துவ அவசரநிலையில் உடனடியாக மருத்துவ உதவியை நாடுங்கள்.">
+மருத்துவ அவசரநிலையில் உடனடியாக மருத்துவ உதவியை நாடுங்கள்.
+</p>
+
+<p>
+<strong>Emergency:</strong>
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a>
+</p>
+
+</section>
+
+<a class="btn"
+ href="index.html"
+ data-en="Back to SIS Homepage"
+ data-ta="SIS முகப்புக்குத் திரும்பவும்">
+SIS முகப்புக்குத் திரும்பவும்
+</a>
+
+</main>
+
+<dialog id="previewDialog"
+ aria-labelledby="previewTitle">
+
+<h2 id="previewTitle"></h2>
+
+<p id="previewMessage"></p>
+
+<ul id="previewTopics"></ul>
+
+<form method="dialog">
+<button data-en="Close"
+ data-ta="மூடு">மூடு</button>
+</form>
+
+</dialog>
+
+<footer>
+
+<strong>SIS – Spinal Injured Society</strong>
+
+<p>Understand • Support • Empower</p>
+
+<p>© 2026 SIS | Knowledge Hub Preview V0.1</p>
+
+</footer>
+
+<script>
+
+let language="ta";
+let textSize=16;
+
+const categories=[
+
+{
+ id:"sci",
+ icon:"🧠",
+ en:"Understand SCI",
+ ta:"முதுகுத்தண்டுவடப் பாதிப்பைப் புரிந்துகொள்வோம்",
+ enDesc:"Understand spinal cord injuries and their effects.",
+ taDesc:"முதுகுத்தண்டுவடப் பாதிப்பு மற்றும் அதன் விளைவுகளைப் புரிந்துகொள்ளுங்கள்.",
+ enTopics:[
+ "Spinal cord anatomy",
+ "Types of spinal cord injury",
+ "Levels of injury",
+ "Complete and incomplete SCI"
+ ],
+ taTopics:[
+ "முதுகுத்தண்டுவட அமைப்பு",
+ "பாதிப்பின் வகைகள்",
+ "பாதிப்பின் நிலைகள்",
+ "முழுமையான மற்றும் பகுதியளவு பாதிப்புகள்"
+ ],
+ url:"understanding-sci.html",
+ ready:false
+},
+
+{
+ id:"health",
+ icon:"🩺",
+ en:"Health & Daily Care",
+ ta:"உடல்நலம் மற்றும் தினசரி பராமரிப்பு",
+ enDesc:"Educational guides for everyday health and care.",
+ taDesc:"அன்றாட உடல்நலம் மற்றும் பராமரிப்புக்கான கல்வி வழிகாட்டுதல்கள்.",
+ enTopics:[
+ "Bowel management",
+ "Bladder management",
+ "Pressure injury and bed sores",
+ "Skin care and nutrition",
+ "Pain and spasticity",
+ "Autonomic dysreflexia"
+ ],
+ taTopics:[
+ "குடல் பராமரிப்பு",
+ "சிறுநீர்ப்பை பராமரிப்பு",
+ "அழுத்தப் புண்கள் மற்றும் படுக்கைப் புண்கள்",
+ "தோல் பராமரிப்பு மற்றும் ஊட்டச்சத்து",
+ "வலி மற்றும் தசை இறுக்கம்",
+ "தன்னியக்க நரம்பு மண்டலச் சிக்கல்"
+ ],
+ url:"health-daily-care.html",
+ ready:false
+},
+
+{
+ id:"mental",
+ icon:"💚",
+ en:"Emotional Wellbeing",
+ ta:"மனநலம் மற்றும் தன்னம்பிக்கை",
+ enDesc:"Support emotional adjustment and wellbeing.",
+ taDesc:"மனநலம் மற்றும் வாழ்க்கை மாற்றங்களை எதிர்கொள்ள உதவும் தகவல்கள்.",
+ enTopics:[
+ "Emotional adjustment",
+ "Stress management",
+ "Confidence and motivation",
+ "Professional mental health support"
+ ],
+ taTopics:[
+ "மனநிலை மாற்றங்களை எதிர்கொள்ளுதல்",
+ "மன அழுத்த மேலாண்மை",
+ "தன்னம்பிக்கை மற்றும் ஊக்கம்",
+ "தொழில்முறை மனநல ஆதரவு"
+ ],
+ url:"emotional-wellbeing.html",
+ ready:false
+},
+
+{
+ id:"living",
+ icon:"♿",
+ en:"Independent Living",
+ ta:"சுயசார்பு வாழ்க்கை",
+ enDesc:"Explore accessible and independent daily living.",
+ taDesc:"அணுகக்கூடிய சுயசார்பு வாழ்க்கைக்கான தகவல்கள்.",
+ enTopics:[
+ "Wheelchair selection",
+ "Safe transfers",
+ "Accessible home modifications",
+ "Assistive technology",
+ "Accessible travel"
+ ],
+ taTopics:[
+ "சக்கர நாற்காலி தேர்வு",
+ "பாதுகாப்பான இடமாற்றம்",
+ "வீட்டு அணுகல் வசதிகள்",
+ "உதவித் தொழில்நுட்பம்",
+ "அணுகக்கூடிய பயணம்"
+ ],
+ url:"independent-living.html",
+ ready:false
+},
+
+{
+ id:"education",
+ icon:"🎓",
+ en:"Education & Career",
+ ta:"கல்வி மற்றும் வேலைவாய்ப்பு",
+ enDesc:"Discover learning and career development opportunities.",
+ taDesc:"கல்வி மற்றும் தொழில் முன்னேற்ற வாய்ப்புகளை அறிந்துகொள்ளுங்கள்.",
+ enTopics:[
+ "Accessible education",
+ "Scholarships",
+ "Work from home opportunities",
+ "Digital skills",
+ "Entrepreneurship"
+ ],
+ taTopics:[
+ "அணுகக்கூடிய கல்வி",
+ "கல்வி உதவித்தொகைகள்",
+ "வீட்டிலிருந்து வேலைவாய்ப்புகள்",
+ "டிஜிட்டல் திறன்கள்",
+ "தொழில்முனைவு"
+ ],
+ url:"education-career.html",
+ ready:false
+},
+
+{
+ id:"rights",
+ icon:"⚖️",
+ en:"Rights & Welfare",
+ ta:"உரிமைகள் மற்றும் நலத்திட்டங்கள்",
+ enDesc:"Understand disability rights and welfare resources.",
+ taDesc:"மாற்றுத்திறனாளிகளின் உரிமைகள் மற்றும் நலத்திட்டங்களை அறிந்துகொள்ளுங்கள்.",
+ enTopics:[
+ "Disability rights",
+ "UDID card",
+ "Government welfare schemes",
+ "Pension and financial assistance",
+ "Accessibility rights"
+ ],
+ taTopics:[
+ "மாற்றுத்திறனாளிகளின் உரிமைகள்",
+ "UDID அடையாள அட்டை",
+ "அரசு நலத்திட்டங்கள்",
+ "ஓய்வூதியம் மற்றும் நிதியுதவி",
+ "அணுகல் உரிமைகள்"
+ ],
+ url:"rights-welfare.html",
+ ready:false
+},
+
+{
+ id:"caregiver",
+ icon:"🤝",
+ en:"Family & Caregiver Guide",
+ ta:"குடும்பம் மற்றும் பராமரிப்பாளர் வழிகாட்டி",
+ enDesc:"Educational support for families and caregivers.",
+ taDesc:"குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான கல்வி ஆதரவு.",
+ enTopics:[
+ "Daily care support",
+ "Caregiver education",
+ "Family communication",
+ "Caregiver wellbeing",
+ "Emergency awareness"
+ ],
+ taTopics:[
+ "தினசரி பராமரிப்பு ஆதரவு",
+ "பராமரிப்பாளர் கல்வி",
+ "குடும்ப உறவுகள்",
+ "பராமரிப்பாளர் நல்வாழ்வு",
+ "அவசரநிலை விழிப்புணர்வு"
+ ],
+ url:"caregiver-guide.html",
+ ready:false
+}
+
+];
+
+const grid=document.getElementById("categoryGrid");
+const searchInput=document.getElementById("searchInput");
+const previewDialog=document.getElementById("previewDialog");
+
+function translatePage(){
+
+ document.documentElement.lang=language;
+
+ document.querySelectorAll("[data-en][data-ta]")
+ .forEach(function(element){
+ element.textContent=element.dataset[language];
+ });
+
+ document.getElementById("taButton")
+ .setAttribute("aria-pressed",String(language==="ta"));
+
+ document.getElementById("enButton")
+ .setAttribute("aria-pressed",String(language==="en"));
+
+ searchInput.placeholder=language==="ta"
+ ?"குடல், சிறுநீர்ப்பை, கல்வி..."
+ :"Bowel, bladder, education...";
+
+}
+
+function setLanguage(value){
+
+ language=value==="en"?"en":"ta";
+
+ translatePage();
+
+ renderCategories();
+
+}
+
+function renderCategories(){
+
+ const query=searchInput.value.trim().toLowerCase();
+
+ grid.replaceChildren();
+
+ let count=0;
+
+ categories.forEach(function(category,index){
+
+ const searchable=[
+ category.en,
+ category.ta,
+ category.enDesc,
+ category.taDesc,
+ ...category.enTopics,
+ ...category.taTopics
+ ].join(" ").toLowerCase();
+
+ if(query&&!searchable.includes(query))return;
+
+ count++;
+
+ const card=document.createElement("article");
+ card.className="card";
+
+ const number=document.createElement("span");
+ number.className="category-number";
+ number.textContent="0"+(index+1);
+
+ const icon=document.createElement("div");
+ icon.className="symbol";
+ icon.setAttribute("aria-hidden","true");
+ icon.textContent=category.icon;
+
+ const heading=document.createElement("h3");
+ heading.textContent=category[language];
+
+ const description=document.createElement("p");
+ description.textContent=language==="ta"
+ ?category.taDesc:category.enDesc;
+
+ const topics=document.createElement("ul");
+
+ const topicList=language==="ta"
+ ?category.taTopics:category.enTopics;
+
+ topicList.forEach(function(topic){
+
+ const item=document.createElement("li");
+ item.textContent=topic;
+ topics.appendChild(item);
+
+ });
+
+ const status=document.createElement("span");
+ status.className="status";
+
+ status.textContent=category.ready
+ ?(language==="ta"?"படிக்கலாம்":"Available")
+ :(language==="ta"?"உருவாக்கத்தில்":"In Development");
+
+ const button=document.createElement("button");
+
+ button.textContent=category.ready
+ ?(language==="ta"?"வழிகாட்டியைப் படிக்கவும்":"Read Guide")
+ :(language==="ta"?"தலைப்புகளைப் பார்க்கவும்":"Preview Topics");
+
+ button.addEventListener("click",function(){
+
+ if(category.ready){
+ window.location.href=category.url;
+ }else{
+ showPreview(category);
+ }
+
+ });
+
+ card.append(
+ number,
+ icon,
+ heading,
+ description,
+ topics,
+ status,
+ button
+ );
+
+ grid.appendChild(card);
+
+ });
+
+ document.getElementById("searchCount")
+ .textContent=language==="ta"
+ ?count+" தலைப்புப் பிரிவுகள்"
+ :count+" knowledge categories";
+
+ document.getElementById("emptyState").hidden=count!==0;
+
+}
+
+function showPreview(category){
+
+ document.getElementById("previewTitle")
+ .textContent=category[language];
+
+ document.getElementById("previewMessage")
+ .textContent=language==="ta"
+ ?"இந்தப் பிரிவிற்கான விரிவான வழிகாட்டுதல்கள் இன்னும் உருவாக்கப்படுகின்றன. கீழே திட்டமிடப்பட்ட தலைப்புகள் உள்ளன."
+ :"Detailed guides for this category are not yet available. The following topics are planned.";
+
+ const list=document.getElementById("previewTopics");
+
+ list.replaceChildren();
+
+ const topics=language==="ta"
+ ?category.taTopics:category.enTopics;
+
+ topics.forEach(function(topic){
+
+ const item=document.createElement("li");
+ item.textContent=topic;
+ list.appendChild(item);
+
+ });
+
+ previewDialog.showModal();
+
+}
+
+function resizeText(change){
+
+ textSize=Math.max(16,Math.min(24,textSize+change));
+
+ document.body.style.fontSize=textSize+"px";
+
+}
+
+function resetText(){
+
+ textSize=16;
+
+ document.body.style.fontSize="16px";
+
+}
+
+function clearSearch(){
+
+ searchInput.value="";
+
+ renderCategories();
+
+ searchInput.focus();
+
+}
+
+searchInput.addEventListener("input",renderCategories);
+
+translatePage();
+
+renderCategories();
+
+</script>
+
+</body>
+</html>

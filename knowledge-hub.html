@@ -688,7 +688,14 @@ function renderCategories(){
  topicList.forEach(function(topic){
 
  const item=document.createElement("li");
+ if(category.id==="health" && topic===topicList[0]){
+ const link=document.createElement("a");
+ link.href="bowel-management.html";
+ link.textContent=topic+ (language==="ta"?" — படிக்கலாம்":" — Read Guide");
+ item.appendChild(link);
+ }else{
  item.textContent=topic;
+ }
  topics.appendChild(item);
 
  });

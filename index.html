@@ -129,15 +129,6 @@ footer{
  text-align:center;
  padding:24px 16px;
 }
-dialog{
- width:90%;
- max-width:500px;
- border:0;
- border-radius:16px;
- padding:24px;
- color:#073763;
-}
-dialog::backdrop{background:#0009}
 
 @media(max-width:600px){
  .hero{padding:36px 16px}
@@ -146,19 +137,26 @@ dialog::backdrop{background:#0009}
  .grid{grid-template-columns:1fr}
  .tools{justify-content:center}
 }
+
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+}
 </style>
 </head>
 
 <body>
 
 <header id="home">
+
 <img src="sis-logo.png"
  alt="Spinal Injured Society Logo"
  style="width:120px;max-width:100%;height:auto;display:block;margin:0 auto 12px;">
+
 <h1>SIS</h1>
 <p>Together we move forward</p>
 <strong>Spinal Injured Society</strong>
 <p>Support • Care • Rehabilitation • Empowerment</p>
+
 </header>
 
 <nav aria-label="Main navigation">
@@ -169,47 +167,70 @@ dialog::backdrop{background:#0009}
 </nav>
 
 <div class="tools">
+
 <span>Text Size:</span>
-<button onclick="resizeText(-1)" aria-label="Decrease text size">A−</button>
-<button onclick="resetText()" aria-label="Reset text size">A</button>
-<button onclick="resizeText(1)" aria-label="Increase text size">A+</button>
+
+<button onclick="resizeText(-1)"
+ aria-label="Decrease text size">A−</button>
+
+<button onclick="resetText()"
+ aria-label="Reset text size">A</button>
+
+<button onclick="resizeText(1)"
+ aria-label="Increase text size">A+</button>
+
 </div>
 
 <section class="hero">
+
 <h2>SIS-க்கு உங்களை வரவேற்கிறோம்</h2>
+
 <h3>Welcome to Spinal Injured Society</h3>
 
 <p>முதுகுத் தண்டுவடக் காயமுற்றவர்களின் நல்வாழ்வு, மறுவாழ்வு, தன்னம்பிக்கை மற்றும் சுயசார்பு வாழ்க்கைக்கான சமூகத் தளம்.</p>
 
 <p>Together, we build a more accessible, inclusive and independent future.</p>
 
-<a class="btn" href="#services">Explore Our Services</a>
+<a class="btn" href="#services">
+Explore Our Services
+</a>
+
 </section>
 
 <main class="container">
 
 <section class="panel" id="about">
+
 <h2>About SIS | எங்களைப் பற்றி</h2>
 
 <p>Spinal Injured Society is a proposed community platform dedicated to supporting individuals with spinal cord injuries through rehabilitation resources, peer support, accessibility awareness and opportunities for independent living.</p>
 
 <p>முதுகுத் தண்டுவடக் காயமுற்றவர்களின் தேவைகளை அறிந்து, அவர்களுக்கான ஆதரவு மற்றும் வாய்ப்புகளை ஒருங்கிணைப்பதே எங்கள் நோக்கம்.</p>
+
 </section>
 
 <section id="mission">
+
 <div class="grid">
 
 <article class="panel">
+
 <h2>Our Vision | தொலைநோக்கு</h2>
+
 <p>An inclusive society where every person with a spinal cord injury can live with dignity, independence and equal opportunities.</p>
+
 </article>
 
 <article class="panel">
+
 <h2>Our Mission | எங்கள் நோக்கம்</h2>
+
 <p>To connect members with essential support, rehabilitation information, assistive resources, education and community opportunities.</p>
+
 </article>
 
 </div>
+
 </section>
 
 <section id="services">
@@ -219,99 +240,124 @@ dialog::backdrop{background:#0009}
 <div class="grid">
 
 <article class="card">
+
 <div class="symbol" aria-hidden="true">👥</div>
+
 <h3>Member Registration</h3>
+
 <p>உறுப்பினர் பதிவு மற்றும் விவரங்கள்</p>
 
 <a class="service-link"
-href="member-registration.html"
-aria-label="View Member Registration Details">
+ href="member-registration.html"
+ aria-label="View Member Registration Details">
 View Details
 </a>
 
 </article>
 
 <article class="card">
+
 <div class="symbol" aria-hidden="true">🤝</div>
+
 <h3>Request Assistance</h3>
+
 <p>உதவிக் கோரிக்கைகள் மற்றும் ஆதரவு</p>
 
 <a class="service-link"
-href="request-assistance.html"
-aria-label="View Request Assistance Details">
+ href="request-assistance.html"
+ aria-label="View Request Assistance Details">
 View Details
 </a>
 
 </article>
 
 <article class="card">
+
 <div class="symbol" aria-hidden="true">🩺</div>
+
 <h3>Medical &amp; Rehabilitation</h3>
+
 <p>மருத்துவம் மற்றும் மறுவாழ்வு</p>
 
 <a class="service-link"
-href="medical-rehabilitation.html"
-aria-label="View Medical and Rehabilitation Details">
+ href="medical-rehabilitation.html"
+ aria-label="View Medical and Rehabilitation Details">
 View Details
 </a>
 
 </article>
 
 <article class="card">
+
 <div class="symbol" aria-hidden="true">📅</div>
+
 <h3>Appointments</h3>
+
 <p>மருத்துவ ஆலோசனை முன்பதிவு</p>
 
 <a class="service-link"
-href="appointments.html"
-aria-label="View Appointment Booking Details">
+ href="appointments.html"
+ aria-label="View Appointment Booking Details">
 View Details
 </a>
 
 </article>
 
 <article class="card">
+
 <div class="symbol" aria-hidden="true">📚</div>
+
 <h3>Learning Resources</h3>
+
 <p>கல்வி, வேலைவாய்ப்பு மற்றும் வழிகாட்டுதல்</p>
 
 <a class="service-link"
-href="learning-resources.html"
-aria-label="View Learning Resources">
+ href="learning-resources.html"
+ aria-label="View Learning Resources">
 View Details
 </a>
 
 </article>
 
 <article class="card">
+
 <div class="symbol" aria-hidden="true">💬</div>
+
 <h3>Community Support</h3>
+
 <p>சமூக ஆதரவு மற்றும் அனுபவப் பகிர்வு</p>
 
-<button onclick="showService('Community Support','Proposed peer support, community events, para sports and independent living awareness.')">
+<a class="service-link"
+ href="community-support.html"
+ aria-label="View Community Support Details">
 View Details
-</button>
+</a>
 
 </article>
 
 </div>
+
 </section>
 
 <section class="container">
 
 <div class="notice">
 
-<strong>SIS Senior Review Demo V1.5</strong>
+<strong>SIS Senior Review Demo V1.6</strong>
 
 <p>Concept Preview – For review and discussion only.</p>
 
-<p>Member Registration, Request Assistance, Medical &amp; Rehabilitation, Appointment Booking and Learning Resources modules are available in demonstration mode.</p>
+<p>All six core service modules are now available in demonstration mode.</p>
+
+<p>Member Registration, Request Assistance, Medical &amp; Rehabilitation, Appointment Booking, Learning Resources and Community Support.</p>
 
 <p>Please use fictional information only. Do not enter real personal, financial or medical information.</p>
 
-<p>No actual membership registration, assistance request, medical appointment, job application or scholarship application is processed through this demo.</p>
+<p>No actual membership registration, assistance request, medical appointment, employment application or community registration is processed through this demo.</p>
 
-<p>Community Support is the upcoming demonstration module.</p>
+<p>இது நிர்வாகக் குழுவின் பார்வைக்கும் கலந்துரையாடலுக்கும் உருவாக்கப்பட்ட மாதிரி இணையதளம் மட்டுமே.</p>
+
+<p>Official services will be considered after senior approval, appropriate verification, privacy safeguards and further development.</p>
 
 </div>
 
@@ -319,29 +365,15 @@ View Details
 
 </main>
 
-<dialog id="serviceDialog" aria-labelledby="dialogTitle">
-
-<h2 id="dialogTitle"></h2>
-
-<p id="dialogText"></p>
-
-<p><strong>Demo Preview Only</strong></p>
-
-<p>This service will be developed after approval.</p>
-
-<form method="dialog">
-<button>Close</button>
-</form>
-
-</dialog>
-
 <footer>
 
 <strong>SIS – Spinal Injured Society</strong>
 
+<p>Together we move forward</p>
+
 <p>Support • Care • Rehabilitation • Empowerment</p>
 
-<p>© 2026 SIS | Senior Review Demo V1.5</p>
+<p>© 2026 SIS | Senior Review Demo V1.6</p>
 
 </footer>
 
@@ -357,12 +389,6 @@ function resizeText(change){
 function resetText(){
  textSize=16;
  document.documentElement.style.fontSize='16px';
-}
-
-function showService(title,description){
- document.getElementById('dialogTitle').textContent=title;
- document.getElementById('dialogText').textContent=description;
- document.getElementById('serviceDialog').showModal();
 }
 
 </script>

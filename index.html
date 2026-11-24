@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SIS | Spinal Injured Society</title>
 <meta name="robots" content="noindex,nofollow">
+
 <style>
 *{box-sizing:border-box}
 :root{font-size:16px}
@@ -53,7 +54,7 @@ button:focus-visible,a:focus-visible{
  padding:12px 16px;
  background:#e4f3f4;
 }
-button{
+button,.service-link{
  font:inherit;
  cursor:pointer;
  border:0;
@@ -62,6 +63,12 @@ button{
  min-height:44px;
  background:#073763;
  color:white;
+}
+.service-link{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ text-decoration:none;
 }
 .hero{
  background:linear-gradient(135deg,#073763,#007d80);
@@ -131,6 +138,7 @@ dialog{
  color:#073763;
 }
 dialog::backdrop{background:#0009}
+
 @media(max-width:600px){
  .hero{padding:36px 16px}
  .hero h2{font-size:1.5rem}
@@ -140,6 +148,7 @@ dialog::backdrop{background:#0009}
 }
 </style>
 </head>
+
 <body>
 
 <header id="home">
@@ -169,8 +178,11 @@ dialog::backdrop{background:#0009}
 <section class="hero">
 <h2>SIS-க்கு உங்களை வரவேற்கிறோம்</h2>
 <h3>Welcome to Spinal Injured Society</h3>
+
 <p>முதுகுத் தண்டுவடக் காயமுற்றவர்களின் நல்வாழ்வு, மறுவாழ்வு, தன்னம்பிக்கை மற்றும் சுயசார்பு வாழ்க்கைக்கான சமூகத் தளம்.</p>
+
 <p>Together, we build a more accessible, inclusive and independent future.</p>
+
 <a class="btn" href="#services">Explore Our Services</a>
 </section>
 
@@ -178,99 +190,146 @@ dialog::backdrop{background:#0009}
 
 <section class="panel" id="about">
 <h2>About SIS | எங்களைப் பற்றி</h2>
+
 <p>Spinal Injured Society is a proposed community platform dedicated to supporting individuals with spinal cord injuries through rehabilitation resources, peer support, accessibility awareness and opportunities for independent living.</p>
+
 <p>முதுகுத் தண்டுவடக் காயமுற்றவர்களின் தேவைகளை அறிந்து, அவர்களுக்கான ஆதரவு மற்றும் வாய்ப்புகளை ஒருங்கிணைப்பதே எங்கள் நோக்கம்.</p>
 </section>
 
 <section id="mission">
 <div class="grid">
+
 <article class="panel">
 <h2>Our Vision | தொலைநோக்கு</h2>
 <p>An inclusive society where every person with a spinal cord injury can live with dignity, independence and equal opportunities.</p>
 </article>
+
 <article class="panel">
 <h2>Our Mission | எங்கள் நோக்கம்</h2>
 <p>To connect members with essential support, rehabilitation information, assistive resources, education and community opportunities.</p>
 </article>
+
 </div>
 </section>
 
 <section id="services">
+
 <h2>Our Services | எங்கள் சேவைகள்</h2>
+
 <div class="grid">
 
 <article class="card">
 <div class="symbol" aria-hidden="true">👥</div>
 <h3>Member Registration</h3>
 <p>உறுப்பினர் பதிவு மற்றும் விவரங்கள்</p>
-<button onclick="showService('Member Registration','Proposed member profiles, membership ID and registration facilities.')">View Details</button>
+
+<a class="service-link"
+href="member-registration.html"
+aria-label="View Member Registration Details">
+View Details
+</a>
+
 </article>
 
 <article class="card">
 <div class="symbol" aria-hidden="true">🤝</div>
 <h3>Request Assistance</h3>
 <p>உதவிக் கோரிக்கைகள் மற்றும் ஆதரவு</p>
-<button onclick="showService('Request Assistance','Proposed assistance requests for wheelchairs, alpha beds, assistive devices and other essential needs.')">View Details</button>
+
+<button onclick="showService('Request Assistance','Proposed assistance requests for wheelchairs, alpha beds, assistive devices and other essential needs.')">
+View Details
+</button>
 </article>
 
 <article class="card">
 <div class="symbol" aria-hidden="true">🩺</div>
-<h3>Medical & Rehabilitation</h3>
+<h3>Medical &amp; Rehabilitation</h3>
 <p>மருத்துவம் மற்றும் மறுவாழ்வு</p>
-<button onclick="showService('Medical & Rehabilitation','Proposed rehabilitation resources, healthcare information and professional guidance.')">View Details</button>
+
+<button onclick="showService('Medical & Rehabilitation','Proposed rehabilitation resources, healthcare information and professional guidance.')">
+View Details
+</button>
 </article>
 
 <article class="card">
 <div class="symbol" aria-hidden="true">📅</div>
 <h3>Appointments</h3>
 <p>மருத்துவ ஆலோசனை முன்பதிவு</p>
-<button onclick="showService('Appointments','Proposed appointment request facilities for medical and rehabilitation consultations.')">View Details</button>
+
+<button onclick="showService('Appointments','Proposed appointment request facilities for medical and rehabilitation consultations.')">
+View Details
+</button>
 </article>
 
 <article class="card">
 <div class="symbol" aria-hidden="true">📚</div>
 <h3>Learning Resources</h3>
 <p>கல்வி, வேலைவாய்ப்பு மற்றும் வழிகாட்டுதல்</p>
-<button onclick="showService('Learning Resources','Proposed educational resources, skill development, employment information and government scheme awareness.')">View Details</button>
+
+<button onclick="showService('Learning Resources','Proposed educational resources, skill development, employment information and government scheme awareness.')">
+View Details
+</button>
 </article>
 
 <article class="card">
 <div class="symbol" aria-hidden="true">💬</div>
 <h3>Community Support</h3>
 <p>சமூக ஆதரவு மற்றும் அனுபவப் பகிர்வு</p>
-<button onclick="showService('Community Support','Proposed peer support, community events, para sports and independent living awareness.')">View Details</button>
+
+<button onclick="showService('Community Support','Proposed peer support, community events, para sports and independent living awareness.')">
+View Details
+</button>
 </article>
 
 </div>
 </section>
 
 <section class="container">
+
 <div class="notice">
-<strong>SIS Senior Review Demo V1.1</strong>
+
+<strong>SIS Senior Review Demo V1.2</strong>
+
 <p>Concept Preview – For review and discussion only.</p>
-<p>No real member data is collected. Registration, medical appointments and assistance submissions are not yet active.</p>
+
+<p>The Member Registration module is available in demonstration mode. Please use fictional information only.</p>
+
+<p>No real member data is collected or permanently stored by the demo. Official membership registration, medical appointments and assistance submissions are not yet active.</p>
+
 </div>
+
 </section>
 
 </main>
 
 <dialog id="serviceDialog" aria-labelledby="dialogTitle">
+
 <h2 id="dialogTitle"></h2>
+
 <p id="dialogText"></p>
+
 <p><strong>Demo Preview Only</strong></p>
+
 <p>This service will be developed after approval.</p>
+
 <form method="dialog">
 <button>Close</button>
 </form>
+
 </dialog>
 
 <footer>
+
 <strong>SIS – Spinal Injured Society</strong>
+
 <p>Support • Care • Rehabilitation • Empowerment</p>
-<p>© 2026 SIS | Senior Review Demo V1.1</p>
+
+<p>© 2026 SIS | Senior Review Demo V1.2</p>
+
 </footer>
 
 <script>
+
 let textSize=16;
 
 function resizeText(change){
@@ -288,6 +347,7 @@ function showService(title,description){
  document.getElementById('dialogText').textContent=description;
  document.getElementById('serviceDialog').showModal();
 }
+
 </script>
 
 </body>

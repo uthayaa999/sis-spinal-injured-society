@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Member Registration | SIS</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.6;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{
+ width:110px;
+ height:auto;
+}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ background:#052946;
+ padding:14px;
+ text-align:center;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+}
+.container{
+ max-width:850px;
+ margin:24px auto;
+ padding:0 16px;
+}
+.section{
+ background:white;
+ border-radius:14px;
+ padding:22px;
+ margin-bottom:20px;
+ box-shadow:0 4px 15px #07376312;
+}
+h2{margin-top:0}
+h3{
+ border-bottom:2px solid #009b99;
+ padding-bottom:10px;
+}
+.notice{
+ background:#e2f4f3;
+ border-left:4px solid #009b99;
+ padding:16px;
+ border-radius:8px;
+ margin-bottom:20px;
+}
+label{
+ display:block;
+ font-weight:bold;
+ margin-top:16px;
+}
+input,select,textarea{
+ width:100%;
+ padding:13px;
+ margin-top:6px;
+ border:1px solid #a9bac8;
+ border-radius:8px;
+ font-size:16px;
+ background:white;
+ color:#073763;
+}
+input:focus,select:focus,textarea:focus,
+button:focus-visible,a:focus-visible{
+ outline:3px solid #009b99;
+ outline-offset:3px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:16px;
+}
+button,.home{
+ display:inline-block;
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:14px 22px;
+ font-size:16px;
+ cursor:pointer;
+ text-decoration:none;
+ margin-top:16px;
+}
+button.secondary{background:#52657b}
+.check{
+ display:flex;
+ align-items:flex-start;
+ gap:10px;
+}
+.check input{
+ width:22px;
+ height:22px;
+ flex-shrink:0;
+}
+#result{
+ display:none;
+ background:#e8f5e9;
+ border:1px solid #27843b;
+ padding:22px;
+ border-radius:12px;
+ margin-top:20px;
+ overflow-wrap:anywhere;
+}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:22px;
+}
+@media(max-width:600px){
+ .grid{grid-template-columns:1fr}
+ .section{padding:16px}
+ button,.home{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+<img src="sis-logo.jpg"
+alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<p>Spinal Injured Society</p>
+<p>Together we move forward</p>
+</header>
+
+<nav>
+<a href="index.html">Home | முகப்பு</a>
+</nav>
+
+<main class="container">
+
+<h2>Member Registration</h2>
+<p>உறுப்பினர் பதிவு</p>
+
+<div class="notice">
+<strong>Senior Review Demo V1.0</strong>
+<p>This is a demonstration only.
+Use fictional information.
+Do not enter real personal or medical details.
+No information is submitted or permanently stored.</p>
+<p>இது மாதிரி பதிவு மட்டுமே.
+உண்மையான தனிப்பட்ட மற்றும் மருத்துவத் தகவல்களைப் பதிவிட வேண்டாம்.</p>
+</div>
+
+<form id="registrationForm" autocomplete="off">
+
+<div class="section">
+<h3>1. Personal Information</h3>
+<p>தனிப்பட்ட விவரங்கள்</p>
+
+<label for="name">Full Name / முழுப் பெயர் *</label>
+<input id="name" type="text"
+placeholder="Demo Member" maxlength="80" required>
+
+<div class="grid">
+<div>
+<label for="age">Age / வயது *</label>
+<input id="age" type="number"
+min="1" max="120" required>
+</div>
+<div>
+<label for="gender">Gender / பாலினம்</label>
+<select id="gender">
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+</div>
+
+<label for="district">District / மாவட்டம் *</label>
+<input id="district" type="text"
+placeholder="Demo District" required>
+
+<label for="state">State / மாநிலம்</label>
+<input id="state" type="text"
+value="Tamil Nadu">
+</div>
+
+<div class="section">
+<h3>2. Contact Information</h3>
+<p>தொடர்பு விவரங்கள்</p>
+
+<label for="mobile">Demo Mobile Number</label>
+<input id="mobile" type="tel"
+placeholder="0000000000" maxlength="15">
+
+<label for="email">Demo Email Address</label>
+<input id="email" type="email"
+placeholder="demo@example.com">
+
+<label for="address">Demo Address / முகவரி</label>
+<textarea id="address" rows="3"
+placeholder="Sample address only"></textarea>
+</div>
+
+<div class="section">
+<h3>3. Spinal Cord Injury Details</h3>
+<p>முதுகுத் தண்டுவடக் காயம் தொடர்பான விவரங்கள்</p>
+
+<label for="injury">Injury Level / காயத்தின் நிலை</label>
+<select id="injury">
+<option value="">Select</option>
+<option>Cervical (C1-C8)</option>
+<option>Thoracic (T1-T12)</option>
+<option>Lumbar (L1-L5)</option>
+<option>Sacral</option>
+<option>Not Known</option>
+</select>
+
+<label for="type">Injury Classification</label>
+<select id="type">
+<option value="">Select</option>
+<option>Complete</option>
+<option>Incomplete</option>
+<option>Not Known</option>
+</select>
+
+<label for="mobility">Mobility / இயக்க நிலை</label>
+<select id="mobility">
+<option value="">Select</option>
+<option>Manual Wheelchair</option>
+<option>Powered Wheelchair</option>
+<option>Walking Aid</option>
+<option>Independent Walking</option>
+<option>Bed-based Support</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="section">
+<h3>4. Assistive Device Requirements</h3>
+<p>உதவி உபகரணத் தேவைகள்</p>
+
+<label class="check">
+<input type="checkbox" value="Manual Wheelchair">
+Manual Wheelchair
+</label>
+
+<label class="check">
+<input type="checkbox" value="Powered Wheelchair">
+Powered Wheelchair
+</label>
+
+<label class="check">
+<input type="checkbox" value="Alpha Bed">
+Alpha Bed / Air Mattress
+</label>
+
+<label class="check">
+<input type="checkbox" value="Pressure Relief Cushion">
+Pressure Relief Cushion
+</label>
+
+<label class="check">
+<input type="checkbox" value="Walking Aid">
+Walking Aid
+</label>
+
+<label class="check">
+<input type="checkbox" value="Other Equipment">
+Other Equipment
+</label>
+</div>
+
+<div class="section">
+<h3>5. Support Requirements</h3>
+<p>தேவையான உதவிகள்</p>
+
+<label class="check">
+<input type="checkbox" value="Medical Support">
+Medical Support
+</label>
+
+<label class="check">
+<input type="checkbox" value="Rehabilitation">
+Rehabilitation
+</label>
+
+<label class="check">
+<input type="checkbox" value="Government Schemes">
+Government Welfare Schemes
+</label>
+
+<label class="check">
+<input type="checkbox" value="Employment">
+Employment & Skill Development
+</label>
+
+<label class="check">
+<input type="checkbox" value="Education">
+Education Support
+</label>
+
+<label class="check">
+<input type="checkbox" value="Para Sports">
+Para Sports
+</label>
+
+<label class="check">
+<input type="checkbox" value="Community Support">
+Community & Peer Support
+</label>
+
+<label for="notes">Additional Requirements</label>
+<textarea id="notes" rows="4"
+placeholder="Enter fictional requirements only"></textarea>
+</div>
+
+<div class="section">
+<h3>6. Demo Confirmation</h3>
+
+<label class="check">
+<input id="consent" type="checkbox" required>
+I confirm that I am using fictional information for demonstration purposes only.
+</label>
+
+<button type="submit">
+Create Demo Member
+</button>
+
+<button type="reset" class="secondary">
+Clear Form
+</button>
+
+<div id="result" role="status" aria-live="polite">
+<h2>Demo Registration Successful!</h2>
+<p>மாதிரி உறுப்பினர் பதிவு வெற்றிகரமாக முடிந்தது.</p>
+<p><strong>Demo Member ID:</strong>
+<span id="memberId"></span></p>
+<p><strong>Member Name:</strong>
+<span id="memberName"></span></p>
+<p><strong>District:</strong>
+<span id="memberDistrict"></span></p>
+<p><strong>Status:</strong> Demo - Not Verified</p>
+<p>No official membership has been created.
+Information is not permanently stored.</p>
+<a class="home" href="index.html">
+Return to Homepage
+</a>
+</div>
+</div>
+
+</form>
+</main>
+
+<footer>
+<strong>SIS - Spinal Injured Society</strong>
+<p>Support • Care • Rehabilitation • Empowerment</p>
+<p>© 2026 SIS | Member Registration Demo V1.0</p>
+</footer>
+
+<script>
+const form = document.getElementById("registrationForm");
+const result = document.getElementById("result");
+
+form.addEventListener("submit",function(event){
+ event.preventDefault();
+
+ const demoId = "SIS-DEMO-" +
+ Date.now().toString().slice(-8);
+
+ document.getElementById("memberId").textContent = demoId;
+ document.getElementById("memberName").textContent =
+ document.getElementById("name").value;
+
+ document.getElementById("memberDistrict").textContent =
+ document.getElementById("district").value;
+
+ result.style.display = "block";
+ result.scrollIntoView({behavior:"smooth",block:"center"});
+});
+
+form.addEventListener("reset",function(){
+ result.style.display = "none";
+ document.getElementById("memberId").textContent = "";
+ document.getElementById("memberName").textContent = "";
+ document.getElementById("memberDistrict").textContent = "";
+});
+</script>
+
+</body>
+</html>

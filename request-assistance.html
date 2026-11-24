@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Request Assistance | SIS</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.6;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{
+ width:140px;
+ max-width:100%;
+ height:auto;
+}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ background:#052b4d;
+ padding:14px;
+ text-align:center;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+}
+.container{
+ max-width:800px;
+ margin:auto;
+ padding:24px 16px;
+}
+.panel{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376316;
+}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:16px;
+ border-radius:8px;
+ margin-bottom:24px;
+}
+label{
+ display:block;
+ font-weight:bold;
+ margin-top:18px;
+ margin-bottom:6px;
+}
+input,select,textarea{
+ width:100%;
+ padding:13px;
+ font:inherit;
+ border:1px solid #a8bacb;
+ border-radius:8px;
+ background:white;
+ color:#073763;
+ min-height:48px;
+}
+textarea{
+ min-height:120px;
+ resize:vertical;
+}
+button{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:14px 20px;
+ font:inherit;
+ font-weight:bold;
+ cursor:pointer;
+ min-height:48px;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+.actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:24px;
+}
+.secondary{
+ background:#e2f3f2;
+ color:#073763;
+}
+.result{
+ display:none;
+ background:#e8f5e9;
+ border:1px solid #80b58a;
+ padding:20px;
+ border-radius:10px;
+ margin-top:24px;
+}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+ margin-top:24px;
+}
+@media(max-width:600px){
+ .panel{padding:18px}
+ .actions button{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav>
+<a href="index.html">← Back to Home | முகப்பு</a>
+</nav>
+
+<main class="container">
+
+<section class="panel">
+
+<h2>Request Assistance</h2>
+<h3>உதவிக் கோரிக்கை</h3>
+
+<p>
+Request essential support and assistance
+for independent living and rehabilitation.
+</p>
+
+<p>
+அத்தியாவசிய உதவிகள் மற்றும் மறுவாழ்வு
+ஆதரவுகளுக்கான கோரிக்கைப் படிவம்.
+</p>
+
+<div class="notice">
+<strong>Demo Preview Only</strong>
+<p>
+Use fictional information only.
+Do not enter real personal, financial
+or medical information.
+No data is stored or transmitted.
+</p>
+</div>
+
+<form id="assistanceForm">
+
+<label for="memberId">
+Demo Member ID | மாதிரி உறுப்பினர் எண்
+</label>
+<input id="memberId"
+ type="text"
+ value="SIS-DEMO-001"
+ readonly>
+
+<label for="name">
+Demo Member Name | மாதிரி உறுப்பினர் பெயர்
+</label>
+<input id="name"
+ type="text"
+ value="Demo Member"
+ readonly>
+
+<label for="district">
+District | மாவட்டம்
+</label>
+<select id="district" required>
+<option value="">Select District</option>
+<option>Thanjavur</option>
+<option>Chennai</option>
+<option>Coimbatore</option>
+<option>Madurai</option>
+<option>Tiruchirappalli</option>
+<option>Salem</option>
+<option>Tirunelveli</option>
+<option>Erode</option>
+<option>Other District</option>
+</select>
+
+<label for="category">
+Assistance Category | உதவியின் வகை
+</label>
+<select id="category" required>
+<option value="">Select Assistance</option>
+<option>Manual Wheelchair</option>
+<option>Powered Wheelchair</option>
+<option>Alpha Bed / Air Mattress</option>
+<option>Medical Assistance</option>
+<option>Rehabilitation Support</option>
+<option>Assistive Devices</option>
+<option>Financial Assistance</option>
+<option>Education and Employment Support</option>
+<option>Government Scheme Guidance</option>
+<option>Other Essential Needs</option>
+</select>
+
+<label for="priority">
+Priority | முன்னுரிமை
+</label>
+<select id="priority" required>
+<option value="">Select Priority</option>
+<option>Normal</option>
+<option>High</option>
+<option>Urgent</option>
+</select>
+
+<label for="description">
+Demo Requirement | மாதிரி தேவையின் விவரம்
+</label>
+<textarea id="description"
+ placeholder="Example: Demo member requires a manual wheelchair."
+ maxlength="500"
+ required></textarea>
+
+<p>
+<small>
+This demo is not an emergency response service.
+No actual assistance request will be submitted.
+</small>
+</p>
+
+<div class="actions">
+<button type="submit">
+Submit Demo Request
+</button>
+<button type="reset" class="secondary">
+Clear Form
+</button>
+</div>
+
+</form>
+
+<div id="result"
+ class="result"
+ role="status"
+ aria-live="polite">
+
+<h3>✓ Demo Request Completed</h3>
+
+<p>மாதிரி உதவிக் கோரிக்கை நிறைவடைந்தது.</p>
+
+<p>
+<strong>Demo Reference:</strong>
+<span id="reference"></span>
+</p>
+
+<p>
+<strong>Category:</strong>
+<span id="resultCategory"></span>
+</p>
+
+<p>
+<strong>Priority:</strong>
+<span id="resultPriority"></span>
+</p>
+
+<p>
+<strong>Status:</strong>
+Pending Review (Simulated)
+</p>
+
+<p>
+This is a simulated confirmation.
+No real request has been submitted
+or saved.
+</p>
+
+</div>
+
+</section>
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Support • Care • Rehabilitation • Empowerment</p>
+<p>© 2026 SIS | Senior Review Demo</p>
+</footer>
+
+<script>
+const form=document.getElementById('assistanceForm');
+const result=document.getElementById('result');
+
+form.addEventListener('submit',function(event){
+ event.preventDefault();
+
+ const reference='SIS-AR-DEMO-'+Date.now()
+ .toString().slice(-8);
+
+ document.getElementById('reference')
+ .textContent=reference;
+
+ document.getElementById('resultCategory')
+ .textContent=document.getElementById('category').value;
+
+ document.getElementById('resultPriority')
+ .textContent=document.getElementById('priority').value;
+
+ result.style.display='block';
+
+ result.scrollIntoView({
+ behavior:'smooth',
+ block:'start'
+ });
+});
+
+form.addEventListener('reset',function(){
+ result.style.display='none';
+ document.getElementById('reference').textContent='';
+ document.getElementById('resultCategory').textContent='';
+ document.getElementById('resultPriority').textContent='';
+});
+</script>
+
+</body>
+</html>

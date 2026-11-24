@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Appointments | SIS</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.65;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{
+ width:140px;
+ max-width:100%;
+ height:auto;
+}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:20px;
+ background:#052b4d;
+ padding:14px;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+}
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ text-align:center;
+ padding:32px 16px;
+}
+.hero h2{margin:0}
+.container{
+ max-width:800px;
+ margin:auto;
+ padding:24px 16px;
+}
+.panel{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376316;
+}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:16px;
+ border-radius:8px;
+ margin-bottom:24px;
+}
+label{
+ display:block;
+ font-weight:bold;
+ margin-top:18px;
+ margin-bottom:6px;
+}
+input,select{
+ width:100%;
+ padding:13px;
+ font:inherit;
+ color:#073763;
+ background:white;
+ border:1px solid #a8bacb;
+ border-radius:8px;
+ min-height:48px;
+}
+button{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:14px 20px;
+ font:inherit;
+ font-weight:bold;
+ cursor:pointer;
+ min-height:48px;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+.actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:24px;
+}
+.secondary{
+ background:#e2f3f2;
+ color:#073763;
+}
+.result{
+ background:#e8f5e9;
+ border:1px solid #80b58a;
+ padding:20px;
+ border-radius:10px;
+ margin-top:24px;
+}
+.result h3{margin-top:0}
+.status{
+ display:inline-block;
+ background:#fff0cf;
+ color:#704600;
+ padding:8px 14px;
+ border-radius:8px;
+ font-weight:bold;
+}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+@media(max-width:600px){
+ .panel{padding:18px}
+ .actions button{width:100%}
+ nav{gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="medical-rehabilitation.html">Medical Services</a>
+<a href="request-assistance.html">Assistance</a>
+</nav>
+
+<section class="hero">
+<h2>Appointment Booking</h2>
+<h3>மருத்துவ ஆலோசனை முன்பதிவு</h3>
+<p>Connecting members with proposed healthcare
+and rehabilitation services.</p>
+</section>
+
+<main class="container">
+
+<section class="panel">
+
+<h2>Request an Appointment</h2>
+<p>மருத்துவ ஆலோசனைக்கான முன்பதிவு கோரிக்கை</p>
+
+<div class="notice">
+<strong>Senior Review Demo V1.0</strong>
+<p>This is a simulated appointment facility.
+No actual doctor or healthcare provider
+will receive your request.</p>
+<p>Use fictional information only.
+No appointment data is stored or transmitted.</p>
+</div>
+
+<form id="appointmentForm">
+
+<label for="memberId">
+Demo Member ID | மாதிரி உறுப்பினர் எண்
+</label>
+<input id="memberId"
+ type="text"
+ value="SIS-DEMO-001"
+ readonly>
+
+<label for="memberName">
+Demo Member Name | மாதிரி உறுப்பினர் பெயர்
+</label>
+<input id="memberName"
+ type="text"
+ value="Demo Member"
+ readonly>
+
+<label for="department">
+Consultation Type | ஆலோசனை வகை
+</label>
+
+<select id="department" required>
+<option value="">Select Consultation</option>
+<option>Spinal Cord Injury Specialist</option>
+<option>Physiotherapy</option>
+<option>Rehabilitation Consultation</option>
+<option>Occupational Therapy</option>
+<option>Urology Consultation</option>
+<option>Wound Care Consultation</option>
+<option>Mental Health Counselling</option>
+<option>Assistive Equipment Consultation</option>
+<option>General Medical Consultation</option>
+</select>
+
+<label for="mode">
+Consultation Mode | ஆலோசனை முறை
+</label>
+
+<select id="mode" required>
+<option value="">Select Mode</option>
+<option>Online Consultation</option>
+<option>In-person Consultation</option>
+</select>
+
+<label for="date">
+Preferred Date | விருப்பமான தேதி
+</label>
+<input id="date" type="date" required>
+
+<label for="time">
+Preferred Time | விருப்பமான நேரம்
+</label>
+
+<select id="time" required>
+<option value="">Select Time</option>
+<option>09:00 AM - 10:00 AM</option>
+<option>10:00 AM - 11:00 AM</option>
+<option>11:00 AM - 12:00 PM</option>
+<option>02:00 PM - 03:00 PM</option>
+<option>03:00 PM - 04:00 PM</option>
+<option>04:00 PM - 05:00 PM</option>
+</select>
+
+<p>
+<small>
+These are sample time preferences,
+not verified appointment availability.
+</small>
+</p>
+
+<label for="accessibility">
+Accessibility Support | அணுகல் வசதிகள்
+</label>
+
+<select id="accessibility" required>
+<option value="">Select Support</option>
+<option>Wheelchair Accessible Entrance</option>
+<option>Accessible Consultation Room</option>
+<option>Accessible Toilet Facility</option>
+<option>Caregiver Accompaniment</option>
+<option>Multiple Accessibility Requirements</option>
+<option>No Additional Support Required</option>
+</select>
+
+<div class="notice" style="margin-top:24px">
+<strong>Important Information</strong>
+<p>This website is not an emergency medical
+service. For emergencies, seek immediate
+medical assistance or call
+<a href="tel:112">112</a>.</p>
+</div>
+
+<div class="actions">
+<button type="submit">
+Submit Demo Appointment
+</button>
+
+<button type="reset" class="secondary">
+Clear Form
+</button>
+</div>
+
+</form>
+
+<section id="result"
+ class="result"
+ role="status"
+ aria-live="polite"
+ tabindex="-1"
+ hidden>
+
+<h3>✓ Demo Appointment Request Completed</h3>
+
+<p>மாதிரி முன்பதிவு கோரிக்கை நிறைவடைந்தது.</p>
+
+<p><strong>Reference ID:</strong>
+<span id="reference"></span></p>
+
+<p><strong>Member:</strong>
+Demo Member</p>
+
+<p><strong>Consultation:</strong>
+<span id="resultDepartment"></span></p>
+
+<p><strong>Mode:</strong>
+<span id="resultMode"></span></p>
+
+<p><strong>Preferred Date:</strong>
+<span id="resultDate"></span></p>
+
+<p><strong>Preferred Time:</strong>
+<span id="resultTime"></span></p>
+
+<p><strong>Accessibility Support:</strong>
+<span id="resultAccessibility"></span></p>
+
+<p><strong>Appointment Status:</strong></p>
+
+<span class="status">
+Pending Confirmation (Simulated)
+</span>
+
+<p>No actual appointment has been booked.
+This confirmation is for demonstration only.</p>
+
+</section>
+
+</section>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Support • Care • Rehabilitation • Empowerment</p>
+<p>© 2026 SIS | Appointment Demo V1.0</p>
+</footer>
+
+<script>
+
+const form=document.getElementById("appointmentForm");
+const result=document.getElementById("result");
+const dateInput=document.getElementById("date");
+
+function localDateString(date){
+ const year=date.getFullYear();
+ const month=String(date.getMonth()+1).padStart(2,"0");
+ const day=String(date.getDate()).padStart(2,"0");
+ return year+"-"+month+"-"+day;
+}
+
+function updateMinimumDate(){
+ dateInput.min=localDateString(new Date());
+}
+
+updateMinimumDate();
+
+form.addEventListener("submit",function(event){
+
+ event.preventDefault();
+
+ updateMinimumDate();
+
+ if(!form.reportValidity())return;
+
+ const reference="SIS-APT-DEMO-"+Date.now()
+ .toString().slice(-8);
+
+ document.getElementById("reference")
+ .textContent=reference;
+
+ document.getElementById("resultDepartment")
+ .textContent=document.getElementById("department").value;
+
+ document.getElementById("resultMode")
+ .textContent=document.getElementById("mode").value;
+
+ document.getElementById("resultDate")
+ .textContent=dateInput.value;
+
+ document.getElementById("resultTime")
+ .textContent=document.getElementById("time").value;
+
+ document.getElementById("resultAccessibility")
+ .textContent=document.getElementById("accessibility").value;
+
+ result.hidden=false;
+
+ result.focus();
+
+ result.scrollIntoView({
+ behavior:"smooth",
+ block:"start"
+ });
+
+});
+
+form.addEventListener("reset",function(){
+
+ result.hidden=true;
+
+ const fields=[
+ "reference",
+ "resultDepartment",
+ "resultMode",
+ "resultDate",
+ "resultTime",
+ "resultAccessibility"
+ ];
+
+ fields.forEach(function(id){
+ document.getElementById(id).textContent="";
+ });
+
+ updateMinimumDate();
+
+});
+
+form.addEventListener("input",function(){
+ result.hidden=true;
+});
+
+</script>
+
+</body>
+</html>

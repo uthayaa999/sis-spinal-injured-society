@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Medical & Rehabilitation | SIS</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.65;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{
+ width:140px;
+ max-width:100%;
+ height:auto;
+}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:20px;
+ background:#052b4d;
+ padding:14px;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+}
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ padding:32px 18px;
+ text-align:center;
+}
+.hero h2{margin:0}
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:24px 16px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+ gap:18px;
+}
+.card{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376316;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+}
+.card h3{margin:10px 0}
+.card p{color:#465b70;flex:1}
+.symbol{font-size:32px}
+button,.btn{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:12px 18px;
+ font:inherit;
+ cursor:pointer;
+ min-height:44px;
+ text-decoration:none;
+ display:inline-block;
+}
+button:focus-visible,a:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:18px;
+ border-radius:8px;
+ margin:24px 0;
+}
+.emergency{
+ background:#fff4e5;
+ border-left:4px solid #b66a00;
+ padding:18px;
+ border-radius:8px;
+ margin:24px 0;
+}
+.panel{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ margin-top:24px;
+}
+dialog{
+ width:92%;
+ max-width:550px;
+ max-height:85vh;
+ overflow:auto;
+ border:0;
+ border-radius:16px;
+ padding:24px;
+ color:#073763;
+}
+dialog::backdrop{background:#0009}
+footer{
+ background:#073763;
+ color:white;
+ padding:24px 16px;
+ text-align:center;
+}
+@media(max-width:600px){
+ .grid{grid-template-columns:1fr}
+ .card{padding:18px}
+ .card button{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="member-registration.html">Registration</a>
+<a href="request-assistance.html">Assistance</a>
+</nav>
+
+<section class="hero">
+<h2>Medical &amp; Rehabilitation</h2>
+<h3>மருத்துவம் மற்றும் மறுவாழ்வு</h3>
+<p>Supporting health, independence and quality of life.</p>
+<p>நல்வாழ்வு, மறுவாழ்வு மற்றும் சுயசார்பு வாழ்க்கைக்கான ஆதரவு.</p>
+</section>
+
+<main class="container">
+
+<div class="notice">
+<strong>Senior Review Demo V1.0</strong>
+<p>This module demonstrates proposed healthcare
+and rehabilitation support services.
+It does not provide medical diagnosis,
+treatment or professional medical advice.</p>
+<p>இது மாதிரி சேவைத் தளம் மட்டுமே.
+மருத்துவ ஆலோசனைக்கு தகுதியான மருத்துவரை அணுகவும்.</p>
+</div>
+
+<h2>Healthcare &amp; Rehabilitation Services</h2>
+
+<div class="grid">
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🏥</div>
+<h3>Physiotherapy &amp; Rehabilitation</h3>
+<p>உடற்பயிற்சி சிகிச்சை மற்றும் மறுவாழ்வு</p>
+<button onclick="showDetails('physio')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🤝</div>
+<h3>Occupational Therapy</h3>
+<p>அன்றாட வாழ்க்கைத் திறன் மேம்பாடு</p>
+<button onclick="showDetails('occupational')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🛏️</div>
+<h3>Pressure Injury Prevention</h3>
+<p>அழுத்தப் புண் தடுப்பு வழிகாட்டுதல்</p>
+<button onclick="showDetails('pressure')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🩺</div>
+<h3>Bladder &amp; Bowel Support</h3>
+<p>சிறுநீர்ப்பை மற்றும் குடல் பராமரிப்பு</p>
+<button onclick="showDetails('bladder')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">💚</div>
+<h3>Mental Health Support</h3>
+<p>மனநலம் மற்றும் உளவியல் ஆதரவு</p>
+<button onclick="showDetails('mental')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">♿</div>
+<h3>Medical &amp; Assistive Equipment</h3>
+<p>மருத்துவ மற்றும் உதவி உபகரணங்கள்</p>
+<button onclick="showDetails('equipment')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">📍</div>
+<h3>Rehabilitation Centre Directory</h3>
+<p>மறுவாழ்வு மையங்கள் பற்றிய தகவல்கள்</p>
+<button onclick="showDetails('centres')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">👨‍⚕️</div>
+<h3>Specialist Consultation</h3>
+<p>சிறப்பு மருத்துவ ஆலோசனை</p>
+<button onclick="showDetails('specialist')">
+View Details
+</button>
+</article>
+
+</div>
+
+<section class="panel">
+<h2>Need Medical Assistance?</h2>
+<p>மருத்துவ உதவி தேவையா?</p>
+<p>Explore our demonstration assistance
+request facility.</p>
+<a class="btn" href="request-assistance.html">
+Request Assistance
+</a>
+</section>
+
+<section class="emergency">
+<h3>Emergency Information</h3>
+<p>In a medical emergency, contact emergency
+services or seek immediate medical care.
+Do not wait for a response from this website.</p>
+<p>அவசர மருத்துவ உதவிக்கு:</p>
+<p>
+<strong>National Emergency:</strong>
+<a href="tel:112">112</a>
+</p>
+<p>
+<strong>Tamil Nadu Ambulance:</strong>
+<a href="tel:108">108</a>
+</p>
+<p>SIS is not an emergency response service.</p>
+</section>
+
+<div class="notice">
+<strong>Future Development</strong>
+<p>Verified rehabilitation centre listings,
+healthcare professional profiles and appointment
+requests will be considered after senior approval
+and appropriate professional verification.</p>
+<p>No medical records or personal information
+are collected through this page.</p>
+</div>
+
+</main>
+
+<dialog id="serviceDialog"
+ aria-labelledby="dialogTitle">
+
+<h2 id="dialogTitle"></h2>
+<p id="dialogTamil"></p>
+<p id="dialogDescription"></p>
+
+<div class="notice">
+<strong>Proposed Service – Demo Only</strong>
+<p>Individual medical decisions must be made
+with a qualified healthcare professional.</p>
+</div>
+
+<form method="dialog">
+<button>Close | மூடு</button>
+</form>
+
+</dialog>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Support • Care • Rehabilitation • Empowerment</p>
+<p>© 2026 SIS | Medical &amp; Rehabilitation Demo V1.0</p>
+</footer>
+
+<script>
+
+const services={
+
+ physio:{
+ title:"Physiotherapy & Rehabilitation",
+ tamil:"உடற்பயிற்சி சிகிச்சை மற்றும் மறுவாழ்வு",
+ description:"Proposed access to qualified physiotherapists, individual rehabilitation assessments and professionally supervised mobility programmes."
+ },
+
+ occupational:{
+ title:"Occupational Therapy",
+ tamil:"அன்றாட வாழ்க்கைத் திறன் மேம்பாடு",
+ description:"Proposed occupational therapy referrals, daily living skills support, adaptive equipment guidance and independent living resources."
+ },
+
+ pressure:{
+ title:"Pressure Injury Prevention",
+ tamil:"அழுத்தப் புண் தடுப்பு",
+ description:"Proposed access to clinician-reviewed skin care education, pressure relief equipment information and professional wound care referrals."
+ },
+
+ bladder:{
+ title:"Bladder & Bowel Support",
+ tamil:"சிறுநீர்ப்பை மற்றும் குடல் பராமரிப்பு",
+ description:"Proposed specialist referrals and professionally reviewed educational resources for individual bladder and bowel management needs."
+ },
+
+ mental:{
+ title:"Mental Health Support",
+ tamil:"மனநலம் மற்றும் உளவியல் ஆதரவு",
+ description:"Proposed access to qualified mental health professionals, counselling referrals, peer support and emotional wellbeing resources."
+ },
+
+ equipment:{
+ title:"Medical & Assistive Equipment",
+ tamil:"மருத்துவ மற்றும் உதவி உபகரணங்கள்",
+ description:"Proposed information and assistance requests for wheelchairs, pressure relief cushions, air mattresses and other professionally recommended equipment."
+ },
+
+ centres:{
+ title:"Rehabilitation Centre Directory",
+ tamil:"மறுவாழ்வு மையங்கள்",
+ description:"A future directory of verified rehabilitation centres, accessibility facilities and available professional services. No centre listings have been verified for this demo."
+ },
+
+ specialist:{
+ title:"Specialist Consultation",
+ tamil:"சிறப்பு மருத்துவ ஆலோசனை",
+ description:"Proposed referrals and appointment request facilities for qualified spinal cord injury specialists and rehabilitation professionals. Actual bookings are not currently available."
+ }
+
+};
+
+function showDetails(key){
+
+ const service=services[key];
+
+ if(!service)return;
+
+ document.getElementById("dialogTitle")
+ .textContent=service.title;
+
+ document.getElementById("dialogTamil")
+ .textContent=service.tamil;
+
+ document.getElementById("dialogDescription")
+ .textContent=service.description;
+
+ document.getElementById("serviceDialog")
+ .showModal();
+
+}
+
+</script>
+
+</body>
+</html>

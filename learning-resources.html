@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Learning Resources | SIS</title>
+
+<style>
+*{box-sizing:border-box}
+:root{font-size:16px}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.65;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{
+ width:140px;
+ max-width:100%;
+ height:auto;
+}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:20px;
+ background:#052b4d;
+ padding:14px;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+}
+.tools{
+ display:flex;
+ justify-content:flex-end;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:8px;
+ padding:12px 16px;
+ background:#e4f3f4;
+}
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ text-align:center;
+ padding:32px 16px;
+}
+.hero h2{margin:0}
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:24px 16px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+ gap:18px;
+}
+.card{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376316;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+}
+.card h3{margin:10px 0}
+.card p{color:#465b70;flex:1}
+.symbol{font-size:2rem}
+button,.btn{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:12px 18px;
+ font:inherit;
+ cursor:pointer;
+ min-height:44px;
+ text-decoration:none;
+ display:inline-block;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:18px;
+ border-radius:8px;
+ margin:24px 0;
+}
+.panel{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ margin-top:24px;
+}
+.search-box{
+ background:white;
+ padding:20px;
+ border-radius:12px;
+ margin:24px 0;
+}
+label{
+ display:block;
+ font-weight:bold;
+ margin-bottom:8px;
+}
+input{
+ width:100%;
+ padding:14px;
+ font:inherit;
+ border:1px solid #a8bacb;
+ border-radius:8px;
+ color:#073763;
+ min-height:48px;
+}
+dialog{
+ width:92%;
+ max-width:600px;
+ max-height:85vh;
+ overflow:auto;
+ border:0;
+ border-radius:16px;
+ padding:24px;
+ color:#073763;
+}
+dialog::backdrop{background:#0009}
+li{margin-bottom:10px}
+[hidden]{display:none!important}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+@media(max-width:600px){
+ .grid{grid-template-columns:1fr}
+ .card{padding:18px}
+ .card button{width:100%}
+ .tools{justify-content:center}
+ nav{gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="member-registration.html">Registration</a>
+<a href="request-assistance.html">Assistance</a>
+</nav>
+
+<div class="tools">
+<span>Text Size:</span>
+<button onclick="resizeText(-1)"
+ aria-label="Decrease text size">A−</button>
+<button onclick="resetText()"
+ aria-label="Reset text size">A</button>
+<button onclick="resizeText(1)"
+ aria-label="Increase text size">A+</button>
+</div>
+
+<section class="hero">
+<h2>Learning Resources</h2>
+<h3>கல்வி மற்றும் திறன் மேம்பாட்டு வளங்கள்</h3>
+<p>Learn • Develop • Empower • Achieve</p>
+<p>கல்வி, திறன் மேம்பாடு மற்றும் சுயசார்பு
+வாழ்க்கைக்கான வழிகாட்டுதல்.</p>
+</section>
+
+<main class="container">
+
+<div class="notice">
+<strong>Senior Review Demo V1.0</strong>
+<p>This module presents proposed educational,
+employment and independent living resources.</p>
+<p>Actual course enrolment, job applications,
+scholarship applications and government scheme
+submissions are not available through this demo.</p>
+</div>
+
+<section class="search-box">
+
+<label for="resourceSearch">
+Search Resources | வளங்களைத் தேடுங்கள்
+</label>
+
+<input type="search"
+ id="resourceSearch"
+ placeholder="Search education, jobs, skills..."
+ autocomplete="off">
+
+<p id="searchStatus" role="status"
+ aria-live="polite">
+8 resources available
+</p>
+
+</section>
+
+<h2>Explore Learning Opportunities</h2>
+
+<div class="grid" id="resourceGrid">
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🎓</div>
+<h3>Education &amp; Scholarships</h3>
+<p>கல்வி மற்றும் கல்வி உதவித்தொகை</p>
+<button onclick="showDetails('education')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🛠️</div>
+<h3>Skill Development</h3>
+<p>தொழில்திறன் மற்றும் திறன் மேம்பாடு</p>
+<button onclick="showDetails('skills')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">💻</div>
+<h3>Work From Home Opportunities</h3>
+<p>வீட்டிலிருந்து வேலைவாய்ப்புகள்</p>
+<button onclick="showDetails('employment')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🏛️</div>
+<h3>Government Welfare Schemes</h3>
+<p>அரசு நலத்திட்டங்கள் மற்றும் உதவிகள்</p>
+<button onclick="showDetails('government')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">⚖️</div>
+<h3>Disability Rights &amp; Legal Awareness</h3>
+<p>மாற்றுத்திறனாளிகளின் சட்ட உரிமைகள்</p>
+<button onclick="showDetails('rights')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🤖</div>
+<h3>Digital Skills &amp; Technology</h3>
+<p>டிஜிட்டல் திறன்கள் மற்றும் தொழில்நுட்பம்</p>
+<button onclick="showDetails('digital')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🚀</div>
+<h3>Self-Employment &amp; Entrepreneurship</h3>
+<p>சுயதொழில் மற்றும் தொழில்முனைவு</p>
+<button onclick="showDetails('business')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">♿</div>
+<h3>Independent Living Resources</h3>
+<p>சுயசார்பு வாழ்க்கைக்கான வழிகாட்டுதல்</p>
+<button onclick="showDetails('living')">
+View Details
+</button>
+</article>
+
+</div>
+
+<section class="panel">
+
+<h2>Official Information Portals</h2>
+<p>அதிகாரப்பூர்வ தகவல் இணையதளங்கள்</p>
+
+<p>Visit the relevant official portals to check
+current eligibility, application procedures
+and available opportunities.</p>
+
+<ul>
+<li>
+<a href="https://scd.tn.gov.in/"
+ target="_blank" rel="noopener noreferrer">
+Tamil Nadu Commissionerate for Welfare
+of the Differently Abled
+</a>
+</li>
+
+<li>
+<a href="https://www.swavlambancard.gov.in/"
+ target="_blank" rel="noopener noreferrer">
+Unique Disability ID (UDID)
+</a>
+</li>
+
+<li>
+<a href="https://scholarships.gov.in/"
+ target="_blank" rel="noopener noreferrer">
+National Scholarship Portal
+</a>
+</li>
+
+<li>
+<a href="https://www.ncs.gov.in/"
+ target="_blank" rel="noopener noreferrer">
+National Career Service
+</a>
+</li>
+
+<li>
+<a href="https://swayam.gov.in/"
+ target="_blank" rel="noopener noreferrer">
+SWAYAM – Online Learning
+</a>
+</li>
+
+<li>
+<a href="https://www.myscheme.gov.in/"
+ target="_blank" rel="noopener noreferrer">
+myScheme – Government Scheme Information
+</a>
+</li>
+</ul>
+
+<p><small>
+External websites are independently operated.
+Eligibility, availability and application
+requirements must be checked directly
+with the relevant authorities.
+</small></p>
+
+</section>
+
+<section class="panel">
+<h2>Need Education or Employment Support?</h2>
+<p>கல்வி அல்லது வேலைவாய்ப்பு உதவி தேவையா?</p>
+<p>Explore the SIS demonstration assistance
+request facility.</p>
+
+<a class="btn" href="request-assistance.html">
+Request Assistance
+</a>
+
+</section>
+
+<div class="notice">
+<strong>Future Development</strong>
+<p>Verified training programmes, accessible job
+listings, scholarship notifications, mentoring
+and employment support may be introduced
+after senior approval and verification.</p>
+<p>No employment, scholarship or financial
+assistance is guaranteed by this demo.</p>
+</div>
+
+</main>
+
+<dialog id="resourceDialog"
+ aria-labelledby="dialogTitle">
+
+<h2 id="dialogTitle"></h2>
+<p id="dialogTamil"></p>
+<p id="dialogDescription"></p>
+
+<h3>Proposed Resources</h3>
+
+<ul id="dialogResources"></ul>
+
+<div class="notice">
+<strong>Demo Preview Only</strong>
+<p>Information and opportunities must be
+verified before making applications
+or financial commitments.</p>
+</div>
+
+<form method="dialog">
+<button>Close | மூடு</button>
+</form>
+
+</dialog>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Support • Care • Rehabilitation • Empowerment</p>
+<p>© 2026 SIS | Learning Resources Demo V1.0</p>
+</footer>
+
+<script>
+
+let textSize=16;
+
+function resizeText(change){
+ textSize=Math.min(24,Math.max(16,textSize+change*2));
+ document.documentElement.style.fontSize=textSize+"px";
+}
+
+function resetText(){
+ textSize=16;
+ document.documentElement.style.fontSize="16px";
+}
+
+const resources={
+
+ education:{
+ title:"Education & Scholarships",
+ tamil:"கல்வி மற்றும் கல்வி உதவித்தொகை",
+ description:"Proposed educational guidance for individuals with spinal cord injuries.",
+ items:[
+ "School and higher education guidance",
+ "Distance education opportunities",
+ "Disability scholarship information",
+ "Accessible learning resources",
+ "Educational application guidance"
+ ]
+ },
+
+ skills:{
+ title:"Skill Development",
+ tamil:"திறன் மேம்பாடு",
+ description:"Proposed skill development resources to support career growth and independence.",
+ items:[
+ "Communication skills",
+ "Computer fundamentals",
+ "Vocational training",
+ "Professional development",
+ "Accessible online training"
+ ]
+ },
+
+ employment:{
+ title:"Work From Home Opportunities",
+ tamil:"வீட்டிலிருந்து வேலைவாய்ப்புகள்",
+ description:"Proposed employment guidance for accessible and remote career opportunities.",
+ items:[
+ "Remote customer support roles",
+ "Data entry and administrative skills",
+ "Digital marketing opportunities",
+ "Resume preparation",
+ "Interview preparation",
+ "Verified employer information"
+ ]
+ },
+
+ government:{
+ title:"Government Welfare Schemes",
+ tamil:"அரசு நலத்திட்டங்கள்",
+ description:"Proposed guidance on relevant state and central government welfare programmes.",
+ items:[
+ "Disability certificate and UDID guidance",
+ "Disability pension information",
+ "Assistive device scheme information",
+ "Education and employment schemes",
+ "Government application guidance"
+ ]
+ },
+
+ rights:{
+ title:"Disability Rights & Legal Awareness",
+ tamil:"மாற்றுத்திறனாளிகளின் சட்ட உரிமைகள்",
+ description:"Proposed awareness resources concerning disability rights and equal opportunities.",
+ items:[
+ "Rights of Persons with Disabilities Act, 2016",
+ "Accessibility rights awareness",
+ "Equal opportunity awareness",
+ "Workplace accommodation guidance",
+ "Legal aid referral information"
+ ]
+ },
+
+ digital:{
+ title:"Digital Skills & Technology",
+ tamil:"டிஜிட்டல் திறன்கள் மற்றும் தொழில்நுட்பம்",
+ description:"Proposed digital learning opportunities to improve independence and career readiness.",
+ items:[
+ "Computer and smartphone skills",
+ "Artificial intelligence fundamentals",
+ "Digital design and content creation",
+ "Online productivity tools",
+ "Assistive technology awareness",
+ "Online safety and fraud prevention"
+ ]
+ },
+
+ business:{
+ title:"Self-Employment & Entrepreneurship",
+ tamil:"சுயதொழில் மற்றும் தொழில்முனைவு",
+ description:"Proposed resources for members interested in starting independent businesses.",
+ items:[
+ "Small business planning",
+ "Home-based business opportunities",
+ "Financial literacy",
+ "Digital marketing",
+ "Entrepreneurship training",
+ "Government funding scheme awareness"
+ ]
+ },
+
+ living:{
+ title:"Independent Living Resources",
+ tamil:"சுயசார்பு வாழ்க்கை",
+ description:"Proposed practical resources to support dignity, accessibility and independent living.",
+ items:[
+ "Accessible housing awareness",
+ "Assistive technology resources",
+ "Accessible transportation guidance",
+ "Personal finance awareness",
+ "Peer mentoring opportunities",
+ "Community participation"
+ ]
+ }
+
+};
+
+function showDetails(key){
+
+ const resource=resources[key];
+
+ if(!resource)return;
+
+ document.getElementById("dialogTitle")
+ .textContent=resource.title;
+
+ document.getElementById("dialogTamil")
+ .textContent=resource.tamil;
+
+ document.getElementById("dialogDescription")
+ .textContent=resource.description;
+
+ const list=document.getElementById("dialogResources");
+
+ list.replaceChildren();
+
+ resource.items.forEach(function(item){
+ const li=document.createElement("li");
+ li.textContent=item;
+ list.appendChild(li);
+ });
+
+ document.getElementById("resourceDialog")
+ .showModal();
+
+}
+
+const search=document.getElementById("resourceSearch");
+
+search.addEventListener("input",function(){
+
+ const query=search.value.trim().toLowerCase();
+
+ const cards=document.querySelectorAll("#resourceGrid .card");
+
+ const keys=Object.keys(resources);
+
+ let visible=0;
+
+ cards.forEach(function(card,index){
+
+ const resource=resources[keys[index]];
+
+ const content=[
+ card.textContent,
+ resource.description,
+ ...resource.items
+ ].join(" ").toLowerCase();
+
+ const match=content.includes(query);
+
+ card.hidden=!match;
+
+ if(match)visible++;
+
+ });
+
+ document.getElementById("searchStatus")
+ .textContent=visible===0
+ ? "No matching resources | பொருந்தும் வளங்கள் இல்லை"
+ : visible+" resources available";
+
+});
+
+</script>
+
+</body>
+</html>

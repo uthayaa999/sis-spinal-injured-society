@@ -1,0 +1,1052 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Understanding Spinal Cord Injury | SIS</title>
+<link rel="stylesheet" href="sis-styles.css">
+
+<style>
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+ margin:0;
+ font-family:Arial,"Noto Sans Tamil",sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.85;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{width:140px;height:auto;max-width:100%}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:16px;
+ padding:12px;
+ background:#052b4d;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+ padding:10px;
+}
+.tools{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:10px;
+ padding:14px;
+ background:white;
+}
+button,.btn{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:12px 18px;
+ font:inherit;
+ min-height:44px;
+ cursor:pointer;
+ text-decoration:none;
+ display:inline-block;
+}
+button[aria-pressed="true"]{background:#007d80}
+button:focus-visible,a:focus-visible,summary:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:4px;
+}
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ padding:40px 20px;
+ text-align:center;
+}
+.hero h2{font-size:2em;margin:0 0 12px}
+.article-container{
+ max-width:960px;
+ margin:auto;
+ padding:24px 16px;
+}
+.article-section{
+ background:white;
+ padding:28px;
+ margin:24px 0;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376312;
+ scroll-margin-top:20px;
+ overflow-wrap:anywhere;
+}
+.article-section h2{
+ margin-top:0;
+ border-bottom:2px solid #e2f3f2;
+ padding-bottom:12px;
+}
+.article-section p{margin:16px 0}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:18px;
+ border-radius:8px;
+ margin:24px 0;
+}
+.warning{
+ background:#fff4e5;
+ border-left:4px solid #b66a00;
+ padding:20px;
+ border-radius:10px;
+ margin:20px 0;
+}
+.review-status{
+ background:#fff0cf;
+ color:#704600;
+ display:inline-block;
+ border-radius:8px;
+ padding:8px 14px;
+ font-weight:bold;
+}
+.toc a{
+ display:block;
+ padding:10px 0;
+ color:#073763;
+ text-decoration:none;
+ border-bottom:1px solid #dce7ef;
+}
+.toc a:hover{text-decoration:underline}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+ gap:16px;
+}
+.info-card{
+ border:1px solid #dce7ef;
+ background:#f8fbff;
+ border-radius:12px;
+ padding:20px;
+}
+.info-card h3{margin-top:0}
+.diagram{
+ background:#f4f9ff;
+ border:1px solid #dce7ef;
+ border-radius:16px;
+ padding:20px;
+ text-align:center;
+}
+.diagram svg{
+ width:100%;
+ max-width:360px;
+ height:auto;
+}
+.legend{
+ display:flex;
+ align-items:flex-start;
+ gap:12px;
+ text-align:left;
+ margin:12px 0;
+}
+.swatch{
+ width:18px;
+ height:18px;
+ border-radius:4px;
+ flex-shrink:0;
+ margin-top:7px;
+}
+.flow-step{
+ padding:16px;
+ background:#e2f3f2;
+ border-radius:12px;
+ text-align:center;
+ font-weight:bold;
+}
+.flow-arrow{
+ text-align:center;
+ font-size:1.5em;
+ padding:4px;
+}
+details{
+ border:1px solid #cbd9e5;
+ border-radius:10px;
+ padding:16px;
+ margin:12px 0;
+}
+summary{
+ font-weight:bold;
+ cursor:pointer;
+ min-height:44px;
+}
+li{margin-bottom:10px}
+.sources a{
+ color:#073763;
+ overflow-wrap:anywhere;
+}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:28px 16px;
+}
+[hidden]{display:none!important}
+@media(max-width:600px){
+ .article-section{padding:18px}
+ .grid{grid-template-columns:1fr}
+ .hero h2{font-size:1.6em}
+ nav{gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html" data-key="home"></a>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<a href="medical-rehabilitation.html" data-key="medical"></a>
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+<strong data-key="language"></strong>
+
+<button id="taButton" onclick="setLanguage('ta')"
+ aria-pressed="true">தமிழ்</button>
+
+<button id="enButton" onclick="setLanguage('en')"
+ aria-pressed="false">English</button>
+
+<strong data-key="textSize"></strong>
+
+<button onclick="resizeText(-2)"
+ aria-label="Decrease text size">A−</button>
+
+<button onclick="resetText()"
+ aria-label="Reset text size">A</button>
+
+<button onclick="resizeText(2)"
+ aria-label="Increase text size">A+</button>
+</section>
+
+<section class="hero">
+<h2 data-key="title"></h2>
+<p data-key="subtitle"></p>
+<p data-key="audience"></p>
+</section>
+
+<main class="article-container">
+
+<p>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<span aria-hidden="true"> / </span>
+<span data-key="shortTitle"></span>
+</p>
+
+<div class="notice">
+<span class="review-status" data-key="review"></span>
+<p data-key="reviewNote"></p>
+<p data-key="updated"></p>
+</div>
+
+<section class="article-section toc">
+<h2 data-key="contents"></h2>
+<div id="contentsList"></div>
+</section>
+
+<div id="articleContent"></div>
+
+<section class="article-section">
+<h2 data-key="faqTitle"></h2>
+<div id="faqList"></div>
+</section>
+
+<section class="article-section sources">
+<h2 data-key="sourcesTitle"></h2>
+<p data-key="sourcesNote"></p>
+
+<p>[1] World Health Organization (WHO)</p>
+<a href="https://www.who.int/news-room/fact-sheets/detail/spinal-cord-injury"
+ target="_blank" rel="noopener noreferrer">
+Spinal Cord Injury – Fact Sheet
+</a>
+
+<p>[2] Model Systems Knowledge Translation Center (MSKTC)</p>
+<a href="https://msktc.org/sci/factsheets/understanding-spinal-cord-injury-part-1-body-and-after-injury"
+ target="_blank" rel="noopener noreferrer">
+Understanding SCI – The Body Before and After Injury
+</a>
+
+<p>[3] Model Systems Knowledge Translation Center (MSKTC)</p>
+<a href="https://msktc.org/sci/factsheets/understanding-spinal-cord-injury-part-2-recovery-and-rehabilitation"
+ target="_blank" rel="noopener noreferrer">
+Understanding SCI – Recovery and Rehabilitation
+</a>
+</section>
+
+<div class="warning">
+<h3 data-key="disclaimerTitle"></h3>
+<p data-key="disclaimer"></p>
+<p data-key="emergency"></p>
+<p>
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a>
+</p>
+</div>
+
+<a class="btn" href="knowledge-hub.html"
+ data-key="back"></a>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Understand • Support • Empower</p>
+<p>© 2026 SIS | Knowledge Hub</p>
+<p>Educational Draft V0.1</p>
+</footer>
+
+<script>
+
+let language="ta";
+let textSize=16;
+
+const ui={
+
+ home:["Home","முகப்பு"],
+ hub:["Knowledge Hub","அறிவு மையம்"],
+ medical:["Medical Services","மருத்துவ சேவைகள்"],
+ language:["Language","மொழி"],
+ textSize:["Text Size","எழுத்து அளவு"],
+
+ title:[
+ "Understanding Spinal Cord Injury",
+ "முதுகுத்தண்டுவடப் பாதிப்பைப் புரிந்துகொள்வோம்"
+ ],
+
+ shortTitle:[
+ "Understanding SCI",
+ "முதுகுத்தண்டுவடப் பாதிப்பு"
+ ],
+
+ subtitle:[
+ "Understand your body. Discover possibilities. Build independence.",
+ "உடலைப் புரிந்துகொள்வோம். வாய்ப்புகளை அறிவோம். சுயசார்புடன் முன்னேறுவோம்."
+ ],
+
+ audience:[
+ "An educational guide for individuals, families and caregivers.",
+ "முதுகுத்தண்டுவடப் பாதிப்பு உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான கல்வி வழிகாட்டி."
+ ],
+
+ review:[
+ "Medical Review Pending",
+ "மருத்துவ நிபுணரின் மதிப்பாய்வு நிலுவையில் உள்ளது"
+ ],
+
+ reviewNote:[
+ "Draft educational material informed by published SCI resources. This SIS article has not yet received independent clinical approval.",
+ "வெளியிடப்பட்ட மருத்துவ ஆதாரங்களின் அடிப்படையில் தயாரிக்கப்பட்ட கல்வி வரைவு. இந்த SIS கட்டுரை இன்னும் மருத்துவ நிபுணரால் தனித்தனியாக மதிப்பாய்வு செய்யப்படவில்லை."
+ ],
+
+ updated:[
+ "Draft prepared: 24 November 2026",
+ "வரைவு தயாரிக்கப்பட்ட நாள்: 24 நவம்பர் 2026"
+ ],
+
+ contents:["In This Guide","இந்த வழிகாட்டியில்"],
+ faqTitle:["Frequently Asked Questions","அடிக்கடி கேட்கப்படும் கேள்விகள்"],
+ sourcesTitle:["Medical References","மருத்துவ ஆதாரங்கள்"],
+
+ sourcesNote:[
+ "Consult these original references for further information.",
+ "கூடுதல் தகவல்களுக்கு இந்த மருத்துவ ஆதாரங்களைப் பார்க்கலாம்."
+ ],
+
+ disclaimerTitle:["Important Medical Disclaimer","முக்கிய மருத்துவ அறிவிப்பு"],
+
+ disclaimer:[
+ "This information is for general education. Do not use this guide to diagnose an injury or change treatment without consulting a qualified healthcare professional.",
+ "இத்தகவல்கள் பொதுவான விழிப்புணர்வுக்காக மட்டுமே. தகுதியான மருத்துவரின் ஆலோசனையின்றி நோயறிதல் செய்யவோ சிகிச்சையை மாற்றவோ வேண்டாம்."
+ ],
+
+ emergency:[
+ "For medical emergencies, seek immediate professional help.",
+ "மருத்துவ அவசரநிலையில் உடனடியாக மருத்துவ உதவியை நாடுங்கள்."
+ ],
+
+ back:[
+ "Back to Knowledge Hub",
+ "அறிவு மையத்திற்குத் திரும்பவும்"
+ ]
+
+};
+
+function tr(en,ta){
+ return language==="ta"?ta:en;
+}
+
+function escapeText(value){
+ const div=document.createElement("div");
+ div.textContent=value;
+ return div.innerHTML;
+}
+
+function anatomyDiagram(){
+
+ return `
+ <div class="diagram">
+
+ <h3>${tr(
+ "Spinal Regions",
+ "முதுகுத்தண்டுப் பகுதிகள்"
+ )}</h3>
+
+ <svg viewBox="0 0 300 400"
+ role="img"
+ aria-labelledby="anatomyTitle anatomyDesc">
+
+ <title id="anatomyTitle">${tr(
+ "Simplified spinal regions",
+ "முதுகுத்தண்டுப் பகுதிகளின் எளிய விளக்கப்படம்"
+ )}</title>
+
+ <desc id="anatomyDesc">${tr(
+ "Four colored regions arranged from the neck to the pelvic region. This diagram is schematic and not a diagnostic image.",
+ "கழுத்திலிருந்து இடுப்புப் பகுதி வரை நான்கு பகுதிகளைக் காட்டும் எளிய வரைபடம். இது நோயறிதலுக்கான படம் அல்ல."
+ )}</desc>
+
+ <rect x="1" y="1" width="298" height="398"
+ rx="18" fill="#ffffff"/>
+
+ <ellipse cx="90" cy="38" rx="25" ry="29"
+ fill="#dce7ef" stroke="#8297aa"/>
+
+ <path d="M90 68 Q72 125 90 190
+ Q112 245 90 310 L90 359"
+ fill="none" stroke="#cbd9e5"
+ stroke-width="30" stroke-linecap="round"/>
+
+ <path d="M90 70 Q80 95 80 130"
+ stroke="#1565c0" stroke-width="19"
+ stroke-linecap="round" fill="none"/>
+
+ <path d="M80 137 Q76 170 91 205
+ Q105 235 104 248"
+ stroke="#007d80" stroke-width="19"
+ stroke-linecap="round" fill="none"/>
+
+ <path d="M104 255 Q103 280 90 310"
+ stroke="#b66a00" stroke-width="19"
+ stroke-linecap="round" fill="none"/>
+
+ <path d="M90 318 L90 350"
+ stroke="#8054a5" stroke-width="19"
+ stroke-linecap="round" fill="none"/>
+
+ <g stroke="#8297aa" stroke-width="1.5">
+ <path d="M100 100 H145"/>
+ <path d="M108 193 H145"/>
+ <path d="M113 280 H145"/>
+ <path d="M102 335 H145"/>
+ </g>
+
+ <g fill="#073763" font-family="Arial"
+ font-size="15" font-weight="bold">
+
+ <text x="151" y="95">C1–C8</text>
+ <text x="151" y="114">Cervical</text>
+
+ <text x="151" y="188">T1–T12</text>
+ <text x="151" y="207">Thoracic</text>
+
+ <text x="151" y="275">L1–L5</text>
+ <text x="151" y="294">Lumbar</text>
+
+ <text x="151" y="330">S1–S5</text>
+ <text x="151" y="349">Sacral</text>
+
+ </g>
+
+ </svg>
+
+ <div class="legend">
+ <span class="swatch" style="background:#1565c0"></span>
+ <div>${tr(
+ "Cervical – Neck region",
+ "Cervical – கழுத்துப் பகுதி"
+ )}</div>
+ </div>
+
+ <div class="legend">
+ <span class="swatch" style="background:#007d80"></span>
+ <div>${tr(
+ "Thoracic – Chest and upper back region",
+ "Thoracic – மார்பு மற்றும் மேல் முதுகுப் பகுதி"
+ )}</div>
+ </div>
+
+ <div class="legend">
+ <span class="swatch" style="background:#b66a00"></span>
+ <div>${tr(
+ "Lumbar – Lower back region",
+ "Lumbar – கீழ் முதுகுப் பகுதி"
+ )}</div>
+ </div>
+
+ <div class="legend">
+ <span class="swatch" style="background:#8054a5"></span>
+ <div>${tr(
+ "Sacral – Pelvic region",
+ "Sacral – இடுப்புப் பகுதி"
+ )}</div>
+ </div>
+
+ <p><small>${tr(
+ "Original SIS schematic of spinal regions and associated neurological levels. Labels refer to nerve levels, not the number or exact position of vertebrae. The adult spinal cord usually ends near vertebral levels L1–L2; nerve roots continue below. Not to scale.",
+ "SIS உருவாக்கிய முதுகுத்தண்டுப் பகுதிகள் மற்றும் தொடர்புடைய நரம்பியல் நிலைகளின் எளிய வரைபடம். குறியீடுகள் நரம்பியல் நிலைகளைக் குறிக்கின்றன; எலும்புகளின் எண்ணிக்கையையோ துல்லியமான இடத்தையோ அல்ல. பெரியவர்களின் முதுகுத்தண்டுவடம் பொதுவாக L1–L2 எலும்பு நிலைகளுக்கு அருகில் முடிவடைகிறது; நரம்பு வேர்கள் அதற்குக் கீழேயும் தொடர்கின்றன. அளவுப்படி வரையப்படவில்லை."
+ )}</small></p>
+
+ </div>`;
+}
+
+function signalDiagram(){
+
+ return `
+ <div class="diagram">
+ <h3>${tr(
+ "How body signals travel",
+ "உடலின் தகவல் பரிமாற்றம்"
+ )}</h3>
+
+ <div class="flow-step">🧠 ${tr("Brain","மூளை")}</div>
+
+ <div class="flow-arrow" aria-hidden="true">↕</div>
+
+ <div class="flow-step">${tr(
+ "Spinal cord",
+ "முதுகுத்தண்டுவடம்"
+ )}</div>
+
+ <div class="flow-arrow" aria-hidden="true">↕</div>
+
+ <div class="flow-step">${tr(
+ "Peripheral nerves",
+ "உடலின் புற நரம்புகள்"
+ )}</div>
+
+ <div class="flow-arrow" aria-hidden="true">↕</div>
+
+ <div class="flow-step">${tr(
+ "Muscles, skin and organs",
+ "தசைகள், தோல் மற்றும் உடல் உறுப்புகள்"
+ )}</div>
+
+ <p>${tr(
+ "An SCI can interrupt these communication pathways.",
+ "முதுகுத்தண்டுவடப் பாதிப்பு இந்தத் தகவல் பரிமாற்றப் பாதைகளில் தடையை ஏற்படுத்தலாம்."
+ )}</p>
+ </div>`;
+}
+
+const sections=[
+
+{
+ id:"what-is-sci",
+
+ title:[
+ "01. What is Spinal Cord Injury?",
+ "01. முதுகுத்தண்டுவடப் பாதிப்பு என்றால் என்ன?"
+ ],
+
+ content:()=>`
+
+ <p>${tr(
+ "Spinal cord injury (SCI) is damage to the nerve tissue inside the spine. Depending on the injury, messages between the brain and the body may be interrupted.",
+ "முதுகெலும்புத் தொடருக்குள் பாதுகாக்கப்படும் நரம்புத் திசு பாதிக்கப்படுவதே முதுகுத்தண்டுவடப் பாதிப்பு (SCI). பாதிப்பைப் பொறுத்து மூளைக்கும் உடலுக்கும் இடையிலான தகவல் பரிமாற்றம் தடைப்படலாம்."
+ )}</p>
+
+ <p>${tr(
+ "SCI can affect movement, sensation and internal body functions. Its effects differ from one person to another.",
+ "SCI உடல் இயக்கம், உணர்வு மற்றும் உடலின் உள் செயல்பாடுகளைப் பாதிக்கலாம். இதன் விளைவுகள் ஒவ்வொருவருக்கும் மாறுபடும்."
+ )}</p>
+
+ ${signalDiagram()}
+
+ <p><small>[1], [2]</small></p>`
+},
+
+{
+ id:"anatomy",
+
+ title:[
+ "02. Understanding Spinal Anatomy",
+ "02. முதுகுத்தண்டின் அமைப்பு"
+ ],
+
+ content:()=>`
+
+ <p>${tr(
+ "The spine is a column of bones that protects the spinal cord. The spinal cord is nervous tissue, not a bone. Nerves connect it to different parts of the body.",
+ "முதுகெலும்புத் தொடர் என்பது முதுகுத்தண்டுவடத்தைப் பாதுகாக்கும் எலும்புகளின் அமைப்பு. முதுகுத்தண்டுவடம் என்பது நரம்புத் திசு; அது எலும்பு அல்ல. நரம்புகள் இதனை உடலின் பல பகுதிகளுடன் இணைக்கின்றன."
+ )}</p>
+
+ ${anatomyDiagram()}
+
+ <p><small>[2]</small></p>`
+},
+
+{
+ id:"causes",
+
+ title:[
+ "03. Causes of SCI",
+ "03. முதுகுத்தண்டுவடப் பாதிப்பின் காரணங்கள்"
+ ],
+
+ content:()=>`
+
+ <div class="grid">
+
+ <div class="info-card">
+ <h3>${tr(
+ "Traumatic SCI",
+ "விபத்தால் ஏற்படும் பாதிப்பு"
+ )}</h3>
+
+ <p>${tr(
+ "Road accidents, falls and other physical trauma can damage the spinal cord.",
+ "சாலை விபத்துகள், உயரத்திலிருந்து விழுதல் மற்றும் பிற உடல் காயங்களால் முதுகுத்தண்டுவடம் பாதிக்கப்படலாம்."
+ )}</p>
+ </div>
+
+ <div class="info-card">
+ <h3>${tr(
+ "Non-traumatic SCI",
+ "விபத்து அல்லாத காரணங்களால் ஏற்படும் பாதிப்பு"
+ )}</h3>
+
+ <p>${tr(
+ "Tumours, infections, blood supply disorders and degenerative conditions can also damage the spinal cord.",
+ "கட்டிகள், தொற்றுகள், இரத்த ஓட்டப் பிரச்சினைகள் மற்றும் திசுச் சிதைவு நோய்களாலும் முதுகுத்தண்டுவடம் பாதிக்கப்படலாம்."
+ )}</p>
+ </div>
+
+ </div>
+
+ <p><small>[1]</small></p>`
+},
+
+{
+ id:"injury-levels",
+
+ title:[
+ "04. Neurological Levels of Injury",
+ "04. நரம்பியல் பாதிப்பின் நிலைகள்"
+ ],
+
+ content:()=>`
+
+ <p>${tr(
+ "A neurological examination helps identify the injury level. A bone fracture level and a neurological injury level are not necessarily the same.",
+ "நரம்பியல் பரிசோதனை மூலம் பாதிப்பின் நிலை கண்டறியப்படுகிறது. எலும்பு முறிவு ஏற்பட்ட இடமும் நரம்பியல் பாதிப்பின் நிலையும் எப்போதும் ஒன்றாக இருப்பதில்லை."
+ )}</p>
+
+ <div class="grid">
+
+ <div class="info-card">
+ <h3>C1–C8 | Cervical</h3>
+ <p>${tr(
+ "May affect hands, arms, trunk and legs. Higher cervical injuries can also affect breathing.",
+ "கைகள், விரல்கள், உடலின் நடுப்பகுதி மற்றும் கால்களின் இயக்கம் பாதிக்கப்படலாம். மேல் கழுத்துப் பகுதியில் ஏற்படும் பாதிப்பு சுவாசத்தையும் பாதிக்கலாம்."
+ )}</p>
+ </div>
+
+ <div class="info-card">
+ <h3>T1–T12 | Thoracic</h3>
+ <p>${tr(
+ "May affect trunk control and lower limb function. Arm function is generally preserved.",
+ "உடலின் நடுப்பகுதியைக் கட்டுப்படுத்துதல் மற்றும் கால்களின் செயல்பாடு பாதிக்கப்படலாம். கைகளின் செயல்பாடு பொதுவாகப் பாதுகாக்கப்படும்."
+ )}</p>
+ </div>
+
+ <div class="info-card">
+ <h3>L1–L5 | Lumbar</h3>
+ <p>${tr(
+ "May affect leg movement and sensation, with varying levels of mobility.",
+ "கால்களின் இயக்கம் மற்றும் உணர்வு மாறுபட்ட அளவில் பாதிக்கப்படலாம்."
+ )}</p>
+ </div>
+
+ <div class="info-card">
+ <h3>S1–S5 | Sacral</h3>
+ <p>${tr(
+ "May affect lower limb sensation, bowel, bladder and sexual function.",
+ "கீழ் உடல் உணர்வு, குடல், சிறுநீர்ப்பை மற்றும் பாலியல் செயல்பாடுகள் பாதிக்கப்படலாம்."
+ )}</p>
+ </div>
+
+ </div>
+
+ <div class="notice">${tr(
+ "These are general descriptions, not predictions of an individual's abilities. Clinical findings are needed to determine the actual effects.",
+ "இவை பொதுவான விளக்கங்கள் மட்டுமே. தனிநபரின் செயல்திறனை இதன் மூலம் முடிவு செய்ய முடியாது. மருத்துவப் பரிசோதனை அவசியம்."
+ )}</div>
+
+ <p><small>[1], [2]</small></p>`
+},
+
+{
+ id:"complete-incomplete",
+
+ title:[
+ "05. Complete and Incomplete SCI",
+ "05. முழுமையான மற்றும் முழுமையற்ற நரம்பியல் பாதிப்பு"
+ ],
+
+ content:()=>`
+
+ <div class="grid">
+
+ <div class="info-card">
+ <h3>${tr("Complete SCI","Complete SCI – முழுமையான பாதிப்பு")}</h3>
+
+ <p>${tr(
+ "Clinicians classify an injury as complete when sensory and motor function are absent in the lowest sacral segments S4–S5. Some function may still be present at other levels below the injury.",
+ "கீழ் Sacral நரம்பியல் பகுதிகளான S4–S5 இல் உணர்வு மற்றும் இயக்கச் செயல்பாடு இல்லாதபோது மருத்துவர்கள் Complete SCI என வகைப்படுத்துவர். பாதிப்புக்குக் கீழேயுள்ள பிற பகுதிகளில் சில செயல்பாடுகள் இருக்கலாம்."
+ )}</p>
+ </div>
+
+ <div class="info-card">
+ <h3>${tr("Incomplete SCI","Incomplete SCI – முழுமையற்ற பாதிப்பு")}</h3>
+
+ <p>${tr(
+ "Some sensory or motor function is preserved in the lowest sacral segments. The extent of preserved function varies.",
+ "கீழ் Sacral பகுதிகளில் சில உணர்வு அல்லது இயக்கச் செயல்பாடு பாதுகாக்கப்பட்டிருக்கும். செயல்பாட்டின் அளவு ஒவ்வொருவருக்கும் மாறுபடும்."
+ )}</p>
+ </div>
+
+ </div>
+
+ <p>${tr(
+ "A trained clinician uses a standardized neurological examination and the ASIA Impairment Scale (AIS) to classify SCI.",
+ "பயிற்சி பெற்ற மருத்துவ நிபுணர் தரப்படுத்தப்பட்ட நரம்பியல் பரிசோதனை மற்றும் ASIA Impairment Scale (AIS) மூலம் SCI பாதிப்பை வகைப்படுத்துகிறார்."
+ )}</p>
+
+ <p><small>[2]</small></p>`
+},
+
+{
+ id:"paralysis",
+
+ title:[
+ "06. Paraplegia and Tetraplegia",
+ "06. Paraplegia மற்றும் Tetraplegia"
+ ],
+
+ content:()=>`
+
+ <div class="grid">
+
+ <div class="info-card">
+ <h3>Paraplegia</h3>
+
+ <p>${tr(
+ "Typically involves impairment of the lower body, with arm function preserved.",
+ "பொதுவாக உடலின் கீழ்ப்பகுதியின் இயக்கம் பாதிக்கப்படும். கைகளின் செயல்பாடு பாதுகாக்கப்படும்."
+ )}</p>
+ </div>
+
+ <div class="info-card">
+ <h3>Tetraplegia / Quadriplegia</h3>
+
+ <p>${tr(
+ "Involves impairment of both upper and lower limbs following cervical SCI. Individual abilities vary.",
+ "கழுத்துப் பகுதி SCI காரணமாக கைகள் மற்றும் கால்கள் இரண்டின் செயல்பாடுகளும் பாதிக்கப்படலாம். பாதிப்பின் அளவு தனிநபரைப் பொறுத்து மாறுபடும்."
+ )}</p>
+ </div>
+
+ </div>
+
+ <p><small>[1], [2]</small></p>`
+},
+
+{
+ id:"daily-life",
+
+ title:[
+ "07. Health and Everyday Life",
+ "07. உடல்நலம் மற்றும் அன்றாட வாழ்க்கை"
+ ],
+
+ content:()=>`
+
+ <p>${tr(
+ "SCI may influence several areas of health. Not everyone experiences every complication.",
+ "SCI உடல்நலத்தின் பல்வேறு பகுதிகளைப் பாதிக்கலாம். எல்லோருக்கும் எல்லா சிக்கல்களும் ஏற்படுவதில்லை."
+ )}</p>
+
+ <div class="grid">
+
+ ${[
+ ["Bowel & Bladder","குடல் மற்றும் சிறுநீர்ப்பை",
+ "Changes in emptying or control.",
+ "மலம் மற்றும் சிறுநீர் வெளியேற்றம் அல்லது கட்டுப்பாட்டில் மாற்றங்கள்."],
+
+ ["Skin Health","தோல் பாதுகாப்பு",
+ "Increased pressure injury risk.",
+ "அழுத்தப் புண்கள் ஏற்படும் அபாயம்."],
+
+ ["Pain & Spasticity","வலி மற்றும் தசை இறுக்கம்",
+ "Changes in comfort and muscle tone.",
+ "வலி மற்றும் தசைகளின் இயல்பான இறுக்கத்தில் மாற்றங்கள்."],
+
+ ["Breathing","சுவாசம்",
+ "Respiratory difficulties may occur.",
+ "சுவாசச் சிக்கல்கள் ஏற்படலாம்."],
+
+ ["Emotional Wellbeing","மனநலம்",
+ "Adjustment and emotional support needs.",
+ "வாழ்க்கை மாற்றங்களை எதிர்கொள்ள மனநல ஆதரவு தேவைப்படலாம்."],
+
+ ["Autonomic Function","தன்னியக்க நரம்பு செயல்பாடு",
+ "Changes in blood pressure or temperature regulation.",
+ "இரத்த அழுத்தம் அல்லது உடல் வெப்பநிலையைக் கட்டுப்படுத்துவதில் மாற்றங்கள்."]
+ ].map(item=>`
+ <div class="info-card">
+ <h3>${tr(item[0],item[1])}</h3>
+ <p>${tr(item[2],item[3])}</p>
+ </div>`).join("")}
+
+ </div>
+
+ <p><small>[1]</small></p>`
+},
+
+{
+ id:"rehabilitation",
+
+ title:[
+ "08. Rehabilitation and Independence",
+ "08. மறுவாழ்வு மற்றும் சுயசார்பு வாழ்க்கை"
+ ],
+
+ content:()=>`
+
+ <p>${tr(
+ "Rehabilitation helps people work towards personal goals, develop practical skills and participate in community life.",
+ "மறுவாழ்வு மூலம் தனிப்பட்ட இலக்குகளை அடையவும், அன்றாட வாழ்க்கைத் திறன்களை வளர்க்கவும், சமூக வாழ்க்கையில் பங்கேற்கவும் உதவி பெறலாம்."
+ )}</p>
+
+ <ul>
+
+ <li>${tr(
+ "Physiotherapy and occupational therapy based on individual assessments.",
+ "தனிப்பட்ட பரிசோதனையின் அடிப்படையிலான உடற்பயிற்சி சிகிச்சை மற்றும் தொழிற்செயல் சிகிச்சை."
+ )}</li>
+
+ <li>${tr(
+ "Appropriate wheelchairs and assistive products.",
+ "பொருத்தமான சக்கர நாற்காலி மற்றும் உதவி உபகரணங்கள்."
+ )}</li>
+
+ <li>${tr(
+ "Training in daily living and self-care.",
+ "அன்றாட வாழ்க்கை மற்றும் சுய பராமரிப்புப் பயிற்சி."
+ )}</li>
+
+ <li>${tr(
+ "Accessible education, employment and housing.",
+ "அணுகக்கூடிய கல்வி, வேலைவாய்ப்பு மற்றும் வாழ்விட வசதிகள்."
+ )}</li>
+
+ <li>${tr(
+ "Family, peer and professional support.",
+ "குடும்பத்தினர், சக உறுப்பினர்கள் மற்றும் தொழில்முறை நிபுணர்களின் ஆதரவு."
+ )}</li>
+
+ </ul>
+
+ <div class="notice">
+
+ <strong>${tr(
+ "Every person's goals are different.",
+ "ஒவ்வொருவருடைய இலக்குகளும் தனித்துவமானவை."
+ )}</strong>
+
+ <p>${tr(
+ "Recovery cannot be guaranteed. Independence can also grow through skills, assistive technology and accessible environments.",
+ "உடல் செயல்பாடுகள் மீண்டும் கிடைக்கும் என்று உறுதியளிக்க முடியாது. பயிற்சி, உதவித் தொழில்நுட்பம் மற்றும் அணுகக்கூடிய சூழல் மூலமாகவும் சுயசார்பை மேம்படுத்த முடியும்."
+ )}</p>
+
+ </div>
+
+ <p><small>[1], [3]</small></p>`
+},
+
+{
+ id:"warning-signs",
+
+ title:[
+ "09. When to Seek Medical Help",
+ "09. எப்போது மருத்துவ உதவியை நாட வேண்டும்?"
+ ],
+
+ content:()=>`
+
+ <div class="warning">
+
+ <p>${tr(
+ "Seek emergency help for sudden breathing difficulty, chest pain, new paralysis or weakness, or suspected spinal injury after an accident.",
+ "திடீர் மூச்சுத்திணறல், மார்பு வலி, புதிதாக ஏற்படும் இயக்க இழப்பு அல்லது தசைப் பலவீனம், விபத்திற்குப் பிறகு முதுகுத்தண்டுப் பாதிப்பு சந்தேகம் போன்ற நிலைகளில் உடனடியாக அவசர மருத்துவ உதவியை நாடவும்."
+ )}</p>
+
+ <p>${tr(
+ "A sudden severe headache with sweating or flushing may indicate autonomic dysreflexia, especially in people with SCI at T6 or above. This can be a medical emergency.",
+ "கடுமையான திடீர் தலைவலியுடன் வியர்வை அல்லது முகம் சிவத்தல் ஏற்படுவது, குறிப்பாக T6 அல்லது அதற்கு மேல் SCI உள்ளவர்களுக்கு, Autonomic Dysreflexia என்ற ஆபத்தான நிலையின் அறிகுறியாக இருக்கலாம். இது மருத்துவ அவசரநிலையாக இருக்கலாம்."
+ )}</p>
+
+ <p>${tr(
+ "Seek prompt medical assessment for fever with worsening illness, infected wounds, or new bowel or bladder problems.",
+ "காய்ச்சலுடன் உடல்நிலை மோசமாதல், புண்களில் தொற்று அல்லது புதிதாக ஏற்படும் குடல் மற்றும் சிறுநீர்ப்பைச் சிக்கல்களுக்கு விரைவாக மருத்துவப் பரிசோதனை பெறவும்."
+ )}</p>
+
+ <p><strong>${tr(
+ "Emergency assistance",
+ "அவசர மருத்துவ உதவி"
+ )}:</strong>
+
+ <a href="tel:112">112</a> |
+ <a href="tel:108">108</a></p>
+
+ </div>`
+}
+
+];
+
+const faqs=[
+
+[
+ "Is a spinal fracture the same as SCI?",
+ "முதுகெலும்பு முறிவும் SCI-யும் ஒன்றா?",
+ "No. A fracture affects bone, while SCI affects nervous tissue. Either may occur without the other.",
+ "இல்லை. எலும்பு முறிவு எலும்பைப் பாதிக்கிறது. SCI நரம்புத் திசுவைப் பாதிக்கிறது. ஒன்று இல்லாமலும் மற்றொன்று ஏற்படலாம்."
+],
+
+[
+ "Can everyone with SCI walk again?",
+ "SCI ஏற்பட்ட அனைவராலும் மீண்டும் நடக்க முடியுமா?",
+ "Recovery varies. Walking cannot be guaranteed, and it is not the only measure of rehabilitation success.",
+ "மீட்பு ஒவ்வொருவருக்கும் மாறுபடும். மீண்டும் நடக்க முடியும் என்று உறுதியளிக்க முடியாது. நடப்பது மட்டுமே மறுவாழ்வின் வெற்றியைக் குறிக்கும் அளவுகோல் அல்ல."
+],
+
+[
+ "Can a wheelchair user live independently?",
+ "சக்கர நாற்காலி பயன்படுத்துபவர் சுயசார்புடன் வாழ முடியுமா?",
+ "Yes. Many people develop independence through rehabilitation, appropriate assistive products and accessible environments. Support needs vary.",
+ "முடியும். மறுவாழ்வு, பொருத்தமான உதவி உபகரணங்கள் மற்றும் அணுகக்கூடிய சூழல் மூலமாகப் பலர் சுயசார்புடன் வாழ்கின்றனர். உதவித் தேவைகள் மாறுபடலாம்."
+],
+
+[
+ "Does everyone need the same bowel or bladder routine?",
+ "அனைவருக்கும் ஒரே குடல் மற்றும் சிறுநீர்ப்பை பராமரிப்பு முறை பொருந்துமா?",
+ "No. A qualified healthcare professional should help develop an individual care plan.",
+ "இல்லை. தகுதியான மருத்துவ நிபுணரின் வழிகாட்டுதலுடன் தனிப்பட்ட பராமரிப்புத் திட்டத்தை உருவாக்க வேண்டும்."
+],
+
+[
+ "Can people with SCI study, work and participate in sports?",
+ "SCI உள்ளவர்கள் படிக்கவும் வேலை செய்யவும் விளையாட்டில் பங்கேற்கவும் முடியுமா?",
+ "Yes. Accessible facilities, appropriate support and suitable opportunities can enable participation.",
+ "முடியும். அணுகக்கூடிய வசதிகள், பொருத்தமான ஆதரவு மற்றும் வாய்ப்புகள் மூலம் இவற்றில் பங்கேற்கலாம்."
+],
+
+[
+ "Can I determine my AIS grade from this guide?",
+ "இந்த வழிகாட்டியைப் பயன்படுத்தி என் AIS Grade-ஐ கண்டறிய முடியுமா?",
+ "No. AIS classification requires a standardized examination by a trained healthcare professional.",
+ "முடியாது. AIS வகைப்படுத்தலுக்கு பயிற்சி பெற்ற மருத்துவ நிபுணரின் தரப்படுத்தப்பட்ட பரிசோதனை அவசியம்."
+]
+
+];
+
+function renderPage(){
+
+ const index=language==="ta"?1:0;
+
+ document.documentElement.lang=language;
+
+ document.querySelectorAll("[data-key]")
+ .forEach(element=>{
+ const key=element.dataset.key;
+ if(ui[key])element.textContent=ui[key][index];
+ });
+
+ document.title=ui.title[index]+" | SIS";
+
+ document.getElementById("taButton")
+ .setAttribute("aria-pressed",String(language==="ta"));
+
+ document.getElementById("enButton")
+ .setAttribute("aria-pressed",String(language==="en"));
+
+ document.getElementById("contentsList").innerHTML=
+ sections.map(section=>`
+ <a href="#${section.id}">
+ ${escapeText(section.title[index])}
+ </a>`).join("");
+
+ document.getElementById("articleContent").innerHTML=
+ sections.map(section=>`
+ <section class="article-section" id="${section.id}">
+ <h2>${escapeText(section.title[index])}</h2>
+ ${section.content()}
+ </section>`).join("");
+
+ document.getElementById("faqList").innerHTML=
+ faqs.map(faq=>`
+ <details>
+ <summary>${escapeText(faq[index])}</summary>
+ <p>${escapeText(faq[index+2])}</p>
+ </details>`).join("");
+
+}
+
+function setLanguage(value){
+ language=value==="en"?"en":"ta";
+ renderPage();
+}
+
+function resizeText(change){
+ textSize=Math.max(16,Math.min(24,textSize+change));
+ document.documentElement.style.fontSize=textSize+"px";
+}
+
+function resetText(){
+ textSize=16;
+ document.documentElement.style.fontSize="16px";
+}
+
+renderPage();
+
+</script>
+
+</body>
+</html>

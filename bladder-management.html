@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bladder Management | SIS</title>
+<link rel="stylesheet" href="sis-styles.css">
+<style>
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;background:#f4f9ff;color:#073763;
+font-family:Arial,"Noto Sans Tamil",sans-serif;
+line-height:1.85}
+header{background:#073763;color:white;
+text-align:center;padding:24px 16px}
+header img{width:140px;height:auto}
+header h1{margin:8px 0}
+nav,.tools{display:flex;flex-wrap:wrap;
+justify-content:center;align-items:center;
+gap:12px;padding:14px}
+nav{background:#052b4d}
+nav a{color:white;text-decoration:none;
+font-weight:bold;padding:10px}
+.tools{background:white}
+button,.btn{display:inline-block;
+background:#073763;color:white;border:0;
+padding:12px 18px;border-radius:8px;
+min-height:44px;font:inherit;
+cursor:pointer;text-decoration:none}
+button[aria-pressed="true"]{background:#007d80}
+button:focus-visible,a:focus-visible,
+summary:focus-visible,input:focus-visible{
+outline:3px solid #e6a700;outline-offset:3px}
+.hero{background:linear-gradient(135deg,#073763,#007d80);
+color:white;text-align:center;padding:40px 20px}
+.hero h2{font-size:2em;margin:0 0 12px}
+.article-container{max-width:960px;
+margin:auto;padding:24px 16px}
+.article-section{background:white;padding:28px;
+margin:24px 0;border-radius:16px;
+box-shadow:0 4px 14px #07376312;
+overflow-wrap:anywhere;scroll-margin-top:20px}
+.article-section h2{margin-top:0;
+border-bottom:2px solid #e2f3f2;padding-bottom:12px}
+.notice,.warning,.emergency{
+padding:20px;border-radius:10px;margin:20px 0}
+.notice{background:#e2f3f2;border-left:4px solid #007d80}
+.warning{background:#fff4e5;color:#663800;
+border-left:4px solid #b66a00}
+.emergency{background:#fff0f0;color:#8b1616;
+border-left:4px solid #b42318}
+.review-status{display:inline-block;
+background:#fff0cf;color:#704600;
+padding:8px 14px;border-radius:8px;font-weight:bold}
+.toc a{display:block;padding:12px 0;
+border-bottom:1px solid #dce7ef;color:#073763;
+text-decoration:none}
+.article-grid{display:grid;
+grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+gap:16px}
+.info-card{background:#f8fbff;padding:20px;
+border:1px solid #dce7ef;border-radius:12px}
+.info-card h3{margin-top:0}
+.diagram{background:#f4f9ff;text-align:center;
+padding:20px;border:1px solid #dce7ef;border-radius:14px}
+.diagram svg{width:100%;max-width:420px;height:auto}
+.flow-step{background:#e2f3f2;border-radius:10px;
+padding:14px;font-weight:bold;text-align:center}
+.flow-arrow{text-align:center;font-size:1.5em}
+.check-item{display:flex;align-items:flex-start;
+gap:12px;padding:14px 8px;
+border-bottom:1px solid #dce7ef;cursor:pointer}
+.check-item input{width:22px;height:22px;
+flex-shrink:0;accent-color:#007d80;margin-top:5px}
+progress{width:100%;height:18px;accent-color:#007d80}
+details{padding:16px;border:1px solid #cbd9e5;
+border-radius:10px;margin:12px 0}
+summary{font-weight:bold;cursor:pointer;min-height:44px}
+li{margin-bottom:10px}
+a{overflow-wrap:anywhere}
+footer{background:#073763;color:white;
+text-align:center;padding:28px 16px}
+@media(max-width:600px){
+.article-section{padding:18px}
+.article-grid{grid-template-columns:1fr}
+.hero h2{font-size:1.65em}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png" alt="Official SIS Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html" data-key="home"></a>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<a href="bowel-management.html" data-key="bowel"></a>
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+
+<strong data-key="language"></strong>
+
+<button id="taButton" onclick="setLanguage('ta')"
+aria-pressed="true">தமிழ்</button>
+
+<button id="enButton" onclick="setLanguage('en')"
+aria-pressed="false">English</button>
+
+<strong data-key="size"></strong>
+
+<button onclick="resizeText(-2)"
+aria-label="Decrease text size">A−</button>
+
+<button onclick="resetText()"
+aria-label="Reset text size">A</button>
+
+<button onclick="resizeText(2)"
+aria-label="Increase text size">A+</button>
+
+<button id="readButton" onclick="readArticle()"
+data-key="read"></button>
+
+<button id="stopButton" onclick="stopReading()"
+data-key="stop"></button>
+
+</section>
+
+<p id="speechStatus" role="status"
+aria-live="polite" style="text-align:center"></p>
+
+<section class="hero">
+<h2 data-key="title"></h2>
+<p data-key="subtitle"></p>
+<p data-key="audience"></p>
+</section>
+
+<main class="article-container">
+
+<p>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<span aria-hidden="true"> / </span>
+<span data-key="shortTitle"></span>
+</p>
+
+<div class="notice">
+<span class="review-status" data-key="review"></span>
+<p data-key="reviewNote"></p>
+<p data-key="date"></p>
+</div>
+
+<section class="article-section toc">
+<h2 data-key="contents"></h2>
+<div id="contentsList"></div>
+<a href="#checklist" data-key="checklistTitle"></a>
+<a href="#faq" data-key="faqTitle"></a>
+<a href="#sources" data-key="sourcesTitle"></a>
+</section>
+
+<div id="articleContent"></div>
+
+<section id="checklist" class="article-section">
+
+<h2 data-key="checklistTitle"></h2>
+<p data-key="checklistNote"></p>
+
+<div id="checklistItems"></div>
+
+<p id="checklistStatus" role="status"
+aria-live="polite"></p>
+
+<progress id="checklistProgress"
+value="0" max="7"
+aria-label="Education checklist progress"></progress>
+
+<p>
+<button onclick="resetChecklist()"
+data-key="resetChecklist"></button>
+</p>
+
+<small data-key="privacy"></small>
+
+</section>
+
+<section id="faq" class="article-section">
+<h2 data-key="faqTitle"></h2>
+<div id="faqList"></div>
+</section>
+
+<section id="sources" class="article-section">
+
+<h2 data-key="sourcesTitle"></h2>
+
+<p data-key="sourcesNote"></p>
+
+<p><strong>[1] MSKTC</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/bladder-management-options-following-sci"
+target="_blank" rel="noopener noreferrer">
+Bladder Management Options Following SCI
+</a>
+
+<p><strong>[2] MSKTC</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/urinary-tract-infection-and-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">
+Reduce Your Risk for UTIs After SCI
+</a>
+
+<p><strong>[3] NSW Agency for Clinical Innovation</strong></p>
+
+<a href="https://aci.health.nsw.gov.au/networks/spinal-cord-injury/resources/bowel-and-bladder-management"
+target="_blank" rel="noopener noreferrer">
+Bowel and Bladder Management Resources
+</a>
+
+<p><strong>[4] NSW Agency for Clinical Innovation – 2023</strong></p>
+
+<a href="https://aci.health.nsw.gov.au/__data/assets/pdf_file/0006/891591/ACI-spinal-cord-injury-bladder-management-a-guide-for-clinicians-in-non-specialist-units.pdf"
+target="_blank" rel="noopener noreferrer">
+Spinal Cord Injury Bladder Management – Clinical Guide
+</a>
+
+</section>
+
+<div class="warning">
+<h3 data-key="disclaimerTitle"></h3>
+<p data-key="disclaimer"></p>
+<p><strong data-key="emergency"></strong>:
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a></p>
+</div>
+
+<a class="btn" href="knowledge-hub.html"
+data-key="back"></a>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Understand • Support • Empower</p>
+<p>© 2026 SIS | Knowledge Hub</p>
+<p>Educational Draft V0.1</p>
+</footer>
+
+<script>
+
+let language="ta";
+let textSize=16;
+let checked=Array(7).fill(false);
+let speechToken=0;
+
+const ui={
+
+home:["Home","முகப்பு"],
+hub:["Knowledge Hub","அறிவு மையம்"],
+bowel:["Bowel Management","குடல் பராமரிப்பு"],
+language:["Language","மொழி"],
+size:["Text Size","எழுத்து அளவு"],
+read:["Read Aloud","குரலில் வாசிக்க"],
+stop:["Stop Reading","வாசிப்பை நிறுத்து"],
+
+title:[
+"Bladder Management After Spinal Cord Injury",
+"முதுகுத்தண்டுவடப் பாதிப்புக்குப் பிறகு சிறுநீர்ப்பை பராமரிப்பு"
+],
+
+shortTitle:[
+"Bladder Management",
+"சிறுநீர்ப்பை பராமரிப்பு"
+],
+
+subtitle:[
+"Protecting bladder and kidney health with knowledge and confidence.",
+"சரியான புரிதலுடன் சிறுநீர்ப்பை மற்றும் சிறுநீரக ஆரோக்கியத்தைப் பாதுகாப்போம்."
+],
+
+audience:[
+"An educational guide for people with SCI, families and caregivers.",
+"முதுகுத்தண்டுவடப் பாதிப்பு உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான கல்வி வழிகாட்டி."
+],
+
+review:[
+"Medical Review Pending",
+"மருத்துவ நிபுணரின் மதிப்பாய்வு நிலுவையில் உள்ளது"
+],
+
+reviewNote:[
+"This SIS educational draft is based on published medical resources. Independent clinical review is still pending.",
+"வெளியிடப்பட்ட மருத்துவ ஆதாரங்களின் அடிப்படையில் இந்த SIS கல்வி வரைவு தயாரிக்கப்பட்டுள்ளது. மருத்துவ நிபுணரின் தனிப்பட்ட மதிப்பாய்வு இன்னும் பெறப்படவில்லை."
+],
+
+date:[
+"Draft prepared: 24 November 2026",
+"வரைவு தயாரிக்கப்பட்ட நாள்: 24 நவம்பர் 2026"
+],
+
+contents:["In This Guide","இந்த வழிகாட்டியில்"],
+
+checklistTitle:[
+"10. Bladder Care Education Checklist",
+"10. சிறுநீர்ப்பை பராமரிப்பு விழிப்புணர்வுப் பட்டியல்"
+],
+
+checklistNote:[
+"Use these questions to identify topics to discuss with your healthcare team. This is not a treatment schedule or medical assessment.",
+"மருத்துவக் குழுவுடன் ஆலோசிக்க வேண்டிய தலைப்புகளைக் கண்டறிய இந்தப் பட்டியலைப் பயன்படுத்துங்கள். இது சிகிச்சை அட்டவணையோ மருத்துவப் பரிசோதனையோ அல்ல."
+],
+
+resetChecklist:["Reset Checklist","பட்டியலை மீட்டமை"],
+
+privacy:[
+"Checklist selections are not saved or sent to SIS. Browser speech services may process article text if Read Aloud is used.",
+"பட்டியல் தேர்வுகள் சேமிக்கப்படவோ SIS அமைப்புக்கு அனுப்பப்படவோ மாட்டாது. குரல் வாசிப்பு வசதியைப் பயன்படுத்தும்போது உலாவியின் குரல் சேவை கட்டுரை உரையைச் செயலாக்கலாம்."
+],
+
+faqTitle:[
+"11. Frequently Asked Questions",
+"11. அடிக்கடி கேட்கப்படும் கேள்விகள்"
+],
+
+sourcesTitle:[
+"12. Medical References",
+"12. மருத்துவ ஆதாரங்கள்"
+],
+
+sourcesNote:[
+"Published medical resources for further learning.",
+"கூடுதல் புரிதலுக்கான வெளியிடப்பட்ட மருத்துவ ஆதாரங்கள்."
+],
+
+disclaimerTitle:[
+"Important Medical Disclaimer",
+"முக்கிய மருத்துவ அறிவிப்பு"
+],
+
+disclaimer:[
+"Do not change medicines, catheter type, catheterization timing or fluid restrictions using this guide alone. Seek individualized advice and practical training from your SCI rehabilitation or urology team.",
+"இந்த வழிகாட்டியை மட்டும் பயன்படுத்தி மருந்துகள், கேத்தடர் வகை, சிறுநீர் வெளியேற்றும் நேரம் அல்லது நீர் உட்கொள்ளும் கட்டுப்பாடுகளை மாற்ற வேண்டாம். மறுவாழ்வு அல்லது சிறுநீரியல் மருத்துவக் குழுவிடம் தனிப்பட்ட ஆலோசனையும் நடைமுறைப் பயிற்சியும் பெறுங்கள்."
+],
+
+emergency:["Emergency assistance","அவசர மருத்துவ உதவி"],
+back:["Back to Knowledge Hub","அறிவு மையத்திற்குத் திரும்பவும்"]
+
+};
+
+function tr(en,ta){
+return language==="ta"?ta:en;
+}
+
+function esc(value){
+const div=document.createElement("div");
+div.textContent=value;
+return div.innerHTML;
+}
+
+function cards(items){
+return `<div class="article-grid">${
+items.map(item=>`
+<div class="info-card">
+<h3>${tr(item[0],item[1])}</h3>
+<p>${tr(item[2],item[3])}</p>
+</div>`).join("")
+}</div>`;
+}
+
+function urinaryDiagram(){
+
+return `
+<div class="diagram">
+
+<h3>${tr(
+"Urinary System – Simplified Illustration",
+"சிறுநீர் மண்டலம் – எளிய விளக்கப்படம்"
+)}</h3>
+
+<svg viewBox="0 0 340 360"
+role="img" aria-labelledby="urinaryTitle urinaryDesc">
+
+<title id="urinaryTitle">${tr(
+"Urinary system schematic",
+"சிறுநீர் மண்டல வரைபடம்"
+)}</title>
+
+<desc id="urinaryDesc">${tr(
+"Two kidneys connected by ureters to a bladder and urethra.",
+"இரண்டு சிறுநீரகங்கள், சிறுநீரகக் குழாய்கள், சிறுநீர்ப்பை மற்றும் சிறுநீர் வெளியேற்றக் குழாய்."
+)}</desc>
+
+<rect x="1" y="1" width="338" height="358"
+rx="18" fill="#ffffff"/>
+
+<path d="M90 35 C32 30 30 125 80 130
+C110 135 123 108 104 90
+C86 73 119 47 90 35Z"
+fill="#bd675f" stroke="#91423c" stroke-width="2"/>
+
+<path d="M250 35 C308 30 310 125 260 130
+C230 135 217 108 236 90
+C254 73 221 47 250 35Z"
+fill="#bd675f" stroke="#91423c" stroke-width="2"/>
+
+<path d="M101 93 Q140 150 135 223"
+fill="none" stroke="#d5a04b"
+stroke-width="9" stroke-linecap="round"/>
+
+<path d="M239 93 Q200 150 205 223"
+fill="none" stroke="#d5a04b"
+stroke-width="9" stroke-linecap="round"/>
+
+<path d="M135 220
+C105 215 100 256 125 280
+Q170 310 215 280
+C240 256 235 215 205 220Z"
+fill="#e6a66e" stroke="#b97943" stroke-width="2"/>
+
+<path d="M170 296 L170 337"
+fill="none" stroke="#d5a04b"
+stroke-width="11" stroke-linecap="round"/>
+
+<ellipse cx="170" cy="303" rx="13" ry="5"
+fill="#007d80"/>
+
+<g fill="#073763" font-size="16"
+font-family="Arial" font-weight="bold">
+<text x="48" y="30">1</text>
+<text x="283" y="30">1</text>
+<text x="146" y="160">2</text>
+<text x="170" y="260">3</text>
+<text x="195" y="330">4</text>
+<text x="195" y="308">5</text>
+</g>
+
+</svg>
+
+<div style="text-align:left">
+
+<p>1. ${tr("Kidneys","சிறுநீரகங்கள்")}</p>
+<p>2. ${tr("Ureters","சிறுநீரகத்திலிருந்து சிறுநீர்ப்பைக்குச் செல்லும் குழாய்கள்")}</p>
+<p>3. ${tr("Bladder","சிறுநீர்ப்பை")}</p>
+<p>4. ${tr("Urethra","சிறுநீர் வெளியேற்றக் குழாய்")}</p>
+<p>5. ${tr("Sphincter","சிறுநீரைக் கட்டுப்படுத்தும் தசை")}</p>
+
+</div>
+
+<small>${tr(
+"Original educational schematic. Not anatomically to scale.",
+"கல்விக்கான அசல் எளிய வரைபடம். உடற்கூறு அளவுகளுக்கு ஏற்ப வரையப்படவில்லை."
+)}</small>
+
+</div>`;
+}
+
+function signalDiagram(){
+
+const steps=[
+tr("Brain","மூளை"),
+tr("Spinal cord and nerves","முதுகுத்தண்டுவடம் மற்றும் நரம்புகள்"),
+tr("Bladder and sphincter coordination","சிறுநீர்ப்பை மற்றும் கட்டுப்பாட்டுத் தசையின் ஒருங்கிணைப்பு"),
+tr("Urine storage and emptying","சிறுநீரைச் சேமித்தல் மற்றும் வெளியேற்றுதல்")
+];
+
+return `<div class="diagram">${
+steps.map((step,i)=>`
+${i?'<div class="flow-arrow" aria-hidden="true">↕</div>':""}
+<div class="flow-step">${step}</div>
+`).join("")
+}<p>${tr(
+"SCI can interrupt this coordination.",
+"SCI இந்த ஒருங்கிணைப்பைப் பாதிக்கலாம்."
+)}</p></div>`;
+}
+
+const sections=[
+
+{
+
+id:"urinary-system",
+
+title:["01. Understanding the Urinary System",
+"01. சிறுநீர் மண்டலத்தைப் புரிந்துகொள்வோம்"],
+
+content:()=>`
+
+<p>${tr(
+"The urinary system removes waste and regulates fluid balance. Understanding its basic structure helps people participate in their care.",
+"சிறுநீர் மண்டலம் உடலின் கழிவுகளை வெளியேற்றி நீர்ச்சத்து சமநிலையைப் பராமரிக்கிறது. இதன் அடிப்படை அமைப்பைப் புரிந்துகொள்வது உடல்நலப் பராமரிப்பில் பங்கேற்க உதவுகிறது."
+)}</p>
+
+${urinaryDiagram()}
+
+<p>${tr(
+"Urine formed by the kidneys travels to the bladder, where it is stored until emptying.",
+"சிறுநீரகங்களில் உருவாகும் சிறுநீர் சிறுநீர்ப்பையை அடைந்து, வெளியேற்றப்படும் வரை அங்கு சேமிக்கப்படுகிறது."
+)}</p>
+
+<p><small>[1]</small></p>`
+
+},
+
+{
+
+id:"neurogenic-bladder",
+
+title:["02. What is Neurogenic Bladder?",
+"02. Neurogenic Bladder என்றால் என்ன?"],
+
+content:()=>`
+
+<p>${tr(
+"Spinal cord injury may interrupt the nerve signals involved in storing and passing urine. This can affect bladder sensation, muscle activity and coordination.",
+"முதுகுத்தண்டுவடப் பாதிப்பு சிறுநீரைச் சேமிக்கவும் வெளியேற்றவும் உதவும் நரம்புத் தகவல் பரிமாற்றத்தைப் பாதிக்கலாம். இதனால் சிறுநீர்ப்பை உணர்வு, தசை இயக்கம் மற்றும் ஒருங்கிணைப்பு மாறலாம்."
+)}</p>
+
+${signalDiagram()}
+
+<div class="notice">${tr(
+"Bladder dysfunction is a health condition that can be managed with appropriate clinical support.",
+"சிறுநீர்ப்பை செயல்பாட்டுப் பாதிப்பை பொருத்தமான மருத்துவ ஆதரவுடன் நிர்வகிக்க முடியும்."
+)}</div>
+
+<p><small>[1], [3]</small></p>`
+
+},
+
+{
+
+id:"bladder-types",
+
+title:["03. Common Bladder Function Changes",
+"03. சிறுநீர்ப்பை செயல்பாட்டில் ஏற்படும் மாற்றங்கள்"],
+
+content:()=>`
+
+${cards([
+
+["Overactive bladder","அதிக இயக்கமுள்ள சிறுநீர்ப்பை",
+"Uncontrolled contractions may cause leakage or urgency.",
+"கட்டுப்பாடற்ற தசைச் சுருக்கத்தால் சிறுநீர் கசிவு அல்லது அவசர உணர்வு ஏற்படலாம்."],
+
+["Underactive bladder","குறைந்த இயக்கமுள்ள சிறுநீர்ப்பை",
+"Weak bladder contraction may result in incomplete emptying.",
+"சிறுநீர்ப்பைத் தசையின் இயக்கம் குறைவதால் சிறுநீர் முழுமையாக வெளியேறாமல் இருக்கலாம்."],
+
+["Sphincter coordination problems","கட்டுப்பாட்டுத் தசை ஒருங்கிணைப்புச் சிக்கல்",
+"The bladder and outlet muscles may fail to work together, increasing pressure.",
+"சிறுநீர்ப்பையும் வெளியேற்றத்தைக் கட்டுப்படுத்தும் தசைகளும் ஒருங்கிணைந்து செயல்படாததால் அழுத்தம் அதிகரிக்கலாம்."]
+
+])}
+
+<div class="warning">${tr(
+"Urinary leakage does not prove that the bladder is empty or that pressure is safe. Clinical assessment is needed.",
+"சிறுநீர் கசிவு ஏற்படுவது சிறுநீர்ப்பை முழுமையாகக் காலியாகியுள்ளது அல்லது அழுத்தம் பாதுகாப்பாக உள்ளது என்பதற்கான ஆதாரம் அல்ல. மருத்துவ மதிப்பீடு அவசியம்."
+)}</div>
+
+<p><small>[1]</small></p>`
+
+},
+
+{
+
+id:"assessment",
+
+title:["04. Assessment and Individual Care Planning",
+"04. மருத்துவ மதிப்பீடு மற்றும் தனிப்பட்ட பராமரிப்புத் திட்டம்"],
+
+content:()=>`
+
+<p>${tr(
+"A suitable bladder care plan depends on bladder function, kidney health, personal abilities, available assistance and lifestyle.",
+"சிறுநீர்ப்பை செயல்பாடு, சிறுநீரக ஆரோக்கியம், தனிநபரின் செயல்திறன், கிடைக்கும் உதவி மற்றும் வாழ்க்கை முறைக்கு ஏற்ப பராமரிப்புத் திட்டம் அமைக்கப்படுகிறது."
+)}</p>
+
+${cards([
+
+["Clinical assessment","மருத்துவ மதிப்பீடு",
+"The healthcare team reviews symptoms, injury history and current care.",
+"அறிகுறிகள், பாதிப்பு வரலாறு மற்றும் தற்போதைய பராமரிப்பு முறையை மருத்துவக் குழு மதிப்பிடும்."],
+
+["Urodynamic testing","Urodynamic பரிசோதனை",
+"Specialist testing evaluates bladder storage, pressure and emptying.",
+"சிறுநீர்ப்பையின் சேமிப்புத் திறன், அழுத்தம் மற்றும் வெளியேற்றத்தை நிபுணர்கள் மதிப்பிடுவர்."],
+
+["Kidney monitoring","சிறுநீரகக் கண்காணிப்பு",
+"Your clinician determines appropriate kidney tests and imaging.",
+"தேவையான சிறுநீரகப் பரிசோதனைகள் மற்றும் ஸ்கேன் முறைகளை மருத்துவர் தீர்மானிப்பார்."]
+
+])}
+
+<p><small>[1], [4]</small></p>`
+
+},
+
+{
+
+id:"management-options",
+
+title:["05. Bladder Management Options",
+"05. சிறுநீர்ப்பை பராமரிப்பு முறைகள்"],
+
+content:()=>`
+
+<p>${tr(
+"Different approaches suit different individuals. The following descriptions explain the options, not how to perform invasive procedures.",
+"ஒவ்வொருவருக்கும் பொருத்தமான பராமரிப்பு முறை மாறுபடும். கீழே உள்ளவை முறைகளைப் பற்றிய விளக்கங்கள் மட்டுமே; மருத்துவச் செயல்முறைகளைச் செய்வதற்கான வழிமுறைகள் அல்ல."
+)}</p>
+
+${cards([
+
+["Intermittent catheterization (CIC)",
+"இடைவெளியில் கேத்தடர் மூலம் சிறுநீர் வெளியேற்றுதல்",
+"A catheter is used temporarily at intervals determined by the clinical team. Practical training is essential.",
+"மருத்துவக் குழு நிர்ணயிக்கும் இடைவெளிகளில் தற்காலிகமாக கேத்தடர் பயன்படுத்தப்படும். நடைமுறைப் பயிற்சி அவசியம்."],
+
+["Indwelling urethral catheter (Foley)",
+"தொடர்ந்து பொருத்தப்பட்ட Foley கேத்தடர்",
+"A tube remains in the bladder through the urethra for ongoing drainage. Blockage and tissue injury are possible concerns.",
+"சிறுநீர் தொடர்ந்து வெளியேறுவதற்காக சிறுநீர் வெளியேற்றக் குழாய் வழியாக கேத்தடர் பொருத்தப்பட்டிருக்கும். அடைப்பு மற்றும் திசுப் பாதிப்பு போன்ற சிக்கல்கள் ஏற்படலாம்."],
+
+["Suprapubic catheter (SPC)",
+"அடிவயிறு வழியாகப் பொருத்தப்படும் கேத்தடர்",
+"A clinician places a drainage tube through the lower abdomen into the bladder.",
+"மருத்துவ நிபுணர் அடிவயிறு வழியாகச் சிறுநீர்ப்பைக்குள் வெளியேற்றக் குழாயைப் பொருத்துவார்."],
+
+["External urine collection",
+"வெளிப்புற சிறுநீர் சேகரிப்பு உபகரணம்",
+"External devices collect urine but do not resolve incomplete bladder emptying.",
+"வெளிப்புற உபகரணங்கள் சிறுநீரைச் சேகரிக்கும். ஆனால் சிறுநீர்ப்பை முழுமையாக காலியாகாத பிரச்சினையைத் தீர்க்காது."],
+
+["Medical and specialist treatment",
+"மருந்துகள் மற்றும் சிறப்பு மருத்துவச் சிகிச்சை",
+"Medicines or specialist procedures may be considered after individual assessment.",
+"தனிப்பட்ட மருத்துவ மதிப்பீட்டிற்குப் பிறகு மருந்துகள் அல்லது சிறப்பு மருத்துவச் சிகிச்சைகள் பரிசீலிக்கப்படலாம்."]
+
+])}
+
+<div class="warning">${tr(
+"Do not start catheterization, force a catheter, press on the bladder to empty it, or perform bladder irrigation without professional assessment and training.",
+"மருத்துவ மதிப்பீடும் பயிற்சியும் இல்லாமல் கேத்தடர் பயன்படுத்தத் தொடங்குதல், வலுக்கட்டாயமாகச் செலுத்துதல், சிறுநீர்ப்பையை அழுத்தி காலி செய்தல் அல்லது சிறுநீர்ப்பை கழுவுதல் போன்றவற்றைச் செய்ய வேண்டாம்."
+)}</div>
+
+<p><small>[1], [4]</small></p>`
+
+},
+
+{
+
+id:"hygiene",
+
+title:["06. Hygiene and Catheter Safety",
+"06. சுகாதாரம் மற்றும் கேத்தடர் பாதுகாப்பு"],
+
+content:()=>`
+
+<ul>
+
+<li>${tr(
+"Use hand hygiene before and after bladder care.",
+"சிறுநீர்ப்பை பராமரிப்பிற்கு முன்னும் பின்னும் கைகளைச் சுத்தமாக வைத்திருக்கவும்."
+)}</li>
+
+<li>${tr(
+"Follow the cleaning and equipment instructions taught by your healthcare team.",
+"மருத்துவக் குழு கற்றுக்கொடுத்த சுத்தம் செய்யும் முறைகளையும் உபகரணப் பயன்பாட்டு அறிவுறுத்தல்களையும் பின்பற்றவும்."
+)}</li>
+
+<li>${tr(
+"Protect skin from moisture, friction and pressure caused by tubing or straps.",
+"குழாய்கள் அல்லது பட்டைகளால் ஏற்படும் ஈரப்பதம், உராய்வு மற்றும் அழுத்தத்திலிருந்து தோலைப் பாதுகாக்கவும்."
+)}</li>
+
+<li>${tr(
+"For an indwelling drainage system, avoid kinks and keep the bag below bladder level, following clinical instructions.",
+"தொடர்ந்து பொருத்தப்பட்ட கேத்தடர் அமைப்பில் குழாய் மடங்காமல் பார்த்துக்கொண்டு மருத்துவரின் அறிவுறுத்தலின்படி சிறுநீர்ப்பைக்கு கீழே சேகரிப்புப் பையை வைத்திருக்கவும்."
+)}</li>
+
+<li>${tr(
+"Seek medical help for blockage, displacement, bleeding or persistent leakage.",
+"அடைப்பு, கேத்தடர் இடம் மாறுதல், இரத்தப்போக்கு அல்லது தொடர்ச்சியான கசிவு ஏற்பட்டால் மருத்துவ உதவியை நாடுங்கள்."
+)}</li>
+
+</ul>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+
+id:"uti-awareness",
+
+title:["07. Urinary Tract Infection (UTI)",
+"07. சிறுநீர்ப் பாதைத் தொற்று (UTI)"],
+
+content:()=>`
+
+<p>${tr(
+"A UTI is an infection involving part of the urinary system. People with SCI may experience symptoms that differ from those without SCI.",
+"சிறுநீர் மண்டலத்தின் ஒரு பகுதியில் ஏற்படும் தொற்று UTI எனப்படுகிறது. SCI உள்ளவர்களுக்கு மற்றவர்களைவிட மாறுபட்ட அறிகுறிகள் ஏற்படலாம்."
+)}</p>
+
+${cards([
+
+["Possible symptoms","ஏற்படக்கூடிய அறிகுறிகள்",
+"Fever, chills, new or increased spasms, unusual tiredness or discomfort may require assessment.",
+"காய்ச்சல், குளிர் நடுக்கம், புதிய அல்லது அதிகரித்த தசை இறுக்கம், வழக்கத்திற்கு மாறான சோர்வு அல்லது அசௌகரியத்திற்கு மருத்துவ மதிப்பீடு தேவைப்படலாம்."],
+
+["Urine changes","சிறுநீரில் மாற்றங்கள்",
+"Cloudiness or odour alone does not establish that a symptomatic infection is present.",
+"சிறுநீர் கலங்கலாக இருப்பது அல்லது துர்நாற்றம் மட்டும் அறிகுறிகளுடன் கூடிய தொற்றை உறுதிப்படுத்தாது."],
+
+["Medical testing","மருத்துவப் பரிசோதனை",
+"Clinicians assess symptoms and arrange suitable urine testing when infection is suspected.",
+"தொற்று சந்தேகிக்கப்பட்டால் மருத்துவர் அறிகுறிகளை மதிப்பிட்டு பொருத்தமான சிறுநீர்ப் பரிசோதனைகளை மேற்கொள்வார்."]
+
+])}
+
+<div class="warning">${tr(
+"Do not self-medicate with antibiotics. Bacteria may be present without symptomatic infection, particularly with catheter use.",
+"மருத்துவ ஆலோசனையின்றி ஆன்டிபயாடிக் மருந்துகளை எடுத்துக்கொள்ள வேண்டாம். குறிப்பாக கேத்தடர் பயன்படுத்துபவர்களுக்கு தொற்று அறிகுறிகள் இல்லாமலேயே சிறுநீரில் பாக்டீரியாக்கள் இருக்கலாம்."
+)}</div>
+
+<p><small>[2]</small></p>`
+
+},
+
+{
+
+id:"kidney-health",
+
+title:["08. Kidney Health and Daily Living",
+"08. சிறுநீரகப் பாதுகாப்பு மற்றும் அன்றாட வாழ்க்கை"],
+
+content:()=>`
+
+<p>${tr(
+"Long-term bladder care aims to protect the kidneys while supporting participation in family life, work, education and travel.",
+"நீண்டகால சிறுநீர்ப்பை பராமரிப்பின் நோக்கம் சிறுநீரகங்களைப் பாதுகாப்பதுடன் குடும்ப வாழ்க்கை, வேலை, கல்வி மற்றும் பயணங்களில் பங்கேற்க உதவுவதாகும்."
+)}</p>
+
+${cards([
+
+["Hydration planning","நீர்ச்சத்துத் திட்டமிடல்",
+"Discuss suitable fluid intake based on your health and bladder plan. Avoid arbitrary fluid restriction.",
+"உடல்நிலை மற்றும் சிறுநீர்ப்பை பராமரிப்புத் திட்டத்திற்கு ஏற்ப நீர் உட்கொள்ளும் அளவை மருத்துவருடன் ஆலோசிக்கவும். தன்னிச்சையாக நீர் உட்கொள்வதைக் கட்டுப்படுத்த வேண்டாம்."],
+
+["Regular follow-up","தொடர் மருத்துவக் கண்காணிப்பு",
+"Attend recommended reviews even when there are no obvious symptoms.",
+"வெளிப்படையான அறிகுறிகள் இல்லாதபோதும் பரிந்துரைக்கப்பட்ட மருத்துவப் பரிசோதனைகளுக்குச் செல்லுங்கள்."],
+
+["Accessible facilities","அணுகக்கூடிய வசதிகள்",
+"Plan for suitable toilets, supplies, privacy and trained assistance when travelling.",
+"பயணத்தின்போது பொருத்தமான கழிப்பறைகள், தேவையான பொருட்கள், தனியுரிமை மற்றும் பயிற்சி பெற்ற உதவியாளர்களுக்குத் திட்டமிடுங்கள்."]
+
+])}
+
+<p><small>[1], [3], [4]</small></p>`
+
+},
+
+{
+
+id:"emergency-signs",
+
+title:["09. Warning Signs and Emergency Awareness",
+"09. ஆபத்தான அறிகுறிகள் மற்றும் அவசரநிலைகள்"],
+
+content:()=>`
+
+<div class="emergency">
+
+<h3>${tr(
+"Seek urgent medical assessment",
+"உடனடி மருத்துவ மதிப்பீட்டை நாடுங்கள்"
+)}</h3>
+
+<ul>
+
+<li>${tr(
+"Inability to pass urine or a catheter that stops draining, especially with bladder swelling or discomfort.",
+"சிறுநீர் வெளியேறாமல் இருத்தல் அல்லது கேத்தடர் வழியாக சிறுநீர் வெளியேறுவது நின்றுவிடுதல், குறிப்பாக சிறுநீர்ப்பை வீக்கம் அல்லது அசௌகரியத்துடன்."
+)}</li>
+
+<li>${tr(
+"Fever with shaking chills, flank pain, vomiting or worsening illness.",
+"காய்ச்சலுடன் கடுமையான நடுக்கம், இடுப்பின் பக்கவாட்டில் வலி, வாந்தி அல்லது உடல்நிலை மோசமடைதல்."
+)}</li>
+
+<li>${tr(
+"Heavy bleeding, blood clots in urine or severe pain.",
+"அதிக இரத்தப்போக்கு, சிறுநீரில் இரத்தக் கட்டிகள் அல்லது கடுமையான வலி."
+)}</li>
+
+<li>${tr(
+"Confusion, fainting, breathing difficulty or severe weakness.",
+"குழப்பம், மயக்கம், சுவாசச் சிரமம் அல்லது கடுமையான பலவீனம்."
+)}</li>
+
+</ul>
+
+</div>
+
+<div class="warning">
+
+<h3>Autonomic Dysreflexia (AD)</h3>
+
+<p>${tr(
+"An overly full bladder or blocked catheter can trigger AD, especially in SCI at T6 or above. This dangerous blood pressure rise can occur with a severe headache, flushing or sweating, and sometimes without obvious symptoms.",
+"சிறுநீர்ப்பை அதிகமாக நிரம்புதல் அல்லது கேத்தடர் அடைப்பு, குறிப்பாக T6 அல்லது அதற்கு மேல் SCI உள்ளவர்களுக்கு AD நிலையைத் தூண்டலாம். ஆபத்தான இரத்த அழுத்த உயர்வுடன் கடுமையான தலைவலி, முகம் சிவத்தல் அல்லது வியர்வை ஏற்படலாம். சில நேரங்களில் வெளிப்படையான அறிகுறிகள் இல்லாமலும் இருக்கலாம்."
+)}</p>
+
+<p>${tr(
+"If AD is suspected, sit upright if safely possible, loosen restrictive clothing, follow your established emergency plan and seek emergency help. Do not attempt unfamiliar invasive procedures.",
+"AD சந்தேகம் இருந்தால் பாதுகாப்பாக முடிந்தால் நிமிர்ந்து அமருங்கள். இறுக்கமான ஆடைகளைத் தளர்த்துங்கள். மருத்துவர் வழங்கிய அவசரநிலைத் திட்டத்தைப் பின்பற்றி உடனடி மருத்துவ உதவியை நாடுங்கள். பயிற்சி இல்லாத மருத்துவச் செயல்முறைகளை முயற்சிக்க வேண்டாம்."
+)}</p>
+
+</div>
+
+<p><strong>${tr(
+"Emergency assistance","அவசர மருத்துவ உதவி"
+)}:</strong>
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a></p>
+
+<p><small>[1], [2], [3]</small></p>`
+
+}
+
+];
+
+const checklist=[
+
+["I know my recommended bladder management plan.",
+"எனக்குப் பரிந்துரைக்கப்பட்ட சிறுநீர்ப்பை பராமரிப்புத் திட்டம் எனக்குத் தெரியும்."],
+
+["I have received practical training for my care method.",
+"எனது பராமரிப்பு முறைக்கான நடைமுறைப் பயிற்சியைப் பெற்றுள்ளேன்."],
+
+["I understand my hygiene and equipment requirements.",
+"எனது சுகாதாரம் மற்றும் உபகரணத் தேவைகளைப் புரிந்துகொண்டுள்ளேன்."],
+
+["I have discussed suitable fluid intake with my clinician.",
+"பொருத்தமான நீர் உட்கொள்ளும் அளவை மருத்துவருடன் ஆலோசித்துள்ளேன்."],
+
+["I know the possible symptoms of urinary infection.",
+"சிறுநீர்ப் பாதைத் தொற்றின் சாத்தியமான அறிகுறிகள் எனக்குத் தெரியும்."],
+
+["I know when to seek emergency medical assistance.",
+"எப்போது அவசர மருத்துவ உதவியை நாட வேண்டும் என்பது எனக்குத் தெரியும்."],
+
+["I understand the importance of kidney monitoring and follow-up.",
+"சிறுநீரகக் கண்காணிப்பு மற்றும் தொடர் மருத்துவப் பரிசோதனைகளின் முக்கியத்துவத்தைப் புரிந்துகொண்டுள்ளேன்."]
+
+];
+
+const faqs=[
+
+["Does every person with SCI need a catheter?",
+"SCI உள்ள அனைவருக்கும் கேத்தடர் தேவையா?",
+"No. The appropriate management method depends on individual bladder function and clinical assessment.",
+"இல்லை. தனிநபரின் சிறுநீர்ப்பை செயல்பாடு மற்றும் மருத்துவ மதிப்பீட்டைப் பொறுத்து பராமரிப்பு முறை தீர்மானிக்கப்படும்."],
+
+["Which catheter is best?",
+"எந்த கேத்தடர் சிறந்தது?",
+"No single catheter type is suitable for everyone. Discuss the advantages and limitations with your urology team.",
+"ஒரே கேத்தடர் வகை அனைவருக்கும் பொருந்தாது. நன்மைகள் மற்றும் வரம்புகள் குறித்து சிறுநீரியல் மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."],
+
+["Does cloudy urine always mean UTI?",
+"சிறுநீர் கலங்கலாக இருந்தால் எப்போதும் UTI என்று அர்த்தமா?",
+"No. Appearance alone cannot diagnose a symptomatic UTI.",
+"இல்லை. சிறுநீரின் தோற்றத்தை மட்டும் வைத்து அறிகுறிகளுடன் கூடிய UTI தொற்றை உறுதிப்படுத்த முடியாது."],
+
+["Can I reduce drinking water to avoid leakage?",
+"சிறுநீர் கசிவைத் தவிர்க்க நீர் குடிப்பதைக் குறைக்கலாமா?",
+"Do not restrict fluids arbitrarily. Discuss an appropriate plan with your healthcare team.",
+"தன்னிச்சையாக நீர் உட்கொள்வதைக் கட்டுப்படுத்த வேண்டாம். பொருத்தமான திட்டத்தை மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."],
+
+["Why are kidney check-ups important?",
+"சிறுநீரகப் பரிசோதனை ஏன் முக்கியம்?",
+"Urinary system complications may develop without noticeable symptoms. Follow the monitoring schedule recommended by your clinician.",
+"வெளிப்படையான அறிகுறிகள் இல்லாமலும் சிறுநீர் மண்டலச் சிக்கல்கள் ஏற்படலாம். மருத்துவர் பரிந்துரைக்கும் பரிசோதனைத் திட்டத்தைப் பின்பற்றுங்கள்."],
+
+["Can bladder problems cause AD?",
+"சிறுநீர்ப்பை சிக்கல்களால் AD ஏற்படுமா?",
+"Yes. Bladder distension or drainage problems may trigger AD in susceptible individuals.",
+"ஆம். ஆபத்து உள்ளவர்களுக்கு சிறுநீர்ப்பை அதிகமாக நிரம்புதல் அல்லது சிறுநீர் வெளியேற்றச் சிக்கல்கள் AD நிலையைத் தூண்டலாம்."],
+
+["Can I travel while using a catheter?",
+"கேத்தடர் பயன்படுத்தும்போது பயணம் செய்யலாமா?",
+"Many people travel using their established bladder care method. Plan supplies, accessibility and assistance in advance.",
+"பலர் தங்களுக்கு ஏற்கெனவே பரிந்துரைக்கப்பட்ட பராமரிப்பு முறையுடன் பயணம் செய்கிறார்கள். தேவையான பொருட்கள், அணுகல் வசதிகள் மற்றும் உதவிகளை முன்கூட்டியே திட்டமிடவும்."]
+
+];
+
+function renderChecklist(){
+
+const i=language==="ta"?1:0;
+
+document.getElementById("checklistItems").innerHTML=
+checklist.map((item,index)=>`
+
+<label class="check-item">
+
+<input type="checkbox"
+${checked[index]?"checked":""}
+onchange="updateChecklist(${index},this.checked)">
+
+<span>${esc(item[i])}</span>
+
+</label>
+
+`).join("");
+
+updateProgress();
+
+}
+
+function updateChecklist(index,value){
+checked[index]=value;
+updateProgress();
+}
+
+function updateProgress(){
+
+const count=checked.filter(Boolean).length;
+
+document.getElementById("checklistProgress").value=count;
+
+document.getElementById("checklistStatus").textContent=
+tr(
+count+" of 7 education topics checked",
+"7 தலைப்புகளில் "+count+" தலைப்புகள் குறிக்கப்பட்டுள்ளன"
+);
+
+}
+
+function resetChecklist(){
+checked=Array(7).fill(false);
+renderChecklist();
+}
+
+function renderPage(){
+
+const i=language==="ta"?1:0;
+
+document.documentElement.lang=language;
+document.title=ui.title[i]+" | SIS";
+
+document.querySelectorAll("[data-key]").forEach(el=>{
+if(ui[el.dataset.key]){
+el.textContent=ui[el.dataset.key][i];
+}
+});
+
+document.getElementById("taButton")
+.setAttribute("aria-pressed",String(language==="ta"));
+
+document.getElementById("enButton")
+.setAttribute("aria-pressed",String(language==="en"));
+
+document.getElementById("contentsList").innerHTML=
+sections.map(section=>`
+<a href="#${section.id}">
+${esc(section.title[i])}
+</a>`).join("");
+
+document.getElementById("articleContent").innerHTML=
+sections.map(section=>`
+<section class="article-section" id="${section.id}">
+<h2>${esc(section.title[i])}</h2>
+${section.content()}
+</section>`).join("");
+
+document.getElementById("faqList").innerHTML=
+faqs.map(faq=>`
+<details>
+<summary>${esc(faq[i])}</summary>
+<p>${esc(faq[i+2])}</p>
+</details>`).join("");
+
+renderChecklist();
+
+if(!("speechSynthesis" in window) ||
+!("SpeechSynthesisUtterance" in window)){
+
+document.getElementById("readButton").disabled=true;
+document.getElementById("stopButton").disabled=true;
+
+document.getElementById("speechStatus").textContent=
+tr(
+"Read Aloud is unavailable in this browser.",
+"இந்த உலாவியில் குரல் வாசிப்பு வசதி இல்லை."
+);
+
+}
+
+}
+
+function setLanguage(value){
+stopReading();
+language=value==="en"?"en":"ta";
+renderPage();
+}
+
+function resizeText(change){
+
+textSize=Math.max(16,Math.min(24,textSize+change));
+document.documentElement.style.fontSize=textSize+"px";
+
+}
+
+function resetText(){
+textSize=16;
+document.documentElement.style.fontSize="16px";
+}
+
+function stopReading(){
+
+speechToken++;
+
+if("speechSynthesis" in window){
+window.speechSynthesis.cancel();
+}
+
+document.getElementById("speechStatus").textContent="";
+
+}
+
+function readArticle(){
+
+if(!("speechSynthesis" in window) ||
+!("SpeechSynthesisUtterance" in window))return;
+
+stopReading();
+
+const token=speechToken;
+const synth=window.speechSynthesis;
+const status=document.getElementById("speechStatus");
+const voice=synth.getVoices().find(v=>
+v.lang.toLowerCase().startsWith(language)
+);
+
+if(!voice){
+
+status.textContent=tr(
+"A matching speech voice is unavailable. Check your device speech settings.",
+"தமிழ் குரல் வசதி கிடைக்கவில்லை. சாதனத்தின் குரல் அமைப்புகளைச் சரிபார்க்கவும்."
+);
+
+return;
+
+}
+
+const sentences=document.getElementById("articleContent")
+.innerText.split(/(?<=[.!?])\s+|\n+/)
+.map(s=>s.trim()).filter(Boolean);
+
+let position=0;
+
+status.textContent=tr(
+"Reading article...",
+"கட்டுரை வாசிக்கப்படுகிறது..."
+);
+
+function speakNext(){
+
+if(token!==speechToken)return;
+
+if(position>=sentences.length){
+
+status.textContent=tr(
+"Reading completed.",
+"வாசிப்பு முடிந்தது."
+);
+
+return;
+
+}
+
+const speech=new SpeechSynthesisUtterance(sentences[position]);
+
+speech.voice=voice;
+speech.lang=voice.lang;
+speech.rate=0.9;
+
+speech.onend=()=>{
+position++;
+speakNext();
+};
+
+speech.onerror=()=>{
+
+if(token!==speechToken)return;
+
+status.textContent=tr(
+"Speech playback could not continue.",
+"குரல் வாசிப்பைத் தொடர முடியவில்லை."
+);
+
+};
+
+synth.speak(speech);
+
+}
+
+speakNext();
+
+}
+
+window.addEventListener("pagehide",stopReading);
+
+renderPage();
+
+</script>
+
+</body>
+</html>

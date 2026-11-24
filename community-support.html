@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Community Support | SIS</title>
+
+<style>
+*{box-sizing:border-box}
+:root{font-size:16px}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f9ff;
+ color:#073763;
+ line-height:1.65;
+}
+header{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+header img{
+ width:140px;
+ max-width:100%;
+ height:auto;
+}
+header h1{margin:8px 0}
+header p{margin:4px 0}
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:20px;
+ background:#052b4d;
+ padding:14px;
+}
+nav a{
+ color:white;
+ text-decoration:none;
+ font-weight:bold;
+}
+.tools{
+ display:flex;
+ justify-content:flex-end;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:8px;
+ padding:12px 16px;
+ background:#e4f3f4;
+}
+.hero{
+ background:linear-gradient(135deg,#073763,#007d80);
+ color:white;
+ text-align:center;
+ padding:36px 16px;
+}
+.hero h2{margin:0}
+.container{
+ max-width:1100px;
+ margin:auto;
+ padding:24px 16px;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+ gap:18px;
+}
+.card{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ box-shadow:0 4px 14px #07376316;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+}
+.card h3{margin:10px 0}
+.card p{color:#465b70;flex:1}
+.symbol{font-size:2rem}
+button,.btn{
+ background:#073763;
+ color:white;
+ border:0;
+ border-radius:8px;
+ padding:12px 18px;
+ font:inherit;
+ cursor:pointer;
+ min-height:44px;
+ text-decoration:none;
+ display:inline-block;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible{
+ outline:3px solid #e6a700;
+ outline-offset:3px;
+}
+.notice{
+ background:#e2f3f2;
+ border-left:4px solid #007d80;
+ padding:18px;
+ border-radius:8px;
+ margin:24px 0;
+}
+.panel{
+ background:white;
+ padding:24px;
+ border-radius:16px;
+ margin-top:24px;
+}
+label{
+ display:block;
+ font-weight:bold;
+ margin-top:18px;
+ margin-bottom:8px;
+}
+input,select{
+ width:100%;
+ padding:13px;
+ font:inherit;
+ border:1px solid #a8bacb;
+ border-radius:8px;
+ color:#073763;
+ background:white;
+ min-height:48px;
+}
+.actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:24px;
+}
+.secondary{
+ background:#e2f3f2;
+ color:#073763;
+}
+.result{
+ background:#e8f5e9;
+ border:1px solid #80b58a;
+ padding:20px;
+ border-radius:10px;
+ margin-top:24px;
+}
+.story{
+ background:#f4f9ff;
+ border-left:4px solid #007d80;
+ padding:18px;
+ border-radius:8px;
+ margin-top:16px;
+}
+dialog{
+ width:92%;
+ max-width:600px;
+ max-height:85vh;
+ overflow:auto;
+ border:0;
+ border-radius:16px;
+ padding:24px;
+ color:#073763;
+}
+dialog::backdrop{background:#0009}
+li{margin-bottom:10px}
+[hidden]{display:none!important}
+footer{
+ background:#073763;
+ color:white;
+ text-align:center;
+ padding:24px 16px;
+}
+@media(max-width:600px){
+ .grid{grid-template-columns:1fr}
+ .card,.panel{padding:18px}
+ .card button,.actions button{width:100%}
+ .tools{justify-content:center}
+ nav{gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png"
+ alt="Spinal Injured Society Official Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="member-registration.html">Registration</a>
+<a href="request-assistance.html">Assistance</a>
+<a href="learning-resources.html">Learning</a>
+</nav>
+
+<div class="tools">
+<span>Text Size:</span>
+<button onclick="resizeText(-1)"
+ aria-label="Decrease text size">A−</button>
+<button onclick="resetText()"
+ aria-label="Reset text size">A</button>
+<button onclick="resizeText(1)"
+ aria-label="Increase text size">A+</button>
+</div>
+
+<section class="hero">
+<h2>Community Support</h2>
+<h3>சமூக ஆதரவு மற்றும் ஒற்றுமை</h3>
+<p>Connect • Support • Inspire • Empower</p>
+<p>ஒன்றிணைவோம், ஒருவருக்கொருவர் ஆதரவளிப்போம்,
+தன்னம்பிக்கையுடன் முன்னேறுவோம்.</p>
+</section>
+
+<main class="container">
+
+<div class="notice">
+<strong>Senior Review Demo V1.0</strong>
+<p>This module demonstrates proposed community
+support services for individuals with spinal
+cord injuries and their families.</p>
+<p>Live messaging, member networking, event
+registration and volunteer coordination are
+not currently active.</p>
+<p>Use fictional information only.</p>
+</div>
+
+<h2>Explore Our Community</h2>
+
+<div class="grid">
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🤝</div>
+<h3>Peer Support</h3>
+<p>உறுப்பினர்களிடையே பரஸ்பர ஆதரவு</p>
+<button onclick="showDetails('peer')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🏆</div>
+<h3>Para Sports</h3>
+<p>மாற்றுத்திறனாளிகளுக்கான விளையாட்டு வாய்ப்புகள்</p>
+<button onclick="showDetails('sports')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">📅</div>
+<h3>Community Events</h3>
+<p>சமூக நிகழ்ச்சிகள் மற்றும் சந்திப்புகள்</p>
+<button onclick="showDetails('events')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">👥</div>
+<h3>Member Networking</h3>
+<p>உறுப்பினர்களுக்கிடையேயான தொடர்பு</p>
+<button onclick="showDetails('network')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">🌟</div>
+<h3>Success Stories</h3>
+<p>சாதனைகள் மற்றும் ஊக்கமளிக்கும் அனுபவங்கள்</p>
+<button onclick="showDetails('stories')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">💚</div>
+<h3>Volunteer Support</h3>
+<p>தன்னார்வலர்களின் உதவி மற்றும் ஆதரவு</p>
+<button onclick="showDetails('volunteer')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">👨‍👩‍👧</div>
+<h3>Family &amp; Caregiver Support</h3>
+<p>குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான ஆதரவு</p>
+<button onclick="showDetails('family')">
+View Details
+</button>
+</article>
+
+<article class="card">
+<div class="symbol" aria-hidden="true">♿</div>
+<h3>Accessibility Awareness</h3>
+<p>அணுகல் வசதிகள் குறித்த விழிப்புணர்வு</p>
+<button onclick="showDetails('accessibility')">
+View Details
+</button>
+</article>
+
+</div>
+
+<section class="panel">
+
+<h2>Community Activities</h2>
+<p>திட்டமிடப்பட்ட சமூக நடவடிக்கைகள்</p>
+
+<div class="grid">
+
+<article class="story">
+<h3>Peer Support Meet</h3>
+<p>Proposed member interaction and
+experience-sharing sessions.</p>
+<strong>Status: Concept Preview</strong>
+</article>
+
+<article class="story">
+<h3>Para Sports Awareness</h3>
+<p>Proposed awareness sessions covering
+accessible sports and participation.</p>
+<strong>Status: Concept Preview</strong>
+</article>
+
+<article class="story">
+<h3>Independent Living Workshop</h3>
+<p>Proposed workshops on accessibility,
+digital skills and independent living.</p>
+<strong>Status: Concept Preview</strong>
+</article>
+
+</div>
+
+<p><small>
+These are proposed activities.
+No event dates, venues or registrations
+have been confirmed.
+</small></p>
+
+</section>
+
+<section class="panel">
+
+<h2>Register Your Community Interest</h2>
+<p>சமூக நடவடிக்கைகளில் பங்கேற்க விருப்பம் தெரிவிக்கவும்.</p>
+
+<div class="notice">
+<strong>Demo Form Only</strong>
+<p>No real member information is collected.
+Your selection is displayed locally and
+is not saved or transmitted.</p>
+</div>
+
+<form id="communityForm">
+
+<label for="memberId">
+Demo Member ID | மாதிரி உறுப்பினர் எண்
+</label>
+
+<input id="memberId"
+ type="text"
+ value="SIS-DEMO-001"
+ readonly>
+
+<label for="memberName">
+Demo Member Name | மாதிரி உறுப்பினர் பெயர்
+</label>
+
+<input id="memberName"
+ type="text"
+ value="Demo Member"
+ readonly>
+
+<label for="interest">
+Area of Interest | விருப்பமான பிரிவு
+</label>
+
+<select id="interest" required>
+<option value="">Select Interest</option>
+<option>Peer Support</option>
+<option>Para Sports</option>
+<option>Community Events</option>
+<option>Member Networking</option>
+<option>Success Story Sharing</option>
+<option>Volunteer Support</option>
+<option>Family &amp; Caregiver Support</option>
+<option>Accessibility Awareness</option>
+</select>
+
+<label for="participation">
+Participation Preference | பங்கேற்பு முறை
+</label>
+
+<select id="participation" required>
+<option value="">Select Preference</option>
+<option>Online Participation</option>
+<option>In-person Participation</option>
+<option>Both Online and In-person</option>
+</select>
+
+<label for="support">
+Accessibility Support | அணுகல் வசதிகள்
+</label>
+
+<select id="support" required>
+<option value="">Select Support</option>
+<option>Wheelchair Accessible Venue</option>
+<option>Accessible Toilet Facility</option>
+<option>Caregiver Accompaniment</option>
+<option>Accessible Transportation Guidance</option>
+<option>Multiple Accessibility Requirements</option>
+<option>No Additional Support Required</option>
+</select>
+
+<div class="actions">
+
+<button type="submit">
+Submit Demo Interest
+</button>
+
+<button type="reset" class="secondary">
+Clear Form
+</button>
+
+</div>
+
+</form>
+
+<section id="result"
+ class="result"
+ role="status"
+ aria-live="polite"
+ tabindex="-1"
+ hidden>
+
+<h3>✓ Demo Interest Completed</h3>
+
+<p>மாதிரி விருப்பப் பதிவு நிறைவடைந்தது.</p>
+
+<p><strong>Reference ID:</strong>
+<span id="reference"></span></p>
+
+<p><strong>Interest:</strong>
+<span id="resultInterest"></span></p>
+
+<p><strong>Participation:</strong>
+<span id="resultParticipation"></span></p>
+
+<p><strong>Accessibility Support:</strong>
+<span id="resultSupport"></span></p>
+
+<p><strong>Status:</strong>
+Pending Coordination (Simulated)</p>
+
+<p>No actual registration has been submitted.
+This confirmation is for demonstration only.</p>
+
+</section>
+
+</section>
+
+<section class="panel">
+
+<h2>Our Community Values</h2>
+<p>நமது சமூகத்தின் மதிப்புகள்</p>
+
+<ul>
+<li>Respect and dignity for every member.</li>
+<li>Equal opportunities and accessibility.</li>
+<li>Mutual support without discrimination.</li>
+<li>Privacy and responsible information sharing.</li>
+<li>Independence and informed decision-making.</li>
+<li>Safe and inclusive community participation.</li>
+</ul>
+
+</section>
+
+<section class="panel">
+
+<h2>Need Additional Support?</h2>
+<p>கூடுதல் உதவி தேவையா?</p>
+
+<a class="btn" href="request-assistance.html">
+Request Assistance
+</a>
+
+</section>
+
+<div class="notice">
+<strong>Future Development</strong>
+<p>Verified member profiles, moderated discussion
+groups, event calendars, volunteer coordination
+and consent-based success stories may be
+introduced after senior approval.</p>
+<p>Member privacy, consent and community safety
+will be essential requirements before launch.</p>
+</div>
+
+</main>
+
+<dialog id="communityDialog"
+ aria-labelledby="dialogTitle">
+
+<h2 id="dialogTitle"></h2>
+<p id="dialogTamil"></p>
+<p id="dialogDescription"></p>
+
+<h3>Proposed Activities</h3>
+
+<ul id="dialogActivities"></ul>
+
+<div class="notice">
+<strong>Demo Preview Only</strong>
+<p>Actual participation and community services
+are not currently available through this website.</p>
+</div>
+
+<form method="dialog">
+<button>Close | மூடு</button>
+</form>
+
+</dialog>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Support • Care • Rehabilitation • Empowerment</p>
+<p>© 2026 SIS | Community Support Demo V1.0</p>
+</footer>
+
+<script>
+
+let textSize=16;
+
+function resizeText(change){
+ textSize=Math.min(24,Math.max(16,textSize+change*2));
+ document.documentElement.style.fontSize=textSize+"px";
+}
+
+function resetText(){
+ textSize=16;
+ document.documentElement.style.fontSize="16px";
+}
+
+const services={
+
+ peer:{
+ title:"Peer Support",
+ tamil:"பரஸ்பர ஆதரவு",
+ description:"Proposed opportunities for members to connect and share experiences in a respectful and supportive environment.",
+ items:[
+ "Peer mentoring",
+ "Experience-sharing sessions",
+ "Independent living discussions",
+ "New member orientation",
+ "Moderated support groups"
+ ]
+ },
+
+ sports:{
+ title:"Para Sports",
+ tamil:"மாற்றுத்திறனாளிகளுக்கான விளையாட்டு",
+ description:"Proposed guidance on accessible sports, recreational activities and competitive participation.",
+ items:[
+ "Wheelchair pickleball",
+ "Para archery",
+ "Wheelchair basketball",
+ "Para athletics",
+ "Sports classification awareness",
+ "Accessible training opportunities"
+ ]
+ },
+
+ events:{
+ title:"Community Events",
+ tamil:"சமூக நிகழ்ச்சிகள்",
+ description:"Proposed community gatherings and awareness programmes designed to encourage inclusive participation.",
+ items:[
+ "Member meetings",
+ "Awareness programmes",
+ "Educational workshops",
+ "Accessible community gatherings",
+ "Rehabilitation awareness sessions"
+ ]
+ },
+
+ network:{
+ title:"Member Networking",
+ tamil:"உறுப்பினர் தொடர்பு",
+ description:"Proposed privacy-conscious networking opportunities for SIS members.",
+ items:[
+ "District-level member connections",
+ "Shared interest groups",
+ "Peer mentoring connections",
+ "Professional networking",
+ "Consent-based communication"
+ ]
+ },
+
+ stories:{
+ title:"Success Stories",
+ tamil:"சாதனையாளர்களின் அனுபவங்கள்",
+ description:"A proposed platform for sharing authentic and consent-based member achievements.",
+ items:[
+ "Education achievements",
+ "Employment milestones",
+ "Para sports achievements",
+ "Entrepreneurship journeys",
+ "Independent living experiences"
+ ]
+ },
+
+ volunteer:{
+ title:"Volunteer Support",
+ tamil:"தன்னார்வலர் ஆதரவு",
+ description:"Proposed coordination of trained and appropriately verified volunteers.",
+ items:[
+ "Community event assistance",
+ "Digital learning support",
+ "Accessibility awareness",
+ "Resource coordination",
+ "Member guidance"
+ ]
+ },
+
+ family:{
+ title:"Family & Caregiver Support",
+ tamil:"குடும்பம் மற்றும் பராமரிப்பாளர் ஆதரவு",
+ description:"Proposed information and support resources for families and caregivers.",
+ items:[
+ "Caregiver awareness sessions",
+ "Family support groups",
+ "Professional resource referrals",
+ "Emotional wellbeing resources",
+ "Independent living awareness"
+ ]
+ },
+
+ accessibility:{
+ title:"Accessibility Awareness",
+ tamil:"அணுகல் வசதி விழிப்புணர்வு",
+ description:"Proposed initiatives to promote accessible environments and inclusive participation.",
+ items:[
+ "Accessible public spaces",
+ "Inclusive transportation awareness",
+ "Accessible education and workplaces",
+ "Digital accessibility",
+ "Community accessibility feedback"
+ ]
+ }
+
+};
+
+function showDetails(key){
+
+ const service=services[key];
+
+ if(!service)return;
+
+ document.getElementById("dialogTitle")
+ .textContent=service.title;
+
+ document.getElementById("dialogTamil")
+ .textContent=service.tamil;
+
+ document.getElementById("dialogDescription")
+ .textContent=service.description;
+
+ const list=document.getElementById("dialogActivities");
+
+ list.replaceChildren();
+
+ service.items.forEach(function(item){
+ const li=document.createElement("li");
+ li.textContent=item;
+ list.appendChild(li);
+ });
+
+ document.getElementById("communityDialog")
+ .showModal();
+
+}
+
+const form=document.getElementById("communityForm");
+const result=document.getElementById("result");
+
+form.addEventListener("submit",function(event){
+
+ event.preventDefault();
+
+ if(!form.reportValidity())return;
+
+ const reference="SIS-COM-DEMO-"+Date.now()
+ .toString().slice(-8);
+
+ document.getElementById("reference")
+ .textContent=reference;
+
+ document.getElementById("resultInterest")
+ .textContent=document.getElementById("interest").value;
+
+ document.getElementById("resultParticipation")
+ .textContent=document.getElementById("participation").value;
+
+ document.getElementById("resultSupport")
+ .textContent=document.getElementById("support").value;
+
+ result.hidden=false;
+
+ result.focus();
+
+ result.scrollIntoView({
+ behavior:"smooth",
+ block:"start"
+ });
+
+});
+
+form.addEventListener("reset",function(){
+
+ result.hidden=true;
+
+ [
+ "reference",
+ "resultInterest",
+ "resultParticipation",
+ "resultSupport"
+ ].forEach(function(id){
+ document.getElementById(id).textContent="";
+ });
+
+});
+
+form.addEventListener("input",function(){
+ result.hidden=true;
+});
+
+</script>
+
+</body>
+</html>

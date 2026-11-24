@@ -1,0 +1,455 @@
+
+/* ========================================
+   SIS - Spinal Injured Society
+   Shared Design System V1.0
+   Senior Review Demo
+======================================== */
+
+:root{
+ --sis-primary:#073763;
+ --sis-primary-dark:#052b4d;
+ --sis-secondary:#007d80;
+ --sis-background:#f4f9ff;
+ --sis-surface:#ffffff;
+ --sis-text:#073763;
+ --sis-muted:#465b70;
+ --sis-border:#cbd9e5;
+ --sis-focus:#e6a700;
+ --sis-radius:16px;
+ --sis-shadow:0 4px 16px #07376312;
+}
+
+/* Global Layout */
+
+*{
+ box-sizing:border-box;
+}
+
+html{
+ scroll-behavior:smooth;
+ -webkit-text-size-adjust:100%;
+}
+
+body{
+ margin:0;
+ font-family:Arial,"Noto Sans Tamil",sans-serif;
+ background:var(--sis-background);
+ color:var(--sis-text);
+ line-height:1.75;
+ overflow-wrap:break-word;
+}
+
+img{
+ max-width:100%;
+ height:auto;
+}
+
+h1,h2,h3,h4{
+ line-height:1.45;
+}
+
+p{
+ margin-top:10px;
+ margin-bottom:14px;
+}
+
+/* Official Branding */
+
+header{
+ background:var(--sis-primary);
+ color:white;
+ padding:28px 16px;
+ text-align:center;
+}
+
+header img[src="sis-logo.png"]{
+ width:150px !important;
+ max-width:100%;
+ height:auto;
+ display:block;
+ margin:0 auto 14px !important;
+ object-fit:contain;
+}
+
+header h1{
+ font-size:2.2rem;
+ margin:8px 0;
+}
+
+header p{
+ margin:6px 0;
+}
+
+/* Navigation */
+
+nav{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ align-items:center;
+ gap:8px;
+ padding:12px;
+ background:var(--sis-primary-dark);
+}
+
+nav a{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ min-height:44px;
+ padding:10px 16px;
+ color:white;
+ text-decoration:none;
+ border-radius:8px;
+ font-weight:bold;
+}
+
+nav a:hover{
+ background:#ffffff18;
+}
+
+/* Accessibility Controls */
+
+.tools{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ justify-content:flex-end;
+ gap:10px;
+ padding:12px 18px;
+ background:#e4f3f4;
+}
+
+.tools button{
+ min-width:48px;
+ min-height:44px;
+}
+
+/* Hero Section */
+
+.hero{
+ background:linear-gradient(
+ 135deg,
+ var(--sis-primary),
+ var(--sis-secondary)
+ );
+ color:white;
+ text-align:center;
+ padding:48px 20px;
+}
+
+.hero h2{
+ font-size:1.9rem;
+ margin-top:0;
+}
+
+.hero p{
+ max-width:800px;
+ margin:14px auto;
+}
+
+/* Content Layout */
+
+.container{
+ width:100%;
+ max-width:1100px;
+ margin:auto;
+ padding:28px 18px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:
+ repeat(auto-fit,minmax(min(100%,260px),1fr));
+ gap:20px;
+}
+
+.panel,.card{
+ background:var(--sis-surface);
+ border:1px solid #e0eaf2;
+ border-radius:var(--sis-radius);
+ padding:24px;
+ box-shadow:var(--sis-shadow);
+}
+
+.card{
+ display:flex;
+ flex-direction:column;
+}
+
+.card h3{
+ margin:12px 0;
+}
+
+.card p{
+ color:var(--sis-muted);
+ flex:1;
+}
+
+.symbol{
+ font-size:2.2rem;
+ line-height:1.5;
+}
+
+/* Buttons and Links */
+
+button,.btn,.service-link{
+ font:inherit;
+ font-weight:600;
+ cursor:pointer;
+ min-height:44px;
+ border-radius:10px;
+ padding:12px 18px;
+ touch-action:manipulation;
+}
+
+button,.service-link{
+ background:var(--sis-primary);
+ color:white;
+ border:0;
+}
+
+.service-link,.btn{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ text-decoration:none;
+}
+
+button:hover,.service-link:hover{
+ background:var(--sis-primary-dark);
+}
+
+.hero .btn{
+ background:white;
+ color:var(--sis-primary);
+}
+
+.secondary{
+ background:#e2f3f2;
+ color:var(--sis-primary);
+}
+
+.secondary:hover{
+ background:#cce7e7;
+ color:var(--sis-primary);
+}
+
+button:disabled{
+ opacity:.65;
+ cursor:not-allowed;
+}
+
+/* Keyboard Accessibility */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible{
+ outline:3px solid var(--sis-focus);
+ outline-offset:4px;
+ box-shadow:0 0 0 2px var(--sis-primary);
+}
+
+/* Form Elements */
+
+label{
+ font-weight:600;
+ line-height:1.6;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea{
+ width:100%;
+ max-width:100%;
+ min-height:48px;
+ padding:12px 14px;
+ border:1px solid #8299ad;
+ border-radius:10px;
+ background:white;
+ color:var(--sis-text);
+ font:inherit;
+}
+
+input[type="checkbox"],
+input[type="radio"]{
+ width:20px;
+ height:20px;
+ accent-color:var(--sis-primary);
+}
+
+input[readonly]{
+ background:#edf3f8;
+}
+
+textarea{
+ min-height:120px;
+ resize:vertical;
+}
+
+::placeholder{
+ color:#52677a;
+ opacity:1;
+}
+
+.actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:24px;
+}
+
+/* Notices and Results */
+
+.notice{
+ background:#e2f3f2;
+ color:var(--sis-primary);
+ border-left:4px solid var(--sis-secondary);
+ padding:20px;
+ border-radius:10px;
+ margin-top:24px;
+ margin-bottom:24px;
+}
+
+.result{
+ background:#e8f5e9;
+ color:#174d25;
+ border:1px solid #80b58a;
+ padding:22px;
+ border-radius:12px;
+}
+
+[hidden]{
+ display:none !important;
+}
+
+/* Accessible Dialogs */
+
+dialog{
+ width:calc(100% - 32px);
+ max-width:600px;
+ max-height:85vh;
+ overflow:auto;
+ border:1px solid var(--sis-border);
+ border-radius:18px;
+ padding:24px;
+ background:white;
+ color:var(--sis-text);
+ box-shadow:0 12px 40px #0003;
+}
+
+dialog::backdrop{
+ background:rgba(0,0,0,.65);
+}
+
+dialog li{
+ margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+ background:var(--sis-primary);
+ color:white;
+ text-align:center;
+ padding:28px 18px;
+}
+
+footer p{
+ margin:8px 0;
+}
+
+/* Mobile Responsive Layout */
+
+@media(max-width:600px){
+
+ header{
+  padding:22px 14px;
+ }
+
+ header img[src="sis-logo.png"]{
+  width:130px !important;
+ }
+
+ header h1{
+  font-size:1.9rem;
+ }
+
+ nav{
+  gap:4px;
+ }
+
+ nav a{
+  padding:10px 12px;
+ }
+
+ .hero{
+  padding:34px 16px;
+ }
+
+ .hero h2{
+  font-size:1.5rem;
+ }
+
+ .container{
+  padding:20px 14px;
+ }
+
+ .grid{
+  grid-template-columns:1fr;
+  gap:16px;
+ }
+
+ .card,.panel{
+  padding:20px 16px;
+ }
+
+ .card button,
+ .card .service-link,
+ .actions button{
+  width:100%;
+ }
+
+ .tools{
+  justify-content:center;
+ }
+
+ dialog{
+  padding:20px;
+ }
+
+}
+
+/* Reduced Motion Accessibility */
+
+@media(prefers-reduced-motion:reduce){
+
+ *,
+ *::before,
+ *::after{
+  animation-duration:.01ms !important;
+  animation-iteration-count:1 !important;
+  transition-duration:.01ms !important;
+  scroll-behavior:auto !important;
+ }
+
+}
+
+/* High Contrast Preference */
+
+@media(prefers-contrast:more){
+
+ .card,.panel{
+  border:2px solid var(--sis-primary);
+ }
+
+ input,select,textarea{
+  border:2px solid var(--sis-primary);
+ }
+
+}
+
+/* End of SIS Shared Design System */

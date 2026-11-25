@@ -525,21 +525,27 @@ const categories=[
  enDesc:"Explore accessible and independent daily living.",
  taDesc:"அணுகக்கூடிய சுயசார்பு வாழ்க்கைக்கான தகவல்கள்.",
  enTopics:[
- "Wheelchair selection",
- "Safe transfers",
- "Accessible home modifications",
- "Assistive technology",
- "Accessible travel"
+ "Wheelchair Selection & Maintenance",
+ "Safe Transfers & Mobility",
+ "Accessible Home Modifications",
+ "Accessible Bathroom & Toilet",
+ "Assistive Devices & Technology",
+ "Accessible Travel & Transportation",
+ "Personal Care & Daily Activities",
+ "Independent Living & Personal Choice"
  ],
  taTopics:[
- "சக்கர நாற்காலி தேர்வு",
- "பாதுகாப்பான இடமாற்றம்",
- "வீட்டு அணுகல் வசதிகள்",
- "உதவித் தொழில்நுட்பம்",
- "அணுகக்கூடிய பயணம்"
+ "சக்கர நாற்காலி தேர்வு மற்றும் பராமரிப்பு",
+ "பாதுகாப்பான இடமாற்றம் மற்றும் இயக்கம்",
+ "அணுகக்கூடிய வீட்டு மாற்றங்கள்",
+ "அணுகக்கூடிய குளியலறை மற்றும் கழிப்பறை",
+ "உதவி உபகரணங்கள் மற்றும் தொழில்நுட்பம்",
+ "அணுகக்கூடிய பயணம் மற்றும் போக்குவரத்து",
+ "தனிப்பட்ட பராமரிப்பு மற்றும் தினசரி செயல்கள்",
+ "சுதந்திரமான வாழ்க்கை மற்றும் தனிப்பட்ட தேர்வு"
  ],
  url:"independent-living.html",
- ready:false
+ ready:true
 },
 
 {
@@ -600,21 +606,27 @@ const categories=[
  enDesc:"Educational support for families and caregivers.",
  taDesc:"குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான கல்வி ஆதரவு.",
  enTopics:[
- "Daily care support",
- "Caregiver education",
- "Family communication",
- "Caregiver wellbeing",
- "Emergency awareness"
+ "Caregiver Responsibilities",
+ "Safe Physical Assistance",
+ "Daily Care & Hygiene",
+ "Emergency Preparedness",
+ "Respect, Privacy & Dignity",
+ "Caregiver Wellbeing",
+ "Family Communication",
+ "Promoting Independence"
  ],
  taTopics:[
- "தினசரி பராமரிப்பு ஆதரவு",
- "பராமரிப்பாளர் கல்வி",
- "குடும்ப உறவுகள்",
- "பராமரிப்பாளர் நல்வாழ்வு",
- "அவசரநிலை விழிப்புணர்வு"
+ "பராமரிப்பாளர்களின் பொறுப்புகள்",
+ "பாதுகாப்பான உடல் உதவி",
+ "தினசரி பராமரிப்பு மற்றும் சுகாதாரம்",
+ "அவசரநிலை முன்னெச்சரிக்கை",
+ "மரியாதை, தனியுரிமை மற்றும் கண்ணியம்",
+ "பராமரிப்பாளரின் நல்வாழ்வு",
+ "குடும்பத்தினரிடையே உரையாடல்",
+ "சுதந்திரமான வாழ்க்கையை ஊக்குவித்தல்"
  ],
  url:"caregiver-guide.html",
- ready:false
+ ready:true
 }
 
 ];
@@ -723,7 +735,27 @@ function renderCategories(){
  "emotional-wellbeing.html#personal-goals",
  "emotional-wellbeing.html#crisis-support"
  ];
- const topicLinks=category.id==="health"?healthLinks:category.id==="mental"?mentalLinks:[];
+ const livingLinks=[
+ "independent-living.html#wheelchair",
+ "independent-living.html#transfers",
+ "independent-living.html#home-access",
+ "independent-living.html#bathroom",
+ "independent-living.html#assistive-devices",
+ "independent-living.html#travel",
+ "independent-living.html#daily-care",
+ "independent-living.html#personal-choice"
+ ];
+ const caregiverLinks=[
+ "caregiver-guide.html#responsibilities",
+ "caregiver-guide.html#safe-assistance",
+ "caregiver-guide.html#daily-care",
+ "caregiver-guide.html#emergency-preparedness",
+ "caregiver-guide.html#dignity",
+ "caregiver-guide.html#caregiver-wellbeing",
+ "caregiver-guide.html#family-communication",
+ "caregiver-guide.html#promoting-independence"
+ ];
+ const topicLinks=category.id==="health"?healthLinks:category.id==="mental"?mentalLinks:category.id==="living"?livingLinks:category.id==="caregiver"?caregiverLinks:[];
  topicList.forEach(function(topic,topicIndex){
 
  const item=document.createElement("li");

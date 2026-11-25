@@ -495,18 +495,26 @@ const categories=[
  taDesc:"மனநலம் மற்றும் வாழ்க்கை மாற்றங்களை எதிர்கொள்ள உதவும் தகவல்கள்.",
  enTopics:[
  "Emotional adjustment",
+ "Depression and anxiety awareness",
  "Stress management",
- "Confidence and motivation",
- "Professional mental health support"
+ "Self-confidence and self-esteem",
+ "Family and social relationships",
+ "Peer support and counselling",
+ "Purpose and personal goals",
+ "Mental health crisis support"
  ],
  taTopics:[
- "மனநிலை மாற்றங்களை எதிர்கொள்ளுதல்",
+ "வாழ்க்கை மாற்றங்களை எதிர்கொள்ளுதல்",
+ "மனச்சோர்வு மற்றும் பதற்றம் பற்றிய விழிப்புணர்வு",
  "மன அழுத்த மேலாண்மை",
- "தன்னம்பிக்கை மற்றும் ஊக்கம்",
- "தொழில்முறை மனநல ஆதரவு"
+ "தன்னம்பிக்கை மற்றும் சுயமரியாதை",
+ "குடும்பம் மற்றும் சமூக உறவுகள்",
+ "சக நபர்களின் ஆதரவு மற்றும் ஆலோசனை",
+ "வாழ்க்கை நோக்கம் மற்றும் தனிப்பட்ட இலக்குகள்",
+ "அவசர மனநல உதவி"
  ],
  url:"emotional-wellbeing.html",
- ready:false
+ ready:true
 },
 
 {
@@ -705,12 +713,23 @@ function renderCategories(){
  "physical-health.html#autonomic-dysreflexia",
  "physical-health.html#womens-health"
  ];
+ const mentalLinks=[
+ "emotional-wellbeing.html#emotional-adjustment",
+ "emotional-wellbeing.html#depression-anxiety",
+ "emotional-wellbeing.html#stress-management",
+ "emotional-wellbeing.html#self-confidence",
+ "emotional-wellbeing.html#relationships",
+ "emotional-wellbeing.html#peer-support",
+ "emotional-wellbeing.html#personal-goals",
+ "emotional-wellbeing.html#crisis-support"
+ ];
+ const topicLinks=category.id==="health"?healthLinks:category.id==="mental"?mentalLinks:[];
  topicList.forEach(function(topic,topicIndex){
 
  const item=document.createElement("li");
- if(category.id==="health" && healthLinks[topicIndex]){
+ if(topicLinks[topicIndex]){
  const link=document.createElement("a");
- link.href=healthLinks[topicIndex];
+ link.href=topicLinks[topicIndex];
  link.textContent=topic+ (language==="ta"?" — படிக்கலாம்":" — Read Guide");
  item.appendChild(link);
  }else{

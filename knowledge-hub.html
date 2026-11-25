@@ -688,9 +688,9 @@ function renderCategories(){
  topicList.forEach(function(topic){
 
  const item=document.createElement("li");
- if(category.id==="health" && (topic===topicList[0] || topic===topicList[1])){
+ if(category.id==="health" && (topic===topicList[0] || topic===topicList[1] || topic===topicList[2])){
  const link=document.createElement("a");
- link.href=topic===topicList[0]?"bowel-management.html":"bladder-management.html";
+ link.href=topic===topicList[0]?"bowel-management.html":topic===topicList[1]?"bladder-management.html":"pressure-injury.html";
  link.textContent=topic+ (language==="ta"?" — படிக்கலாம்":" — Read Guide");
  item.appendChild(link);
  }else{

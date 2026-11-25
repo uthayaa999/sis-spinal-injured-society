@@ -1,0 +1,1455 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Pressure Injury & Skin Care | SIS</title>
+<link rel="stylesheet" href="sis-styles.css">
+<style>
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+margin:0;background:#f4f9ff;color:#073763;
+font-family:Arial,"Noto Sans Tamil",sans-serif;
+line-height:1.85
+}
+header{
+background:#073763;color:white;
+text-align:center;padding:24px 16px
+}
+header img{width:140px;max-width:100%;height:auto}
+header h1{margin:8px 0}
+nav,.tools{
+display:flex;flex-wrap:wrap;justify-content:center;
+align-items:center;gap:12px;padding:14px
+}
+nav{background:#052b4d}
+nav a{
+color:white;font-weight:bold;text-decoration:none;
+padding:10px;min-height:44px
+}
+.tools{background:white}
+button,.btn{
+display:inline-block;background:#073763;color:white;
+padding:12px 18px;min-height:44px;font:inherit;
+border:0;border-radius:8px;cursor:pointer;
+text-decoration:none
+}
+button[aria-pressed="true"]{background:#007d80}
+button:disabled{opacity:.6;cursor:not-allowed}
+button:focus-visible,a:focus-visible,
+input:focus-visible,summary:focus-visible{
+outline:3px solid #e6a700;outline-offset:4px
+}
+.hero{
+background:linear-gradient(135deg,#073763,#007d80);
+color:white;text-align:center;padding:40px 20px
+}
+.hero h2{font-size:2em;margin:0 0 12px}
+.article-container{
+max-width:960px;margin:auto;padding:24px 16px
+}
+.article-section{
+background:white;padding:28px;margin:24px 0;
+border-radius:16px;box-shadow:0 4px 14px #07376312;
+overflow-wrap:anywhere;scroll-margin-top:20px
+}
+.article-section h2{
+margin-top:0;padding-bottom:12px;
+border-bottom:2px solid #e2f3f2
+}
+.article-grid{
+display:grid;gap:16px;
+grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr))
+}
+.info-card{
+background:#f8fbff;border:1px solid #cbd9e5;
+border-radius:12px;padding:20px
+}
+.info-card h3{margin-top:0}
+.notice,.warning,.emergency{
+padding:18px;border-radius:10px;margin:20px 0
+}
+.notice{
+background:#e2f3f2;border-left:4px solid #007d80
+}
+.warning{
+background:#fff4e5;color:#663800;
+border-left:4px solid #b66a00
+}
+.emergency{
+background:#fff0f0;color:#8b1616;
+border-left:4px solid #b42318
+}
+.review-status{
+display:inline-block;background:#fff0cf;
+color:#704600;font-weight:bold;
+padding:8px 14px;border-radius:8px
+}
+.toc a{
+display:block;padding:12px 0;color:#073763;
+border-bottom:1px solid #dce7ef;text-decoration:none
+}
+.diagram{
+background:#f4f9ff;padding:18px;
+border:1px solid #dce7ef;
+border-radius:12px;text-align:center
+}
+.diagram svg,.info-card svg{width:100%;height:auto}
+.diagram svg{max-width:420px}
+.check-item{
+display:flex;align-items:flex-start;gap:12px;
+padding:14px 8px;border-bottom:1px solid #dce7ef;
+cursor:pointer
+}
+.check-item input{
+width:22px;height:22px;flex-shrink:0;
+accent-color:#007d80;margin-top:5px
+}
+progress{width:100%;height:18px;accent-color:#007d80}
+details{
+border:1px solid #cbd9e5;border-radius:10px;
+padding:16px;margin:12px 0
+}
+summary{font-weight:bold;cursor:pointer;min-height:44px}
+li{margin-bottom:10px}
+a{overflow-wrap:anywhere}
+footer{
+background:#073763;color:white;text-align:center;
+padding:28px 16px
+}
+@media(max-width:600px){
+.article-section{padding:18px}
+.article-grid{grid-template-columns:1fr}
+.hero h2{font-size:1.65em}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="sis-logo.png" alt="Official SIS Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html" data-key="home"></a>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<a href="bowel-management.html" data-key="bowel"></a>
+<a href="bladder-management.html" data-key="bladder"></a>
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+
+<strong data-key="language"></strong>
+
+<button id="taButton" onclick="setLanguage('ta')"
+aria-pressed="true">தமிழ்</button>
+
+<button id="enButton" onclick="setLanguage('en')"
+aria-pressed="false">English</button>
+
+<strong data-key="size"></strong>
+
+<button onclick="resizeText(-2)"
+aria-label="Decrease text size">A−</button>
+
+<button onclick="resetText()"
+aria-label="Reset text size">A</button>
+
+<button onclick="resizeText(2)"
+aria-label="Increase text size">A+</button>
+
+<button id="readButton" onclick="readArticle()"
+data-key="read"></button>
+
+<button id="stopButton" onclick="stopReading()"
+data-key="stop"></button>
+
+</section>
+
+<p id="speechStatus" role="status"
+aria-live="polite"
+style="text-align:center;padding:0 16px"></p>
+
+<section class="hero">
+<h2 data-key="title"></h2>
+<p data-key="subtitle"></p>
+<p data-key="audience"></p>
+</section>
+
+<main class="article-container">
+
+<p>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<span aria-hidden="true"> / </span>
+<span data-key="shortTitle"></span>
+</p>
+
+<div class="notice">
+<span class="review-status" data-key="review"></span>
+<p data-key="reviewNote"></p>
+<p data-key="date"></p>
+</div>
+
+<section class="article-section toc">
+<h2 data-key="contents"></h2>
+<div id="contentsList"></div>
+<a href="#checklist" data-key="checklistTitle"></a>
+<a href="#faq" data-key="faqTitle"></a>
+<a href="#sources" data-key="sourcesTitle"></a>
+</section>
+
+<div id="articleContent"></div>
+
+<section id="checklist" class="article-section">
+
+<h2 data-key="checklistTitle"></h2>
+<p data-key="checklistNote"></p>
+
+<div id="checklistItems"></div>
+
+<p id="checklistStatus"
+role="status" aria-live="polite"></p>
+
+<progress id="checklistProgress"
+value="0" max="8"
+aria-label="Education checklist progress"></progress>
+
+<p>
+<button onclick="resetChecklist()"
+data-key="resetChecklist"></button>
+</p>
+
+<small data-key="privacy"></small>
+
+</section>
+
+<section id="faq" class="article-section">
+<h2 data-key="faqTitle"></h2>
+<div id="faqList"></div>
+</section>
+
+<section id="sources" class="article-section">
+
+<h2 data-key="sourcesTitle"></h2>
+<p data-key="sourcesNote"></p>
+
+<p><strong>[1] MSKTC</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/skincare-and-pressure-sores-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">
+Causes and Risks of Pressure Sores
+</a>
+
+<p><strong>[2] MSKTC</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/preventing-pressure-sores"
+target="_blank" rel="noopener noreferrer">
+Preventing Pressure Sores
+</a>
+
+<p><strong>[3] MSKTC</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/recognizing-and-treating-pressure-sores"
+target="_blank" rel="noopener noreferrer">
+Recognizing and Treating Pressure Sores
+</a>
+
+<p><strong>[4] Clinical Review – 2020</strong></p>
+
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7640915/"
+target="_blank" rel="noopener noreferrer">
+A Primary Care Provider’s Guide to Prevention and Management of Pressure Injury and Skin Breakdown in People With Spinal Cord Injury
+</a>
+
+<p><strong>[5] MSKTC</strong></p>
+
+<a href="https://msktc.org/sci/factsheets/areas-high-risk-developing-pressure-sores"
+target="_blank" rel="noopener noreferrer">
+Areas at High Risk of Developing Pressure Sores
+</a>
+
+</section>
+
+<div class="warning">
+<h3 data-key="disclaimerTitle"></h3>
+<p data-key="disclaimer"></p>
+<p><strong data-key="emergency"></strong>:
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a></p>
+</div>
+
+<a class="btn" href="knowledge-hub.html"
+data-key="back"></a>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Understand • Support • Empower</p>
+<p>© 2026 SIS | Knowledge Hub</p>
+<p>Educational Draft V0.1</p>
+</footer>
+
+<script>
+
+let language="ta";
+let textSize=16;
+let checked=Array(8).fill(false);
+let speechToken=0;
+
+const ui={
+
+home:["Home","முகப்பு"],
+hub:["Knowledge Hub","அறிவு மையம்"],
+bowel:["Bowel Management","குடல் பராமரிப்பு"],
+bladder:["Bladder Management","சிறுநீர்ப்பை பராமரிப்பு"],
+language:["Language","மொழி"],
+size:["Text Size","எழுத்து அளவு"],
+read:["Read Aloud","குரலில் வாசிக்க"],
+stop:["Stop Reading","வாசிப்பை நிறுத்து"],
+
+title:[
+"Pressure Injury & Skin Care After SCI",
+"முதுகுத்தண்டுவடப் பாதிப்புக்குப் பிறகு அழுத்தப் புண்கள் மற்றும் தோல் பராமரிப்பு"
+],
+
+shortTitle:[
+"Pressure Injury & Skin Care",
+"அழுத்தப் புண்கள் மற்றும் தோல் பராமரிப்பு"
+],
+
+subtitle:[
+"Protect your skin through awareness, prevention and timely care.",
+"விழிப்புணர்வு, தடுப்பு முறைகள் மற்றும் சரியான நேரத்தில் மருத்துவ உதவி மூலம் தோலைப் பாதுகாப்போம்."
+],
+
+audience:[
+"Educational guide for people with SCI, families and caregivers.",
+"முதுகுத்தண்டுவடப் பாதிப்பு உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான கல்வி வழிகாட்டி."
+],
+
+review:[
+"Medical Review Pending",
+"மருத்துவ நிபுணரின் மதிப்பாய்வு நிலுவையில் உள்ளது"
+],
+
+reviewNote:[
+"This SIS educational draft uses published medical resources. Independent clinical review is pending.",
+"வெளியிடப்பட்ட மருத்துவ ஆதாரங்களின் அடிப்படையில் இந்த SIS கல்வி வரைவு உருவாக்கப்பட்டுள்ளது. மருத்துவ நிபுணரின் மதிப்பாய்வு இன்னும் பெறப்படவில்லை."
+],
+
+date:[
+"Draft prepared: 25 November 2026",
+"வரைவு தயாரிக்கப்பட்ட நாள்: 25 நவம்பர் 2026"
+],
+
+contents:["In This Guide","இந்த வழிகாட்டியில்"],
+
+checklistTitle:[
+"10. Skin Care Education Checklist",
+"10. தோல் பராமரிப்பு விழிப்புணர்வுப் பட்டியல்"
+],
+
+checklistNote:[
+"Use this checklist to discuss preventive care with your healthcare team. Completing it does not establish that your skin is healthy.",
+"தடுப்பு பராமரிப்பு குறித்து மருத்துவக் குழுவுடன் ஆலோசிக்க இந்தப் பட்டியலைப் பயன்படுத்துங்கள். இதனை நிறைவு செய்வது தோல் ஆரோக்கியமாக இருப்பதை உறுதிப்படுத்தாது."
+],
+
+resetChecklist:[
+"Reset Checklist",
+"பட்டியலை மீட்டமை"
+],
+
+privacy:[
+"Checklist selections are not stored or sent to SIS. Browser speech services may process article text when Read Aloud is used.",
+"பட்டியல் தேர்வுகள் சேமிக்கப்படவோ SIS அமைப்புக்கு அனுப்பப்படவோ மாட்டாது. குரல் வாசிப்பின்போது உலாவியின் குரல் சேவை கட்டுரை உரையைச் செயலாக்கலாம்."
+],
+
+faqTitle:[
+"11. Frequently Asked Questions",
+"11. அடிக்கடி கேட்கப்படும் கேள்விகள்"
+],
+
+sourcesTitle:[
+"12. Medical References",
+"12. மருத்துவ ஆதாரங்கள்"
+],
+
+sourcesNote:[
+"Published clinical and educational resources for further learning.",
+"கூடுதல் புரிதலுக்கான வெளியிடப்பட்ட மருத்துவ மற்றும் கல்வி ஆதாரங்கள்."
+],
+
+disclaimerTitle:[
+"Important Medical Disclaimer",
+"முக்கிய மருத்துவ அறிவிப்பு"
+],
+
+disclaimer:[
+"This guide cannot diagnose or stage a wound. Suspected pressure injuries need professional assessment. Do not cut away tissue, apply unprescribed substances or change wound treatment without clinical advice.",
+"இந்த வழிகாட்டியால் காயத்தையோ அதன் நிலையையோ கண்டறிய முடியாது. அழுத்தப் புண்கள் சந்தேகிக்கப்பட்டால் மருத்துவ மதிப்பீடு அவசியம். மருத்துவ ஆலோசனையின்றி இறந்த திசுக்களை அகற்றவோ, பரிந்துரைக்கப்படாத பொருட்களைப் பயன்படுத்தவோ, காய சிகிச்சையை மாற்றவோ வேண்டாம்."
+],
+
+emergency:[
+"Emergency assistance",
+"அவசர மருத்துவ உதவி"
+],
+
+back:[
+"Back to Knowledge Hub",
+"அறிவு மையத்திற்குத் திரும்பவும்"
+]
+
+};
+
+function tr(en,ta){
+return language==="ta"?ta:en;
+}
+
+function esc(value){
+const div=document.createElement("div");
+div.textContent=value;
+return div.innerHTML;
+}
+
+function cards(items){
+
+return `<div class="article-grid">${
+items.map(item=>`
+<div class="info-card">
+<h3>${tr(item[0],item[1])}</h3>
+<p>${tr(item[2],item[3])}</p>
+</div>
+`).join("")
+}</div>`;
+
+}
+
+function skinDiagram(stage){
+
+const wounds={
+
+0:"",
+
+1:'<ellipse cx="120" cy="24" rx="40" ry="9" fill="#9e2440" opacity=".8"/>',
+
+2:'<path d="M82 20 Q120 62 158 20 Z" fill="#ffffff"/><path d="M82 20 Q120 62 158 20" fill="none" stroke="#ac3c4b" stroke-width="4"/>',
+
+3:'<path d="M78 20 L90 65 Q120 140 150 65 L162 20 Z" fill="#ffffff"/><path d="M78 20 L90 65 Q120 140 150 65 L162 20" fill="none" stroke="#ac3c4b" stroke-width="4"/>',
+
+4:'<path d="M72 20 L86 80 Q100 155 107 184 L133 184 Q140 155 154 80 L168 20 Z" fill="#ffffff"/><path d="M72 20 L86 80 Q100 155 107 184 L133 184 Q140 155 154 80 L168 20" fill="none" stroke="#ac3c4b" stroke-width="4"/>',
+
+5:'<path d="M80 20 Q120 100 160 20 Z" fill="#554437" stroke="#392e26" stroke-width="3"/>',
+
+6:'<ellipse cx="120" cy="23" rx="40" ry="9" fill="#73354e"/><ellipse cx="120" cy="154" rx="42" ry="28" fill="#73354e" opacity=".8"/>'
+
+};
+
+const labels=[
+
+tr("Intact skin","பாதிக்கப்படாத தோல்"),
+
+tr("Stage 1","நிலை 1"),
+
+tr("Stage 2","நிலை 2"),
+
+tr("Stage 3","நிலை 3"),
+
+tr("Stage 4","நிலை 4"),
+
+tr("Unstageable injury","நிலை தீர்மானிக்க முடியாத புண்"),
+
+tr("Deep tissue injury","ஆழமான திசுப் பாதிப்பு")
+
+];
+
+return `
+
+<svg viewBox="0 0 240 215"
+role="img"
+aria-label="${labels[stage]}">
+
+<title>${labels[stage]}</title>
+
+<rect x="10" y="20" width="220" height="15"
+rx="3" fill="#d79c7a"/>
+
+<rect x="10" y="35" width="220" height="40"
+fill="#eebda8"/>
+
+<rect x="10" y="75" width="220" height="65"
+fill="#f3d77e"/>
+
+<rect x="10" y="140" width="220" height="55"
+fill="#c98587"/>
+
+<rect x="85" y="184" width="70" height="24"
+rx="10" fill="#dedfe4" stroke="#8d96a4"/>
+
+${wounds[stage]}
+
+</svg>`;
+
+}
+
+function stageCards(){
+
+const stages=[
+
+[
+1,"Stage 1","நிலை 1",
+"Skin remains intact but develops persistent local colour or texture changes. Damage may be harder to recognise in darker skin.",
+"தோல் உடையாமல் இருக்கும். ஆனால் ஒரு பகுதியில் நிறம் அல்லது தன்மையில் நீடித்த மாற்றம் ஏற்படும். அடர் நிறத் தோலில் இதைக் கண்டறிவது சிரமமாக இருக்கலாம்."
+],
+
+[
+2,"Stage 2","நிலை 2",
+"Partial loss of skin with exposed dermis. It may resemble a shallow sore or blister.",
+"தோலின் ஒரு பகுதி சேதமடைந்து உட்புறத் தோல் அடுக்கு வெளிப்படும். மேலோட்டமான புண் அல்லது கொப்புளம் போன்று தோன்றலாம்."
+],
+
+[
+3,"Stage 3","நிலை 3",
+"Full thickness skin loss. Fat may be visible, but deeper supporting tissues are not exposed.",
+"தோலின் முழுத் தடிமனும் பாதிக்கப்பட்டிருக்கும். கொழுப்புத் திசு தெரியலாம். ஆனால் அதற்குக் கீழுள்ள ஆழமான திசுக்கள் வெளிப்படாது."
+],
+
+[
+4,"Stage 4","நிலை 4",
+"Extensive tissue loss involving deeper structures such as muscle, tendon or bone.",
+"தசை, தசைநார் அல்லது எலும்பு போன்ற ஆழமான பகுதிகளையும் பாதிக்கும் தீவிரமான திசு இழப்பு."
+],
+
+[
+5,"Unstageable","நிலை தீர்மானிக்க முடியாத புண்",
+"Dead tissue obscures the wound base, preventing accurate assessment of its depth.",
+"இறந்த திசுக்கள் காயத்தின் அடிப்பகுதியை மறைப்பதால் அதன் ஆழத்தைத் துல்லியமாக மதிப்பிட முடியாது."
+],
+
+[
+6,"Deep Tissue Pressure Injury","ஆழமான திசு அழுத்தப் பாதிப்பு",
+"Persistent dark red, maroon or purple changes may indicate injury beneath the surface, even before a large wound becomes visible.",
+"நீடித்த அடர் சிவப்பு, கருஞ்சிவப்பு அல்லது ஊதா நிற மாற்றங்கள் பெரிய புண் வெளிப்படுவதற்கு முன்பே ஆழமான திசுப் பாதிப்பைக் குறிக்கலாம்."
+]
+
+];
+
+return `<div class="article-grid">${
+stages.map(item=>`
+
+<div class="info-card">
+
+<h3>${tr(item[1],item[2])}</h3>
+
+${skinDiagram(item[0])}
+
+<p>${tr(item[3],item[4])}</p>
+
+</div>
+`).join("")
+}</div>`;
+
+}
+
+function pressureMap(){
+
+return `
+<div class="diagram">
+
+<h3>${tr(
+"Common Pressure Risk Areas",
+"அழுத்தப் புண்கள் ஏற்படக்கூடிய முக்கிய பகுதிகள்"
+)}</h3>
+
+<svg viewBox="0 0 320 385"
+role="img"
+aria-label="${tr(
+"Schematic body showing areas requiring skin inspection",
+"தோல் பரிசோதனை தேவைப்படும் உடல் பகுதிகளின் வரைபடம்"
+)}">
+
+<title>${tr(
+"Pressure risk area illustration",
+"அழுத்தப் பாதிப்பு பகுதிகள்"
+)}</title>
+
+<circle cx="160" cy="42" r="27"
+fill="#cbdce9" stroke="#738da3"/>
+
+<path d="M145 72 L175 72
+Q210 85 200 140
+L190 205 L130 205 L120 140
+Q110 85 145 72 Z"
+fill="#cbdce9" stroke="#738da3"/>
+
+<path d="M126 91 L94 180 L105 225
+M194 91 L226 180 L215 225"
+fill="none" stroke="#cbdce9"
+stroke-width="25" stroke-linecap="round"/>
+
+<path d="M143 205 L134 280 L130 350
+M177 205 L186 280 L190 350"
+fill="none" stroke="#cbdce9"
+stroke-width="34" stroke-linecap="round"/>
+
+<g fill="#b42318" stroke="white" stroke-width="2">
+
+<circle cx="160" cy="42" r="9"/>
+<circle cx="135" cy="103" r="9"/>
+<circle cx="185" cy="103" r="9"/>
+<circle cx="94" cy="180" r="9"/>
+<circle cx="226" cy="180" r="9"/>
+<circle cx="160" cy="182" r="10"/>
+<circle cx="134" cy="202" r="10"/>
+<circle cx="186" cy="202" r="10"/>
+<circle cx="143" cy="218" r="9"/>
+<circle cx="177" cy="218" r="9"/>
+<circle cx="134" cy="280" r="8"/>
+<circle cx="186" cy="280" r="8"/>
+<circle cx="130" cy="350" r="9"/>
+<circle cx="190" cy="350" r="9"/>
+
+</g>
+
+<g fill="#073763" font-size="14"
+font-weight="bold" font-family="Arial">
+
+<text x="195" y="42">1</text>
+<text x="205" y="103">2</text>
+<text x="245" y="180">3</text>
+<text x="170" y="172">4</text>
+<text x="205" y="204">5</text>
+<text x="100" y="240">6</text>
+<text x="205" y="285">7</text>
+<text x="210" y="355">8</text>
+
+</g>
+
+</svg>
+
+<div style="text-align:left">
+
+<p>1. ${tr("Back of head","தலையின் பின்பகுதி")}</p>
+
+<p>2. ${tr("Shoulder blades","தோள்பட்டை எலும்புகள்")}</p>
+
+<p>3. ${tr("Elbows","முழங்கைகள்")}</p>
+
+<p>4. ${tr("Sacrum and tailbone","முதுகுத்தண்டின் கீழ்ப்பகுதி மற்றும் வால் எலும்பு")}</p>
+
+<p>5. ${tr("Hips","இடுப்புப் பகுதிகள்")}</p>
+
+<p>6. ${tr("Sitting bones","அமரும் பகுதியில் உள்ள எலும்புகள்")}</p>
+
+<p>7. ${tr("Knees","முழங்கால்கள்")}</p>
+
+<p>8. ${tr("Heels and ankles","குதிகால் மற்றும் கணுக்கால்கள்")}</p>
+
+</div>
+
+<small>${tr(
+"Original simplified SIS illustration. Risk varies with body position, equipment and health. Other areas may also be affected.",
+"SIS உருவாக்கிய எளிய விளக்கப்படம். உடல் நிலை, உபகரணங்கள் மற்றும் உடல்நிலையைப் பொறுத்து அழுத்த அபாயம் மாறுபடும். மற்ற பகுதிகளும் பாதிக்கப்படலாம்."
+)}</small>
+
+</div>`;
+
+}
+
+const sections=[
+
+{
+
+id:"understanding-pressure",
+
+title:[
+"01. What is a Pressure Injury?",
+"01. அழுத்தப் புண் என்றால் என்ன?"
+],
+
+content:()=>`
+
+<p>${tr(
+"A pressure injury is local damage to skin or deeper tissue associated with sustained pressure, sometimes combined with shear. It is also known as a pressure ulcer or bed sore.",
+"நீண்ட நேர அழுத்தம் அல்லது அதனுடன் ஏற்படும் திசு இழுவிசையால் தோல் அல்லது ஆழமான திசுக்கள் பாதிக்கப்படுவது அழுத்தப் புண் எனப்படும். இதனை Pressure Ulcer அல்லது Bed Sore என்றும் அழைக்கின்றனர்."
+)}</p>
+
+<div class="diagram">
+
+<h3>${tr("Normal Skin Layers","இயல்பான தோல் அடுக்குகள்")}</h3>
+
+${skinDiagram(0)}
+
+<div style="text-align:left">
+
+<p>1. ${tr("Outer skin – epidermis","வெளிப்புறத் தோல்")}</p>
+<p>2. ${tr("Dermis – inner skin layer","உட்புறத் தோல் அடுக்கு")}</p>
+<p>3. ${tr("Fat tissue","கொழுப்புத் திசு")}</p>
+<p>4. ${tr("Muscle","தசை")}</p>
+<p>5. ${tr("Bone","எலும்பு")}</p>
+
+</div>
+
+<small>${tr(
+"Layers shown from top to bottom. Simplified illustration, not to scale.",
+"மேலிருந்து கீழாக தோல் அடுக்குகள் காட்டப்பட்டுள்ளன. இது அளவுகளுக்கு ஏற்ப வரையப்பட்ட படம் அல்ல."
+)}</small>
+
+</div>
+
+<p><small>[1], [4]</small></p>`
+
+},
+
+{
+
+id:"risk-factors",
+
+title:[
+"02. Why Pressure Injuries Occur After SCI",
+"02. SCI உள்ளவர்களுக்கு அழுத்தப் புண்கள் ஏன் ஏற்படுகின்றன?"
+],
+
+content:()=>`
+
+${cards([
+
+[
+"Reduced sensation","உணர்வு குறைதல்",
+"Skin damage can develop without the usual pain warning.",
+"வலி தெரியாமலேயே தோல் பாதிப்பு ஏற்படலாம்."
+],
+
+[
+"Limited mobility","இயக்கத்திறன் குறைதல்",
+"Remaining in one position increases pressure on vulnerable tissues.",
+"நீண்ட நேரம் ஒரே நிலையில் இருப்பதால் திசுக்களின் மீது அழுத்தம் அதிகரிக்கலாம்."
+],
+
+[
+"Shear and friction","திசு இழுவிசை மற்றும் உராய்வு",
+"Sliding during transfers or repositioning can damage tissues.",
+"உடல் நிலையை மாற்றும்போது இழுத்தல் அல்லது உராய்வால் திசுக்கள் பாதிக்கப்படலாம்."
+],
+
+[
+"Moisture","ஈரப்பதம்",
+"Sweat, urine or stool exposure can weaken the skin barrier.",
+"வியர்வை, சிறுநீர் அல்லது மலம் தோலின் பாதுகாப்புத் தன்மையைப் பாதிக்கலாம்."
+],
+
+[
+"Equipment problems","உபகரணச் சிக்கல்கள்",
+"Poorly fitting seating, footwear, braces or tubing can create pressure points.",
+"பொருத்தமற்ற இருக்கை, காலணி, ஆதரவு உபகரணங்கள் அல்லது குழாய்களால் அழுத்தம் ஏற்படலாம்."
+],
+
+[
+"Health and nutrition","உடல்நிலை மற்றும் ஊட்டச்சத்து",
+"Poor nutrition, circulation problems and other illnesses may increase vulnerability.",
+"ஊட்டச்சத்துக் குறைபாடு, இரத்த ஓட்டச் சிக்கல்கள் மற்றும் பிற நோய்கள் பாதிப்பு அபாயத்தை அதிகரிக்கலாம்."
+]
+
+])}
+
+<p><small>[1], [4]</small></p>`
+
+},
+
+{
+
+id:"pressure-areas",
+
+title:[
+"03. High-Risk Body Areas",
+"03. அதிக அழுத்தம் ஏற்படக்கூடிய உடல் பகுதிகள்"
+],
+
+content:()=>`
+
+${pressureMap()}
+
+<div class="notice">${tr(
+"Inspect skin under medical devices, wheelchair supports, shoes and straps as well as bony areas.",
+"எலும்புகள் உள்ள பகுதிகள் மட்டுமின்றி மருத்துவ உபகரணங்கள், வீல்சேர் ஆதரவுகள், காலணிகள் மற்றும் பட்டைகளின் கீழுள்ள தோலையும் கவனிக்கவும்."
+)}</div>
+
+<p><small>[2], [5]</small></p>`
+
+},
+
+{
+
+id:"injury-stages",
+
+title:[
+"04. Pressure Injury Stages and Classification",
+"04. அழுத்தப் புண்களின் நிலைகள் மற்றும் வகைகள்"
+],
+
+content:()=>`
+
+<p>${tr(
+"Clinicians classify pressure injuries according to the tissue damage identified during assessment.",
+"மருத்துவ மதிப்பீட்டில் கண்டறியப்படும் திசுப் பாதிப்பின் அடிப்படையில் அழுத்தப் புண்களின் நிலைகள் வகைப்படுத்தப்படுகின்றன."
+)}</p>
+
+${stageCards()}
+
+<div class="warning">
+
+<strong>${tr(
+"Illustrations are not diagnostic tools.",
+"விளக்கப்படங்கள் நோயறிதல் கருவிகள் அல்ல."
+)}</strong>
+
+<p>${tr(
+"A wound may be more extensive beneath the skin than it appears. Do not determine treatment or wound stage using these drawings alone. Any suspected injury needs assessment.",
+"வெளிப்புறத்தில் தெரியும் அளவைவிட ஆழமான திசுப் பாதிப்பு அதிகமாக இருக்கலாம். இந்தப் படங்களை மட்டும் வைத்து புண்ணின் நிலையையோ சிகிச்சையையோ தீர்மானிக்க வேண்டாம். சந்தேகிக்கப்படும் எந்தப் பாதிப்பிற்கும் மருத்துவ மதிப்பீடு தேவை."
+)}</p>
+
+</div>
+
+<p><small>[3], [4]</small></p>`
+
+},
+
+{
+
+id:"skin-inspection",
+
+title:[
+"05. Skin Inspection and Daily Care",
+"05. தோல் பரிசோதனை மற்றும் தினசரி பராமரிப்பு"
+],
+
+content:()=>`
+
+<ul>
+
+<li>${tr(
+"Include morning and evening skin inspections in your care routine.",
+"காலை மற்றும் மாலை தோல் பரிசோதனையைப் பராமரிப்புப் பழக்கத்தில் சேர்த்துக்கொள்ளுங்கள்."
+)}</li>
+
+<li>${tr(
+"Use a mirror or assistance with consent to inspect areas you cannot see.",
+"பார்க்க முடியாத பகுதிகளை கண்ணாடி அல்லது சம்மதத்துடன் மற்றவரின் உதவி மூலம் பரிசோதிக்கவும்."
+)}</li>
+
+<li>${tr(
+"Look for persistent colour change, blisters, swelling, warmth, firmness or unusual softness.",
+"நீடித்த நிற மாற்றம், கொப்புளம், வீக்கம், வெப்பம், கடினத்தன்மை அல்லது வழக்கத்திற்கு மாறான மென்மையைக் கவனிக்கவும்."
+)}</li>
+
+<li>${tr(
+"Maintain gentle hygiene and promptly address moisture from incontinence.",
+"மென்மையான சுகாதார முறைகளைப் பின்பற்றி சிறுநீர் அல்லது மலத்தால் ஏற்படும் ஈரப்பதத்தை உடனடியாகக் கவனிக்கவும்."
+)}</li>
+
+<li>${tr(
+"Check clothing folds and equipment contact areas for unwanted pressure.",
+"ஆடை மடிப்புகள் மற்றும் உபகரணங்கள் தொடும் பகுதிகளில் தேவையற்ற அழுத்தம் இருக்கிறதா என்று பாருங்கள்."
+)}</li>
+
+</ul>
+
+<div class="warning">${tr(
+"If you notice a suspicious skin change, remove pressure from that area safely and contact a healthcare professional promptly. Do not massage the affected skin.",
+"சந்தேகத்திற்குரிய தோல் மாற்றத்தைக் கண்டால் அந்தப் பகுதியில் உள்ள அழுத்தத்தைப் பாதுகாப்பாக நீக்கி மருத்துவ நிபுணரை விரைவாக அணுகுங்கள். பாதிக்கப்பட்ட தோலை மசாஜ் செய்ய வேண்டாம்."
+)}</div>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+
+id:"pressure-relief",
+
+title:[
+"06. Pressure Relief and Safe Positioning",
+"06. அழுத்தத்தைக் குறைத்தல் மற்றும் பாதுகாப்பான உடல் நிலை"
+],
+
+content:()=>`
+
+${cards([
+
+[
+"Wheelchair pressure relief",
+"வீல்சேரில் அழுத்தத்தைக் குறைத்தல்",
+"Learn an appropriate weight-shifting or powered seating method from a rehabilitation professional.",
+"மறுவாழ்வு நிபுணரிடம் பொருத்தமான எடை மாற்றுதல் அல்லது மின்சார இருக்கை நிலை மாற்றும் முறையைக் கற்றுக்கொள்ளுங்கள்."
+],
+
+[
+"Bed positioning",
+"படுக்கையில் உடல் நிலை",
+"Agree on a repositioning schedule and suitable support surfaces with your healthcare team.",
+"மருத்துவக் குழுவுடன் உடல் நிலை மாற்றும் அட்டவணையையும் பொருத்தமான ஆதரவு உபகரணங்களையும் தீர்மானிக்கவும்."
+],
+
+[
+"Assisted repositioning",
+"உதவியுடன் உடல் நிலை மாற்றுதல்",
+"Caregivers should receive training to reduce tissue strain and prevent injury during movement.",
+"உடலை நகர்த்தும்போது திசு பாதிப்பையும் காயங்களையும் தவிர்க்க பராமரிப்பாளர்கள் முறையான பயிற்சி பெற வேண்டும்."
+]
+
+])}
+
+<div class="notice">${tr(
+"Pressure relief frequency and duration should be individualized. A cushion or mattress does not eliminate the need for skin checks and repositioning.",
+"அழுத்தத்தைக் குறைக்கும் இடைவெளியும் கால அளவும் தனிநபருக்கு ஏற்ப தீர்மானிக்கப்பட வேண்டும். குஷன் அல்லது மெத்தை பயன்படுத்துவது தோல் பரிசோதனை மற்றும் உடல் நிலை மாற்றத்தின் தேவையை நீக்காது."
+)}</div>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+
+id:"equipment",
+
+title:[
+"07. Cushions, Mattresses and Assistive Products",
+"07. குஷன்கள், மெத்தைகள் மற்றும் உதவி உபகரணங்கள்"
+],
+
+content:()=>`
+
+${cards([
+
+[
+"Wheelchair cushions",
+"வீல்சேர் குஷன்கள்",
+"Air, foam and combination designs are available. Selection depends on seating needs and clinical assessment.",
+"காற்று, நுரை மற்றும் கலப்பு வகை குஷன்கள் கிடைக்கின்றன. இருக்கைத் தேவைகள் மற்றும் மருத்துவ மதிப்பீட்டின் அடிப்படையில் தேர்ந்தெடுக்க வேண்டும்."
+],
+
+[
+"Pressure redistribution mattresses",
+"அழுத்தத்தைப் பகிர்ந்தளிக்கும் மெத்தைகள்",
+"Specialized mattresses and alternating-pressure systems may be considered when clinically appropriate.",
+"மருத்துவத் தேவைகளுக்கு ஏற்ப சிறப்பு மெத்தைகள் மற்றும் மாறும் காற்றழுத்த மெத்தைகள் பரிசீலிக்கப்படலாம்."
+],
+
+[
+"Seating assessment",
+"இருக்கை மருத்துவ மதிப்பீடு",
+"Individual assessment can identify pressure problems involving posture, cushion and wheelchair fit.",
+"உடல் அமரும் நிலை, குஷன் மற்றும் வீல்சேர் பொருத்தத்தால் ஏற்படும் அழுத்தச் சிக்கல்களை தனிப்பட்ட மதிப்பீட்டின் மூலம் கண்டறியலாம்."
+],
+
+[
+"Equipment maintenance",
+"உபகரணப் பராமரிப்பு",
+"Follow manufacturer and rehabilitation team instructions for inflation, cleaning and equipment condition.",
+"காற்று நிரப்புதல், சுத்தம் செய்தல் மற்றும் உபகரணத்தின் நிலை குறித்து உற்பத்தியாளர் மற்றும் மறுவாழ்வு குழுவின் அறிவுறுத்தல்களைப் பின்பற்றவும்."
+]
+
+])}
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+
+id:"nutrition-and-healing",
+
+title:[
+"08. Nutrition and Wound Care Awareness",
+"08. ஊட்டச்சத்து மற்றும் காயப் பராமரிப்பு விழிப்புணர்வு"
+],
+
+content:()=>`
+
+<p>${tr(
+"Skin maintenance and wound healing require sufficient energy, protein and other nutrients. Individual food and fluid needs should be assessed.",
+"தோல் ஆரோக்கியத்திற்கும் காயம் ஆறுவதற்கும் போதுமான ஆற்றல், புரதம் மற்றும் பிற ஊட்டச்சத்துகள் தேவை. தனிநபருக்கான உணவு மற்றும் நீர்ச்சத்து தேவைகளை மதிப்பிட வேண்டும்."
+)}</p>
+
+${cards([
+
+[
+"Balanced meals","சமச்சீர் உணவு",
+"Discuss suitable protein sources and varied nutritious foods with a dietitian.",
+"பொருத்தமான புரத உணவுகள் மற்றும் பலவகை ஊட்டச்சத்து உணவுகளை உணவியல் நிபுணருடன் ஆலோசிக்கவும்."
+],
+
+[
+"Hydration","நீர்ச்சத்து",
+"Follow a fluid plan suited to your overall health and clinical restrictions.",
+"உடல்நிலை மற்றும் மருத்துவக் கட்டுப்பாடுகளுக்கு ஏற்ற நீர்ச்சத்துத் திட்டத்தைப் பின்பற்றவும்."
+],
+
+[
+"Professional wound care","மருத்துவக் காயப் பராமரிப்பு",
+"Wound treatment may involve pressure management, appropriate dressings and specialist assessment.",
+"காய சிகிச்சையில் அழுத்தத்தைக் குறைத்தல், பொருத்தமான காயக் கட்டுகள் மற்றும் சிறப்பு மருத்துவ மதிப்பீடு இடம்பெறலாம்."
+]
+
+])}
+
+<div class="warning">${tr(
+"Do not apply household remedies, food products, unprescribed antiseptics or powders to an open wound. Do not attempt to remove dead tissue yourself.",
+"திறந்த காயத்தில் வீட்டு வைத்தியப் பொருட்கள், உணவுப் பொருட்கள், பரிந்துரைக்கப்படாத கிருமிநாசினிகள் அல்லது பொடிகளைப் பயன்படுத்த வேண்டாம். இறந்த திசுக்களை நீங்களாகவே அகற்ற முயற்சிக்க வேண்டாம்."
+)}</div>
+
+<p><small>[2], [4]</small></p>`
+
+},
+
+{
+
+id:"warning-signs",
+
+title:[
+"09. Warning Signs and When to Seek Help",
+"09. ஆபத்தான அறிகுறிகள் மற்றும் மருத்துவ உதவி"
+],
+
+content:()=>`
+
+<div class="warning">
+
+<h3>${tr(
+"Contact a healthcare professional promptly",
+"மருத்துவ நிபுணரை விரைவாக அணுகுங்கள்"
+)}</h3>
+
+<ul>
+
+<li>${tr(
+"New persistent skin discolouration.",
+"புதிதாக ஏற்பட்டு நீடிக்கும் தோல் நிற மாற்றம்."
+)}</li>
+
+<li>${tr(
+"Blisters, broken skin or an open wound.",
+"கொப்புளம், தோல் சேதம் அல்லது திறந்த புண்."
+)}</li>
+
+<li>${tr(
+"Increasing wound size, discharge, swelling or unpleasant odour.",
+"புண்ணின் அளவு அதிகரித்தல், திரவம் வெளியேறுதல், வீக்கம் அல்லது துர்நாற்றம்."
+)}</li>
+
+</ul>
+
+</div>
+
+<div class="emergency">
+
+<h3>${tr(
+"Seek emergency medical help",
+"அவசர மருத்துவ உதவியை நாடுங்கள்"
+)}</h3>
+
+<ul>
+
+<li>${tr(
+"Fever or shaking chills with a worsening wound.",
+"புண் மோசமாவதுடன் காய்ச்சல் அல்லது கடுமையான நடுக்கம்."
+)}</li>
+
+<li>${tr(
+"Confusion, fainting, fast breathing or severe weakness.",
+"குழப்பம், மயக்கம், வேகமான சுவாசம் அல்லது கடுமையான பலவீனம்."
+)}</li>
+
+<li>${tr(
+"Rapidly spreading skin changes with serious illness.",
+"உடல்நிலை கடுமையாகப் பாதிக்கப்பட்ட நிலையில் வேகமாகப் பரவும் தோல் மாற்றங்கள்."
+)}</li>
+
+</ul>
+
+<p><strong>${tr(
+"These may indicate serious infection or sepsis.",
+"இவை தீவிரத் தொற்று அல்லது Sepsis எனப்படும் ஆபத்தான நிலையின் அறிகுறிகளாக இருக்கலாம்."
+)}</strong></p>
+
+</div>
+
+<div class="warning">
+
+<h3>Autonomic Dysreflexia (AD)</h3>
+
+<p>${tr(
+"Pressure injuries can trigger AD, especially in people with SCI at T6 or above. Sudden severe headache, sweating, flushing or a marked blood pressure rise require urgent action.",
+"அழுத்தப் புண்கள் குறிப்பாக T6 அல்லது அதற்கு மேல் SCI உள்ளவர்களுக்கு AD நிலையைத் தூண்டலாம். திடீர் கடுமையான தலைவலி, வியர்வை, முகம் சிவத்தல் அல்லது குறிப்பிடத்தக்க இரத்த அழுத்த உயர்வு ஏற்பட்டால் அவசர நடவடிக்கை தேவை."
+)}</p>
+
+<p>${tr(
+"If AD is suspected, sit upright if safely possible, loosen restrictive clothing, follow your established emergency plan and seek emergency assistance.",
+"AD சந்தேகிக்கப்பட்டால் பாதுகாப்பாக முடிந்தால் நிமிர்ந்து அமருங்கள். இறுக்கமான ஆடைகளைத் தளர்த்தி மருத்துவர் வழங்கிய அவசரத் திட்டத்தைப் பின்பற்றி உடனடி மருத்துவ உதவியை நாடுங்கள்."
+)}</p>
+
+</div>
+
+<p><strong>${tr(
+"Emergency assistance",
+"அவசர மருத்துவ உதவி"
+)}:</strong>
+
+<a href="tel:112">112</a> |
+<a href="tel:108">108</a></p>
+
+<p><small>[3], [4]</small></p>`
+
+}
+
+];
+
+const checklist=[
+
+[
+"I understand my skin injury risk areas.",
+"எனது தோல் பாதிப்பு ஏற்படக்கூடிய பகுதிகள் எனக்குத் தெரியும்."
+],
+
+[
+"I have a suitable skin inspection routine.",
+"எனக்குப் பொருத்தமான தோல் பரிசோதனைப் பழக்கம் உள்ளது."
+],
+
+[
+"I know my recommended pressure relief method.",
+"எனக்குப் பரிந்துரைக்கப்பட்ட அழுத்தத்தைக் குறைக்கும் முறை எனக்குத் தெரியும்."
+],
+
+[
+"My wheelchair cushion has been appropriately assessed.",
+"எனது வீல்சேர் குஷன் பொருத்தம் குறித்து மதிப்பீடு செய்யப்பட்டுள்ளது."
+],
+
+[
+"I have discussed safe bed positioning and mattress needs.",
+"பாதுகாப்பான படுக்கை நிலை மற்றும் மெத்தைத் தேவைகள் குறித்து ஆலோசித்துள்ளேன்."
+],
+
+[
+"I understand skin hygiene and moisture management.",
+"தோல் சுகாதாரம் மற்றும் ஈரப்பத மேலாண்மையைப் புரிந்துகொண்டுள்ளேன்."
+],
+
+[
+"I know the warning signs that require medical attention.",
+"மருத்துவ உதவி தேவைப்படும் அறிகுறிகள் எனக்குத் தெரியும்."
+],
+
+[
+"I know whom to contact if a skin injury develops.",
+"தோல் பாதிப்பு ஏற்பட்டால் யாரை அணுக வேண்டும் என்பது எனக்குத் தெரியும்."
+]
+
+];
+
+const faqs=[
+
+[
+"Can a pressure injury develop without pain?",
+"வலி இல்லாமலேயே அழுத்தப் புண் ஏற்படுமா?",
+"Yes. Reduced sensation after SCI can prevent pain from being recognised.",
+"ஆம். SCI காரணமாக உணர்வு குறைந்திருந்தால் வலி தெரியாமல் இருக்கலாம்."
+],
+
+[
+"Can wheelchair users develop bed sores?",
+"வீல்சேர் பயன்படுத்துபவர்களுக்கு அழுத்தப் புண்கள் ஏற்படுமா?",
+"Yes. Pressure injuries can occur during sitting as well as lying down.",
+"ஆம். படுத்திருக்கும்போது மட்டுமின்றி அமர்ந்திருக்கும்போதும் அழுத்தப் புண்கள் ஏற்படலாம்."
+],
+
+[
+"Is a small skin wound always minor?",
+"சிறிய தோல் புண் எப்போதும் சாதாரணமானதா?",
+"No. Deeper tissue damage can be greater than the visible wound suggests.",
+"இல்லை. வெளிப்புறத்தில் தெரியும் புண்ணைவிட ஆழமான திசுப் பாதிப்பு அதிகமாக இருக்கலாம்."
+],
+
+[
+"Does an air mattress prevent every pressure injury?",
+"காற்று மெத்தை எல்லா அழுத்தப் புண்களையும் தடுக்கும்?",
+"No. Appropriate equipment supports prevention but does not replace other skin protection measures.",
+"இல்லை. பொருத்தமான உபகரணம் தடுப்புக்கு உதவும். ஆனால் மற்ற தோல் பாதுகாப்பு முறைகளுக்கு மாற்றாகாது."
+],
+
+[
+"Should I massage a discoloured pressure area?",
+"நிறம் மாறிய அழுத்தப் பகுதியை மசாஜ் செய்யலாமா?",
+"No. Safely remove pressure and seek professional assessment.",
+"வேண்டாம். அழுத்தத்தைப் பாதுகாப்பாக நீக்கி மருத்துவ மதிப்பீட்டைப் பெறுங்கள்."
+],
+
+[
+"Can I use home remedies on an open wound?",
+"திறந்த புண்ணுக்கு வீட்டு வைத்தியம் பயன்படுத்தலாமா?",
+"Do not use unprescribed substances. A wound care professional should assess the injury.",
+"பரிந்துரைக்கப்படாத பொருட்களைப் பயன்படுத்த வேண்டாம். காயப் பராமரிப்பு நிபுணரிடம் மதிப்பீடு பெறுங்கள்."
+],
+
+[
+"How long does a pressure injury take to heal?",
+"அழுத்தப் புண் ஆறுவதற்கு எவ்வளவு காலம் ஆகும்?",
+"Healing time varies with tissue damage, infection, pressure management and overall health. There is no universal timeline.",
+"திசுப் பாதிப்பு, தொற்று, அழுத்த மேலாண்மை மற்றும் உடல்நிலைக்கு ஏற்ப காயம் ஆறும் காலம் மாறுபடும். அனைவருக்கும் பொதுவான கால அளவு இல்லை."
+],
+
+[
+"Are pressure injuries always preventable?",
+"அனைத்து அழுத்தப் புண்களையும் தடுக்க முடியுமா?",
+"Preventive care reduces risk, but some injuries may still occur despite appropriate care.",
+"தடுப்பு பராமரிப்பு அபாயத்தைக் குறைக்கும். இருப்பினும் முறையான பராமரிப்பின் போதும் சில பாதிப்புகள் ஏற்படலாம்."
+]
+
+];
+
+function renderChecklist(){
+
+const i=language==="ta"?1:0;
+
+document.getElementById("checklistItems").innerHTML=
+checklist.map((item,index)=>`
+
+<label class="check-item">
+
+<input type="checkbox"
+${checked[index]?"checked":""}
+onchange="updateChecklist(${index},this.checked)">
+
+<span>${esc(item[i])}</span>
+
+</label>
+
+`).join("");
+
+updateProgress();
+
+}
+
+function updateChecklist(index,value){
+checked[index]=value;
+updateProgress();
+}
+
+function updateProgress(){
+
+const count=checked.filter(Boolean).length;
+
+document.getElementById("checklistProgress").value=count;
+
+document.getElementById("checklistStatus").textContent=
+tr(
+count+" of 8 education topics checked",
+"8 தலைப்புகளில் "+count+" தலைப்புகள் குறிக்கப்பட்டுள்ளன"
+);
+
+}
+
+function resetChecklist(){
+checked=Array(8).fill(false);
+renderChecklist();
+}
+
+function renderPage(){
+
+const i=language==="ta"?1:0;
+
+document.documentElement.lang=language;
+
+document.title=ui.title[i]+" | SIS";
+
+document.querySelectorAll("[data-key]").forEach(el=>{
+if(ui[el.dataset.key]){
+el.textContent=ui[el.dataset.key][i];
+}
+});
+
+document.getElementById("taButton")
+.setAttribute("aria-pressed",String(language==="ta"));
+
+document.getElementById("enButton")
+.setAttribute("aria-pressed",String(language==="en"));
+
+document.getElementById("contentsList").innerHTML=
+
+sections.map(section=>`
+
+<a href="#${section.id}">
+${esc(section.title[i])}
+</a>
+
+`).join("");
+
+document.getElementById("articleContent").innerHTML=
+
+sections.map(section=>`
+
+<section class="article-section" id="${section.id}">
+<h2>${esc(section.title[i])}</h2>
+${section.content()}
+</section>
+
+`).join("");
+
+document.getElementById("faqList").innerHTML=
+
+faqs.map(faq=>`
+
+<details>
+<summary>${esc(faq[i])}</summary>
+<p>${esc(faq[i+2])}</p>
+</details>
+
+`).join("");
+
+renderChecklist();
+
+if(!("speechSynthesis" in window) ||
+!("SpeechSynthesisUtterance" in window)){
+
+document.getElementById("readButton").disabled=true;
+document.getElementById("stopButton").disabled=true;
+
+document.getElementById("speechStatus").textContent=
+tr(
+"Read Aloud is unavailable in this browser.",
+"இந்த உலாவியில் குரல் வாசிப்பு வசதி இல்லை."
+);
+
+}
+
+}
+
+function setLanguage(value){
+stopReading();
+language=value==="en"?"en":"ta";
+renderPage();
+}
+
+function resizeText(change){
+textSize=Math.max(16,Math.min(24,textSize+change));
+document.documentElement.style.fontSize=textSize+"px";
+}
+
+function resetText(){
+textSize=16;
+document.documentElement.style.fontSize="16px";
+}
+
+function stopReading(){
+
+speechToken++;
+
+if("speechSynthesis" in window){
+window.speechSynthesis.cancel();
+}
+
+document.getElementById("speechStatus").textContent="";
+
+}
+
+function readArticle(){
+
+if(!("speechSynthesis" in window) ||
+!("SpeechSynthesisUtterance" in window))return;
+
+stopReading();
+
+const token=speechToken;
+const synth=window.speechSynthesis;
+const status=document.getElementById("speechStatus");
+
+const voice=synth.getVoices().find(v=>
+v.lang.toLowerCase().startsWith(language)
+);
+
+if(!voice){
+
+status.textContent=tr(
+"A matching speech voice is unavailable. Check your device speech settings.",
+"தமிழ் குரல் வசதி கிடைக்கவில்லை. சாதனத்தின் குரல் அமைப்புகளைச் சரிபார்க்கவும்."
+);
+
+return;
+
+}
+
+const sentences=document.getElementById("articleContent")
+.innerText.split(/(?<=[.!?])\s+|\n+/)
+.map(s=>s.trim()).filter(Boolean);
+
+let position=0;
+
+status.textContent=tr(
+"Reading article...",
+"கட்டுரை வாசிக்கப்படுகிறது..."
+);
+
+function speakNext(){
+
+if(token!==speechToken)return;
+
+if(position>=sentences.length){
+
+status.textContent=tr(
+"Reading completed.",
+"வாசிப்பு முடிந்தது."
+);
+
+return;
+
+}
+
+const speech=new SpeechSynthesisUtterance(sentences[position]);
+
+speech.voice=voice;
+speech.lang=voice.lang;
+speech.rate=0.9;
+
+speech.onend=()=>{
+position++;
+speakNext();
+};
+
+speech.onerror=()=>{
+
+if(token!==speechToken)return;
+
+status.textContent=tr(
+"Speech playback could not continue.",
+"குரல் வாசிப்பைத் தொடர முடியவில்லை."
+);
+
+};
+
+synth.speak(speech);
+
+}
+
+speakNext();
+
+}
+
+window.addEventListener("pagehide",stopReading);
+
+renderPage();
+
+</script>
+
+</body>
+</html>

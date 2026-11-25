@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Physical Health After SCI | SIS</title>
+<link rel="stylesheet" href="sis-styles.css">
+<style>
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;background:#f4f9ff;color:#073763;
+font-family:Arial,"Noto Sans Tamil",sans-serif;line-height:1.85}
+header{background:#073763;color:white;text-align:center;padding:24px}
+header img{width:140px;max-width:100%;height:auto}
+header h1{margin:8px 0}
+nav,.tools{display:flex;flex-wrap:wrap;justify-content:center;
+align-items:center;gap:12px;padding:14px}
+nav{background:#052b4d}
+nav a{color:white;text-decoration:none;font-weight:bold;padding:10px}
+.tools{background:white}
+button,.btn{display:inline-block;background:#073763;
+color:white;border:0;border-radius:8px;padding:12px 18px;
+min-height:44px;font:inherit;cursor:pointer;text-decoration:none}
+button[aria-pressed=true]{background:#007d80}
+button:disabled{opacity:.6;cursor:not-allowed}
+a:focus-visible,button:focus-visible,input:focus-visible,
+summary:focus-visible{outline:3px solid #e6a700;outline-offset:4px}
+.hero{background:linear-gradient(135deg,#073763,#007d80);
+color:white;padding:40px 20px;text-align:center}
+.hero h2{font-size:2em;margin:0 0 12px}
+.article-container{max-width:960px;margin:auto;padding:24px 16px}
+.article-section{background:white;padding:26px;margin:24px 0;
+border-radius:16px;box-shadow:0 4px 14px #07376312;
+overflow-wrap:anywhere;scroll-margin-top:20px}
+.article-section h2{margin-top:0;padding-bottom:12px;
+border-bottom:2px solid #e2f3f2}
+.article-grid{display:grid;gap:16px;
+grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.info-card{background:#f8fbff;border:1px solid #cbd9e5;
+border-radius:12px;padding:18px}
+.info-card h3{margin-top:0}
+.notice,.warning,.emergency{padding:18px;border-radius:10px;margin:20px 0}
+.notice{background:#e2f3f2;border-left:4px solid #007d80}
+.warning{background:#fff4e5;color:#663800;border-left:4px solid #b66a00}
+.emergency{background:#fff0f0;color:#8b1616;border-left:4px solid #b42318}
+.review-status{display:inline-block;background:#fff0cf;
+color:#704600;font-weight:bold;padding:8px 14px;border-radius:8px}
+.toc a{display:block;padding:12px 0;color:#073763;
+border-bottom:1px solid #dce7ef;text-decoration:none}
+.diagram{padding:18px;background:#f4f9ff;border:1px solid #cbd9e5;
+border-radius:12px;text-align:center;margin:20px 0}
+.diagram svg{display:block;width:100%;max-width:480px;height:auto;margin:auto}
+.check-item{display:flex;gap:12px;align-items:flex-start;
+padding:14px 8px;border-bottom:1px solid #dce7ef;cursor:pointer}
+.check-item input{width:22px;height:22px;flex-shrink:0;
+accent-color:#007d80;margin-top:5px}
+progress{width:100%;height:18px;accent-color:#007d80}
+details{border:1px solid #cbd9e5;border-radius:10px;
+padding:16px;margin:12px 0}
+summary{font-weight:bold;cursor:pointer;min-height:44px}
+li{margin-bottom:10px}
+a{overflow-wrap:anywhere}
+footer{background:#073763;color:white;text-align:center;padding:28px 16px}
+@media(max-width:600px){
+.article-section{padding:18px}
+.article-grid{grid-template-columns:1fr}
+.hero h2{font-size:1.65em}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+<img src="sis-logo.png" alt="Official SIS Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html" data-key="home"></a>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<a href="bowel-management.html" data-key="bowel"></a>
+<a href="bladder-management.html" data-key="bladder"></a>
+<a href="pressure-injury.html" data-key="skin"></a>
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+<strong data-key="language"></strong>
+<button id="taButton" onclick="setLanguage('ta')" aria-pressed="true">தமிழ்</button>
+<button id="enButton" onclick="setLanguage('en')" aria-pressed="false">English</button>
+<strong data-key="size"></strong>
+<button onclick="resizeText(-2)" aria-label="Decrease text size">A−</button>
+<button onclick="resetText()" aria-label="Reset text size">A</button>
+<button onclick="resizeText(2)" aria-label="Increase text size">A+</button>
+<button id="readButton" onclick="readArticle()" data-key="read"></button>
+<button id="stopButton" onclick="stopReading()" data-key="stop"></button>
+</section>
+
+<p id="speechStatus" role="status" aria-live="polite"
+style="text-align:center;padding:0 16px"></p>
+
+<section class="hero">
+<h2 data-key="title"></h2>
+<p data-key="subtitle"></p>
+<p data-key="audience"></p>
+</section>
+
+<main class="article-container">
+
+<p><a href="knowledge-hub.html" data-key="hub"></a>
+ / <span data-key="shortTitle"></span></p>
+
+<div class="notice">
+<span class="review-status" data-key="review"></span>
+<p data-key="reviewNote"></p>
+<p data-key="date"></p>
+</div>
+
+<div class="emergency">
+<strong data-key="urgentTitle"></strong>
+<p data-key="urgentText"></p>
+<a href="#autonomic-dysreflexia" data-key="adLink"></a>
+<p><strong data-key="emergency"></strong>:
+<a href="tel:112">112</a> | <a href="tel:108">108</a></p>
+</div>
+
+<section class="article-section toc">
+<h2 data-key="contents"></h2>
+<div id="contentsList"></div>
+<a href="#checklist" data-key="checklistTitle"></a>
+<a href="#faq" data-key="faqTitle"></a>
+<a href="#sources" data-key="sourcesTitle"></a>
+</section>
+
+<div id="articleContent"></div>
+
+<section id="checklist" class="article-section">
+<h2 data-key="checklistTitle"></h2>
+<p data-key="checklistNote"></p>
+<div id="checklistItems"></div>
+<p id="checklistStatus" role="status" aria-live="polite"></p>
+<progress id="checklistProgress" max="7" value="0"
+aria-label="Education checklist progress"></progress>
+<p><button onclick="resetChecklist()" data-key="resetChecklist"></button></p>
+<small data-key="privacy"></small>
+</section>
+
+<section id="faq" class="article-section">
+<h2 data-key="faqTitle"></h2>
+<div id="faqList"></div>
+</section>
+
+<section id="sources" class="article-section">
+<h2 data-key="sourcesTitle"></h2>
+<p data-key="sourcesNote"></p>
+
+<p>[1] MSKTC — <a href="https://msktc.org/sci/factsheets/spasticity-and-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">Spasticity and SCI</a></p>
+
+<p>[2] MSKTC — <a href="https://msktc.org/sci/factsheets/pain"
+target="_blank" rel="noopener noreferrer">Pain After SCI</a></p>
+
+<p>[3] MSKTC — <a href="https://msktc.org/sci/factsheets/nutrition-and-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">Nutrition and SCI</a></p>
+
+<p>[4] MSKTC — <a href="https://msktc.org/sci/factsheets/exercise-after-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">Exercise After SCI</a></p>
+
+<p>[5] MSKTC — <a href="https://msktc.org/sci/factsheets/autonomic-dysreflexia"
+target="_blank" rel="noopener noreferrer">Autonomic Dysreflexia</a></p>
+
+<p>[6] MSKTC — <a href="https://msktc.org/sci/factsheets"
+target="_blank" rel="noopener noreferrer">SCI Educational Resources</a></p>
+
+<p><small data-key="sourceLimit"></small></p>
+</section>
+
+<div class="warning">
+<h3 data-key="disclaimerTitle"></h3>
+<p data-key="disclaimer"></p>
+<p><strong data-key="emergency"></strong>:
+<a href="tel:112">112</a> | <a href="tel:108">108</a></p>
+</div>
+
+<a class="btn" href="knowledge-hub.html" data-key="back"></a>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Understand • Support • Empower</p>
+<p>© 2026 SIS | Knowledge Hub</p>
+<p>Educational Draft V0.1</p>
+</footer>
+
+<script>
+let language="ta";
+let textSize=16;
+let checked=Array(7).fill(false);
+let speechToken=0;
+
+const ui={
+home:["Home","முகப்பு"],
+hub:["Knowledge Hub","அறிவு மையம்"],
+bowel:["Bowel Care","குடல் பராமரிப்பு"],
+bladder:["Bladder Care","சிறுநீர்ப்பை பராமரிப்பு"],
+skin:["Skin Care","தோல் பராமரிப்பு"],
+language:["Language","மொழி"],
+size:["Text Size","எழுத்து அளவு"],
+read:["Read Aloud","குரலில் வாசிக்க"],
+stop:["Stop Reading","வாசிப்பை நிறுத்து"],
+title:["Physical Health & Daily Wellbeing After SCI",
+"முதுகுத்தண்டுவடப் பாதிப்புக்குப் பிறகு உடல்நலமும் தினசரி பராமரிப்பும்"],
+shortTitle:["Physical Health","உடல்நலம்"],
+subtitle:["Understand common health changes and build safer daily care habits.",
+"பொதுவான உடல்நல மாற்றங்களைப் புரிந்துகொண்டு பாதுகாப்பான பராமரிப்புப் பழக்கங்களை உருவாக்குவோம்."],
+audience:["For people with SCI, families and caregivers.",
+"SCI உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான வழிகாட்டி."],
+review:["Medical Review Pending","மருத்துவ நிபுணரின் மதிப்பாய்வு நிலுவையில் உள்ளது"],
+reviewNote:["Educational draft. Independent clinical review is pending.",
+"இது ஒரு கல்வி வரைவு. மருத்துவ நிபுணரின் மதிப்பாய்வு இன்னும் பெறப்படவில்லை."],
+date:["Draft prepared: 25 November 2026","வரைவு தயாரிக்கப்பட்ட நாள்: 25 நவம்பர் 2026"],
+urgentTitle:["Know the emergency warning signs","அவசரநிலை அறிகுறிகளைத் தெரிந்துகொள்ளுங்கள்"],
+urgentText:["Severe breathing difficulty, sudden chest pain or suspected autonomic dysreflexia require urgent medical attention.",
+"கடுமையான மூச்சுத்திணறல், திடீர் நெஞ்சுவலி அல்லது AD சந்தேகம் ஏற்பட்டால் உடனடி மருத்துவ உதவி தேவை."],
+adLink:["Read the AD emergency awareness section","AD அவசரநிலை விழிப்புணர்வைப் படிக்கவும்"],
+contents:["In This Guide","இந்த வழிகாட்டியில்"],
+checklistTitle:["08. Health Education Checklist","08. உடல்நல விழிப்புணர்வுப் பட்டியல்"],
+checklistNote:["Use this checklist for discussions with your healthcare team. It is not a medical assessment.",
+"மருத்துவக் குழுவுடன் ஆலோசிக்க இந்தப் பட்டியலைப் பயன்படுத்துங்கள். இது மருத்துவ மதிப்பீடு அல்ல."],
+resetChecklist:["Reset Checklist","பட்டியலை மீட்டமை"],
+privacy:["Checklist selections are not stored or transmitted. Browser speech services may process article text.",
+"பட்டியல் தேர்வுகள் சேமிக்கப்படவோ அனுப்பப்படவோ மாட்டாது. உலாவியின் குரல் சேவை கட்டுரை உரையைச் செயலாக்கலாம்."],
+faqTitle:["09. Frequently Asked Questions","09. அடிக்கடி கேட்கப்படும் கேள்விகள்"],
+sourcesTitle:["10. Medical References","10. மருத்துவ ஆதாரங்கள்"],
+sourcesNote:["Published educational resources for further reading.",
+"கூடுதல் புரிதலுக்கான வெளியிடப்பட்ட கல்வி ஆதாரங்கள்."],
+sourceLimit:["Respiratory and women's health sections require additional specialist source verification and clinical review.",
+"சுவாசப் பராமரிப்பு மற்றும் பெண்களின் உடல்நலப் பகுதிகளுக்கு கூடுதல் மருத்துவ ஆதாரச் சரிபார்ப்பும் நிபுணர் மதிப்பாய்வும் தேவை."],
+disclaimerTitle:["Important Medical Disclaimer","முக்கிய மருத்துவ அறிவிப்பு"],
+disclaimer:["This guide does not diagnose conditions or prescribe treatment. Do not change medication, exercise intensity or medical equipment without appropriate clinical advice.",
+"இந்த வழிகாட்டி நோயறிதலோ சிகிச்சைப் பரிந்துரையோ வழங்கவில்லை. மருத்துவ ஆலோசனையின்றி மருந்து, உடற்பயிற்சியின் தீவிரம் அல்லது மருத்துவ உபகரணங்களை மாற்ற வேண்டாம்."],
+emergency:["Emergency assistance","அவசர மருத்துவ உதவி"],
+back:["Back to Knowledge Hub","அறிவு மையத்திற்குத் திரும்பவும்"]
+};
+
+function tr(en,ta){
+return language==="ta"?ta:en;
+}
+
+function esc(value){
+const div=document.createElement("div");
+div.textContent=value;
+return div.innerHTML;
+}
+
+function paragraph(en,ta){
+return `<p>${tr(en,ta)}</p>`;
+}
+
+function cards(items){
+return `<div class="article-grid">${items.map(item=>`
+<div class="info-card">
+<h3>${tr(item[0],item[1])}</h3>
+<p>${tr(item[2],item[3])}</p>
+</div>`).join("")}</div>`;
+}
+
+function points(items){
+return `<ul>${items.map(item=>`
+<li>${tr(item[0],item[1])}</li>`).join("")}</ul>`;
+}
+
+function note(en,ta,type="notice"){
+return `<div class="${type}">${tr(en,ta)}</div>`;
+}
+
+function flowDiagram(title,steps){
+return `<div class="diagram">
+<h3>${title}</h3>
+<svg viewBox="0 0 320 275" role="img"
+aria-label="${steps.join(' → ')}">
+<defs>
+<marker id="arrow${steps.length}-${title.length}"
+markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0 0 L6 3 L0 6 Z" fill="#007d80"/>
+</marker>
+</defs>
+${steps.map((step,i)=>{
+const y=10+i*84;
+return `
+<rect x="10" y="${y}" width="300" height="58"
+rx="12" fill="#ffffff" stroke="#007d80" stroke-width="2"/>
+<foreignObject x="18" y="${y+4}" width="284" height="50">
+<div xmlns="http://www.w3.org/1999/xhtml"
+style="height:100%;display:flex;align-items:center;justify-content:center;
+text-align:center;font-size:13px;color:#073763;font-weight:bold">
+${esc(step)}
+</div>
+</foreignObject>
+${i<steps.length-1?`<path d="M160 ${y+58} V${y+78}"
+stroke="#007d80" stroke-width="3"
+marker-end="url(#arrow${steps.length}-${title.length})"/>`:""}
+`;
+}).join("")}
+</svg>
+<small>${tr("Original simplified SIS educational diagram.",
+"SIS உருவாக்கிய எளிய கல்வி விளக்கப்படம்.")}</small>
+</div>`;
+}
+
+const sections=[
+
+{
+id:"spasticity",
+title:["01. Spasticity Management","01. தசை இறுக்கம் மற்றும் தசைப் பிடிப்பு"],
+content:()=>`
+
+${paragraph(
+"Spasticity is increased muscle stiffness or involuntary muscle activity after SCI. Its severity and effect on independence vary between individuals.",
+"SCI பாதிப்புக்குப் பிறகு தசைகளில் ஏற்படும் அதிக இறுக்கம் அல்லது தன்னிச்சையான தசை இயக்கம் Spasticity எனப்படும். இதன் தீவிரமும் அன்றாட வாழ்க்கையின் மீதான தாக்கமும் ஒவ்வொருவருக்கும் மாறுபடும்."
+)}
+
+${flowDiagram(tr("Understanding Muscle Spasms","தசைப் பிடிப்பைப் புரிந்துகொள்ளுதல்"),[
+tr("Spinal cord injury","முதுகுத்தண்டுவடப் பாதிப்பு"),
+tr("Altered nerve signal regulation","நரம்புச் சமிக்ஞை கட்டுப்பாட்டில் மாற்றம்"),
+tr("Involuntary muscle activity","தன்னிச்சையான தசை இயக்கம்")
+])}
+
+${cards([
+["Common symptoms","பொதுவான அறிகுறிகள்",
+"Muscle tightness, jerking and difficulty moving joints comfortably.",
+"தசை இறுக்கம், திடீர் தசை அசைவு மற்றும் மூட்டுகளை எளிதாக இயக்குவதில் சிரமம்."],
+["Possible triggers","தூண்டக்கூடிய காரணங்கள்",
+"Bladder or bowel problems, skin irritation and uncomfortable positioning.",
+"சிறுநீர்ப்பை அல்லது குடல் சிக்கல்கள், தோல் எரிச்சல் மற்றும் பொருத்தமற்ற உடல் நிலை."],
+["Functional impact","அன்றாட வாழ்க்கையில் தாக்கம்",
+"Spasms can interfere with sleep, transfers or seating, but sometimes assist movement.",
+"தசைப் பிடிப்புகள் தூக்கம், இடமாற்றம் மற்றும் அமரும் நிலையைப் பாதிக்கலாம். சில நேரங்களில் இயக்கத்திற்கு உதவவும் செய்யலாம்."],
+["Management options","மேலாண்மை முறைகள்",
+"Individual rehabilitation, positioning assessment and clinician-directed medication or specialist treatment.",
+"தனிப்பட்ட மறுவாழ்வுப் பயிற்சி, உடல் நிலை மதிப்பீடு மற்றும் மருத்துவர் பரிந்துரைக்கும் மருந்து அல்லது சிறப்பு சிகிச்சை."]
+])}
+
+${note(
+"A sudden unexplained increase in spasms may signal an underlying injury or illness. Seek medical assessment rather than changing medicine yourself.",
+"காரணமின்றி தசைப் பிடிப்பு திடீரென அதிகரித்தால் உடலில் வேறு பாதிப்பு இருக்கலாம். நீங்களாகவே மருந்தை மாற்றாமல் மருத்துவ மதிப்பீட்டைப் பெறுங்கள்.",
+"warning")}
+<p><small>[1]</small></p>
+`
+},
+
+{
+id:"pain-management",
+title:["02. Pain Management","02. வலி மேலாண்மை"],
+content:()=>`
+
+${paragraph(
+"Pain after SCI can arise from damaged nerves, muscles, joints or internal organs. Identifying the cause is important for selecting suitable treatment.",
+"SCI பாதிப்புக்குப் பிறகு நரம்புகள், தசைகள், மூட்டுகள் அல்லது உட்புற உறுப்புகள் காரணமாக வலி ஏற்படலாம். பொருத்தமான சிகிச்சையைத் தேர்ந்தெடுக்க வலியின் காரணத்தைக் கண்டறிவது அவசியம்."
+)}
+
+${cards([
+["Neuropathic pain","நரம்பு சார்ந்த வலி",
+"Burning, tingling or electric-like sensations may occur because of altered nerve processing.",
+"நரம்புச் செயல்பாட்டு மாற்றத்தால் எரிச்சல், ஊசி குத்துவது போன்ற உணர்வு அல்லது மின்சாரம் பாய்வது போன்ற வலி ஏற்படலாம்."],
+["Musculoskeletal pain","தசை மற்றும் எலும்பு சார்ந்த வலி",
+"Shoulder, wrist, back or joint pain may relate to repeated loading or movement.",
+"தொடர்ச்சியான அழுத்தம் அல்லது இயக்கத்தால் தோள், மணிக்கட்டு, முதுகு மற்றும் மூட்டுகளில் வலி ஏற்படலாம்."],
+["Visceral pain","உட்புற உறுப்பு சார்ந்த வலி",
+"Abdominal or internal discomfort may reflect organ-related problems requiring assessment.",
+"வயிறு அல்லது உட்புற அசௌகரியம் மருத்துவ மதிப்பீடு தேவைப்படும் உறுப்புச் சிக்கலைக் குறிக்கலாம்."],
+["Pain management plan","வலி மேலாண்மைத் திட்டம்",
+"Discuss rehabilitation, equipment adjustment, sleep, psychological support and suitable treatment.",
+"மறுவாழ்வு, உபகரண மாற்றங்கள், தூக்கம், மனநல ஆதரவு மற்றும் பொருத்தமான சிகிச்சை குறித்து ஆலோசிக்கவும்."]
+])}
+
+${note(
+"Record pain location, duration, triggers and its effect on daily activities for your healthcare appointment.",
+"வலி ஏற்படும் இடம், கால அளவு, காரணிகள் மற்றும் அன்றாட வாழ்க்கையின் மீதான தாக்கத்தைக் குறித்து வைத்து மருத்துவரிடம் தெரிவிக்கவும்."
+)}
+
+${note(
+"New severe pain, chest pain, or abdominal pain with vomiting or swelling needs urgent evaluation.",
+"புதிதாக ஏற்படும் கடுமையான வலி, நெஞ்சுவலி அல்லது வாந்தி மற்றும் வீக்கத்துடன் வயிற்றுவலி ஏற்பட்டால் அவசர மருத்துவ மதிப்பீடு தேவை.",
+"warning")}
+<p><small>[2]</small></p>
+`
+},
+
+{
+id:"nutrition",
+title:["03. Diet and Nutrition","03. உணவு மற்றும் ஊட்டச்சத்து"],
+content:()=>`
+
+${paragraph(
+"Changes in muscle mass and activity after SCI can affect energy requirements. Food choices should support bowel function, skin health and overall wellbeing.",
+"SCI பாதிப்புக்குப் பிறகு தசை அளவு மற்றும் உடல் இயக்கத்தில் ஏற்படும் மாற்றங்கள் ஆற்றல் தேவையைப் பாதிக்கலாம். குடல் செயல்பாடு, தோல் ஆரோக்கியம் மற்றும் ஒட்டுமொத்த உடல்நலத்திற்கு உதவும் உணவுகளைத் தேர்ந்தெடுக்க வேண்டும்."
+)}
+
+${cards([
+["Protein","புரதச்சத்து",
+"Examples include dal, beans, eggs, fish, curd and other suitable foods.",
+"பருப்பு, பயறு, முட்டை, மீன், தயிர் மற்றும் பொருத்தமான பிற உணவுகள் புரதச்சத்து ஆதாரங்களாகும்."],
+["Fibre","நார்ச்சத்து",
+"Vegetables, fruits and whole grains may support bowel health. Adjust intake with professional advice.",
+"காய்கறிகள், பழங்கள் மற்றும் முழுத் தானியங்கள் குடல் ஆரோக்கியத்திற்கு உதவலாம். மருத்துவ ஆலோசனையுடன் அளவை மாற்றவும்."],
+["Vitamins and minerals","வைட்டமின்கள் மற்றும் தாதுக்கள்",
+"A varied diet supports normal body functions and tissue maintenance.",
+"பலவகையான உணவுகள் உடலின் இயல்பான செயல்பாடுகளுக்கும் திசுப் பராமரிப்பிற்கும் உதவும்."],
+["Hydration","நீர்ச்சத்து",
+"Fluid needs depend on bladder management, kidney function and medical restrictions.",
+"சிறுநீர்ப்பை மேலாண்மை, சிறுநீரகச் செயல்பாடு மற்றும் மருத்துவக் கட்டுப்பாடுகளுக்கு ஏற்ப நீர்ச்சத்து தேவை மாறுபடும்."]
+])}
+
+${note(
+"People with wounds, diabetes, kidney disease or major weight changes may need an individualized nutrition plan.",
+"காயங்கள், நீரிழிவு, சிறுநீரக நோய் அல்லது குறிப்பிடத்தக்க உடல் எடை மாற்றம் உள்ளவர்களுக்கு தனிப்பட்ட உணவுத் திட்டம் தேவைப்படலாம்."
+)}
+
+<p><a href="bowel-management.html">${tr("Read Bowel Management Guide","குடல் பராமரிப்பு வழிகாட்டியைப் படிக்கவும்")}</a></p>
+<p><a href="pressure-injury.html">${tr("Read Skin Care Guide","தோல் பராமரிப்பு வழிகாட்டியைப் படிக்கவும்")}</a></p>
+<p><small>[3]</small></p>
+`
+},
+
+{
+id:"exercise",
+title:["04. Exercise and Physical Activity","04. உடற்பயிற்சி மற்றும் உடல் இயக்கம்"],
+content:()=>`
+
+${paragraph(
+"Appropriate physical activity can support fitness, strength and participation. Suitable activities depend on injury level, joint condition, bone health and available movement.",
+"பொருத்தமான உடற்பயிற்சி உடல் தகுதி, வலிமை மற்றும் சமூகப் பங்கேற்பிற்கு உதவும். காயத்தின் நிலை, மூட்டுகளின் நிலை, எலும்பு ஆரோக்கியம் மற்றும் இயக்கத்திறனைப் பொறுத்து பயிற்சிகளைத் தேர்ந்தெடுக்க வேண்டும்."
+)}
+
+${cards([
+["Range of motion","மூட்டு இயக்கப் பயிற்சி",
+"Clinician-guided movement may help maintain joint mobility.",
+"மருத்துவ நிபுணர் வழிகாட்டும் இயக்கப் பயிற்சி மூட்டுகளின் இயக்கத்திறனைப் பராமரிக்க உதவலாம்."],
+["Strength training","தசை வலிமைப் பயிற்சி",
+"Adapted resistance exercises can target available muscle function.",
+"தனிப்பட்ட திறனுக்கு ஏற்ற எதிர்ப்புப் பயிற்சிகள் செயல்படும் தசைகளின் வலிமையை மேம்படுத்த உதவும்."],
+["Aerobic activity","இதய மற்றும் சுவாசத் திறன் பயிற்சி",
+"Arm cycling, adapted sports or other suitable activities may improve fitness.",
+"கை சைக்கிள், மாற்றுத்திறனாளிகளுக்கான விளையாட்டுகள் மற்றும் பொருத்தமான பிற பயிற்சிகள் உடல் தகுதியை மேம்படுத்த உதவும்."],
+["Recovery and safety","ஓய்வு மற்றும் பாதுகாப்பு",
+"Allow suitable recovery, inspect skin and avoid excessive joint loading.",
+"தேவையான ஓய்வு எடுத்துக்கொண்டு தோலைப் பரிசோதிக்கவும். மூட்டுகளில் அதிகப்படியான அழுத்தத்தைத் தவிர்க்கவும்."]
+])}
+
+${note(
+"Stop activity if you experience faintness, unusual breathlessness, chest pain or possible AD symptoms. Obtain medical help as appropriate.",
+"மயக்கம், வழக்கத்திற்கு மாறான மூச்சுத்திணறல், நெஞ்சுவலி அல்லது AD அறிகுறிகள் ஏற்பட்டால் பயிற்சியை நிறுத்தி தேவையான மருத்துவ உதவியைப் பெறுங்கள்.",
+"warning")}
+
+${paragraph(
+"Ask a rehabilitation professional before beginning assisted standing, electrical stimulation or unfamiliar training. Exercise does not guarantee neurological recovery.",
+"உதவியுடன் நிற்கும் பயிற்சி, மின்தூண்டல் அல்லது புதிய பயிற்சியைத் தொடங்குவதற்கு முன் மறுவாழ்வு நிபுணரிடம் ஆலோசிக்கவும். உடற்பயிற்சி நரம்பியல் மீட்சியை உறுதிப்படுத்தாது."
+)}
+<p><small>[4]</small></p>
+`
+},
+
+{
+id:"respiratory-care",
+title:["05. Respiratory Care","05. சுவாசப் பராமரிப்பு"],
+content:()=>`
+
+${paragraph(
+"SCI can affect the muscles involved in breathing and coughing, particularly with higher-level injuries. Respiratory needs vary between individuals.",
+"SCI பாதிப்பால் சுவாசத்திற்கும் இருமலுக்கும் உதவும் தசைகள் பாதிக்கப்படலாம். குறிப்பாக உயர்நிலை முதுகுத்தண்டுவடப் பாதிப்புகளில் இது ஏற்படலாம். தேவைகள் ஒவ்வொருவருக்கும் மாறுபடும்."
+)}
+
+<div class="diagram">
+
+<h3>${tr("Simplified Breathing System","எளிய சுவாச மண்டல விளக்கப்படம்")}</h3>
+
+<svg viewBox="0 0 320 280" role="img"
+aria-label="${tr("Trachea, lungs and diaphragm","மூச்சுக்குழாய், நுரையீரல் மற்றும் உதரவிதானம்")}">
+
+<title>${tr("Respiratory anatomy","சுவாச மண்டலம்")}</title>
+
+<path d="M160 15 V85 M160 85 L115 120 M160 85 L205 120"
+fill="none" stroke="#7aafc9" stroke-width="18" stroke-linecap="round"/>
+
+<path d="M145 85 C105 55 60 105 45 175
+C30 235 90 245 140 220 Z"
+fill="#a7d8db" stroke="#007d80" stroke-width="3"/>
+
+<path d="M175 85 C215 55 260 105 275 175
+C290 235 230 245 180 220 Z"
+fill="#a7d8db" stroke="#007d80" stroke-width="3"/>
+
+<path d="M45 245 Q160 205 275 245"
+fill="none" stroke="#073763" stroke-width="7"/>
+
+<g fill="#073763" font-size="17" font-weight="bold">
+<text x="175" y="35">1</text>
+<text x="90" y="170">2</text>
+<text x="225" y="170">2</text>
+<text x="160" y="266">3</text>
+</g>
+</svg>
+
+<p>1. ${tr("Trachea","மூச்சுக்குழாய்")} |
+2. ${tr("Lungs","நுரையீரல்")} |
+3. ${tr("Diaphragm","உதரவிதானம்")}</p>
+
+<small>${tr("Original schematic, not to scale.","அளவுகளுக்கு ஏற்ப வரையப்படாத SIS விளக்கப்படம்.")}</small>
+</div>
+
+${points([
+["Discuss breathing and cough strength with your healthcare team.",
+"சுவாசம் மற்றும் இருமல் திறன் குறித்து மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."],
+["Follow clinician-taught respiratory exercises and secretion management if prescribed.",
+"மருத்துவர் பரிந்துரைத்திருந்தால் பயிற்சி அளிக்கப்பட்ட சுவாச மற்றும் சளி மேலாண்மை முறைகளைப் பின்பற்றவும்."],
+["Discuss recommended vaccinations and infection prevention.",
+"பரிந்துரைக்கப்படும் தடுப்பூசிகள் மற்றும் தொற்றுத் தடுப்பு பற்றி ஆலோசிக்கவும்."],
+["Avoid smoking and exposure to smoke.",
+"புகைப்பிடித்தல் மற்றும் புகைக்கு ஆளாவதைத் தவிர்க்கவும்."]
+])}
+
+${note(
+"Severe breathing difficulty, blue or grey lips, chest pain or sudden confusion require emergency care. Do not delay seeking help.",
+"கடுமையான மூச்சுத்திணறல், உதடுகளில் நீலம் அல்லது சாம்பல் நிற மாற்றம், நெஞ்சுவலி அல்லது திடீர் குழப்பம் ஏற்பட்டால் அவசர மருத்துவ உதவியை நாடவும்.",
+"emergency")}
+
+<p><small>${tr(
+"Specialist respiratory source verification pending.",
+"சுவாசம் தொடர்பான சிறப்பு மருத்துவ ஆதாரச் சரிபார்ப்பு நிலுவையில் உள்ளது.")}</small></p>
+`
+},
+
+{
+id:"autonomic-dysreflexia",
+title:["06. Autonomic Dysreflexia (AD)","06. தன்னியக்க நரம்பு மண்டல அவசரநிலை (AD)"],
+content:()=>`
+
+<div class="emergency">
+<strong>${tr("Potentially life-threatening medical emergency",
+"உயிருக்கு ஆபத்தை ஏற்படுத்தக்கூடிய மருத்துவ அவசரநிலை")}</strong>
+
+${paragraph(
+"AD involves a sudden abnormal rise in blood pressure. People with SCI at T6 or above are particularly at risk. It may occasionally occur with lower injuries.",
+"AD என்பது இரத்த அழுத்தம் திடீரென அசாதாரணமாக அதிகரிக்கும் நிலையாகும். குறிப்பாக T6 அல்லது அதற்கு மேல் SCI உள்ளவர்களுக்கு அபாயம் அதிகம். கீழ்நிலைப் பாதிப்புகளிலும் அரிதாக ஏற்படலாம்."
+)}
+</div>
+
+${flowDiagram(tr("How AD Can Develop","AD எவ்வாறு ஏற்படலாம்"),[
+tr("Irritation below injury level","பாதிப்பின் கீழுள்ள பகுதியில் தூண்டுதல்"),
+tr("Abnormal autonomic nerve response","அசாதாரண தன்னியக்க நரம்புப் பிரதிசெயல்"),
+tr("Sudden blood pressure rise","திடீர் இரத்த அழுத்த உயர்வு")
+])}
+
+<h3>${tr("Possible triggers","தூண்டக்கூடிய காரணங்கள்")}</h3>
+
+${points([
+["Bladder distension or catheter drainage problems.",
+"சிறுநீர்ப்பை நிரம்புதல் அல்லது வடிகுழாய் சிக்கல்கள்."],
+["Constipation or other bowel irritation.",
+"மலச்சிக்கல் அல்லது பிற குடல் எரிச்சல்கள்."],
+["Pressure injuries, tight clothing or other physical irritation.",
+"அழுத்தப் புண்கள், இறுக்கமான ஆடைகள் அல்லது பிற உடல் எரிச்சல்கள்."]
+])}
+
+<h3>${tr("Warning signs","எச்சரிக்கை அறிகுறிகள்")}</h3>
+
+${points([
+["Sudden severe headache or increased blood pressure.",
+"திடீர் கடுமையான தலைவலி அல்லது இரத்த அழுத்த உயர்வு."],
+["Sweating, flushing, goosebumps or blurred vision.",
+"வியர்வை, முகம் சிவத்தல், மயிர்க்கூச்சம் அல்லது மங்கலான பார்வை."],
+["AD can sometimes occur without typical symptoms.",
+"சில நேரங்களில் பொதுவான அறிகுறிகள் இல்லாமலும் AD ஏற்படலாம்."]
+])}
+
+<div class="emergency">
+
+<h3>${tr("Immediate safety actions","உடனடி பாதுகாப்பு நடவடிக்கைகள்")}</h3>
+
+${points([
+["Stop the current activity and sit upright if safely possible.",
+"செய்துகொண்டிருக்கும் செயலை நிறுத்தி பாதுகாப்பாக முடிந்தால் நிமிர்ந்து அமரவும்."],
+["Loosen restrictive clothing and equipment.",
+"இறுக்கமான ஆடைகள் மற்றும் உபகரணங்களைத் தளர்த்தவும்."],
+["Check blood pressure if a monitor is available. Do not delay getting help.",
+"கருவி இருந்தால் இரத்த அழுத்தத்தைப் பரிசோதிக்கவும். மருத்துவ உதவியைத் தாமதிக்க வேண்டாம்."],
+["Follow your clinician-provided AD emergency plan. Check only obvious external triggers if safe.",
+"மருத்துவர் வழங்கிய AD அவசரத் திட்டத்தைப் பின்பற்றவும். பாதுகாப்பாக இருந்தால் வெளிப்புறத்தில் தெளிவாகத் தெரியும் காரணிகளை மட்டும் கவனிக்கவும்."],
+["Seek emergency medical assistance. Do not wait for symptoms to resolve before seeking help.",
+"அவசர மருத்துவ உதவியை நாடவும். அறிகுறிகள் மறையும் வரை உதவி பெறக் காத்திருக்க வேண்டாம்."]
+])}
+
+<p><strong>${tr("Emergency numbers","அவசர உதவி எண்கள்")}:</strong>
+<a href="tel:112">112</a> | <a href="tel:108">108</a></p>
+
+</div>
+
+${note(
+"Do not attempt unfamiliar invasive procedures or take unprescribed blood pressure medicines. Discuss a written AD emergency plan with your SCI specialist.",
+"பயிற்சி இல்லாத உட்புற மருத்துவச் செயல்முறைகளை மேற்கொள்ளவோ பரிந்துரைக்கப்படாத இரத்த அழுத்த மருந்துகளை எடுத்துக்கொள்ளவோ வேண்டாம். SCI நிபுணருடன் எழுத்துப்பூர்வ AD அவசரத் திட்டத்தை உருவாக்கவும்.",
+"warning")}
+
+<p><small>[5]</small></p>
+`
+},
+
+{
+id:"womens-health",
+title:["07. Women's Health After SCI","07. SCI பாதிப்புக்குப் பிறகு பெண்களின் உடல்நலம்"],
+content:()=>`
+
+${paragraph(
+"Women with SCI should have access to respectful, accessible healthcare across all stages of life. Care should recognize individual preferences, privacy and informed consent.",
+"SCI உள்ள பெண்களுக்கு வாழ்க்கையின் அனைத்துக் கட்டங்களிலும் மரியாதையான, அணுகக்கூடிய மருத்துவ சேவை கிடைக்க வேண்டும். தனிப்பட்ட விருப்பம், தனியுரிமை மற்றும் தகவலறிந்த சம்மதத்திற்கு முக்கியத்துவம் தர வேண்டும்."
+)}
+
+${cards([
+["Menstrual health","மாதவிடாய் ஆரோக்கியம்",
+"Discuss menstrual changes, hygiene needs, unusual bleeding or discomfort with a healthcare professional.",
+"மாதவிடாய் மாற்றங்கள், சுகாதாரத் தேவைகள், வழக்கத்திற்கு மாறான இரத்தப்போக்கு அல்லது அசௌகரியம் குறித்து மருத்துவரிடம் ஆலோசிக்கவும்."],
+["Sexual and reproductive health","பாலியல் மற்றும் இனப்பெருக்க ஆரோக்கியம்",
+"Accessible counselling should address reproductive choices, contraception and individual health concerns.",
+"இனப்பெருக்கத் தேர்வுகள், கருத்தடை மற்றும் தனிப்பட்ட உடல்நலச் சிக்கல்களுக்கு அணுகக்கூடிய ஆலோசனை கிடைக்க வேண்டும்."],
+["Pregnancy and maternity care","கர்ப்பகால மற்றும் மகப்பேறு பராமரிப்பு",
+"Pregnancy is possible for many women with SCI. Coordinated obstetric and SCI specialist care is important.",
+"SCI உள்ள பல பெண்களுக்கு கர்ப்பம் தரிப்பது சாத்தியம். மகப்பேறு மருத்துவர் மற்றும் SCI நிபுணரின் ஒருங்கிணைந்த பராமரிப்பு முக்கியம்."],
+["Accessible screening","அணுகக்கூடிய மருத்துவப் பரிசோதனை",
+"Arrange suitable examination equipment, transfer assistance and recommended routine screenings.",
+"பொருத்தமான பரிசோதனை உபகரணங்கள், இடமாற்ற உதவி மற்றும் பரிந்துரைக்கப்படும் வழக்கமான மருத்துவப் பரிசோதனைகளை ஏற்பாடு செய்யவும்."],
+["Bone and long-term health","எலும்பு மற்றும் நீண்டகால ஆரோக்கியம்",
+"Discuss bone health, menopause and other age-related changes with a clinician.",
+"எலும்பு ஆரோக்கியம், மாதவிடாய் நிறைவு மற்றும் வயது சார்ந்த பிற மாற்றங்கள் குறித்து மருத்துவரிடம் ஆலோசிக்கவும்."],
+["Privacy and dignity","தனியுரிமை மற்றும் கண்ணியம்",
+"Patients should be able to make informed choices and request suitable support during examinations.",
+"மருத்துவப் பரிசோதனைகளின்போது தகவலறிந்த முடிவுகளை எடுக்கவும் பொருத்தமான உதவியைக் கோரவும் நோயாளிகளுக்கு உரிமை உண்டு."]
+])}
+
+${note(
+"Pregnancy-related care, medication changes and AD risk require individual specialist assessment.",
+"கர்ப்பகாலப் பராமரிப்பு, மருந்து மாற்றங்கள் மற்றும் AD அபாயத்திற்கு தனிப்பட்ட நிபுணர் மதிப்பீடு தேவை.",
+"warning")}
+
+<p><small>${tr(
+"Specialist women's health source verification pending.",
+"பெண்களின் உடல்நலம் தொடர்பான சிறப்பு மருத்துவ ஆதாரச் சரிபார்ப்பு நிலுவையில் உள்ளது.")}</small></p>
+`
+}
+
+];
+
+const checklist=[
+["I know when changes in spasticity need assessment.",
+"தசைப் பிடிப்பில் ஏற்படும் எந்த மாற்றங்களுக்கு மருத்துவ மதிப்பீடு தேவை என்பதை அறிவேன்."],
+["I know how to describe my pain to a clinician.",
+"எனது வலியை மருத்துவரிடம் எவ்வாறு விளக்குவது என்பதை அறிவேன்."],
+["I have discussed suitable nutrition and hydration needs.",
+"பொருத்தமான உணவு மற்றும் நீர்ச்சத்து தேவைகள் குறித்து ஆலோசித்துள்ளேன்."],
+["I understand my exercise safety requirements.",
+"எனது உடற்பயிற்சி பாதுகாப்புத் தேவைகளைப் புரிந்துகொண்டுள்ளேன்."],
+["I recognize serious respiratory warning signs.",
+"தீவிர சுவாச எச்சரிக்கை அறிகுறிகளை அறிவேன்."],
+["I understand AD warning signs and emergency contacts.",
+"AD எச்சரிக்கை அறிகுறிகள் மற்றும் அவசர உதவி தொடர்புகளை அறிவேன்."],
+["I know how to access appropriate routine and specialist healthcare.",
+"பொருத்தமான வழக்கமான மற்றும் சிறப்பு மருத்துவ சேவைகளை எவ்வாறு பெறுவது என்பதை அறிவேன்."]
+];
+
+const faqs=[
+["Does every person with SCI experience spasticity?",
+"SCI உள்ள அனைவருக்கும் தசைப் பிடிப்பு ஏற்படுமா?",
+"No. Its presence and severity vary between individuals.",
+"இல்லை. அதன் இருப்பும் தீவிரமும் ஒவ்வொருவருக்கும் மாறுபடும்."],
+["Can nerve pain occur in areas with reduced sensation?",
+"உணர்வு குறைந்த பகுதிகளில் நரம்பு வலி ஏற்படுமா?",
+"Yes. Neuropathic pain can occur even when other sensations are reduced.",
+"ஆம். மற்ற உணர்வுகள் குறைந்திருந்தாலும் நரம்பு சார்ந்த வலி ஏற்படலாம்."],
+["Should everyone with SCI follow the same diet?",
+"SCI உள்ள அனைவரும் ஒரே உணவுத் திட்டத்தைப் பின்பற்ற வேண்டுமா?",
+"No. Nutrition depends on individual health and lifestyle needs.",
+"இல்லை. தனிப்பட்ட உடல்நிலை மற்றும் வாழ்க்கைமுறைக்கு ஏற்ப உணவுத் தேவைகள் மாறுபடும்."],
+["Can wheelchair users participate in exercise?",
+"வீல்சேர் பயன்படுத்துபவர்கள் உடற்பயிற்சி செய்யலாமா?",
+"Yes. Activities can be adapted according to ability and clinical safety.",
+"ஆம். திறன் மற்றும் மருத்துவப் பாதுகாப்பிற்கு ஏற்ப பயிற்சிகளை மாற்றியமைக்கலாம்."],
+["Is persistent coughing always harmless?",
+"தொடர்ச்சியான இருமல் எப்போதும் பாதிப்பில்லாததா?",
+"No. New or worsening respiratory symptoms should be assessed.",
+"இல்லை. புதிய அல்லது அதிகரிக்கும் சுவாச அறிகுறிகளுக்கு மருத்துவ மதிப்பீடு தேவை."],
+["Is AD a medical emergency?",
+"AD ஒரு மருத்துவ அவசரநிலையா?",
+"Yes. Severe blood pressure elevation can cause serious complications.",
+"ஆம். கடுமையான இரத்த அழுத்த உயர்வு தீவிரமான உடல்நலச் சிக்கல்களை ஏற்படுத்தலாம்."],
+["Can women with SCI become pregnant?",
+"SCI உள்ள பெண்கள் கர்ப்பம் தரிக்க முடியுமா?",
+"Many can. Individual pre-pregnancy and maternity advice is important.",
+"பலரால் முடியும். தனிப்பட்ட கர்ப்பத்திற்கு முந்தைய மற்றும் மகப்பேறு ஆலோசனை முக்கியம்."],
+["Can this guide replace a rehabilitation specialist?",
+"இந்த வழிகாட்டி மறுவாழ்வு நிபுணருக்கு மாற்றாகுமா?",
+"No. It provides education, not individualized medical treatment.",
+"இல்லை. இது விழிப்புணர்வுக்கானது; தனிப்பட்ட மருத்துவ சிகிச்சைக்கானது அல்ல."]
+];
+
+function renderChecklist(){
+const i=language==="ta"?1:0;
+document.getElementById("checklistItems").innerHTML=
+checklist.map((item,index)=>`
+<label class="check-item">
+<input type="checkbox" ${checked[index]?"checked":""}
+onchange="updateChecklist(${index},this.checked)">
+<span>${esc(item[i])}</span>
+</label>`).join("");
+updateProgress();
+}
+
+function updateChecklist(index,value){
+checked[index]=value;
+updateProgress();
+}
+
+function updateProgress(){
+const count=checked.filter(Boolean).length;
+document.getElementById("checklistProgress").value=count;
+document.getElementById("checklistStatus").textContent=
+tr(count+" of 7 education topics checked",
+"7 தலைப்புகளில் "+count+" தலைப்புகள் குறிக்கப்பட்டுள்ளன");
+}
+
+function resetChecklist(){
+checked=Array(7).fill(false);
+renderChecklist();
+}
+
+function renderPage(){
+const i=language==="ta"?1:0;
+document.documentElement.lang=language;
+document.title=ui.title[i]+" | SIS";
+
+document.querySelectorAll("[data-key]").forEach(el=>{
+if(ui[el.dataset.key])el.textContent=ui[el.dataset.key][i];
+});
+
+document.getElementById("taButton").setAttribute(
+"aria-pressed",String(language==="ta"));
+
+document.getElementById("enButton").setAttribute(
+"aria-pressed",String(language==="en"));
+
+document.getElementById("contentsList").innerHTML=
+sections.map(section=>`
+<a href="#${section.id}">${esc(section.title[i])}</a>
+`).join("");
+
+document.getElementById("articleContent").innerHTML=
+sections.map(section=>`
+<section class="article-section" id="${section.id}">
+<h2>${esc(section.title[i])}</h2>
+${section.content()}
+</section>`).join("");
+
+document.getElementById("faqList").innerHTML=
+faqs.map(faq=>`
+<details>
+<summary>${esc(faq[i])}</summary>
+<p>${esc(faq[i+2])}</p>
+</details>`).join("");
+
+renderChecklist();
+
+if(!("speechSynthesis" in window)||
+!("SpeechSynthesisUtterance" in window)){
+document.getElementById("readButton").disabled=true;
+document.getElementById("stopButton").disabled=true;
+document.getElementById("speechStatus").textContent=
+tr("Read Aloud is unavailable in this browser.",
+"இந்த உலாவியில் குரல் வாசிப்பு வசதி இல்லை.");
+}
+}
+
+function setLanguage(value){
+stopReading();
+language=value==="en"?"en":"ta";
+renderPage();
+}
+
+function resizeText(change){
+textSize=Math.max(16,Math.min(24,textSize+change));
+document.documentElement.style.fontSize=textSize+"px";
+}
+
+function resetText(){
+textSize=16;
+document.documentElement.style.fontSize="16px";
+}
+
+function stopReading(){
+speechToken++;
+if("speechSynthesis" in window)window.speechSynthesis.cancel();
+document.getElementById("speechStatus").textContent="";
+}
+
+function readArticle(){
+if(!("speechSynthesis" in window)||
+!("SpeechSynthesisUtterance" in window))return;
+
+stopReading();
+
+const token=speechToken;
+const synth=window.speechSynthesis;
+const status=document.getElementById("speechStatus");
+const voice=synth.getVoices().find(v=>
+v.lang.toLowerCase().startsWith(language));
+
+if(!voice){
+status.textContent=tr(
+"A matching speech voice is unavailable. Check device speech settings.",
+"தமிழ் குரல் வசதி கிடைக்கவில்லை. சாதனத்தின் குரல் அமைப்புகளைச் சரிபார்க்கவும்.");
+return;
+}
+
+const sentences=document.getElementById("articleContent")
+.innerText.split(/(?<=[.!?])\s+|\n+/)
+.map(s=>s.trim()).filter(Boolean);
+
+let position=0;
+status.textContent=tr("Reading article...","கட்டுரை வாசிக்கப்படுகிறது...");
+
+function speakNext(){
+if(token!==speechToken)return;
+if(position>=sentences.length){
+status.textContent=tr("Reading completed.","வாசிப்பு முடிந்தது.");
+return;
+}
+
+const speech=new SpeechSynthesisUtterance(sentences[position]);
+speech.voice=voice;
+speech.lang=voice.lang;
+speech.rate=0.9;
+
+speech.onend=()=>{
+position++;
+speakNext();
+};
+
+speech.onerror=()=>{
+if(token!==speechToken)return;
+status.textContent=tr("Speech playback could not continue.",
+"குரல் வாசிப்பைத் தொடர முடியவில்லை.");
+};
+
+synth.speak(speech);
+}
+speakNext();
+}
+
+window.addEventListener("pagehide",stopReading);
+
+renderPage();
+</script>
+
+</body>
+</html>

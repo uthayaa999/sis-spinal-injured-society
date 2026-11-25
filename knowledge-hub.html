@@ -462,20 +462,28 @@ const categories=[
  "Bowel management",
  "Bladder management",
  "Pressure injury and bed sores",
- "Skin care and nutrition",
- "Pain and spasticity",
- "Autonomic dysreflexia"
+ "Spasticity management",
+ "Pain management",
+ "Diet and nutrition",
+ "Exercise and physical activity",
+ "Respiratory care",
+ "Autonomic dysreflexia",
+ "Women's health after SCI"
  ],
  taTopics:[
  "குடல் பராமரிப்பு",
  "சிறுநீர்ப்பை பராமரிப்பு",
  "அழுத்தப் புண்கள் மற்றும் படுக்கைப் புண்கள்",
- "தோல் பராமரிப்பு மற்றும் ஊட்டச்சத்து",
- "வலி மற்றும் தசை இறுக்கம்",
- "தன்னியக்க நரம்பு மண்டலச் சிக்கல்"
+ "தசை இறுக்கம் மற்றும் தசைப் பிடிப்பு",
+ "வலி மேலாண்மை",
+ "உணவு மற்றும் ஊட்டச்சத்து",
+ "உடற்பயிற்சி மற்றும் உடல் இயக்கம்",
+ "சுவாசப் பராமரிப்பு",
+ "தன்னியக்க நரம்பு மண்டலச் சிக்கல் (AD)",
+ "SCI பாதிப்புக்குப் பிறகு பெண்களின் உடல்நலம்"
  ],
- url:"health-daily-care.html",
- ready:false
+ url:"physical-health.html",
+ ready:true
 },
 
 {
@@ -685,12 +693,24 @@ function renderCategories(){
  const topicList=language==="ta"
  ?category.taTopics:category.enTopics;
 
- topicList.forEach(function(topic){
+ const healthLinks=[
+ "bowel-management.html",
+ "bladder-management.html",
+ "pressure-injury.html",
+ "physical-health.html#spasticity",
+ "physical-health.html#pain-management",
+ "physical-health.html#nutrition",
+ "physical-health.html#exercise",
+ "physical-health.html#respiratory-care",
+ "physical-health.html#autonomic-dysreflexia",
+ "physical-health.html#womens-health"
+ ];
+ topicList.forEach(function(topic,topicIndex){
 
  const item=document.createElement("li");
- if(category.id==="health" && (topic===topicList[0] || topic===topicList[1] || topic===topicList[2])){
+ if(category.id==="health" && healthLinks[topicIndex]){
  const link=document.createElement("a");
- link.href=topic===topicList[0]?"bowel-management.html":topic===topicList[1]?"bladder-management.html":"pressure-injury.html";
+ link.href=healthLinks[topicIndex];
  link.textContent=topic+ (language==="ta"?" — படிக்கலாம்":" — Read Guide");
  item.appendChild(link);
  }else{

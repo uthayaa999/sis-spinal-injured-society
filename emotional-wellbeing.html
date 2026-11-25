@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Emotional Wellbeing After SCI | SIS</title>
+<link rel="stylesheet" href="sis-styles.css">
+<style>
+*{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;background:#f4f9ff;color:#073763;
+font-family:Arial,"Noto Sans Tamil",sans-serif;line-height:1.85}
+header{background:#073763;color:white;text-align:center;padding:24px}
+header img{width:150px;max-width:100%;height:auto}
+header h1{margin:8px 0}
+nav,.tools{display:flex;flex-wrap:wrap;justify-content:center;
+align-items:center;gap:12px;padding:14px}
+nav{background:#052b4d}
+nav a{color:white;text-decoration:none;font-weight:bold;padding:10px}
+.tools{background:white}
+button,.btn{display:inline-block;background:#073763;color:white;
+border:0;border-radius:8px;padding:12px 18px;min-height:44px;
+font:inherit;cursor:pointer;text-decoration:none}
+button[aria-pressed=true]{background:#007d80}
+button:disabled{opacity:.6;cursor:not-allowed}
+a:focus-visible,button:focus-visible,input:focus-visible,
+summary:focus-visible{outline:3px solid #e6a700;outline-offset:4px}
+.hero{background:linear-gradient(135deg,#073763,#007d80);
+color:white;padding:40px 20px;text-align:center}
+.hero h2{font-size:2em;margin:0 0 12px}
+.article-container{max-width:960px;margin:auto;padding:24px 16px}
+.article-section{background:white;padding:26px;margin:24px 0;
+border-radius:16px;box-shadow:0 4px 14px #07376312;
+overflow-wrap:anywhere;scroll-margin-top:20px}
+.article-section h2{margin-top:0;padding-bottom:12px;
+border-bottom:2px solid #e2f3f2}
+.article-grid{display:grid;gap:16px;
+grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.info-card{background:#f8fbff;border:1px solid #cbd9e5;
+border-radius:12px;padding:18px}
+.info-card h3{margin-top:0}
+.notice,.warning,.emergency{padding:18px;border-radius:10px;margin:20px 0}
+.notice{background:#e2f3f2;border-left:4px solid #007d80}
+.warning{background:#fff4e5;color:#663800;border-left:4px solid #b66a00}
+.emergency{background:#fff0f0;color:#8b1616;border-left:4px solid #b42318}
+.emergency a{color:#8b1616;font-weight:bold}
+.review-status{display:inline-block;background:#fff0cf;
+color:#704600;font-weight:bold;padding:8px 14px;border-radius:8px}
+.toc a{display:block;padding:12px 0;color:#073763;
+border-bottom:1px solid #dce7ef;text-decoration:none}
+.diagram{background:#f4f9ff;border:1px solid #cbd9e5;
+border-radius:12px;padding:20px;margin:20px 0;text-align:center}
+.diagram svg{display:block;width:100%;max-width:420px;height:auto;margin:auto}
+.flow-step{border:2px solid #007d80;background:white;
+border-radius:10px;padding:16px;margin:8px auto;max-width:480px}
+.flow-arrow{font-size:1.6rem;color:#007d80}
+.check-item{display:flex;gap:12px;align-items:flex-start;
+padding:14px 8px;border-bottom:1px solid #dce7ef;cursor:pointer}
+.check-item input{width:22px;height:22px;flex-shrink:0;
+accent-color:#007d80;margin-top:5px}
+progress{width:100%;height:18px;accent-color:#007d80}
+details{border:1px solid #cbd9e5;border-radius:10px;
+padding:16px;margin:12px 0}
+summary{font-weight:bold;cursor:pointer;min-height:44px}
+li{margin-bottom:10px}
+a{overflow-wrap:anywhere}
+footer{background:#073763;color:white;text-align:center;padding:28px 16px}
+@media(max-width:600px){
+.article-section{padding:18px}
+.article-grid{grid-template-columns:1fr}
+.hero h2{font-size:1.65em}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+<img src="sis-logo.png" alt="Official SIS Logo">
+<h1>SIS</h1>
+<strong>Spinal Injured Society</strong>
+<p>Together we move forward</p>
+</header>
+
+<nav aria-label="Main navigation">
+<a href="index.html" data-key="home"></a>
+<a href="knowledge-hub.html" data-key="hub"></a>
+<a href="physical-health.html" data-key="physical"></a>
+<a href="community-support.html" data-key="community"></a>
+<a href="#crisis-support" data-key="help"></a>
+</nav>
+
+<section class="tools" aria-label="Accessibility controls">
+<strong data-key="language"></strong>
+<button id="taButton" onclick="setLanguage('ta')" aria-pressed="true">தமிழ்</button>
+<button id="enButton" onclick="setLanguage('en')" aria-pressed="false">English</button>
+<strong data-key="size"></strong>
+<button onclick="resizeText(-2)" aria-label="Decrease text size">A−</button>
+<button onclick="resetText()" aria-label="Reset text size">A</button>
+<button onclick="resizeText(2)" aria-label="Increase text size">A+</button>
+<button id="readButton" onclick="readArticle()" data-key="read"></button>
+<button id="stopButton" onclick="stopReading()" data-key="stop"></button>
+</section>
+
+<p id="speechStatus" role="status" aria-live="polite"
+style="text-align:center;padding:0 16px"></p>
+
+<section class="hero">
+<h2 data-key="title"></h2>
+<p data-key="subtitle"></p>
+<p data-key="audience"></p>
+</section>
+
+<main class="article-container">
+
+<p><a href="knowledge-hub.html" data-key="hub"></a>
+ / <span data-key="shortTitle"></span></p>
+
+<div class="notice">
+<span class="review-status" data-key="review"></span>
+<p data-key="reviewNote"></p>
+<p data-key="date"></p>
+</div>
+
+<div class="emergency">
+<h2 data-key="urgentTitle"></h2>
+<p data-key="urgentText"></p>
+<p><strong>Tele-MANAS:</strong>
+<a href="tel:14416">14416</a> |
+<a href="tel:18008914416">1800-891-4416</a></p>
+<p data-key="helplineNote"></p>
+<p><strong data-key="emergency"></strong>:
+<a href="tel:112">112</a></p>
+<a href="#crisis-support" data-key="crisisLink"></a>
+</div>
+
+<section class="article-section toc">
+<h2 data-key="contents"></h2>
+<div id="contentsList"></div>
+<a href="#checklist" data-key="checklistTitle"></a>
+<a href="#faq" data-key="faqTitle"></a>
+<a href="#sources" data-key="sourcesTitle"></a>
+</section>
+
+<div id="articleContent"></div>
+
+<section id="checklist" class="article-section">
+<h2 data-key="checklistTitle"></h2>
+<p data-key="checklistNote"></p>
+<div id="checklistItems"></div>
+<p id="checklistStatus" role="status" aria-live="polite"></p>
+<progress id="checklistProgress" max="8" value="0"
+aria-label="Education checklist progress"></progress>
+<p><button onclick="resetChecklist()" data-key="resetChecklist"></button></p>
+<small data-key="privacy"></small>
+</section>
+
+<section id="faq" class="article-section">
+<h2 data-key="faqTitle"></h2>
+<div id="faqList"></div>
+</section>
+
+<section id="sources" class="article-section">
+<h2 data-key="sourcesTitle"></h2>
+<p data-key="sourcesNote"></p>
+
+<p>[1] MSKTC —
+<a href="https://msktc.org/sci/factsheets/adjusting-life-after-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">
+Adjusting to Life After Spinal Cord Injury</a></p>
+
+<p>[2] MSKTC —
+<a href="https://msktc.org/sci/factsheets/depression-and-spinal-cord-injury"
+target="_blank" rel="noopener noreferrer">
+Depression and Spinal Cord Injury</a></p>
+
+<p>[3] Government of India, DGHS —
+<a href="https://www.dghs.mohfw.gov.in/national-mental-health-programme.php"
+target="_blank" rel="noopener noreferrer">
+National Mental Health Programme</a></p>
+
+<p>[4] Government of India —
+<a href="https://telemanas.mohfw.gov.in/"
+target="_blank" rel="noopener noreferrer">
+Tele-MANAS</a></p>
+
+<p><small data-key="sourceDate"></small></p>
+</section>
+
+<div class="warning">
+<h3 data-key="disclaimerTitle"></h3>
+<p data-key="disclaimer"></p>
+</div>
+
+<a class="btn" href="knowledge-hub.html" data-key="back"></a>
+
+</main>
+
+<footer>
+<strong>SIS – Spinal Injured Society</strong>
+<p>Understand • Support • Empower</p>
+<p>© 2026 SIS | Knowledge Hub</p>
+<p>Educational Draft V0.1</p>
+</footer>
+
+<script>
+let language="ta";
+let textSize=16;
+let checked=Array(8).fill(false);
+let speechToken=0;
+
+const ui={
+home:["Home","முகப்பு"],
+hub:["Knowledge Hub","அறிவு மையம்"],
+physical:["Physical Health","உடல்நலம்"],
+community:["Community","சமூக ஆதரவு"],
+help:["Get Help","உதவி பெற"],
+language:["Language","மொழி"],
+size:["Text Size","எழுத்து அளவு"],
+read:["Read Aloud","குரலில் வாசிக்க"],
+stop:["Stop Reading","வாசிப்பை நிறுத்து"],
+title:["Mental Health & Emotional Wellbeing After SCI",
+"முதுகுத்தண்டுவடப் பாதிப்புக்குப் பிறகு மனநலமும் உணர்வுசார் நல்வாழ்வும்"],
+shortTitle:["Emotional Wellbeing","மனநலம்"],
+subtitle:["Respect, meaningful relationships, personal choices and accessible support.",
+"மரியாதை, அர்த்தமுள்ள உறவுகள், தனிப்பட்ட தேர்வுகள் மற்றும் அணுகக்கூடிய ஆதரவு."],
+audience:["For people with SCI, families and caregivers.",
+"SCI உள்ளவர்கள், குடும்பத்தினர் மற்றும் பராமரிப்பாளர்களுக்கான வழிகாட்டி."],
+review:["Medical Review Pending","மருத்துவ நிபுணரின் மதிப்பாய்வு நிலுவையில் உள்ளது"],
+reviewNote:["Educational draft. Independent mental health professional review is pending.",
+"இது ஒரு கல்வி வரைவு. மனநல நிபுணரின் மதிப்பாய்வு இன்னும் பெறப்படவில்லை."],
+date:["Draft prepared: 25 November 2026","வரைவு தயாரிக்கப்பட்ட நாள்: 25 நவம்பர் 2026"],
+urgentTitle:["Support is available","மனநல உதவி கிடைக்கிறது"],
+urgentText:["If you are experiencing thoughts of suicide or self-harm, seek professional help promptly. If you cannot stay safe, contact emergency services or go to the nearest emergency department.",
+"தற்கொலை அல்லது சுயதீங்கு எண்ணங்கள் ஏற்பட்டால் உடனடியாக மனநல நிபுணரின் உதவியை நாடுங்கள். பாதுகாப்பாக இருக்க முடியாத நிலை ஏற்பட்டால் அவசர உதவியை அழைக்கவும் அல்லது அருகிலுள்ள மருத்துவமனையின் அவசர சிகிச்சைப் பிரிவிற்குச் செல்லவும்."],
+helplineNote:["Government of India mental health support, available 24 hours. Request your preferred language.",
+"இந்திய அரசின் 24 மணி நேர மனநல உதவி சேவை. உங்களுக்கு விருப்பமான மொழியைக் கோரலாம்."],
+emergency:["Immediate emergency assistance","உடனடி அவசர உதவி"],
+crisisLink:["Learn about crisis support","அவசர மனநல உதவி பற்றிப் படிக்கவும்"],
+contents:["In This Guide","இந்த வழிகாட்டியில்"],
+checklistTitle:["09. Wellbeing Education Checklist","09. மனநல விழிப்புணர்வுப் பட்டியல்"],
+checklistNote:["Mark topics you have understood. This checklist does not measure mental health or provide a diagnosis.",
+"நீங்கள் புரிந்துகொண்ட தலைப்புகளைக் குறிக்கவும். இந்தப் பட்டியல் மனநலத்தை மதிப்பிடவோ நோயறிதல் செய்யவோ பயன்படாது."],
+resetChecklist:["Reset Checklist","பட்டியலை மீட்டமை"],
+privacy:["Selections are not stored or transmitted. Browser speech services may process article text.",
+"தேர்வுகள் சேமிக்கப்படவோ அனுப்பப்படவோ மாட்டாது. உலாவியின் குரல் சேவை கட்டுரை உரையைச் செயலாக்கலாம்."],
+faqTitle:["10. Frequently Asked Questions","10. அடிக்கடி கேட்கப்படும் கேள்விகள்"],
+sourcesTitle:["11. Educational References","11. கல்வி ஆதாரங்கள்"],
+sourcesNote:["Research-based SCI education and official Indian mental health resources.",
+"ஆராய்ச்சி அடிப்படையிலான SCI கல்வி மற்றும் இந்திய அரசின் மனநல ஆதாரங்கள்."],
+sourceDate:["Key SCI references and DGHS helpline information checked on 25 November 2026.",
+"முக்கிய SCI ஆதாரங்கள் மற்றும் DGHS உதவி எண் தகவல்கள் 25 நவம்பர் 2026 அன்று சரிபார்க்கப்பட்டன."],
+disclaimerTitle:["Important Disclaimer","முக்கிய அறிவிப்பு"],
+disclaimer:["This guide is educational and is not psychotherapy, diagnosis or individualized treatment. SIS demo pages do not provide live counselling or emergency response. Consult a qualified professional.",
+"இந்த வழிகாட்டி விழிப்புணர்வுக்கானது. இது மனநல சிகிச்சையோ நோயறிதலோ தனிப்பட்ட மருத்துவ ஆலோசனையோ அல்ல. SIS மாதிரி இணையதளம் நேரடி ஆலோசனை அல்லது அவசர உதவி வழங்குவதில்லை. தகுதியான நிபுணரை அணுகவும்."],
+back:["Back to Knowledge Hub","அறிவு மையத்திற்குத் திரும்பவும்"]
+};
+
+function tr(en,ta){
+return language==="ta"?ta:en;
+}
+
+function esc(value){
+const div=document.createElement("div");
+div.textContent=value;
+return div.innerHTML;
+}
+
+function paragraph(en,ta){
+return `<p>${tr(en,ta)}</p>`;
+}
+
+function cards(items){
+return `<div class="article-grid">${items.map(item=>`
+<div class="info-card">
+<h3>${tr(item[0],item[1])}</h3>
+<p>${tr(item[2],item[3])}</p>
+</div>`).join("")}</div>`;
+}
+
+function points(items){
+return `<ul>${items.map(item=>`
+<li>${tr(item[0],item[1])}</li>`).join("")}</ul>`;
+}
+
+function note(en,ta,type="notice"){
+return `<div class="${type}">${tr(en,ta)}</div>`;
+}
+
+function flowDiagram(title,steps){
+return `<div class="diagram">
+<h3>${esc(title)}</h3>
+${steps.map((step,i)=>`
+<div class="flow-step">${esc(step)}</div>
+${i<steps.length-1?'<div class="flow-arrow" aria-hidden="true">↓</div>':""}
+`).join("")}
+<small>${tr("Original SIS educational illustration.",
+"SIS உருவாக்கிய கல்வி விளக்கப்படம்.")}</small>
+</div>`;
+}
+
+const sections=[
+
+{
+id:"emotional-adjustment",
+title:["01. Emotional Adjustment","01. வாழ்க்கை மாற்றங்களை எதிர்கொள்ளுதல்"],
+content:()=>`
+
+${paragraph(
+"Life after SCI may include changes in physical ability, daily routines, work, relationships and personal independence. People respond to these changes in different ways.",
+"SCI பாதிப்புக்குப் பிறகு உடல் இயக்கம், தினசரி பழக்கங்கள், வேலை, உறவுகள் மற்றும் சுதந்திரமான வாழ்க்கையில் மாற்றங்கள் ஏற்படலாம். ஒவ்வொருவரும் இம்மாற்றங்களை வெவ்வேறு விதமாக எதிர்கொள்கிறார்கள்."
+)}
+
+${paragraph(
+"Sadness, frustration, uncertainty and grief about changes can occur. Emotional adjustment has no fixed timetable.",
+"சோகம், ஏமாற்றம், எதிர்காலம் குறித்த குழப்பம் மற்றும் ஏற்பட்ட மாற்றங்கள் குறித்த துயரம் தோன்றலாம். உணர்வுசார் மாற்றங்களை ஏற்றுக்கொள்வதற்கு குறிப்பிட்ட காலக்கெடு இல்லை."
+)}
+
+${cards([
+["Recognize emotions","உணர்வுகளைப் புரிந்துகொள்ளுதல்",
+"Make room for different feelings without judging yourself.",
+"உங்களை நீங்களே குறை கூறாமல் வெவ்வேறு உணர்வுகளைப் புரிந்துகொள்ளுங்கள்."],
+["Create a manageable routine","எளிய தினசரி ஒழுங்கு",
+"Build a flexible schedule around care, rest and meaningful activities.",
+"உடல் பராமரிப்பு, ஓய்வு மற்றும் விருப்பமான செயல்களுக்கு ஏற்ற நெகிழ்வான தினசரி அட்டவணையை உருவாக்குங்கள்."],
+["Express your needs","தேவைகளை வெளிப்படுத்துதல்",
+"Discuss accessibility, personal preferences and assistance openly with trusted people.",
+"அணுகல் வசதி, தனிப்பட்ட விருப்பங்கள் மற்றும் உதவித் தேவைகளை நம்பகமானவர்களுடன் பகிருங்கள்."],
+["Seek appropriate support","பொருத்தமான ஆதரவைப் பெறுதல்",
+"Ask experienced rehabilitation and mental health professionals for guidance when needed.",
+"தேவைப்படும்போது அனுபவமுள்ள மறுவாழ்வு மற்றும் மனநல நிபுணர்களின் வழிகாட்டுதலைப் பெறுங்கள்."]
+])}
+
+${note(
+"Your identity includes your interests, experiences, relationships and choices. A medical condition does not define your entire life.",
+"உங்கள் அடையாளம் என்பது ஆர்வங்கள், அனுபவங்கள், உறவுகள் மற்றும் தேர்வுகளை உள்ளடக்கியது. மருத்துவ நிலை மட்டுமே உங்கள் முழு வாழ்க்கையையும் வரையறுப்பதில்லை."
+)}
+<p><small>[1]</small></p>
+`
+},
+
+{
+id:"depression-anxiety",
+title:["02. Depression and Anxiety Awareness",
+"02. மனச்சோர்வு மற்றும் பதற்றம் பற்றிய விழிப்புணர்வு"],
+content:()=>`
+
+${paragraph(
+"Depression is a treatable health condition. Anxiety may involve persistent worry or fear that becomes difficult to manage. Neither condition can be diagnosed from a website.",
+"மனச்சோர்வு சிகிச்சை பெறக்கூடிய உடல்நல நிலையாகும். பதற்றம் என்பது கட்டுப்படுத்துவதில் சிரமத்தை ஏற்படுத்தும் தொடர்ச்சியான கவலை அல்லது பயத்தைக் கொண்டிருக்கலாம். இணையதளத்தின் மூலம் மட்டும் இவற்றை நோயறிதல் செய்ய முடியாது."
+)}
+
+${cards([
+["Mood changes","மனநிலை மாற்றங்கள்",
+"Persistent sadness, emptiness, irritability or hopelessness.",
+"தொடர்ச்சியான சோகம், வெறுமை உணர்வு, எரிச்சல் அல்லது நம்பிக்கையின்மை."],
+["Changes in enjoyment","ஆர்வத்தில் மாற்றங்கள்",
+"Losing interest in activities that were previously enjoyable.",
+"முன்பு மகிழ்ச்சியளித்த செயல்களில் ஆர்வம் குறைதல்."],
+["Anxiety symptoms","பதற்றத்தின் அறிகுறிகள்",
+"Troubling worry, fear, restlessness or avoidance that affects everyday activities.",
+"அன்றாடச் செயல்களைப் பாதிக்கும் கவலை, பயம், அமைதியின்மை அல்லது செயல்களைத் தவிர்த்தல்."],
+["Daily functioning","அன்றாடச் செயல்பாடு",
+"Changes in concentration, sleep, motivation or participation may need assessment.",
+"கவனம், தூக்கம், ஊக்கம் அல்லது பங்கேற்பில் ஏற்படும் மாற்றங்களுக்கு மதிப்பீடு தேவைப்படலாம்."]
+])}
+
+${note(
+"If low mood or loss of interest persists for around two weeks, or symptoms interfere with daily life, arrange a professional assessment. Seek help sooner if symptoms are severe.",
+"மனநிலைத் தாழ்வு அல்லது ஆர்வமின்மை சுமார் இரண்டு வாரங்கள் தொடர்ந்தாலோ அன்றாட வாழ்க்கையைப் பாதித்தாலோ நிபுணரின் மதிப்பீட்டைப் பெறுங்கள். அறிகுறிகள் தீவிரமாக இருந்தால் அதற்கு முன்பே உதவியை நாடுங்கள்.",
+"warning")}
+
+${paragraph(
+"Pain, infections, medication effects and other physical conditions can also influence sleep, energy and mood. A clinician can assess these together.",
+"வலி, தொற்று, மருந்துகளின் விளைவுகள் மற்றும் பிற உடல்நல நிலைகளும் தூக்கம், ஆற்றல் மற்றும் மனநிலையைப் பாதிக்கலாம். இவற்றை மருத்துவர் ஒருங்கிணைந்து மதிப்பிட முடியும்."
+)}
+
+<p><a href="#crisis-support">${tr(
+"Read urgent mental health support information",
+"அவசர மனநல உதவித் தகவல்களைப் படிக்கவும்")}</a></p>
+<p><small>[2]</small></p>
+`
+},
+
+{
+id:"stress-management",
+title:["03. Stress Management","03. மன அழுத்த மேலாண்மை"],
+content:()=>`
+
+${paragraph(
+"Stress may arise from health concerns, financial difficulties, inaccessible environments, family responsibilities or changes in independence.",
+"உடல்நலக் கவலைகள், பொருளாதாரச் சிக்கல்கள், அணுகல் வசதியற்ற சூழல்கள், குடும்பப் பொறுப்புகள் அல்லது சுதந்திரமான வாழ்க்கையில் ஏற்படும் மாற்றங்களால் மன அழுத்தம் உருவாகலாம்."
+)}
+
+${flowDiagram(tr("A Practical Coping Approach","மன அழுத்தத்தைச் சமாளிக்கும் அணுகுமுறை"),[
+tr("Identify the immediate difficulty","தற்போதைய சிரமத்தைக் கண்டறியுங்கள்"),
+tr("Separate manageable tasks from larger concerns","செய்யக்கூடிய சிறிய பணிகளைப் பிரித்துக்கொள்ளுங்கள்"),
+tr("Choose a suitable action or ask for support","பொருத்தமான நடவடிக்கை அல்லது உதவியைத் தேர்ந்தெடுங்கள்"),
+tr("Review and adapt the plan","திட்டத்தை மதிப்பிட்டு தேவைக்கேற்ப மாற்றுங்கள்")
+])}
+
+${points([
+["Set aside time for rest and activities you enjoy.",
+"ஓய்வுக்கும் உங்களுக்கு விருப்பமான செயல்களுக்கும் நேரம் ஒதுக்குங்கள்."],
+["Discuss unresolved pain, sleep or care difficulties with your healthcare team.",
+"தொடர்ச்சியான வலி, தூக்கம் அல்லது பராமரிப்புச் சிக்கல்கள் குறித்து மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."],
+["Try comfortable relaxation techniques without forcing your breathing.",
+"சுவாசத்தை வற்புறுத்தாமல் உங்களுக்கு ஏற்ற தளர்வுப் பயிற்சிகளை முயற்சிக்கவும்."],
+["Reduce avoidable demands and negotiate practical assistance.",
+"தவிர்க்கக்கூடிய பணிச்சுமையைக் குறைத்து நடைமுறை உதவிகளை ஏற்பாடு செய்யுங்கள்."]
+])}
+
+${note(
+"Relaxation and daily routines can complement professional care, but they do not replace treatment for significant mental health symptoms.",
+"தளர்வுப் பயிற்சிகளும் தினசரி ஒழுங்கும் நிபுணர் வழங்கும் பராமரிப்புக்கு துணையாக இருக்கலாம். தீவிர மனநல அறிகுறிகளுக்கான சிகிச்சைக்கு மாற்றாகாது."
+)}
+<p><small>[1]</small></p>
+`
+},
+
+{
+id:"self-confidence",
+title:["04. Self-Confidence and Self-Esteem",
+"04. தன்னம்பிக்கை மற்றும் சுயமரியாதை"],
+content:()=>`
+
+${paragraph(
+"Confidence may change when familiar tasks become difficult or when other people make assumptions about disability. Accessible environments and respectful support are important.",
+"பழக்கமான செயல்கள் சிரமமாகும்போதோ மாற்றுத்திறன் குறித்து பிறர் தவறான அனுமானங்களை வைத்திருக்கும்போதோ தன்னம்பிக்கையில் மாற்றம் ஏற்படலாம். அணுகக்கூடிய சூழலும் மரியாதையான ஆதரவும் முக்கியம்."
+)}
+
+${cards([
+["Recognize your strengths","உங்கள் திறன்களை அறிந்துகொள்ளுங்கள்",
+"Value existing skills, knowledge, creativity and life experience.",
+"உங்களிடம் ஏற்கெனவே உள்ள திறன்கள், அறிவு, படைப்பாற்றல் மற்றும் வாழ்க்கை அனுபவங்களுக்கு மதிப்பளியுங்கள்."],
+["Develop new skills","புதிய திறன்களை வளர்த்துக்கொள்ளுங்கள்",
+"Choose learning or rehabilitation goals that are meaningful to you.",
+"உங்களுக்கு அர்த்தமுள்ள கற்றல் அல்லது மறுவாழ்வு இலக்குகளைத் தேர்ந்தெடுங்கள்."],
+["Respect your boundaries","தனிப்பட்ட எல்லைகளை மதியுங்கள்",
+"You can decide what help you prefer and when to accept it.",
+"எந்த உதவி வேண்டும், எப்போது அதைப் பெற வேண்டும் என்பதை நீங்கள் தீர்மானிக்கலாம்."],
+["Challenge discrimination","பாகுபாட்டை எதிர்கொள்ளுங்கள்",
+"Seek accessible services and appropriate advocacy rather than accepting unfair treatment.",
+"நியாயமற்ற நடத்தையை ஏற்றுக்கொள்வதற்குப் பதிலாக அணுகக்கூடிய சேவைகளையும் உரிய உரிமை ஆதரவையும் நாடுங்கள்."]
+])}
+
+${note(
+"Independence includes choice and control. Using assistance or equipment does not reduce a person's dignity.",
+"சுதந்திரமான வாழ்க்கை என்பது தேர்வு செய்யும் உரிமையையும் கட்டுப்பாட்டையும் உள்ளடக்கியது. உதவி அல்லது உபகரணங்களைப் பயன்படுத்துவது ஒருவரின் கண்ணியத்தைக் குறைக்காது."
+)}
+`
+},
+
+{
+id:"relationships",
+title:["05. Family and Social Relationships",
+"05. குடும்பம் மற்றும் சமூக உறவுகள்"],
+content:()=>`
+
+${paragraph(
+"SCI may change responsibilities within a household. Open communication can help families understand personal preferences, assistance needs and privacy.",
+"SCI காரணமாக குடும்பப் பொறுப்புகளில் மாற்றங்கள் ஏற்படலாம். வெளிப்படையான உரையாடல் தனிப்பட்ட விருப்பங்கள், உதவித் தேவைகள் மற்றும் தனியுரிமையைப் புரிந்துகொள்ள உதவும்."
+)}
+
+${cards([
+["Listen before advising","ஆலோசனைக்கு முன் கேளுங்கள்",
+"Give the person time to express concerns and preferences.",
+"ஒருவரின் கவலைகளையும் விருப்பங்களையும் வெளிப்படுத்த போதுமான நேரம் கொடுங்கள்."],
+["Ask before assisting","உதவுவதற்கு முன் கேளுங்கள்",
+"Obtain consent before providing physical assistance.",
+"உடல் சார்ந்த உதவியை வழங்குவதற்கு முன் சம்மதம் பெறுங்கள்."],
+["Share responsibilities","பொறுப்புகளைப் பகிர்ந்துகொள்ளுங்கள்",
+"Agree on manageable roles without excluding the person from decisions.",
+"சம்பந்தப்பட்ட நபரை முடிவுகளிலிருந்து விலக்காமல் செய்யக்கூடிய பொறுப்புகளைப் பகிர்ந்துகொள்ளுங்கள்."],
+["Caregiver wellbeing","பராமரிப்பாளரின் நல்வாழ்வு",
+"Encourage rest, practical assistance and professional support for caregivers when needed.",
+"பராமரிப்பாளர்களுக்கு ஓய்வு, நடைமுறை உதவி மற்றும் தேவையான நிபுணர் ஆதரவை ஊக்குவிக்கவும்."]
+])}
+
+${paragraph(
+"Intimacy and relationship concerns can be discussed privately with an appropriate healthcare or counselling professional.",
+"தாம்பத்தியம் மற்றும் உறவுகள் தொடர்பான கவலைகளை பொருத்தமான மருத்துவர் அல்லது ஆலோசகருடன் தனிப்பட்ட முறையில் விவாதிக்கலாம்."
+)}
+`
+},
+
+{
+id:"peer-support",
+title:["06. Peer Support and Counselling",
+"06. சக நபர்களின் ஆதரவு மற்றும் ஆலோசனை"],
+content:()=>`
+
+${paragraph(
+"Sharing experiences with people who understand similar accessibility and rehabilitation challenges can offer practical ideas and social connection.",
+"ஒத்த அணுகல் மற்றும் மறுவாழ்வுச் சவால்களைப் புரிந்துகொள்ளும் நபர்களுடன் அனுபவங்களைப் பகிர்வது நடைமுறை யோசனைகளையும் சமூகத் தொடர்பையும் வழங்கலாம்."
+)}
+
+${cards([
+["Peer support","சக நபர்களின் ஆதரவு",
+"Share experiences, community resources and everyday accessibility solutions.",
+"அனுபவங்கள், சமூக வளங்கள் மற்றும் அன்றாட அணுகல் தீர்வுகளைப் பகிரலாம்."],
+["Clinical psychologist","மருத்துவ உளவியல் நிபுணர்",
+"Can provide psychological assessment and suitable evidence-based therapy.",
+"உளவியல் மதிப்பீடு மற்றும் பொருத்தமான ஆதார அடிப்படையிலான சிகிச்சையை வழங்க முடியும்."],
+["Psychiatrist","மனநல மருத்துவர்",
+"Can assess mental health conditions, medical factors and treatment options.",
+"மனநல நிலைகள், மருத்துவக் காரணிகள் மற்றும் சிகிச்சை முறைகளை மதிப்பிட முடியும்."],
+["Rehabilitation team","மறுவாழ்வுக் குழு",
+"Can help coordinate physical, emotional and participation-related needs.",
+"உடல், உணர்வு மற்றும் சமூகப் பங்கேற்புத் தேவைகளை ஒருங்கிணைக்க உதவலாம்."]
+])}
+
+${flowDiagram(tr("Choosing a Support Path","ஆதரவு வழியைத் தேர்ந்தெடுத்தல்"),[
+tr("Identify what kind of support is needed","எந்த வகையான ஆதரவு தேவை என்பதை அறியுங்கள்"),
+tr("Choose trusted peer or qualified professional support","நம்பகமான சக நபர் அல்லது தகுதியான நிபுணரை அணுகுங்கள்"),
+tr("Arrange accessible and private communication","அணுகக்கூடிய தனியுரிமையுள்ள உரையாடலை ஏற்பாடு செய்யுங்கள்")
+])}
+
+${note(
+"Peer groups complement professional care. Do not rely on peer advice alone for medication changes, diagnosis or emergencies.",
+"சக நபர்களின் ஆதரவு நிபுணர் பராமரிப்புக்கு துணையாக அமையும். மருந்து மாற்றம், நோயறிதல் அல்லது அவசரநிலைகளுக்கு சக நபர்களின் ஆலோசனையை மட்டும் நம்ப வேண்டாம்."
+)}
+
+<p><a href="community-support.html">${tr(
+"Explore SIS Community Support Demo",
+"SIS சமூக ஆதரவு மாதிரிப் பக்கத்தைப் பார்வையிடுங்கள்")}</a></p>
+<p><small>[1]</small></p>
+`
+},
+
+{
+id:"personal-goals",
+title:["07. Purpose and Personal Goals",
+"07. வாழ்க்கை நோக்கம் மற்றும் தனிப்பட்ட இலக்குகள்"],
+content:()=>`
+
+${paragraph(
+"Meaningful goals can include health, education, relationships, hobbies, employment, sports or community participation. Goals should reflect your own interests and circumstances.",
+"உடல்நலம், கல்வி, உறவுகள், பொழுதுபோக்கு, வேலைவாய்ப்பு, விளையாட்டு அல்லது சமூகப் பங்கேற்பு ஆகியவை அர்த்தமுள்ள இலக்குகளாக இருக்கலாம். இலக்குகள் உங்கள் விருப்பங்களுக்கும் சூழ்நிலைக்கும் ஏற்றதாக இருக்க வேண்டும்."
+)}
+
+${flowDiagram(tr("Personal Goal Planning","தனிப்பட்ட இலக்குத் திட்டமிடல்"),[
+tr("Choose something meaningful to you","உங்களுக்கு அர்த்தமுள்ள இலக்கைத் தேர்ந்தெடுங்கள்"),
+tr("Identify resources and accessibility needs","தேவையான வளங்களையும் அணுகல் வசதிகளையும் கண்டறியுங்கள்"),
+tr("Plan a manageable first action","செய்யக்கூடிய முதல் நடவடிக்கையைத் திட்டமிடுங்கள்"),
+tr("Review progress without unnecessary pressure","தேவையற்ற அழுத்தமின்றி முன்னேற்றத்தை மதிப்பிடுங்கள்")
+])}
+
+${cards([
+["Learning","கற்றல்",
+"Explore accessible education or digital skill development.",
+"அணுகக்கூடிய கல்வி அல்லது டிஜிட்டல் திறன் வளர்ப்பை ஆராயுங்கள்."],
+["Recreation","பொழுதுபோக்கு",
+"Discover interests such as reading, art, music or accessible outdoor activities.",
+"வாசிப்பு, கலை, இசை அல்லது அணுகக்கூடிய வெளிப்புறச் செயல்களில் ஆர்வம் கொள்ளலாம்."],
+["Employment","வேலைவாய்ப்பு",
+"Explore work options and reasonable workplace adjustments.",
+"வேலைவாய்ப்புகளையும் பொருத்தமான பணியிட வசதிகளையும் ஆராயுங்கள்."],
+["Participation","சமூகப் பங்கேற்பு",
+"Consider suitable para sports, volunteering or social events according to your preferences.",
+"உங்கள் விருப்பங்களுக்கு ஏற்ப பாரா விளையாட்டு, தன்னார்வப் பணி அல்லது சமூக நிகழ்ச்சிகளைக் கருத்தில் கொள்ளுங்கள்."]
+])}
+
+${note(
+"Personal worth is not measured by productivity, employment or physical recovery. Rest and personal choice are equally valid.",
+"ஒருவரின் மதிப்பு அவரது உற்பத்தித்திறன், வேலைவாய்ப்பு அல்லது உடல் மீட்பால் அளவிடப்படுவதில்லை. ஓய்வும் தனிப்பட்ட தேர்வுகளும் முக்கியமானவை."
+)}
+
+<p><a href="learning-resources.html">${tr(
+"Explore Learning Resources",
+"கற்றல் வளங்களைப் பார்வையிடுங்கள்")}</a></p>
+`
+},
+
+{
+id:"crisis-support",
+title:["08. Mental Health Crisis Support",
+"08. அவசர மனநல உதவி"],
+content:()=>`
+
+<div class="emergency">
+<h3>${tr("When immediate help is needed",
+"உடனடி உதவி தேவைப்படும் சூழல்")}</h3>
+
+${paragraph(
+"Thoughts of suicide or self-harm require prompt attention. An immediate intention to harm yourself, inability to remain safe, or a recent attempt requires emergency care.",
+"தற்கொலை அல்லது சுயதீங்கு எண்ணங்களுக்கு உடனடி கவனம் தேவை. சுயதீங்கு செய்யும் உடனடி எண்ணம், பாதுகாப்பாக இருக்க முடியாத நிலை அல்லது சமீபத்திய முயற்சி இருந்தால் அவசர மருத்துவ உதவி தேவை."
+)}
+
+${points([
+["Tell a trusted person or healthcare professional what you are experiencing.",
+"நீங்கள் அனுபவிக்கும் நிலையை நம்பகமான நபர் அல்லது மருத்துவ நிபுணரிடம் தெரிவியுங்கள்."],
+["If immediate danger exists, call emergency services or go to the nearest emergency department.",
+"உடனடி ஆபத்து இருந்தால் அவசர உதவியை அழைக்கவும் அல்லது அருகிலுள்ள மருத்துவமனையின் அவசர சிகிச்சைப் பிரிவிற்குச் செல்லவும்."],
+["Ask a trusted person to stay with you if possible while help is arranged.",
+"உதவி ஏற்பாடு செய்யப்படும் வரை முடிந்தால் நம்பகமான ஒருவரை உங்களுடன் இருக்கச் சொல்லுங்கள்."],
+["Arrange accessible transport and communication assistance if needed. Do not delay emergency care.",
+"தேவைப்பட்டால் அணுகக்கூடிய போக்குவரத்து மற்றும் தகவல் தொடர்பு உதவியை ஏற்பாடு செய்யுங்கள். அவசர சிகிச்சையைத் தாமதிக்க வேண்டாம்."]
+])}
+
+<p><strong>${tr("India Emergency Assistance","இந்திய அவசர உதவி")}:</strong>
+<a href="tel:112">112</a></p>
+</div>
+
+<div class="notice">
+<h3>Tele-MANAS</h3>
+
+${paragraph(
+"India's national mental health support programme offers round-the-clock telephone assistance.",
+"இந்தியாவின் தேசிய மனநல ஆதரவுத் திட்டம் 24 மணி நேர தொலைபேசி உதவியை வழங்குகிறது."
+)}
+
+<p><a class="btn" href="tel:14416">14416</a></p>
+<p><a href="tel:18008914416">1800-891-4416</a></p>
+
+<p><a href="https://telemanas.mohfw.gov.in/"
+target="_blank" rel="noopener noreferrer">
+${tr("Official Tele-MANAS Website","அதிகாரப்பூர்வ Tele-MANAS இணையதளம்")}
+</a></p>
+
+${paragraph(
+"Telephone counselling does not replace emergency medical care when someone is in immediate danger.",
+"உடனடி ஆபத்து ஏற்பட்டால் தொலைபேசி ஆலோசனை அவசர மருத்துவ சிகிச்சைக்கு மாற்றாகாது."
+)}
+</div>
+
+<h3>${tr("How families can help","குடும்பத்தினர் எவ்வாறு உதவலாம்")}</h3>
+
+${points([
+["Listen without blame or criticism.",
+"குற்றம் சாட்டாமல் அல்லது விமர்சிக்காமல் கேளுங்கள்."],
+["Take statements about self-harm seriously.",
+"சுயதீங்கு பற்றிய கருத்துகளைத் தீவிரமாக எடுத்துக்கொள்ளுங்கள்."],
+["Help the person access qualified professional or emergency care.",
+"தகுதியான நிபுணர் அல்லது அவசர மருத்துவ உதவியைப் பெற உதவுங்கள்."],
+["Respect privacy while prioritizing immediate safety.",
+"உடனடி பாதுகாப்பிற்கு முன்னுரிமை அளித்து தனியுரிமையை மதியுங்கள்."]
+])}
+
+<p><small>[2], [3], [4]</small></p>
+`
+}
+];
+
+const checklist=[
+["I understand that emotional adjustment differs between people.",
+"உணர்வுசார் மாற்றங்கள் ஒவ்வொருவருக்கும் மாறுபடும் என்பதைப் புரிந்துகொண்டேன்."],
+["I know when persistent mood changes require professional help.",
+"தொடர்ச்சியான மனநிலை மாற்றங்களுக்கு எப்போது நிபுணர் உதவி தேவை என்பதை அறிவேன்."],
+["I understand practical approaches to managing stress.",
+"மன அழுத்தத்தைச் சமாளிக்கும் நடைமுறை அணுகுமுறைகளைப் புரிந்துகொண்டேன்."],
+["I understand the importance of dignity and personal choices.",
+"கண்ணியம் மற்றும் தனிப்பட்ட தேர்வுகளின் முக்கியத்துவத்தைப் புரிந்துகொண்டேன்."],
+["I understand respectful communication and consent.",
+"மரியாதையான உரையாடல் மற்றும் சம்மதத்தின் முக்கியத்துவத்தை அறிவேன்."],
+["I know the difference between peer support and clinical care.",
+"சக நபர்களின் ஆதரவுக்கும் மருத்துவப் பராமரிப்புக்கும் உள்ள வேறுபாட்டை அறிவேன்."],
+["I understand how to plan meaningful personal goals.",
+"அர்த்தமுள்ள தனிப்பட்ட இலக்குகளைத் திட்டமிடும் முறையைப் புரிந்துகொண்டேன்."],
+["I know the Tele-MANAS and emergency assistance numbers.",
+"Tele-MANAS மற்றும் அவசர உதவி எண்களை அறிவேன்."]
+];
+
+const faqs=[
+["Is depression inevitable after SCI?",
+"SCI பாதிப்புக்குப் பிறகு மனச்சோர்வு கட்டாயமாக ஏற்படுமா?",
+"No. Experiences vary, and depression can be treated.",
+"இல்லை. அனுபவங்கள் மாறுபடும். மனச்சோர்வுக்கு சிகிச்சை பெற முடியும்."],
+
+["How long does emotional adjustment take?",
+"வாழ்க்கை மாற்றங்களை ஏற்றுக்கொள்ள எவ்வளவு காலம் ஆகும்?",
+"There is no universal timeframe.",
+"அனைவருக்கும் பொதுவான காலக்கெடு இல்லை."],
+
+["Can physical pain affect mental wellbeing?",
+"உடல் வலி மனநலத்தைப் பாதிக்குமா?",
+"Yes. Discuss persistent pain and emotional concerns with your healthcare team.",
+"ஆம். தொடர்ச்சியான வலி மற்றும் மனநலக் கவலைகள் குறித்து மருத்துவக் குழுவுடன் ஆலோசிக்கவும்."],
+
+["Is counselling only for severe mental health conditions?",
+"ஆலோசனை தீவிர மனநலப் பாதிப்புகளுக்கு மட்டுமா?",
+"No. Counselling can also address adjustment, relationships and everyday difficulties.",
+"இல்லை. வாழ்க்கை மாற்றங்கள், உறவுகள் மற்றும் அன்றாடச் சிரமங்களுக்கும் ஆலோசனை உதவலாம்."],
+
+["Can families receive support?",
+"குடும்பத்தினரும் ஆதரவு பெறலாமா?",
+"Yes. Family counselling and caregiver support may be appropriate.",
+"ஆம். குடும்ப ஆலோசனையும் பராமரிப்பாளர் ஆதரவும் உதவலாம்."],
+
+["Can peer support replace a psychiatrist?",
+"சக நபர்களின் ஆதரவு மனநல மருத்துவருக்கு மாற்றாகுமா?",
+"No. Peer support and professional treatment serve different purposes.",
+"இல்லை. சக நபர் ஆதரவும் நிபுணர் சிகிச்சையும் வெவ்வேறு நோக்கங்களைக் கொண்டவை."],
+
+["Can I request Tamil mental health support?",
+"தமிழில் மனநல உதவியைக் கோர முடியுமா?",
+"You can contact Tele-MANAS and request Tamil language assistance.",
+"Tele-MANAS சேவையைத் தொடர்புகொண்டு தமிழில் உதவியைக் கோரலாம்."],
+
+["What should I do during an immediate mental health emergency?",
+"உடனடி மனநல அவசரநிலை ஏற்பட்டால் என்ன செய்ய வேண்டும்?",
+"Call 112 or seek emergency medical care. Ask a trusted person for assistance if possible.",
+"112 எண்ணை அழைக்கவும் அல்லது அவசர மருத்துவ உதவியைப் பெறவும். முடிந்தால் நம்பகமான நபரின் உதவியைக் கோரவும்."]
+];
+
+function renderChecklist(){
+const i=language==="ta"?1:0;
+document.getElementById("checklistItems").innerHTML=
+checklist.map((item,index)=>`
+<label class="check-item">
+<input type="checkbox" ${checked[index]?"checked":""}
+onchange="updateChecklist(${index},this.checked)">
+<span>${esc(item[i])}</span>
+</label>`).join("");
+updateProgress();
+}
+
+function updateChecklist(index,value){
+checked[index]=value;
+updateProgress();
+}
+
+function updateProgress(){
+const count=checked.filter(Boolean).length;
+document.getElementById("checklistProgress").value=count;
+document.getElementById("checklistStatus").textContent=
+tr(count+" of 8 education topics checked",
+"8 தலைப்புகளில் "+count+" தலைப்புகள் குறிக்கப்பட்டுள்ளன");
+}
+
+function resetChecklist(){
+checked=Array(8).fill(false);
+renderChecklist();
+}
+
+function renderPage(){
+const i=language==="ta"?1:0;
+document.documentElement.lang=language;
+document.title=ui.title[i]+" | SIS";
+
+document.querySelectorAll("[data-key]").forEach(el=>{
+if(ui[el.dataset.key])el.textContent=ui[el.dataset.key][i];
+});
+
+document.getElementById("taButton").setAttribute(
+"aria-pressed",String(language==="ta"));
+
+document.getElementById("enButton").setAttribute(
+"aria-pressed",String(language==="en"));
+
+document.getElementById("contentsList").innerHTML=
+sections.map(section=>`
+<a href="#${section.id}">${esc(section.title[i])}</a>
+`).join("");
+
+document.getElementById("articleContent").innerHTML=
+sections.map(section=>`
+<section class="article-section" id="${section.id}">
+<h2>${esc(section.title[i])}</h2>
+${section.content()}
+</section>`).join("");
+
+document.getElementById("faqList").innerHTML=
+faqs.map(faq=>`
+<details>
+<summary>${esc(faq[i])}</summary>
+<p>${esc(faq[i+2])}</p>
+</details>`).join("");
+
+renderChecklist();
+
+if(!("speechSynthesis" in window)||
+!("SpeechSynthesisUtterance" in window)){
+document.getElementById("readButton").disabled=true;
+document.getElementById("stopButton").disabled=true;
+document.getElementById("speechStatus").textContent=
+tr("Read Aloud is unavailable in this browser.",
+"இந்த உலாவியில் குரல் வாசிப்பு வசதி இல்லை.");
+}
+}
+
+function setLanguage(value){
+stopReading();
+language=value==="en"?"en":"ta";
+renderPage();
+}
+
+function resizeText(change){
+textSize=Math.max(16,Math.min(24,textSize+change));
+document.documentElement.style.fontSize=textSize+"px";
+}
+
+function resetText(){
+textSize=16;
+document.documentElement.style.fontSize="16px";
+}
+
+function stopReading(){
+speechToken++;
+if("speechSynthesis" in window)window.speechSynthesis.cancel();
+document.getElementById("speechStatus").textContent="";
+}
+
+function readArticle(){
+if(!("speechSynthesis" in window)||
+!("SpeechSynthesisUtterance" in window))return;
+
+stopReading();
+
+const token=speechToken;
+const synth=window.speechSynthesis;
+const status=document.getElementById("speechStatus");
+const voice=synth.getVoices().find(v=>
+v.lang.toLowerCase().startsWith(language));
+
+if(!voice){
+status.textContent=tr(
+"A matching speech voice is unavailable. Check device speech settings.",
+"தமிழ் குரல் வசதி கிடைக்கவில்லை. சாதனத்தின் குரல் அமைப்புகளைச் சரிபார்க்கவும்.");
+return;
+}
+
+const sentences=document.getElementById("articleContent")
+.innerText.split(/(?<=[.!?])\s+|\n+/)
+.map(s=>s.trim()).filter(Boolean);
+
+let position=0;
+status.textContent=tr("Reading article...","கட்டுரை வாசிக்கப்படுகிறது...");
+
+function speakNext(){
+if(token!==speechToken)return;
+
+if(position>=sentences.length){
+status.textContent=tr("Reading completed.","வாசிப்பு முடிந்தது.");
+return;
+}
+
+const speech=new SpeechSynthesisUtterance(sentences[position]);
+speech.voice=voice;
+speech.lang=voice.lang;
+speech.rate=0.9;
+
+speech.onend=()=>{
+position++;
+speakNext();
+};
+
+speech.onerror=()=>{
+if(token!==speechToken)return;
+status.textContent=tr("Speech playback could not continue.",
+"குரல் வாசிப்பைத் தொடர முடியவில்லை.");
+};
+
+synth.speak(speech);
+}
+speakNext();
+}
+
+window.addEventListener("pagehide",stopReading);
+renderPage();
+</script>
+
+</body>
+</html>

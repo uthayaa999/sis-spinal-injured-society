@@ -555,22 +555,10 @@ const categories=[
  ta:"கல்வி மற்றும் வேலைவாய்ப்பு",
  enDesc:"Discover learning and career development opportunities.",
  taDesc:"கல்வி மற்றும் தொழில் முன்னேற்ற வாய்ப்புகளை அறிந்துகொள்ளுங்கள்.",
- enTopics:[
- "Accessible education",
- "Scholarships",
- "Work from home opportunities",
- "Digital skills",
- "Entrepreneurship"
- ],
- taTopics:[
- "அணுகக்கூடிய கல்வி",
- "கல்வி உதவித்தொகைகள்",
- "வீட்டிலிருந்து வேலைவாய்ப்புகள்",
- "டிஜிட்டல் திறன்கள்",
- "தொழில்முனைவு"
- ],
+ enTopics:["Accessible Education", "Scholarships & Educational Assistance", "Skill Development & Vocational Training", "Work From Home Opportunities", "Government & Private Sector Employment", "Digital Skills & AI Learning", "Self-Employment & Entrepreneurship", "Career Guidance & Workplace Accessibility"],
+ taTopics:["அணுகக்கூடிய கல்வி", "கல்வி உதவித்தொகைகள்", "திறன் மேம்பாடு மற்றும் தொழிற்பயிற்சி", "வீட்டிலிருந்து வேலைவாய்ப்பு", "அரசு மற்றும் தனியார் வேலைவாய்ப்பு", "டிஜிட்டல் திறன்கள் மற்றும் AI கற்றல்", "சுயதொழில் மற்றும் தொழில்முனைவு", "வேலை வழிகாட்டுதல் மற்றும் பணியிட அணுகல்"],
  url:"education-career.html",
- ready:false
+ ready:true
 },
 
 {
@@ -580,22 +568,10 @@ const categories=[
  ta:"உரிமைகள் மற்றும் நலத்திட்டங்கள்",
  enDesc:"Understand disability rights and welfare resources.",
  taDesc:"மாற்றுத்திறனாளிகளின் உரிமைகள் மற்றும் நலத்திட்டங்களை அறிந்துகொள்ளுங்கள்.",
- enTopics:[
- "Disability rights",
- "UDID card",
- "Government welfare schemes",
- "Pension and financial assistance",
- "Accessibility rights"
- ],
- taTopics:[
- "மாற்றுத்திறனாளிகளின் உரிமைகள்",
- "UDID அடையாள அட்டை",
- "அரசு நலத்திட்டங்கள்",
- "ஓய்வூதியம் மற்றும் நிதியுதவி",
- "அணுகல் உரிமைகள்"
- ],
+ enTopics:["Disability Rights & RPwD Act", "Disability Certificate & UDID", "Central Government Welfare Schemes", "Tamil Nadu Welfare Schemes", "Pension & Financial Assistance", "Assistive Device Assistance", "Travel Concessions & Accessibility Rights", "Application & Grievance Support"],
+ taTopics:["மாற்றுத்திறனாளிகளின் சட்ட உரிமைகள்", "மாற்றுத்திறன் சான்றிதழ் மற்றும் UDID", "மத்திய அரசு நலத்திட்டங்கள்", "தமிழ்நாடு அரசு நலத்திட்டங்கள்", "ஓய்வூதியம் மற்றும் நிதியுதவி", "உதவி உபகரணங்கள் பெறுதல்", "பயணச் சலுகைகள் மற்றும் அணுகல் உரிமைகள்", "விண்ணப்பம் மற்றும் குறைதீர்ப்பு வழிகாட்டி"],
  url:"rights-welfare.html",
- ready:false
+ ready:true
 },
 
 {
@@ -755,7 +731,9 @@ function renderCategories(){
  "caregiver-guide.html#family-communication",
  "caregiver-guide.html#promoting-independence"
  ];
- const topicLinks=category.id==="health"?healthLinks:category.id==="mental"?mentalLinks:category.id==="living"?livingLinks:category.id==="caregiver"?caregiverLinks:[];
+ const educationLinks=["education-career.html#accessible-education", "education-career.html#scholarships", "education-career.html#skill-development", "education-career.html#work-from-home", "education-career.html#employment", "education-career.html#digital-skills", "education-career.html#entrepreneurship", "education-career.html#career-guidance"];
+ const rightsLinks=["rights-welfare.html#disability-rights", "rights-welfare.html#udid", "rights-welfare.html#central-schemes", "rights-welfare.html#tamil-nadu-schemes", "rights-welfare.html#pension", "rights-welfare.html#assistive-devices", "rights-welfare.html#travel-concessions", "rights-welfare.html#application-grievance"];
+ const topicLinks=category.id==="health"?healthLinks:category.id==="mental"?mentalLinks:category.id==="living"?livingLinks:category.id==="caregiver"?caregiverLinks:category.id==="education"?educationLinks:category.id==="rights"?rightsLinks:[];
  topicList.forEach(function(topic,topicIndex){
 
  const item=document.createElement("li");

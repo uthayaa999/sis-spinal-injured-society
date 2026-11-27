@@ -297,7 +297,7 @@ data-key="back"></a>
 <strong>SIS – Spinal Injured Society</strong>
 <p>Understand • Support • Empower</p>
 <p>© 2026 SIS | Knowledge Hub</p>
-<p>Educational Draft V0.1</p>
+<p>Educational Draft V0.2</p>
 </footer>
 
 <script>
@@ -349,8 +349,8 @@ reviewNote:[
 ],
 
 date:[
-"Draft prepared: 25 November 2026",
-"வரைவு தயாரிக்கப்பட்ட நாள்: 25 நவம்பர் 2026"
+"Draft prepared: 25 November 2026 | Editorial update: 27 November 2026",
+"வரைவு தயாரிக்கப்பட்ட நாள்: 25 நவம்பர் 2026 | தொகுப்பு புதுப்பிப்பு: 27 நவம்பர் 2026"
 ],
 
 contents:["In This Guide","இந்த வழிகாட்டியில்"],
@@ -386,8 +386,8 @@ sourcesTitle:[
 ],
 
 sourcesNote:[
-"Published clinical and educational resources for further learning.",
-"கூடுதல் புரிதலுக்கான வெளியிடப்பட்ட மருத்துவ மற்றும் கல்வி ஆதாரங்கள்."
+"Published resources for further learning. Reference [3] was accessed on 27 November 2026; [4] could not be accessed due to a browser check. Other links and independent clinical review remain pending.",
+"கூடுதல் புரிதலுக்கான ஆதாரங்கள். ஆதாரம் [3] 27 நவம்பர் 2026 அன்று அணுகப்பட்டது; உலாவி சரிபார்ப்புத் தடையால் [4] அணுக முடியவில்லை. மற்ற இணைப்புகளின் சரிபார்ப்பும் மருத்துவ நிபுணரின் மதிப்பாய்வும் நிலுவையில் உள்ளன."
 ],
 
 disclaimerTitle:[
@@ -497,6 +497,7 @@ fill="#c98587"/>
 rx="10" fill="#dedfe4" stroke="#8d96a4"/>
 
 ${wounds[stage]}
+${stage===4?'<rect x="85" y="184" width="70" height="24" rx="10" fill="#dedfe4" stroke="#8d96a4"/>':''}
 
 </svg>`;
 
@@ -508,8 +509,8 @@ const stages=[
 
 [
 1,"Stage 1","நிலை 1",
-"Skin remains intact but develops persistent local colour or texture changes. Damage may be harder to recognise in darker skin.",
-"தோல் உடையாமல் இருக்கும். ஆனால் ஒரு பகுதியில் நிறம் அல்லது தன்மையில் நீடித்த மாற்றம் ஏற்படும். அடர் நிறத் தோலில் இதைக் கண்டறிவது சிரமமாக இருக்கலாம்."
+"Skin remains intact with localized redness that does not fade when gently pressed (non-blanchable erythema). In darker skin, colour changes may be harder to see; temperature, firmness or sensation changes can also be warning signs.",
+"தோல் உடையாமல் இருக்கும். மெதுவாக அழுத்தும்போதும் வெளிறாத சிவப்பு நிற மாற்றம் காணப்படும். அடர் நிறத் தோலில் நிற மாற்றத்தைக் கண்டறிவது சிரமமாக இருக்கலாம்; வெப்பநிலை, கடினத்தன்மை அல்லது உணர்வில் மாற்றமும் எச்சரிக்கை அறிகுறிகளாக இருக்கலாம்."
 ],
 
 [
@@ -526,20 +527,20 @@ const stages=[
 
 [
 4,"Stage 4","நிலை 4",
-"Extensive tissue loss involving deeper structures such as muscle, tendon or bone.",
-"தசை, தசைநார் அல்லது எலும்பு போன்ற ஆழமான பகுதிகளையும் பாதிக்கும் தீவிரமான திசு இழப்பு."
+"Full-thickness skin and tissue loss with exposed or directly palpable deeper structures such as muscle, tendon or bone.",
+"தோல் மற்றும் திசுக்களின் முழுத் தடிமனும் இழக்கப்பட்டு, தசை, தசைநார் அல்லது எலும்பு போன்ற ஆழமான பகுதிகள் வெளிப்படலாம் அல்லது மருத்துவ மதிப்பீட்டில் நேரடியாக உணரப்படலாம்."
 ],
 
 [
 5,"Unstageable","நிலை தீர்மானிக்க முடியாத புண்",
-"Dead tissue obscures the wound base, preventing accurate assessment of its depth.",
-"இறந்த திசுக்கள் காயத்தின் அடிப்பகுதியை மறைப்பதால் அதன் ஆழத்தைத் துல்லியமாக மதிப்பிட முடியாது."
+"Full-thickness tissue loss whose extent is obscured by dead tissue covering the wound base.",
+"முழுத் தடிமன் திசு இழப்பு ஏற்பட்டிருக்கும்; இறந்த திசுக்கள் காயத்தின் அடிப்பகுதியை மறைப்பதால் பாதிப்பின் ஆழத்தை மதிப்பிட முடியாது."
 ],
 
 [
 6,"Deep Tissue Pressure Injury","ஆழமான திசு அழுத்தப் பாதிப்பு",
-"Persistent dark red, maroon or purple changes may indicate injury beneath the surface, even before a large wound becomes visible.",
-"நீடித்த அடர் சிவப்பு, கருஞ்சிவப்பு அல்லது ஊதா நிற மாற்றங்கள் பெரிய புண் வெளிப்படுவதற்கு முன்பே ஆழமான திசுப் பாதிப்பைக் குறிக்கலாம்."
+"Persistent dark red, maroon or purple discoloration or a blood-filled blister may indicate deep tissue damage. Skin may be intact or broken; damage can progress rapidly.",
+"நீடித்த அடர் சிவப்பு, கருஞ்சிவப்பு அல்லது ஊதா நிற மாற்றம் அல்லது இரத்தம் நிறைந்த கொப்புளம் ஆழமான திசுப் பாதிப்பைக் குறிக்கலாம். தோல் உடைந்தோ உடையாமலோ இருக்கலாம்; பாதிப்பு வேகமாக அதிகரிக்கலாம்."
 ]
 
 ];
@@ -814,8 +815,8 @@ ${stageCards()}
 )}</strong>
 
 <p>${tr(
-"A wound may be more extensive beneath the skin than it appears. Do not determine treatment or wound stage using these drawings alone. Any suspected injury needs assessment.",
-"வெளிப்புறத்தில் தெரியும் அளவைவிட ஆழமான திசுப் பாதிப்பு அதிகமாக இருக்கலாம். இந்தப் படங்களை மட்டும் வைத்து புண்ணின் நிலையையோ சிகிச்சையையோ தீர்மானிக்க வேண்டாம். சந்தேகிக்கப்படும் எந்தப் பாதிப்பிற்கும் மருத்துவ மதிப்பீடு தேவை."
+"These simplified illustrations show examples, not every possible appearance. A wound may be more extensive beneath the skin than it appears. Do not determine treatment or wound stage using these drawings alone. Any suspected injury needs assessment.",
+"இந்த எளிய படங்கள் எடுத்துக்காட்டுகள் மட்டுமே; அனைத்து வகையான தோற்றங்களையும் காட்டுவதில்லை. வெளிப்புறத்தில் தெரியும் அளவைவிட ஆழமான திசுப் பாதிப்பு அதிகமாக இருக்கலாம். இந்தப் படங்களை மட்டும் வைத்து புண்ணின் நிலையையோ சிகிச்சையையோ தீர்மானிக்க வேண்டாம். சந்தேகிக்கப்படும் எந்தப் பாதிப்பிற்கும் மருத்துவ மதிப்பீடு தேவை."
 )}</p>
 
 </div>
@@ -1094,8 +1095,8 @@ content:()=>`
 )}</p>
 
 <p>${tr(
-"If AD is suspected, sit upright if safely possible, loosen restrictive clothing, follow your established emergency plan and seek emergency assistance.",
-"AD சந்தேகிக்கப்பட்டால் பாதுகாப்பாக முடிந்தால் நிமிர்ந்து அமருங்கள். இறுக்கமான ஆடைகளைத் தளர்த்தி மருத்துவர் வழங்கிய அவசரத் திட்டத்தைப் பின்பற்றி உடனடி மருத்துவ உதவியை நாடுங்கள்."
+"If AD is suspected, sit upright if safely possible, loosen restrictive clothing, follow your established emergency plan and seek emergency assistance. Check blood pressure if equipment is available, without delaying help.",
+"AD சந்தேகிக்கப்பட்டால் பாதுகாப்பாக முடிந்தால் நிமிர்ந்து அமருங்கள். இறுக்கமான ஆடைகளைத் தளர்த்தி மருத்துவர் வழங்கிய அவசரத் திட்டத்தைப் பின்பற்றி உடனடி மருத்துவ உதவியை நாடுங்கள். உதவியைத் தாமதப்படுத்தாமல் கருவி இருந்தால் இரத்த அழுத்தத்தை அளவிடுங்கள்."
 )}</p>
 
 </div>

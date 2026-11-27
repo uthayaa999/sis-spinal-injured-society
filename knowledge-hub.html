@@ -226,6 +226,24 @@ footer{
 @media(prefers-reduced-motion:reduce){
  *{scroll-behavior:auto!important}
 }
+
+/* STEP 43.2: scoped responsive and accessible category layout */
+#categoryGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#categoryGrid .card{min-width:0;width:100%;overflow-wrap:anywhere;text-align:start}
+#categoryGrid .card ul{width:100%;min-width:0;padding-inline-start:0;list-style:none;margin:12px 0}
+#categoryGrid .card li{margin:0 0 8px;overflow-wrap:anywhere}
+#categoryGrid .card li a{display:flex;align-items:center;min-height:44px;padding:10px 12px;border:1px solid #cbd9e5;border-radius:8px;background:#f4f9ff;color:#073763;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+#categoryGrid .card li a:hover{background:#e2f3f2}
+#categoryGrid .card button,#categoryGrid .card .btn{width:100%;min-height:48px;white-space:normal;overflow-wrap:anywhere;text-align:center;margin-top:auto}
+#categoryGrid .card .status.available{background:#e2f3f2;color:#075c5e}
+nav a,.tools button,main .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+main.container,.panel,.notice,.tools,nav{min-width:0;overflow-wrap:anywhere}
+#searchInput{min-width:0;max-width:100%}
+#categoryGrid a:focus-visible,#categoryGrid button:focus-visible,nav a:focus-visible,.tools button:focus-visible,#searchInput:focus-visible{outline:3px solid #073763;outline-offset:3px;box-shadow:0 0 0 6px #e6a700}
+@media(max-width:1000px){#categoryGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){#categoryGrid{grid-template-columns:minmax(0,1fr)}#categoryGrid .card{padding:16px}.container{padding-inline:12px}.panel{padding:16px}}
+html.large-text #categoryGrid{grid-template-columns:minmax(0,1fr)}
+
 </style>
 </head>
 
@@ -750,27 +768,20 @@ function renderCategories(){
  });
 
  const status=document.createElement("span");
- status.className="status";
+ status.className=category.ready?"status available":"status";
 
  status.textContent=category.ready
  ?(language==="ta"?"படிக்கலாம்":"Available")
  :(language==="ta"?"உருவாக்கத்தில்":"In Development");
 
- const button=document.createElement("button");
+ const button=document.createElement(category.ready?"a":"button");
+ if(category.ready){button.href=category.url;button.className="btn";}else{button.type="button";}
 
  button.textContent=category.ready
  ?(language==="ta"?"வழிகாட்டியைப் படிக்கவும்":"Read Guide")
  :(language==="ta"?"தலைப்புகளைப் பார்க்கவும்":"Preview Topics");
 
- button.addEventListener("click",function(){
-
- if(category.ready){
- window.location.href=category.url;
- }else{
- showPreview(category);
- }
-
- });
+ if(!category.ready)button.addEventListener("click",function(){showPreview(category);});
 
  card.append(
  number,
@@ -828,7 +839,9 @@ function resizeText(change){
 
  textSize=Math.max(16,Math.min(24,textSize+change));
 
+ document.documentElement.style.fontSize=textSize+"px";
  document.body.style.fontSize=textSize+"px";
+ document.documentElement.classList.toggle("large-text",textSize>=22);
 
 }
 
@@ -836,7 +849,9 @@ function resetText(){
 
  textSize=16;
 
+ document.documentElement.style.fontSize="16px";
  document.body.style.fontSize="16px";
+ document.documentElement.classList.remove("large-text");
 
 }
 

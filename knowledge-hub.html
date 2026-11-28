@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -275,6 +275,7 @@ html.large-text #categoryGrid{grid-template-columns:minmax(0,1fr)}
  data-en="Community"
  data-ta="சமூகம்">சமூகம்</a>
 
+<a href="request-assistance.html" data-en="Request Assistance" data-ta="உதவி கோருதல்">Request Assistance</a>
 </nav>
 
 <section class="tools" aria-label="Accessibility controls">
@@ -327,9 +328,9 @@ html.large-text #categoryGrid{grid-template-columns:minmax(0,1fr)}
 
 <section class="notice">
 
-<strong data-en="Knowledge Hub – Development Preview V0.1"
- data-ta="அறிவு மையம் – உருவாக்க முன்னோட்டம் V0.1">
-அறிவு மையம் – உருவாக்க முன்னோட்டம் V0.1
+<strong data-en="Knowledge Hub – Development Preview V0.2"
+ data-ta="அறிவு மையம் – உருவாக்க முன்னோட்டம் V0.2">
+அறிவு மையம் – உருவாக்க முன்னோட்டம் V0.2
 </strong>
 
 <p data-en="Detailed educational guides are being developed. Medical content will require qualified professional review before being presented as medically reviewed information."
@@ -363,6 +364,17 @@ html.large-text #categoryGrid{grid-template-columns:minmax(0,1fr)}
 </h2>
 
 <div class="grid" id="categoryGrid"></div>
+<section class="panel" aria-labelledby="serviceRoutes">
+<h2 id="serviceRoutes" data-en="Find Services & Support" data-ta="சேவைகள் மற்றும் ஆதரவு">Find Services &amp; Support</h2>
+<p data-en="Read detailed information in the guides above. For service information, use the relevant module below. Services are currently demonstration only." data-ta="விரிவான தகவல்களை மேலுள்ள வழிகாட்டிகளில் படிக்கலாம். சேவை விவரங்களுக்கு கீழுள்ள தொடர்புடைய பிரிவைப் பயன்படுத்துங்கள். தற்போது சேவைகள் மாதிரி நிலையில் மட்டுமே உள்ளன.">Read detailed information in the guides above. For service information, use the relevant module below. Services are currently demonstration only.</p>
+<div class="grid">
+<a class="btn" href="medical-rehabilitation.html" data-en="Medical & Rehabilitation" data-ta="மருத்துவம் மற்றும் மறுவாழ்வு">Medical &amp; Rehabilitation</a>
+<a class="btn" href="learning-resources.html" data-en="Learning & Career Resources" data-ta="கல்வி மற்றும் வேலைவாய்ப்பு வளங்கள்">Learning &amp; Career Resources</a>
+<a class="btn" href="community-support.html" data-en="Community & Para Sports" data-ta="சமூக ஆதரவு மற்றும் பாரா விளையாட்டுகள்">Community &amp; Para Sports</a>
+<a class="btn" href="request-assistance.html" data-en="Request Assistance (Demo)" data-ta="உதவி கோருதல் (மாதிரி)">Request Assistance (Demo)</a>
+</div>
+<p data-en="A dedicated sexual and reproductive health guide is planned. It is not yet available." data-ta="பாலியல் மற்றும் இனப்பெருக்க நலத்திற்கான தனி வழிகாட்டி திட்டமிடப்பட்டுள்ளது. இன்னும் வெளியிடப்படவில்லை.">A dedicated sexual and reproductive health guide is planned. It is not yet available.</p>
+</section>
 
 <section id="emptyState" class="panel" hidden>
 
@@ -397,7 +409,7 @@ html.large-text #categoryGrid{grid-template-columns:minmax(0,1fr)}
 </p>
 
 <p>
-<strong>Emergency:</strong>
+<strong data-en="Emergency:" data-ta="அவசர உதவி:">Emergency:</strong>
 <a href="tel:112">112</a> |
 <a href="tel:108">108</a>
 </p>
@@ -433,15 +445,16 @@ SIS முகப்புக்குத் திரும்பவும்
 
 <strong>SIS – Spinal Injured Society</strong>
 
-<p>Understand • Support • Empower</p>
+<p data-en="Understand • Support • Empower" data-ta="புரிந்துகொள்வோம் • ஆதரவளிப்போம் • முன்னேறுவோம்">Understand • Support • Empower</p>
 
-<p>© 2026 SIS | Knowledge Hub Preview V0.1</p>
+<p>© 2026 SIS | Knowledge Hub Preview V0.2</p>
 
 </footer>
 
 <script>
 
-let language="ta";
+let language="en";
+try { if(localStorage.getItem("sis-homepage-language")==="ta") language="ta"; } catch(e) {}
 let textSize=16;
 
 const categories=[
@@ -652,7 +665,8 @@ function translatePage(){
 
 function setLanguage(value){
 
- language=value==="en"?"en":"ta";
+ language=value==="ta"?"ta":"en";
+ try { localStorage.setItem("sis-homepage-language",language); } catch(e) {}
 
  translatePage();
 

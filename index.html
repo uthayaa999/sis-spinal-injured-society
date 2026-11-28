@@ -143,7 +143,18 @@ footer{
 }
 </style>
 <link href="sis-styles.css" rel="stylesheet"/>
-<style>html[lang="en"] [data-lang="ta"],html[lang="ta"] [data-lang="en"]{display:none!important}.homepage-language{display:flex;flex-wrap:wrap;gap:8px;margin-inline-end:auto}.homepage-language button[aria-pressed="false"]{background:white;color:#073763;border:1px solid #073763}.homepage-language button[aria-pressed="true"]{background:#073763;color:white}.homepage-language button{min-height:44px}@media(max-width:600px){.homepage-language{margin-inline-end:0;justify-content:center;width:100%}}</style></head>
+<style>html[lang="en"] [data-lang="ta"],html[lang="ta"] [data-lang="en"]{display:none!important}.homepage-language{display:flex;flex-wrap:wrap;gap:8px;margin-inline-end:auto}.homepage-language button[aria-pressed="false"]{background:white;color:#073763;border:1px solid #073763}.homepage-language button[aria-pressed="true"]{background:#073763;color:white}.homepage-language button{min-height:44px}@media(max-width:600px){.homepage-language{margin-inline-end:0;justify-content:center;width:100%}}</style><style>
+#voice-guide{max-width:1100px;margin:16px auto;padding:0 16px;min-width:0}
+#voice-guide .voice-panel{background:#e2f3f2;border:1px solid #a5cece;border-radius:16px;padding:18px;color:#073763}
+#voice-guide h2{margin:0;font-size:1.25rem}
+#voice-guide .voice-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+#voice-guide button{min-height:44px;max-width:100%;white-space:normal}
+#voice-guide summary{cursor:pointer;min-height:44px;padding:8px 0;font-weight:bold}
+#voice-guide summary:focus-visible{outline:3px solid #e6a700;outline-offset:3px}
+#voice-status{min-height:1.75em;margin:8px 0}
+@media(max-width:600px){#voice-guide .voice-actions button{flex:1 1 120px}}
+</style>
+</head>
 <body>
 <header id="home">
 <img alt="Spinal Injured Society Logo" data-alt-en="Spinal Injured Society Logo" data-alt-ta="SIS சங்கத்தின் அதிகாரப்பூர்வ இலச்சினை" src="sis-logo.png" style="width:120px;max-width:100%;height:auto;display:block;margin:0 auto 12px;"/>
@@ -166,6 +177,7 @@ footer{
 <button aria-label="Reset text size" data-label-en="Reset text size" data-label-ta="எழுத்து அளவை மீட்டமைக்க" onclick="resetText()">A</button>
 <button aria-label="Increase text size" data-label-en="Increase text size" data-label-ta="எழுத்து அளவை அதிகரிக்க" onclick="resizeText(1)">A+</button>
 </div>
+<section id="voice-guide" aria-labelledby="voice-title"><div class="voice-panel"><h2 id="voice-title"><span data-lang="en" lang="en">Voice Navigation Guide</span><span data-lang="ta" lang="ta">குரல்வழி இணையதள வழிகாட்டி</span></h2><p><span data-lang="en" lang="en">New to this website? Listen to the guide in your selected homepage language.</span><span data-lang="ta" lang="ta">இந்த இணையதளத்தை எப்படிப் பயன்படுத்துவது? தேர்வு செய்த மொழியில் விளக்கத்தைக் கேளுங்கள்.</span></p><div class="voice-actions"><button type="button" id="voice-play" disabled><span data-lang="en" lang="en">▶ Play guide</span><span data-lang="ta" lang="ta">▶ விளக்கத்தைக் கேட்க</span></button><button type="button" id="voice-pause" disabled><span data-lang="en" lang="en">Pause</span><span data-lang="ta" lang="ta">இடைநிறுத்து</span></button><button type="button" id="voice-resume" disabled><span data-lang="en" lang="en">Resume</span><span data-lang="ta" lang="ta">தொடரவும்</span></button><button type="button" id="voice-stop" disabled><span data-lang="en" lang="en">Stop</span><span data-lang="ta" lang="ta">நிறுத்து</span></button><button type="button" id="voice-replay" disabled><span data-lang="en" lang="en">Replay</span><span data-lang="ta" lang="ta">மீண்டும் கேட்க</span></button></div><p id="voice-status" role="status" aria-live="polite"><span data-lang="en" lang="en">Written guide available below.</span><span data-lang="ta" lang="ta">எழுத்து வடிவ வழிகாட்டி கீழே உள்ளது.</span></p><details id="voice-transcript"><summary><span data-lang="en" lang="en">Read website guide</span><span data-lang="ta" lang="ta">இணையதள வழிகாட்டியைப் படிக்க</span></summary><div data-lang="en" lang="en" id="voice-text-en"><p>Welcome to the Spinal Injured Society website. This voice guide explains how to use the homepage.</p><p>Select English or Tamil near the top to change the homepage language. Home takes you back to the top. About Us explains the society. Our Mission takes you to our vision and mission.</p><p>Select Services or Explore Our Services to find six service cards. Select View Details on any card to open its page. Member Registration and Request Assistance show demonstration forms. Medical and Rehabilitation provides educational information and a district-wise rehabilitation centre directory. Appointment Booking is a demonstration only. Learning Resources and Community Support provide information and support resources.</p><p>Select Member Welfare to learn about proposed assistance and government welfare information. Eligibility and benefits must be confirmed with the relevant authorities. Select Knowledge Hub to open educational guides on spinal cord injury, health, daily care, emotional wellbeing, independent living, education, rights and caregiver support.</p><p>Use A plus to enlarge text, A minus to reduce it, or A to reset. Use your browser back button to return from another page. You can pause, resume, stop or replay this guide, or read the written version.</p><p>This is a senior review demonstration, not an official service or emergency response website. Do not enter real personal or medical information. Thank you. Together we move forward.</p></div><div data-lang="ta" lang="ta" id="voice-text-ta"><p>வணக்கம்! முதுகுத் தண்டுவடக் காயமுற்றோருக்கான எஸ் ஐ எஸ் இணையதளத்திற்கு உங்களை வரவேற்கிறோம். முகப்புப் பக்கத்தை எப்படிப் பயன்படுத்துவது என்பதை இந்தக் குரல்வழி விளக்கம் தெரிவிக்கிறது.</p><p>மேலே உள்ள தமிழ் அல்லது English பொத்தானை அழுத்தி முகப்புப் பக்கத்தின் மொழியை மாற்றலாம். முகப்பு என்ற பகுதி பக்கத்தின் மேலே அழைத்துச் செல்லும். எங்களைப் பற்றி என்ற பகுதியில் சங்கத்தைப் பற்றித் தெரிந்துகொள்ளலாம். எங்கள் நோக்கம் என்ற பகுதியில் தொலைநோக்கு மற்றும் நோக்கத்தைப் பார்க்கலாம்.</p><p>சேவைகள் அல்லது எங்கள் சேவைகளைப் பாருங்கள் என்ற பொத்தானை அழுத்தினால் ஆறு சேவைப் பகுதிகள் தெரியும். ஒவ்வொரு பகுதியிலும் விவரங்களைப் பார்க்க என்ற பொத்தானை அழுத்தவும். உறுப்பினர் பதிவு மற்றும் உதவி கோருதல் ஆகியவை மாதிரிப் படிவங்கள். மருத்துவம் மற்றும் மறுவாழ்வு பகுதியில் கல்வித் தகவல்களும் மாவட்ட வாரியான மறுவாழ்வு மைய விவரங்களும் உள்ளன. மருத்துவ முன்பதிவு மாதிரி மட்டுமே. கற்றல் வளங்கள் மற்றும் சமூக ஆதரவு பகுதிகளில் பயனுள்ள தகவல்கள் உள்ளன.</p><p>உறுப்பினர் நலன் பகுதியில் முன்மொழியப்பட்ட உதவிகள் மற்றும் அரசு நலத்திட்டத் தகவல்களைப் பார்க்கலாம். தகுதி மற்றும் உதவித் தொகையை உரிய அரசு அலுவலகத்தில் உறுதிப்படுத்த வேண்டும். அறிவு மையத்தில் முதுகுத் தண்டுவடக் காயம், உடல்நலம், தினசரிப் பராமரிப்பு, மனநலம், சுயசார்பு வாழ்க்கை, கல்வி, உரிமைகள் மற்றும் குடும்பப் பராமரிப்பு வழிகாட்டுதல்கள் உள்ளன.</p><p>எழுத்தைப் பெரிதாக்க ஏ பிளஸ், குறைக்க ஏ மைனஸ், இயல்பு அளவுக்கு மாற்ற ஏ பொத்தானை அழுத்தவும். மற்ற பக்கத்திலிருந்து திரும்ப உலாவியின் பின் செல்லும் பொத்தானைப் பயன்படுத்தலாம். இந்த விளக்கத்தை இடைநிறுத்தலாம், தொடரலாம், நிறுத்தலாம் அல்லது மீண்டும் கேட்கலாம். எழுத்து வடிவிலும் படிக்கலாம்.</p><p>இது நிர்வாகக் குழுவின் பார்வைக்கான மாதிரி இணையதளம் மட்டுமே. அதிகாரப்பூர்வ சேவையோ அவசர உதவி தளமோ அல்ல. உண்மையான தனிப்பட்ட அல்லது மருத்துவத் தகவல்களை உள்ளிட வேண்டாம். நன்றி! ஒன்றிணைந்து முன்னேறுவோம்.</p></div></details></div></section>
 <section class="hero">
 <h2><span data-lang="en" lang="en">Welcome to Spinal Injured Society</span><span data-lang="ta" lang="ta">SIS-க்கு உங்களை வரவேற்கிறோம்</span></h2>
 
@@ -397,6 +409,58 @@ document.getElementById('lang-en').addEventListener('click',()=>setHomepageLangu
 document.getElementById('lang-ta').addEventListener('click',()=>setHomepageLanguage('ta'));
 let savedLanguage='en';try{savedLanguage=localStorage.getItem('sis-homepage-language')||'en'}catch(e){}
 setHomepageLanguage(savedLanguage,false);
+
+// Homepage-only voice guide. No automatic playback.
+(function(){
+ const synth=window.speechSynthesis;
+ const supported=!!(synth && window.SpeechSynthesisUtterance);
+ const buttons=Object.fromEntries(['play','pause','resume','stop','replay'].map(k=>[k,document.getElementById('voice-'+k)]));
+ const status=document.getElementById('voice-status');
+ const transcript=document.getElementById('voice-transcript');
+ let state='idle',generation=0,current=null,parts=[],index=0,voice=null,locale='en-IN';
+ const messages={idle:['Ready to listen.','கேட்கத் தயாராக உள்ளது.'],playing:['Playing guide…','விளக்கம் ஒலிக்கிறது…'],paused:['Paused.','இடைநிறுத்தப்பட்டுள்ளது.'],stopped:['Stopped.','நிறுத்தப்பட்டது.'],done:['Guide completed.','விளக்கம் முடிந்தது.'],unavailable:['Voice playback is unavailable. Please read the guide below.','குரல் வசதி கிடைக்கவில்லை. கீழே உள்ள வழிகாட்டியைப் படிக்கவும்.'],error:['Voice playback could not continue. Read the guide or try Replay.','குரல் விளக்கத்தைத் தொடர முடியவில்லை. வழிகாட்டியைப் படிக்கவும் அல்லது மீண்டும் முயற்சிக்கவும்.']};
+ function lang(){return document.documentElement.lang==='ta'?'ta':'en'}
+ function update(message){
+  status.textContent=messages[message||state][lang()==='ta'?1:0];
+  buttons.play.disabled=!supported||state==='playing'||state==='paused';
+  buttons.replay.disabled=!supported;
+  buttons.pause.disabled=!supported||state!=='playing';
+  buttons.resume.disabled=!supported||state!=='paused';
+  buttons.stop.disabled=!supported||!['playing','paused'].includes(state);
+ }
+ function stop(message='stopped'){
+  generation++;state='idle';current=null;
+  if(supported){try{synth.cancel();if(synth.paused)synth.resume()}catch(e){}}
+  update(message);
+ }
+ function fallback(message){stop(message);transcript.open=true;}
+ function next(token){
+  if(token!==generation)return;
+  if(index>=parts.length){current=null;state='idle';update('done');return;}
+  const u=new SpeechSynthesisUtterance(parts[index]);current=u;u.lang=locale;if(voice)u.voice=voice;u.rate=.9;
+  u.onend=()=>{if(token!==generation)return;index++;next(token)};
+  u.onerror=()=>{if(token===generation)fallback('error')};
+  try{synth.speak(u)}catch(e){fallback('error')}
+ }
+ function play(){
+  if(!supported){fallback('unavailable');return;}
+  stop('idle');const code=lang();locale=code==='ta'?'ta-IN':'en-IN';
+  const voices=synth.getVoices();const matching=voices.filter(v=>v.lang.toLowerCase().split(/[-_]/)[0]===code);
+  voice=matching.find(v=>v.lang.toLowerCase()===locale.toLowerCase())||matching[0]||null;
+  if(code==='ta'&&!voice){fallback('unavailable');return;}
+  parts=Array.from(document.querySelectorAll('#voice-text-'+code+' p'),p=>p.textContent.trim()).flatMap(t=>t.match(/[^.!?]+[.!?]*\s*/g)||[t]);
+  index=0;state='playing';update();next(generation);
+ }
+ buttons.play.addEventListener('click',play);buttons.replay.addEventListener('click',play);
+ buttons.pause.addEventListener('click',()=>{if(state==='playing'){try{synth.pause();state='paused';update()}catch(e){fallback('error')}}});
+ buttons.resume.addEventListener('click',()=>{if(state==='paused'){try{synth.resume();state='playing';update()}catch(e){fallback('error')}}});
+ buttons.stop.addEventListener('click',()=>stop());
+ document.getElementById('lang-en').addEventListener('click',()=>stop(supported?'idle':'unavailable'));
+ document.getElementById('lang-ta').addEventListener('click',()=>stop(supported?'idle':'unavailable'));
+ window.addEventListener('pagehide',()=>stop());
+ update(supported?'idle':'unavailable');if(!supported)transcript.open=true;
+})();
+
 </script>
 </body>
 </html>

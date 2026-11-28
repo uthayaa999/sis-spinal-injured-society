@@ -204,11 +204,12 @@ Tele-MANAS</a></p>
 <strong>SIS – Spinal Injured Society</strong>
 <p>Understand • Support • Empower</p>
 <p>© 2026 SIS | Knowledge Hub</p>
-<p>Educational Draft V0.2</p>
+<p>Educational Draft V0.3</p>
 </footer>
 
 <script>
-let language="ta";
+let language="en";
+try{language=localStorage.getItem("sis-homepage-language")==="ta"?"ta":"en";}catch(e){}
 let textSize=16;
 let checked=Array(8).fill(false);
 let speechToken=0;
@@ -456,8 +457,8 @@ ${note(
 
 {
 id:"relationships",
-title:["05. Family and Social Relationships",
-"05. குடும்பம் மற்றும் சமூக உறவுகள்"],
+title:["05. Relationships, Family and Intimacy",
+"05. குடும்பம், உறவுகள் மற்றும் நெருக்கம்"],
 content:()=>`
 
 ${paragraph(
@@ -484,6 +485,11 @@ ${paragraph(
 "Intimacy and relationship concerns can be discussed privately with an appropriate healthcare or counselling professional.",
 "தாம்பத்தியம் மற்றும் உறவுகள் தொடர்பான கவலைகளை பொருத்தமான மருத்துவர் அல்லது ஆலோசகருடன் தனிப்பட்ட முறையில் விவாதிக்கலாம்."
 )}
+${cards([["Identity and body confidence", "சுய அடையாளமும் உடல் நம்பிக்கையும்", "Changes in sensation, mobility or appearance can affect confidence. You do not need to meet anyone else’s expectations. Choose the pace and kind of closeness that feels right to you.", "உணர்வு, இயக்கம் அல்லது தோற்றத்தில் ஏற்படும் மாற்றங்கள் தன்னம்பிக்கையைப் பாதிக்கலாம். பிறரின் எதிர்பார்ப்புகளை நிறைவேற்ற வேண்டிய கட்டாயம் இல்லை. உங்களுக்கு ஏற்ற நெருக்கத்தையும் வேகத்தையும் தேர்வு செய்யுங்கள்."], ["Dating and disclosure", "புதிய உறவுகளும் தகவல் பகிர்வும்", "You decide when to share personal health information. Discuss practical accessibility needs when planning a meeting. Choose a safe meeting place and tell a trusted person if you wish.", "தனிப்பட்ட மருத்துவத் தகவல்களை எப்போது பகிர்வது என்பது உங்கள் முடிவு. சந்திப்பைத் திட்டமிடும்போது அணுகல் தேவைகளைப் பேசுங்கள். பாதுகாப்பான இடத்தைத் தேர்வு செய்து விரும்பினால் நம்பகமானவரிடம் தெரிவிக்கலாம்."], ["Communication with a partner", "துணைவருடன் உரையாடல்", "Choose a private, relaxed time. Explain what feels comfortable, ask about your partner’s preferences and agree that either person can stop or change their mind.", "தனியுரிமையுள்ள அமைதியான நேரத்தைத் தேர்வு செய்யுங்கள். உங்களுக்கு வசதியானதைச் சொல்லி துணைவரின் விருப்பங்களையும் கேளுங்கள். இருவரில் யாரும் எப்போது வேண்டுமானாலும் நிறுத்தவோ மனதை மாற்றவோ முடியும்."], ["Closeness beyond sexual activity", "பாலியல் செயல்பாட்டிற்கு அப்பாற்பட்ட நெருக்கம்", "Conversation, shared hobbies, affection and time together can be meaningful forms of intimacy. Sexual activity is not a requirement for a fulfilling relationship.", "உரையாடல், பகிர்ந்த பொழுதுபோக்குகள், அன்பு மற்றும் ஒன்றாகச் செலவிடும் நேரம் ஆகியவையும் நெருக்கத்தின் வடிவங்கள். நிறைவான உறவுக்கு பாலியல் செயல்பாடு கட்டாயமல்ல."], ["Partner and caregiver roles", "துணைவர் மற்றும் பராமரிப்பாளர் பொறுப்புகள்", "Agree on care routines and private time separately. Receiving assistance does not create an obligation to provide affection or sexual contact. Consider outside care support when available and desired.", "பராமரிப்பு நேரத்தையும் தனிப்பட்ட நேரத்தையும் தனித்தனியாகத் திட்டமிடுங்கள். உதவி பெறுவதால் அன்பையோ பாலியல் தொடர்பையோ வழங்க வேண்டிய கட்டாயம் இல்லை. விருப்பமும் வாய்ப்பும் இருந்தால் வெளிப்புற பராமரிப்பு உதவியைப் பரிசீலிக்கலாம்."], ["Boundaries and safety", "தனிப்பட்ட எல்லைகளும் பாதுகாப்பும்", "Pressure, threats, unwanted touching or withholding essential care are not acceptable. If you feel unsafe, seek private support from a trusted person or professional. In immediate danger in India, call 112 if safe to do so.", "வற்புறுத்தல், மிரட்டல், விருப்பமற்ற தொடுதல் அல்லது அத்தியாவசிய பராமரிப்பை மறுப்பது ஏற்கத்தக்கதல்ல. பாதுகாப்பற்றதாக உணர்ந்தால் நம்பகமான நபர் அல்லது நிபுணரிடம் தனிப்பட்ட உதவி பெறுங்கள். இந்தியாவில் உடனடி ஆபத்து ஏற்பட்டால் பாதுகாப்பாக இயன்றால் 112 எண்ணை அழைக்கவும்."]])}
+${paragraph("A private conversation can begin with: I would like to talk about what feels comfortable for both of us. You may also request an individual or couples counselling appointment. Medical questions about sexual function, fertility or physical safety belong in the dedicated guide.","தனிப்பட்ட உரையாடலை இவ்வாறு தொடங்கலாம்: நம் இருவருக்கும் எது வசதியாக இருக்கும் என்பதைப் பற்றி பேச விரும்புகிறேன். தனிநபர் அல்லது தம்பதியர் ஆலோசனையையும் கோரலாம். பாலியல் செயல்பாடு, குழந்தைப்பேறு அல்லது உடல் பாதுகாப்பு குறித்த மருத்துவக் கேள்விகளுக்குத் தனி வழிகாட்டியைப் பார்க்கவும்.")}
+<p><a href="sexual-reproductive-health.html">${tr("Sexual &amp; Reproductive Health Guide","பாலியல் மற்றும் இனப்பெருக்க நல வழிகாட்டி")}</a></p>
+${note("This educational section does not collect intimate information or provide individual counselling. Specialist review remains pending.","இந்தக் கல்விப் பகுதி தனிப்பட்ட பாலியல் தகவல்களைச் சேகரிப்பதில்லை; தனிநபர் ஆலோசனையும் வழங்குவதில்லை. நிபுணர் ஆய்வு நிலுவையில் உள்ளது.")}
+
 `
 },
 
@@ -727,7 +733,7 @@ function updateProgress(){
 const count=checked.filter(Boolean).length;
 document.getElementById("checklistProgress").value=count;
 document.getElementById("checklistStatus").textContent=
-tr(count+" of 8 education topics checked",
+tr(count+" of 8 wellbeing topics checked",
 "8 தலைப்புகளில் "+count+" தலைப்புகள் குறிக்கப்பட்டுள்ளன");
 }
 
@@ -785,6 +791,7 @@ tr("Read Aloud is unavailable in this browser.",
 function setLanguage(value){
 stopReading();
 language=value==="en"?"en":"ta";
+try{localStorage.setItem("sis-homepage-language",language);}catch(e){}
 renderPage();
 }
 

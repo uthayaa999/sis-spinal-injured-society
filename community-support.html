@@ -179,6 +179,7 @@ footer{
  .tools{justify-content:center}
  nav{gap:12px}
 }
+#communityExpanded article{border-top:1px solid #cbd9e5;padding:12px 0} #communityExpanded h4{margin:4px 0} #communityExpanded a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere} #communityDialog{max-height:85vh;overflow:auto}
 </style>
 
 <link rel="stylesheet" href="sis-styles.css">
@@ -223,7 +224,7 @@ footer{
 <main class="container">
 
 <div class="notice">
-<strong>Senior Review Demo V1.0</strong>
+<strong>Senior Review Demo V1.1</strong>
 <p>This module demonstrates proposed community
 support services for individuals with spinal
 cord injuries and their families.</p>
@@ -511,6 +512,7 @@ will be essential requirements before launch.</p>
 <dialog id="communityDialog"
  aria-labelledby="dialogTitle">
 
+<form method="dialog"><button aria-label="Close details | மூடு">Close | மூடு</button></form>
 <h2 id="dialogTitle"></h2>
 <p id="dialogTamil"></p>
 <p id="dialogDescription"></p>
@@ -518,6 +520,7 @@ will be essential requirements before launch.</p>
 <h3>Proposed Activities</h3>
 
 <ul id="dialogActivities"></ul>
+<section id="communityExpanded"></section>
 
 <div class="notice">
 <strong>Demo Preview Only</strong>
@@ -534,7 +537,7 @@ are not currently available through this website.</p>
 <footer>
 <strong>SIS – Spinal Injured Society</strong>
 <p>Support • Care • Rehabilitation • Empowerment</p>
-<p>© 2026 SIS | Community Support Demo V1.0</p>
+<p>© 2026 SIS | Community Support Demo V1.1</p>
 </footer>
 
 <script>
@@ -660,6 +663,8 @@ const services={
 
 };
 
+const expanded = {"peer": [["Getting started", "தொடங்குவது எப்படி", "Ask a rehabilitation professional or a trusted disability organisation about moderated peer groups. Share only what you are comfortable sharing.", "மறுவாழ்வு நிபுணர் அல்லது நம்பகமான அமைப்பிடம் வழிகாட்டப்படும் ஆதரவுக் குழுக்கள் பற்றிக் கேளுங்கள். விருப்பமான தகவல்களை மட்டுமே பகிருங்கள்."], ["Boundaries", "பாதுகாப்பு", "Peer experience is not medical advice. Obtain consent before sharing another member’s details.", "சக உறுப்பினரின் அனுபவம் மருத்துவ ஆலோசனை அல்ல. பிறரின் விவரங்களைப் பகிர முன் ஒப்புதல் பெறுங்கள்."]], "events": [["Finding events", "நிகழ்ச்சிகளைக் கண்டறிதல்", "Check official organiser notices for dates, registration, fees and cancellation policies. Ask about accessible toilets, transport and companion access.", "அதிகாரப்பூர்வ அறிவிப்பில் தேதி, பதிவு, கட்டணம், ரத்து விதிகளைப் பாருங்கள். அணுகக்கூடிய கழிப்பறை, போக்குவரத்து, துணையாளர் வசதி பற்றிக் கேளுங்கள்."]], "network": [["Connecting safely", "பாதுகாப்பான தொடர்பு", "Start through a trusted organisation. Contact sharing must be voluntary; avoid posting medical records or identity documents in groups. SIS has no active member directory yet.", "நம்பகமான அமைப்பு மூலம் தொடர்பைத் தொடங்குங்கள். தொடர்பு விவரங்களை விருப்பத்துடன் மட்டுமே பகிருங்கள். மருத்துவ மற்றும் அடையாள ஆவணங்களை குழுக்களில் பதிவிட வேண்டாம். SIS உறுப்பினர் பட்டியல் இன்னும் செயல்பாட்டில் இல்லை."]], "stories": [["Sharing achievements", "சாதனைகளைப் பகிர்தல்", "Education, employment, sport and everyday independence are equally valuable. Obtain the storyteller’s permission and verify details before publication. No member stories have been approved for publication yet.", "கல்வி, வேலை, விளையாட்டு, அன்றாட சுயசார்பு அனைத்தும் மதிப்புமிக்கவை. வெளியிட முன் சம்பந்தப்பட்டவரின் ஒப்புதலும் தகவல் சரிபார்ப்பும் தேவை. இதுவரை வெளியீட்டுக்கு கதைகள் அங்கீகரிக்கப்படவில்லை."]], "volunteer": [["Responsible assistance", "பொறுப்பான உதவி", "Ask the person what support they prefer. Volunteers can assist with information, event logistics and digital learning. Do not attempt transfers or medical procedures without appropriate training.", "எத்தகைய உதவி வேண்டும் என்று முதலில் கேளுங்கள். தகவல், நிகழ்ச்சி ஏற்பாடு, கணினிப் பயிற்சியில் உதவலாம். உரிய பயிற்சி இல்லாமல் உடல் இடமாற்றம் அல்லது மருத்துவ நடைமுறைகளைச் செய்ய வேண்டாம்."]], "family": [["Supporting independence", "சுயசார்புக்கு ஆதரவு", "Agree on daily care with the person and rehabilitation team. Respect privacy and choices; plan caregiver rest and emergency contacts.", "அவருடனும் மறுவாழ்வுக் குழுவுடனும் தினசரிப் பராமரிப்பைத் திட்டமிடுங்கள். தனியுரிமை, விருப்பங்களை மதித்து பராமரிப்பாளர் ஓய்வு மற்றும் அவசர தொடர்புகளைத் திட்டமிடுங்கள்."]], "accessibility": [["Checking accessibility", "அணுகல் வசதிகளைச் சரிபார்த்தல்", "Before visiting, ask about step-free entry, usable toilets, space for wheelchair movement and accessible transport. Document barriers with consent and report to the responsible authority.", "செல்லும் முன் படியில்லா நுழைவு, பயன்படுத்தக்கூடிய கழிப்பறை, சக்கர நாற்காலி இயக்க இடம், போக்குவரத்து பற்றி கேளுங்கள். ஒப்புதலுடன் தடைகளைப் பதிவு செய்து உரிய அதிகாரியிடம் தெரிவியுங்கள்."]], "sports": [["Starting safely", "பாதுகாப்பாகத் தொடங்குதல்", "Recreational activity and competitive eligibility are different. Discuss readiness, seating support, skin protection, fatigue and individual emergency plans with your rehabilitation team. Start with a trained adaptive sports coach. Classification is sport-specific and determined by authorised classifiers.", "பொழுதுபோக்கு விளையாட்டும் போட்டித் தகுதியும் வேறுபடும். உடல்நிலை, அமர்வு ஆதரவு, தோல் பாதுகாப்பு, சோர்வு, அவசரத் திட்டம் குறித்து மறுவாழ்வுக் குழுவிடம் ஆலோசிக்கவும். பயிற்சி பெற்ற பாரா விளையாட்டுப் பயிற்சியாளருடன் தொடங்குங்கள். ஒவ்வொரு விளையாட்டுக்கும் அங்கீகரிக்கப்பட்ட வகைப்பாட்டாளர்கள் தகுதியை நிர்ணயிப்பார்கள்."], ["Tamil Nadu opportunities", "தமிழ்நாட்டில் வாய்ப்புகள்", "Consult PCI state association resources and ask the district sports office about accessible coaching. Confirm venue, dates, registration, equipment and classification requirements with organisers before travelling. No specific upcoming event or training centre has been verified for this release.", "PCI மாநில அமைப்பு ஆதாரங்களைப் பார்த்து மாவட்ட விளையாட்டு அலுவலகத்தில் அணுகக்கூடிய பயிற்சி பற்றி கேளுங்கள். பயணம் முன் இடம், தேதி, பதிவு, உபகரணம், வகைப்பாடு ஆகியவற்றை அமைப்பாளரிடம் உறுதி செய்யுங்கள். இந்த வெளியீட்டில் குறிப்பிட்ட வரவிருக்கும் போட்டி அல்லது பயிற்சி மையம் சரிபார்க்கப்படவில்லை."], ["Wheelchair Pickleball", "சக்கர நாற்காலி பிக்கிள்பால்", "Paddle and ball court game; ask local organisers about wheelchair rules and suitable seating. Not a Paralympic medal sport.", "பேடில் மற்றும் பந்து விளையாட்டு; சக்கர நாற்காலி விதிகள், அமர்வு பற்றி அமைப்பாளரிடம் கேளுங்கள். பாராலிம்பிக் பதக்க விளையாட்டு அல்ல."], ["Para Archery", "பாரா வில்வித்தை", "Target archery with approved adaptive equipment when eligible; seek supervised range training and formal classification.", "இலக்கை நோக்கி அம்பு எய்துதல்; தகுதிக்கு ஏற்ப அங்கீகரிக்கப்பட்ட உதவி உபகரணம், மேற்பார்வைப் பயிற்சி, வகைப்பாடு தேவை."], ["Wheelchair Basketball", "சக்கர நாற்காலி கூடைப்பந்து", "Team court game using sports wheelchairs; learn chair control and passing with a coach.", "விளையாட்டு சக்கர நாற்காலியில் குழு ஆட்டம்; நாற்காலி இயக்கம், பந்து பரிமாற்றம் பயிற்சி பெறுங்கள்."], ["Para Athletics", "பாரா தடகளம்", "Includes eligible wheelchair racing and seated throwing disciplines; event and equipment depend on classification.", "தகுதிக்கேற்ப சக்கர நாற்காலி ஓட்டம், அமர்ந்து எறிதல் போட்டிகள்; வகைப்பாட்டுக்கு ஏற்ப உபகரணம் மாறும்."], ["Para Table Tennis", "பாரா மேசைப்பந்து", "Table-based racket sport with seated classes; practise reach and stability with coaching.", "அமர்ந்து விளையாடும் வகைகளைக் கொண்ட மேசைப்பந்து; எட்டும் திறன் மற்றும் நிலைத்தன்மைக்குப் பயிற்சி பெறுங்கள்."], ["Wheelchair Tennis", "சக்கர நாற்காலி டென்னிஸ்", "Court racket sport with wheelchair-specific rules; coaching helps with safe chair movement.", "சக்கர நாற்காலிக்கான தனி விதிகள் கொண்ட டென்னிஸ்; பாதுகாப்பான இயக்கத்துக்குப் பயிற்சி பெறுங்கள்."], ["Para Powerlifting", "பாரா பளுதூக்குதல்", "Competitive bench press; eligibility, safe transfer and progressive supervised strength training are essential.", "பெஞ்ச் பிரஸ் போட்டி; தகுதி, பாதுகாப்பான இடமாற்றம், மேற்பார்வையுடன் படிப்படியான வலுப் பயிற்சி முக்கியம்."], ["Para Swimming", "பாரா நீச்சல்", "Adapted swimming with sport-specific classes; use accessible pool entry and qualified supervision.", "வகைப்பாட்டுடன் கூடிய நீச்சல்; அணுகக்கூடிய குள நுழைவு மற்றும் தகுதியுள்ள மேற்பார்வை தேவை."], ["Para Badminton", "பாரா பேட்மிண்டன்", "Racket sport including wheelchair classes; learn court movement and stroke techniques.", "சக்கர நாற்காலி வகைகளைக் கொண்ட இறகுப்பந்து; மைதான இயக்கம் மற்றும் அடிக்கும் முறைகளைப் பயிலுங்கள்."], ["Shooting Para Sport", "பாரா துப்பாக்கிச் சுடுதல்", "Precision target sport; participate only at authorised facilities with qualified instruction and applicable eligibility checks.", "துல்லிய இலக்கு விளையாட்டு; அங்கீகரிக்கப்பட்ட மையத்தில் தகுதியுள்ள பயிற்சியாளர் மற்றும் உரிய தகுதி சரிபார்ப்புடன் மட்டுமே பங்கேற்கவும்."]]};
+const resourceLinks = {"sports": [["PCI official announcements", "https://www.paralympicindia.com/"], ["PCI classification", "https://www.paralympicindia.com/classification"], ["IPC sport classification", "https://www.paralympic.org/classification-by-sport"], ["World Archery", "https://www.worldarchery.sport/sport/disciplines/para-archery"], ["PCI state association and policy resources", "https://www.paralympicindia.com/pci-policies"]], "peer": [["Independent living | சுயசார்பு", "independent-living.html"], ["Emotional wellbeing | மனநலம்", "emotional-wellbeing.html"]], "family": [["Caregiver guide | பராமரிப்பாளர் வழிகாட்டி", "caregiver-guide.html"]], "accessibility": [["Rights and welfare | உரிமைகள்", "rights-welfare.html"]], "events": [["PCI announcements", "https://www.paralympicindia.com/"]]};
 function showDetails(key){
 
  const service=services[key];
@@ -685,8 +690,18 @@ function showDetails(key){
  list.appendChild(li);
  });
 
- document.getElementById("communityDialog")
- .showModal();
+ const target=document.getElementById("communityExpanded");
+ target.replaceChildren();
+ for(const [en,ta,bodyEn,bodyTa] of expanded[key] || []){
+ const article=document.createElement("article");
+ for(const [tag,lang,value] of [["h3","en",en],["h4","ta",ta],["p","en",bodyEn],["p","ta",bodyTa]]){
+ const node=document.createElement(tag); node.lang=lang; node.textContent=value; article.appendChild(node);
+ } target.appendChild(article);
+ }
+ for(const [label,url] of resourceLinks[key] || []){
+ const p=document.createElement("p"); const a=document.createElement("a"); a.href=url; a.textContent=label; p.appendChild(a); target.appendChild(p);
+ }
+ document.getElementById("communityDialog").showModal();
 
 }
 

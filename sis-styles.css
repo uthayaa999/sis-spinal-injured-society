@@ -1,8 +1,8 @@
-
 /* ========================================
    SIS - Spinal Injured Society
-   Shared Design System V1.0
+   Shared Design System V1.1
    Senior Review Demo
+   STEP 43.6.2 - Header Enhancement
 ======================================== */
 
 :root{
@@ -53,31 +53,54 @@ p{
  margin-bottom:14px;
 }
 
-/* Official Branding */
+/* ========================================
+   Enhanced Official SIS Branding
+======================================== */
 
-header{
- background:var(--sis-primary);
+body header{
+ position:relative;
+ isolation:isolate;
+ background-color:var(--sis-primary);
+ background-image:
+ linear-gradient(
+  rgba(5,43,77,.30),
+  rgba(5,43,77,.48)
+ ),
+ url("sis-header-bg.png");
+ background-size:cover;
+ background-position:center center;
+ background-repeat:no-repeat;
  color:white;
- padding:28px 16px;
+ padding:22px 16px;
  text-align:center;
 }
 
-header img[src="sis-logo.png"]{
- width:150px !important;
+body header img[src="sis-logo.png"]{
+ width:145px !important;
  max-width:100%;
  height:auto;
  display:block;
- margin:0 auto 14px !important;
+ margin:0 auto 10px !important;
  object-fit:contain;
+ filter:drop-shadow(0 3px 8px #0005);
 }
 
-header h1{
+body header h1{
  font-size:2.2rem;
- margin:8px 0;
+ margin:5px 0;
+ color:white;
+ text-shadow:0 2px 5px #0009;
 }
 
-header p{
- margin:6px 0;
+body header p{
+ margin:4px 0;
+ color:white;
+ text-shadow:0 2px 5px #0009;
+}
+
+body header strong{
+ color:white;
+ text-shadow:0 2px 5px #0009;
 }
 
 /* Navigation */
@@ -153,6 +176,7 @@ nav a:hover{
 .container{
  width:100%;
  max-width:1100px;
+ min-width:0;
  margin:auto;
  padding:28px 18px;
 }
@@ -162,6 +186,12 @@ nav a:hover{
  grid-template-columns:
  repeat(auto-fit,minmax(min(100%,260px),1fr));
  gap:20px;
+ min-width:0;
+}
+
+.grid > *{
+ min-width:0;
+ max-width:100%;
 }
 
 .panel,.card{
@@ -170,6 +200,7 @@ nav a:hover{
  border-radius:var(--sis-radius);
  padding:24px;
  box-shadow:var(--sis-shadow);
+ min-width:0;
 }
 
 .card{
@@ -179,6 +210,7 @@ nav a:hover{
 
 .card h3{
  margin:12px 0;
+ overflow-wrap:anywhere;
 }
 
 .card p{
@@ -198,9 +230,11 @@ button,.btn,.service-link{
  font-weight:600;
  cursor:pointer;
  min-height:44px;
+ max-width:100%;
  border-radius:10px;
  padding:12px 18px;
  touch-action:manipulation;
+ white-space:normal;
 }
 
 button,.service-link{
@@ -214,6 +248,7 @@ button,.service-link{
  align-items:center;
  justify-content:center;
  text-decoration:none;
+ text-align:center;
 }
 
 button:hover,.service-link:hover{
@@ -362,19 +397,47 @@ footer p{
  margin:8px 0;
 }
 
+/* Tablet Responsive Layout */
+
+@media(min-width:601px) and (max-width:900px){
+
+ body header{
+  padding:20px 16px;
+  background-position:center center;
+ }
+
+ body header img[src="sis-logo.png"]{
+  width:135px !important;
+ }
+
+ .grid{
+  grid-template-columns:
+  repeat(2,minmax(0,1fr));
+ }
+
+}
+
 /* Mobile Responsive Layout */
 
 @media(max-width:600px){
 
- header{
-  padding:22px 14px;
+ body header{
+  padding:18px 14px;
+  background-image:
+  linear-gradient(
+   rgba(5,43,77,.45),
+   rgba(5,43,77,.60)
+  ),
+  url("sis-header-bg.png");
+  background-size:cover;
+  background-position:22% center;
  }
 
- header img[src="sis-logo.png"]{
-  width:130px !important;
+ body header img[src="sis-logo.png"]{
+  width:120px !important;
  }
 
- header h1{
+ body header h1{
   font-size:1.9rem;
  }
 
@@ -399,7 +462,7 @@ footer p{
  }
 
  .grid{
-  grid-template-columns:1fr;
+  grid-template-columns:minmax(0,1fr);
   gap:16px;
  }
 
@@ -442,6 +505,11 @@ footer p{
 
 @media(prefers-contrast:more){
 
+ body header{
+  background-image:none;
+  background-color:var(--sis-primary-dark);
+ }
+
  .card,.panel{
   border:2px solid var(--sis-primary);
  }
@@ -452,4 +520,4 @@ footer p{
 
 }
 
-/* End of SIS Shared Design System */
+/* End of SIS Shared Design System V1.1 */
